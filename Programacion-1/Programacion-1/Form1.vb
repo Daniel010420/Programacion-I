@@ -233,43 +233,43 @@
 
 
             ElseIf cobdato1.SelectedItem = "Tonelada" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {1, 1000, 1000000, 1000000000, 1000000000000, 0.984207, 1.10231, 157.473, 2204.62199992473, 35274}
 
 
             ElseIf cobdato1.SelectedItem = "Kilogramo" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.001, 1, 1000, 1000000, 1000000000, 0.000984207, 0.00110231, 0.157473, 2.20462, 35.274}
 
 
             ElseIf cobdato1.SelectedItem = "Gramo" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.000001, 0.001, 1, 1000, 1000000.0, 0.00000098421, 0.0000011023, 0.000157473, 0.00220462, 0.035274}
 
 
             ElseIf cobdato1.SelectedItem = "Miligramo" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.000000001, 0.000001, 0.001, 1, 1000, 0.00000000098421, 0.0000000011023, 0.00000015747, 0.0000022046, 0.000035274}
 
 
             ElseIf cobdato1.SelectedItem = "Microgramo" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.000000000001, 0.000000001, 0.000001, 0.001, 1, 0.00000000000098421, 0.0000000000011023, 0.00000000015747, 0.0000000022046, 0.000000035274}
 
 
             ElseIf cobdato1.SelectedItem = "Tonelada larga" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {1.01605, 1016.05, 1016000.0, 1016000000.0, 1016000000000.0, 1, 1.12, 160, 2240, 35840}
 
 
             ElseIf cobdato1.SelectedItem = "Tonelada corta" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.907185, 907.185, 907185, 907200000.0, 907200000000.0, 0.892857, 1, 142.857, 2000, 32000}
 
 
             ElseIf cobdato1.SelectedItem = "Stone" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.00635029, 6.35029, 6350.29, 6350000.0, 6350000000.0, 0.00625, 0.007, 1, 14, 224}
 
 
             ElseIf cobdato1.SelectedItem = "Libra" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.000453592, 0.453592, 453.592, 453592, 453600000.0, 0.000446429, 0.0005, 0.0714286, 14, 224}
 
 
             ElseIf cobdato1.SelectedItem = "Onza" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.00002835, 0.0283495, 28.3495, 28349.5, 28350000.0, 0.000027902, 0.00003125, 0.00446429, 0.0625, 16}
 
 
             ElseIf cobdato1.SelectedItem = "Pulgada cubica" Then

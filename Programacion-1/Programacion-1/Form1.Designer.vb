@@ -41,7 +41,7 @@ Partial Class Form1
         'lbl5
         '
         Me.lbl5.AutoSize = True
-        Me.lbl5.Location = New System.Drawing.Point(46, 146)
+        Me.lbl5.Location = New System.Drawing.Point(46, 265)
         Me.lbl5.Name = "lbl5"
         Me.lbl5.Size = New System.Drawing.Size(39, 13)
         Me.lbl5.TabIndex = 28
@@ -50,7 +50,7 @@ Partial Class Form1
         'lbl4
         '
         Me.lbl4.AutoSize = True
-        Me.lbl4.Location = New System.Drawing.Point(42, 112)
+        Me.lbl4.Location = New System.Drawing.Point(46, 239)
         Me.lbl4.Name = "lbl4"
         Me.lbl4.Size = New System.Drawing.Size(39, 13)
         Me.lbl4.TabIndex = 27
@@ -59,7 +59,7 @@ Partial Class Form1
         'lbl2
         '
         Me.lbl2.AutoSize = True
-        Me.lbl2.Location = New System.Drawing.Point(46, 55)
+        Me.lbl2.Location = New System.Drawing.Point(46, 171)
         Me.lbl2.Name = "lbl2"
         Me.lbl2.Size = New System.Drawing.Size(39, 13)
         Me.lbl2.TabIndex = 26
@@ -68,7 +68,7 @@ Partial Class Form1
         'lbl
         '
         Me.lbl.AutoSize = True
-        Me.lbl.Location = New System.Drawing.Point(42, 85)
+        Me.lbl.Location = New System.Drawing.Point(46, 204)
         Me.lbl.Name = "lbl"
         Me.lbl.Size = New System.Drawing.Size(39, 13)
         Me.lbl.TabIndex = 25
@@ -92,7 +92,7 @@ Partial Class Form1
         '
         'btncalcular
         '
-        Me.btncalcular.Location = New System.Drawing.Point(150, 146)
+        Me.btncalcular.Location = New System.Drawing.Point(167, 55)
         Me.btncalcular.Name = "btncalcular"
         Me.btncalcular.Size = New System.Drawing.Size(121, 40)
         Me.btncalcular.TabIndex = 22
@@ -104,7 +104,7 @@ Partial Class Form1
         Me.cobtipodeconversion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cobtipodeconversion.FormattingEnabled = True
         Me.cobtipodeconversion.Items.AddRange(New Object() {"Monedas", "Masa", "Volumen", "Longitud", "Almacenamiento", "Tiempo"})
-        Me.cobtipodeconversion.Location = New System.Drawing.Point(150, 55)
+        Me.cobtipodeconversion.Location = New System.Drawing.Point(40, 55)
         Me.cobtipodeconversion.Name = "cobtipodeconversion"
         Me.cobtipodeconversion.Size = New System.Drawing.Size(121, 21)
         Me.cobtipodeconversion.TabIndex = 21
@@ -120,7 +120,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(146, 203)
+        Me.Label2.Location = New System.Drawing.Point(188, 131)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(55, 13)
         Me.Label2.TabIndex = 19
@@ -130,7 +130,7 @@ Partial Class Form1
         '
         Me.cobdato2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cobdato2.FormattingEnabled = True
-        Me.cobdato2.Location = New System.Drawing.Point(150, 109)
+        Me.cobdato2.Location = New System.Drawing.Point(40, 131)
         Me.cobdato2.Name = "cobdato2"
         Me.cobdato2.Size = New System.Drawing.Size(121, 21)
         Me.cobdato2.TabIndex = 18
@@ -139,7 +139,7 @@ Partial Class Form1
         '
         Me.cobdato1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cobdato1.FormattingEnabled = True
-        Me.cobdato1.Location = New System.Drawing.Point(150, 82)
+        Me.cobdato1.Location = New System.Drawing.Point(40, 95)
         Me.cobdato1.Name = "cobdato1"
         Me.cobdato1.Size = New System.Drawing.Size(121, 21)
         Me.cobdato1.TabIndex = 17
@@ -147,7 +147,8 @@ Partial Class Form1
         'lblcantidad
         '
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(42, 23)
+        Me.lblcantidad.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.lblcantidad.Location = New System.Drawing.Point(37, 27)
         Me.lblcantidad.Name = "lblcantidad"
         Me.lblcantidad.Size = New System.Drawing.Size(102, 13)
         Me.lblcantidad.TabIndex = 16
@@ -155,7 +156,7 @@ Partial Class Form1
         '
         'txtcantidad
         '
-        Me.txtcantidad.Location = New System.Drawing.Point(150, 20)
+        Me.txtcantidad.Location = New System.Drawing.Point(150, 24)
         Me.txtcantidad.Name = "txtcantidad"
         Me.txtcantidad.Size = New System.Drawing.Size(121, 20)
         Me.txtcantidad.TabIndex = 15
@@ -164,7 +165,8 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(295, 337)
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.ClientSize = New System.Drawing.Size(295, 323)
         Me.Controls.Add(Me.lbl5)
         Me.Controls.Add(Me.lbl4)
         Me.Controls.Add(Me.lbl2)
