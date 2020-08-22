@@ -376,63 +376,63 @@
 
 
             ElseIf cobdato1.SelectedItem = "Byte" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {8, 0.008, 0.000008, 0.000000008, 0.000000008, 1, 0.001, 0.000001, 0.000000001, 0.000000000001}
 
 
             ElseIf cobdato1.SelectedItem = "Kilobyte" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {8000, 8, 0.008, 0.000008, 0.000000008, 1000, 1, 0.001, 0.000001, 0.000000001}
 
 
             ElseIf cobdato1.SelectedItem = "Megabyte" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {8000000, 8000, 8, 0.008, 0.000008, 1000000, 1000, 1, 0.001, 0.000001}
 
 
             ElseIf cobdato1.SelectedItem = "Gigabyte" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {8000000000, 8000000, 8000, 8, 0.008, 1000000000, 1000000, 1000, 1, 0.001}
 
 
             ElseIf cobdato1.SelectedItem = "Terabyte" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {8000000000000, 8000000000, 8000000, 8000, 8, 1000000000000, 1000000000, 1000000, 1000, 1}
 
 
             ElseIf cobdato1.SelectedItem = "Semana" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {1, 7, 168, 10080, 604800, 0.00383562, 0.0000191781, 0.00191781, 0.000191781, 0.0191781}
 
 
             ElseIf cobdato1.SelectedItem = "Dia" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.142857, 1, 24, 1440, 86400, 0.000547945, 0.00000273973, 0.000273973, 0.000027397, 0.00273973}
 
 
             ElseIf cobdato1.SelectedItem = "Hora" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.00595238, 0.0416667, 1, 60, 3600, 0.0000228311, 0.00000011415999999999999, 0.000011415999999999999, 0.0000011415999999999998, 0.000114155}
 
 
             ElseIf cobdato1.SelectedItem = "Minuto" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.000099206, 0.000694444, 0.0166667, 1, 60, 0.00000038052, 0.00000000190259, 0.00000019026, 0.000000019026, 0.0000019026}
 
 
             ElseIf cobdato1.SelectedItem = "Segundo" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.0000016534, 0.000011574, 0.000277778, 0.0166667, 1, 0.000000006342, 0.000000000031709999999999993, 0.000000003171, 0.00000000031709999999999997, 0.00000003171}
 
 
             ElseIf cobdato1.SelectedItem = "Lustro" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {260.714, 1825, 43800, 2628000, 15770000000000000, 1, 0.005, 0.5, 0.05, 5}
 
 
             ElseIf cobdato1.SelectedItem = "Milenio" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {52142.9, 365000, 8760000, 525600000, 31540000000, 200, 1, 100, 10, 1000}
 
 
             ElseIf cobdato1.SelectedItem = "Decada" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {521.429, 3650, 87600, 5256000, 315400000, 2, 0.01, 1, 0.1, 10}
 
 
             ElseIf cobdato1.SelectedItem = "Siglo" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {5214.29, 36500, 876000, 52560000, 3154000000, 20, 0.1, 10, 1, 100}
 
 
             ElseIf cobdato1.SelectedItem = "Año" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {52.1429, 365, 8760, 525600, 31540000, 0.2, 0.001, 0.1, 0.01, 1}
 
 
             End If
