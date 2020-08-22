@@ -275,39 +275,40 @@
 
 
             ElseIf cobdato1.SelectedItem = "Pulgada cubica" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {1, 0.000578704, 16.3871, 0.0163871, 0.000016387, 0.000000000000016387, 0.004329, 0.0001031, 0.0000214, 16387.1}
 
 
             ElseIf cobdato1.SelectedItem = "Pie cubico" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {1728, 1, 28316.8, 28.3168, 0.0283168, 0.000000000028317, 7.48052, 0.17811, 0.03704, 28320000.0}
 
 
             ElseIf cobdato1.SelectedItem = "Mililitro" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.0610237, 0.000035315, 1, 0.001, 0.000001, 0.000000000000001, 0.000264172, 0.00000629, 0.00000131, 1000}
 
 
             ElseIf cobdato1.SelectedItem = "Litro" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {61.0237, 0.0353147, 1000, 1, 0.001, 0.000000000001, 0.264172, 0.00629, 0.00131, 1000000.0}
 
 
             ElseIf cobdato1.SelectedItem = "Metro cubico" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {61023.7, 35.3147, 1000000.0, 1000, 1, 0.000000001, 264.172, 6.28981, 1.30795, 1000000000.0}
 
 
             ElseIf cobdato1.SelectedItem = "Kilometro cubico" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {61020000000000.0, 35310000000.0, 1.0E+15, 1000000000000.0, 1000000000.0, 1, 264200000000.0, 8386414325.1288, 1308000000.0, 1.0E+18}
 
 
             ElseIf cobdato1.SelectedItem = "Galon" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {231, 0.133681, 3785.41, 3.78541, 0.00378541, 0.0000000000037854, 1, 0.02381, 0.004951, 3785000.0}
 
 
             ElseIf cobdato1.SelectedItem = "Barril" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {9702, 5.6146, 158987.3, 158.987, 0.15899, 0.000000000119, 42, 1, 0.20795, 158987300}
 
 
             ElseIf cobdato1.SelectedItem = "Yarda cubica" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {46656, 27, 764554.86, 764.555, 0.76455, 0.000000000764555, 201.974, 4.80891, 1, 764600000.0}
+
 
 
             ElseIf cobdato1.SelectedItem = "Milimetro cubico" Then
