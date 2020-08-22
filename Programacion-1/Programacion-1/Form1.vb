@@ -313,64 +313,64 @@
 
 
             ElseIf cobdato1.SelectedItem = "Milla" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {1, 1.60934, 1609.34, 160934, 1609000.0, 1609000.0, 1609000000000.0, 1760, 5280, 63360}
 
 
 
             ElseIf cobdato1.SelectedItem = "Kilometro" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.621371, 1, 1000, 100000, 1000000.0, 1000000000.0, 1000000000000.0, 1093.61, 3280.84, 39370.1}
 
 
             ElseIf cobdato1.SelectedItem = "Metro" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.000621371, 0.001, 1, 100, 1000, 1000000.0, 1000000000.0, 1.09361, 3.28084, 39.3701}
 
 
             ElseIf cobdato1.SelectedItem = "Centimetro" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.0000062137, 0.00001, 0.01, 1, 10, 10000, 10000000.0, 0.0109361, 0.0328084, 0.393701}
 
 
             ElseIf cobdato1.SelectedItem = "Milimetro" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.00000062137, 0.000001, 0.001, 0.1, 1, 1000, 1000000.0, 0.00109361, 0.00328084, 0.0393701}
 
 
             ElseIf cobdato1.SelectedItem = "Micrometro" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.00000000062137, 0.000000001, 0.000001, 0.0001, 0.001, 1, 1000, 0.0000010936, 0.0000032808, 0.00003937}
 
 
             ElseIf cobdato1.SelectedItem = "Nanometro" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.00000000000062137, 0.000000000001, 0.000000001, 0.0000001, 0.000001, 0.001, 1, 0.0000000010936, 0.0000000032808, 0.00000003937}
 
 
             ElseIf cobdato1.SelectedItem = "Yarda" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.000568182, 0.0009144, 0.9144, 0.9144, 914.4, 914400, 914400000.0, 1, 3, 36}
 
 
             ElseIf cobdato1.SelectedItem = "Pie" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.000189394, 0.0003048, 0.3048, 30.48, 304.8, 304800, 304800000.0, 0.333333, 1, 12}
 
 
             ElseIf cobdato1.SelectedItem = "Pulgada" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.000015783, 0.0000254, 0.0254, 2.54, 25.4, 25400, 25400000.0, 0.0277778, 0.0833334, 1}
 
 
             ElseIf cobdato1.SelectedItem = "Bit" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {1, 0.001, 0.000001, 0.000000001, 0.000000000001, 0.125, 0.000125, 0.000000125, 0.000000000125, 0.000000000000125}
 
 
             ElseIf cobdato1.SelectedItem = "Kilobit" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {1000, 1, 0.001, 0.000001, 0.000000001, 125, 0.125, 0.000125, 0.000125, 0.000000000125}
 
 
             ElseIf cobdato1.SelectedItem = "Megabit" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {1000000.0, 1000, 1, 0.001, 0.000001, 125000, 125, 0.125, 0.000125, 0.000000125}
 
 
             ElseIf cobdato1.SelectedItem = "Gigabit" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {1000000000.0, 1000000.0, 1000, 1, 0.001, 125000000.0, 125000, 125, 0.125, 0.000125}
 
 
             ElseIf cobdato1.SelectedItem = "Terabit" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {1000000000000.0, 1000000000.0, 1000000.0, 1000, 0.001, 125000000.0, 125000, 125, 0.125, 0.000125}
 
 
             ElseIf cobdato1.SelectedItem = "Byte" Then
@@ -439,17 +439,6 @@
             'en la posicion x del array, la cual la posicion es tomada del combobox 2
             resultado = cantidad * (arraydeinformacion(posicion))
             lblresultado.Text = resultado
-
-            lblinformacion.Text = "La conversion de " + txtcantidad.Text + " " + cobdato1.SelectedItem.ToString + " a "
-            lblinformacion2.Text = cobdato2.SelectedItem.ToString + " es igual a " + resultado.ToString
-
-
-
-
-            'Esto se borrara
-            lbl2.Text = "categ" + cobtipodeconversion.SelectedItem
-            lbl4.Text = "a " + cobdato2.SelectedItem
-            lbl5.Text = "Va " + arraydeinformacion(posicion).ToString + " lu " + posicion.ToString
 
 
 

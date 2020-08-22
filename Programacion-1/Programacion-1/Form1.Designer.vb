@@ -22,12 +22,6 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.lbl5 = New System.Windows.Forms.Label()
-        Me.lbl4 = New System.Windows.Forms.Label()
-        Me.lbl2 = New System.Windows.Forms.Label()
-        Me.lbl = New System.Windows.Forms.Label()
-        Me.lblinformacion2 = New System.Windows.Forms.Label()
-        Me.lblinformacion = New System.Windows.Forms.Label()
         Me.btncalcular = New System.Windows.Forms.Button()
         Me.cobtipodeconversion = New System.Windows.Forms.ComboBox()
         Me.lblresultado = New System.Windows.Forms.Label()
@@ -38,63 +32,12 @@ Partial Class Form1
         Me.txtcantidad = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
-        'lbl5
-        '
-        Me.lbl5.AutoSize = True
-        Me.lbl5.Location = New System.Drawing.Point(46, 265)
-        Me.lbl5.Name = "lbl5"
-        Me.lbl5.Size = New System.Drawing.Size(39, 13)
-        Me.lbl5.TabIndex = 28
-        Me.lbl5.Text = "Label3"
-        '
-        'lbl4
-        '
-        Me.lbl4.AutoSize = True
-        Me.lbl4.Location = New System.Drawing.Point(46, 239)
-        Me.lbl4.Name = "lbl4"
-        Me.lbl4.Size = New System.Drawing.Size(39, 13)
-        Me.lbl4.TabIndex = 27
-        Me.lbl4.Text = "Label3"
-        '
-        'lbl2
-        '
-        Me.lbl2.AutoSize = True
-        Me.lbl2.Location = New System.Drawing.Point(46, 171)
-        Me.lbl2.Name = "lbl2"
-        Me.lbl2.Size = New System.Drawing.Size(39, 13)
-        Me.lbl2.TabIndex = 26
-        Me.lbl2.Text = "Label1"
-        '
-        'lbl
-        '
-        Me.lbl.AutoSize = True
-        Me.lbl.Location = New System.Drawing.Point(46, 204)
-        Me.lbl.Name = "lbl"
-        Me.lbl.Size = New System.Drawing.Size(39, 13)
-        Me.lbl.TabIndex = 25
-        Me.lbl.Text = "Label1"
-        '
-        'lblinformacion2
-        '
-        Me.lblinformacion2.AutoSize = True
-        Me.lblinformacion2.Location = New System.Drawing.Point(37, 265)
-        Me.lblinformacion2.Name = "lblinformacion2"
-        Me.lblinformacion2.Size = New System.Drawing.Size(0, 13)
-        Me.lblinformacion2.TabIndex = 24
-        '
-        'lblinformacion
-        '
-        Me.lblinformacion.AutoSize = True
-        Me.lblinformacion.Location = New System.Drawing.Point(37, 239)
-        Me.lblinformacion.Name = "lblinformacion"
-        Me.lblinformacion.Size = New System.Drawing.Size(0, 13)
-        Me.lblinformacion.TabIndex = 23
-        '
         'btncalcular
         '
-        Me.btncalcular.Location = New System.Drawing.Point(167, 55)
+        Me.btncalcular.Font = New System.Drawing.Font("Sitka Small", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncalcular.Location = New System.Drawing.Point(40, 159)
         Me.btncalcular.Name = "btncalcular"
-        Me.btncalcular.Size = New System.Drawing.Size(121, 40)
+        Me.btncalcular.Size = New System.Drawing.Size(100, 27)
         Me.btncalcular.TabIndex = 22
         Me.btncalcular.Text = "Calcular"
         Me.btncalcular.UseVisualStyleBackColor = True
@@ -102,63 +45,72 @@ Partial Class Form1
         'cobtipodeconversion
         '
         Me.cobtipodeconversion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cobtipodeconversion.Font = New System.Drawing.Font("Sitka Small", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cobtipodeconversion.FormattingEnabled = True
         Me.cobtipodeconversion.Items.AddRange(New Object() {"Monedas", "Masa", "Volumen", "Longitud", "Almacenamiento", "Tiempo"})
-        Me.cobtipodeconversion.Location = New System.Drawing.Point(40, 55)
+        Me.cobtipodeconversion.Location = New System.Drawing.Point(40, 89)
         Me.cobtipodeconversion.Name = "cobtipodeconversion"
-        Me.cobtipodeconversion.Size = New System.Drawing.Size(121, 21)
+        Me.cobtipodeconversion.Size = New System.Drawing.Size(121, 24)
         Me.cobtipodeconversion.TabIndex = 21
         '
         'lblresultado
         '
         Me.lblresultado.AutoSize = True
-        Me.lblresultado.Location = New System.Drawing.Point(202, 204)
+        Me.lblresultado.BackColor = System.Drawing.SystemColors.Control
+        Me.lblresultado.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblresultado.Location = New System.Drawing.Point(245, 166)
         Me.lblresultado.Name = "lblresultado"
-        Me.lblresultado.Size = New System.Drawing.Size(0, 13)
+        Me.lblresultado.Size = New System.Drawing.Size(0, 15)
         Me.lblresultado.TabIndex = 20
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(188, 131)
+        Me.Label2.BackColor = System.Drawing.SystemColors.Control
+        Me.Label2.Font = New System.Drawing.Font("Sitka Small", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(146, 163)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(55, 13)
+        Me.Label2.Size = New System.Drawing.Size(84, 19)
         Me.Label2.TabIndex = 19
-        Me.Label2.Text = "Resultado"
+        Me.Label2.Text = "Resultado:"
         '
         'cobdato2
         '
         Me.cobdato2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cobdato2.Font = New System.Drawing.Font("Sitka Small", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cobdato2.FormattingEnabled = True
-        Me.cobdato2.Location = New System.Drawing.Point(40, 131)
+        Me.cobdato2.Location = New System.Drawing.Point(350, 89)
         Me.cobdato2.Name = "cobdato2"
-        Me.cobdato2.Size = New System.Drawing.Size(121, 21)
+        Me.cobdato2.Size = New System.Drawing.Size(121, 24)
         Me.cobdato2.TabIndex = 18
         '
         'cobdato1
         '
         Me.cobdato1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cobdato1.Font = New System.Drawing.Font("Sitka Small", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cobdato1.FormattingEnabled = True
-        Me.cobdato1.Location = New System.Drawing.Point(40, 95)
+        Me.cobdato1.Location = New System.Drawing.Point(193, 89)
         Me.cobdato1.Name = "cobdato1"
-        Me.cobdato1.Size = New System.Drawing.Size(121, 21)
+        Me.cobdato1.Size = New System.Drawing.Size(121, 24)
         Me.cobdato1.TabIndex = 17
         '
         'lblcantidad
         '
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.lblcantidad.Location = New System.Drawing.Point(37, 27)
+        Me.lblcantidad.Font = New System.Drawing.Font("Sitka Small", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblcantidad.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblcantidad.Location = New System.Drawing.Point(36, 25)
         Me.lblcantidad.Name = "lblcantidad"
-        Me.lblcantidad.Size = New System.Drawing.Size(102, 13)
+        Me.lblcantidad.Size = New System.Drawing.Size(153, 19)
         Me.lblcantidad.TabIndex = 16
         Me.lblcantidad.Text = "Cantidad a convertir"
         '
         'txtcantidad
         '
-        Me.txtcantidad.Location = New System.Drawing.Point(150, 24)
+        Me.txtcantidad.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcantidad.Location = New System.Drawing.Point(204, 25)
         Me.txtcantidad.Name = "txtcantidad"
-        Me.txtcantidad.Size = New System.Drawing.Size(121, 20)
+        Me.txtcantidad.Size = New System.Drawing.Size(121, 21)
         Me.txtcantidad.TabIndex = 15
         '
         'Form1
@@ -166,13 +118,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(295, 323)
-        Me.Controls.Add(Me.lbl5)
-        Me.Controls.Add(Me.lbl4)
-        Me.Controls.Add(Me.lbl2)
-        Me.Controls.Add(Me.lbl)
-        Me.Controls.Add(Me.lblinformacion2)
-        Me.Controls.Add(Me.lblinformacion)
+        Me.ClientSize = New System.Drawing.Size(521, 243)
         Me.Controls.Add(Me.btncalcular)
         Me.Controls.Add(Me.cobtipodeconversion)
         Me.Controls.Add(Me.lblresultado)
@@ -190,13 +136,6 @@ Partial Class Form1
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents lbl5 As Label
-    Friend WithEvents lbl4 As Label
-    Friend WithEvents lbl2 As Label
-    Friend WithEvents lbl As Label
-    Friend WithEvents lblinformacion2 As Label
-    Friend WithEvents lblinformacion As Label
     Friend WithEvents btncalcular As Button
     Friend WithEvents cobtipodeconversion As ComboBox
     Friend WithEvents lblresultado As Label
