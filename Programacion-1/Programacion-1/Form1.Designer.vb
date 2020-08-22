@@ -81,7 +81,7 @@ Partial Class Form1
         Me.cobdato2.FormattingEnabled = True
         Me.cobdato2.Location = New System.Drawing.Point(350, 89)
         Me.cobdato2.Name = "cobdato2"
-        Me.cobdato2.Size = New System.Drawing.Size(121, 24)
+        Me.cobdato2.Size = New System.Drawing.Size(145, 24)
         Me.cobdato2.TabIndex = 18
         '
         'cobdato1
@@ -89,9 +89,9 @@ Partial Class Form1
         Me.cobdato1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cobdato1.Font = New System.Drawing.Font("Sitka Small", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cobdato1.FormattingEnabled = True
-        Me.cobdato1.Location = New System.Drawing.Point(193, 89)
+        Me.cobdato1.Location = New System.Drawing.Point(184, 89)
         Me.cobdato1.Name = "cobdato1"
-        Me.cobdato1.Size = New System.Drawing.Size(121, 24)
+        Me.cobdato1.Size = New System.Drawing.Size(151, 24)
         Me.cobdato1.TabIndex = 17
         '
         'lblcantidad

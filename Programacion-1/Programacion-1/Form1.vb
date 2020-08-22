@@ -1,8 +1,6 @@
 ﻿Public Class Form1
     Private Sub cobtipodeconversion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cobtipodeconversion.SelectedIndexChanged
 
-
-
         'Si selecciona monedas
         If cobtipodeconversion.SelectedItem = "Monedas" Then
             cobdato1.Items.Clear()
@@ -54,6 +52,7 @@
             cobdato2.Items.Add("Stone")
             cobdato2.Items.Add("Libra")
             cobdato2.Items.Add("Onza")
+
 
             'Si selecciona volumen
         ElseIf cobtipodeconversion.SelectedItem = "Volumen" Then
@@ -161,12 +160,22 @@
 
         End If
 
+        lblresultado.Text = ""
+    End Sub
+
+    Private Sub cobdato1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cobdato1.SelectedIndexChanged
+        lblresultado.Text = ""
+    End Sub
+
+    Private Sub cobdato2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cobdato2.SelectedIndexChanged
+        lblresultado.Text = ""
+
     End Sub
 
 
 
 
-    Private Sub btncalcular_Click(sender As Object, e As EventArgs) Handles btncalcular.Click
+    Public Sub btncalcular_Click(sender As Object, e As EventArgs) Handles btncalcular.Click
 
         If txtcantidad.Text <> "" And cobtipodeconversion.SelectedItem <> "" And cobdato1.SelectedItem <> "" And cobdato2.SelectedItem <> "" Then
 
@@ -312,7 +321,7 @@
 
 
             ElseIf cobdato1.SelectedItem = "Milimetro cubico" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.000061024, 0.0000000353147, 0.001, 0.000001, 0.000000001, 1.0E-18, 0.000000264172, 0.000000006, 0.00000000130795, 1}
 
 
             ElseIf cobdato1.SelectedItem = "Milla" Then
@@ -451,5 +460,6 @@
         End If
 
     End Sub
+
 
 End Class
