@@ -22,200 +22,127 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.lblRespuesta = New System.Windows.Forms.Label()
-        Me.optResiduo = New System.Windows.Forms.RadioButton()
-        Me.optPorcentaje = New System.Windows.Forms.RadioButton()
-        Me.optExponenciacion = New System.Windows.Forms.RadioButton()
-        Me.optDivicion = New System.Windows.Forms.RadioButton()
-        Me.optMultiplicacion = New System.Windows.Forms.RadioButton()
-        Me.optResta = New System.Windows.Forms.RadioButton()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtnum2 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.optSuma = New System.Windows.Forms.RadioButton()
-        Me.txtnum1 = New System.Windows.Forms.TextBox()
-        Me.cboOperaciones = New System.Windows.Forms.ComboBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.lblserie = New System.Windows.Forms.Label()
+        Me.txtserie = New System.Windows.Forms.TextBox()
+        Me.lblmedia = New System.Windows.Forms.Label()
+        Me.lblvarianza = New System.Windows.Forms.Label()
+        Me.lbldesviacion = New System.Windows.Forms.Label()
+        Me.lblrespuestavarianza = New System.Windows.Forms.Label()
+        Me.lblrespuestadesv = New System.Windows.Forms.Label()
+        Me.lblrespuestamedia = New System.Windows.Forms.Label()
+        Me.btncalcular = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'lblRespuesta
+        'lblserie
         '
-        Me.lblRespuesta.AutoSize = True
-        Me.lblRespuesta.Location = New System.Drawing.Point(298, 45)
-        Me.lblRespuesta.Name = "lblRespuesta"
-        Me.lblRespuesta.Size = New System.Drawing.Size(0, 13)
-        Me.lblRespuesta.TabIndex = 27
+        Me.lblserie.AutoSize = True
+        Me.lblserie.Location = New System.Drawing.Point(12, 21)
+        Me.lblserie.Name = "lblserie"
+        Me.lblserie.Size = New System.Drawing.Size(31, 13)
+        Me.lblserie.TabIndex = 0
+        Me.lblserie.Text = "Serie"
         '
-        'optResiduo
+        'txtserie
         '
-        Me.optResiduo.AutoSize = True
-        Me.optResiduo.Location = New System.Drawing.Point(143, 175)
-        Me.optResiduo.Name = "optResiduo"
-        Me.optResiduo.Size = New System.Drawing.Size(64, 17)
-        Me.optResiduo.TabIndex = 26
-        Me.optResiduo.TabStop = True
-        Me.optResiduo.Text = "Residuo"
-        Me.optResiduo.UseVisualStyleBackColor = True
+        Me.txtserie.Location = New System.Drawing.Point(49, 18)
+        Me.txtserie.Name = "txtserie"
+        Me.txtserie.Size = New System.Drawing.Size(100, 20)
+        Me.txtserie.TabIndex = 1
         '
-        'optPorcentaje
+        'lblmedia
         '
-        Me.optPorcentaje.AutoSize = True
-        Me.optPorcentaje.Location = New System.Drawing.Point(143, 129)
-        Me.optPorcentaje.Name = "optPorcentaje"
-        Me.optPorcentaje.Size = New System.Drawing.Size(76, 17)
-        Me.optPorcentaje.TabIndex = 25
-        Me.optPorcentaje.TabStop = True
-        Me.optPorcentaje.Text = "Porcentaje"
-        Me.optPorcentaje.UseVisualStyleBackColor = True
+        Me.lblmedia.AutoSize = True
+        Me.lblmedia.Location = New System.Drawing.Point(12, 55)
+        Me.lblmedia.Name = "lblmedia"
+        Me.lblmedia.Size = New System.Drawing.Size(36, 13)
+        Me.lblmedia.TabIndex = 2
+        Me.lblmedia.Text = "Media"
         '
-        'optExponenciacion
+        'lblvarianza
         '
-        Me.optExponenciacion.AutoSize = True
-        Me.optExponenciacion.Location = New System.Drawing.Point(143, 152)
-        Me.optExponenciacion.Name = "optExponenciacion"
-        Me.optExponenciacion.Size = New System.Drawing.Size(31, 17)
-        Me.optExponenciacion.TabIndex = 24
-        Me.optExponenciacion.TabStop = True
-        Me.optExponenciacion.Text = "^"
-        Me.optExponenciacion.UseVisualStyleBackColor = True
+        Me.lblvarianza.AutoSize = True
+        Me.lblvarianza.Location = New System.Drawing.Point(12, 86)
+        Me.lblvarianza.Name = "lblvarianza"
+        Me.lblvarianza.Size = New System.Drawing.Size(48, 13)
+        Me.lblvarianza.TabIndex = 3
+        Me.lblvarianza.Text = "Varianza"
         '
-        'optDivicion
+        'lbldesviacion
         '
-        Me.optDivicion.AutoSize = True
-        Me.optDivicion.Location = New System.Drawing.Point(143, 106)
-        Me.optDivicion.Name = "optDivicion"
-        Me.optDivicion.Size = New System.Drawing.Size(30, 17)
-        Me.optDivicion.TabIndex = 23
-        Me.optDivicion.TabStop = True
-        Me.optDivicion.Text = "/"
-        Me.optDivicion.UseVisualStyleBackColor = True
+        Me.lbldesviacion.AutoSize = True
+        Me.lbldesviacion.Location = New System.Drawing.Point(12, 113)
+        Me.lbldesviacion.Name = "lbldesviacion"
+        Me.lbldesviacion.Size = New System.Drawing.Size(67, 13)
+        Me.lbldesviacion.TabIndex = 4
+        Me.lbldesviacion.Text = "Desv. Tipica"
         '
-        'optMultiplicacion
+        'lblrespuestavarianza
         '
-        Me.optMultiplicacion.AutoSize = True
-        Me.optMultiplicacion.Location = New System.Drawing.Point(143, 83)
-        Me.optMultiplicacion.Name = "optMultiplicacion"
-        Me.optMultiplicacion.Size = New System.Drawing.Size(29, 17)
-        Me.optMultiplicacion.TabIndex = 22
-        Me.optMultiplicacion.TabStop = True
-        Me.optMultiplicacion.Text = "*"
-        Me.optMultiplicacion.UseVisualStyleBackColor = True
+        Me.lblrespuestavarianza.AutoSize = True
+        Me.lblrespuestavarianza.Location = New System.Drawing.Point(85, 86)
+        Me.lblrespuestavarianza.Name = "lblrespuestavarianza"
+        Me.lblrespuestavarianza.Size = New System.Drawing.Size(13, 13)
+        Me.lblrespuestavarianza.TabIndex = 5
+        Me.lblrespuestavarianza.Text = "?"
         '
-        'optResta
+        'lblrespuestadesv
         '
-        Me.optResta.AutoSize = True
-        Me.optResta.Location = New System.Drawing.Point(143, 60)
-        Me.optResta.Name = "optResta"
-        Me.optResta.Size = New System.Drawing.Size(28, 17)
-        Me.optResta.TabIndex = 21
-        Me.optResta.TabStop = True
-        Me.optResta.Text = "-"
-        Me.optResta.UseVisualStyleBackColor = True
+        Me.lblrespuestadesv.AutoSize = True
+        Me.lblrespuestadesv.Location = New System.Drawing.Point(85, 113)
+        Me.lblrespuestadesv.Name = "lblrespuestadesv"
+        Me.lblrespuestadesv.Size = New System.Drawing.Size(13, 13)
+        Me.lblrespuestadesv.TabIndex = 6
+        Me.lblrespuestadesv.Text = "?"
         '
-        'Label2
+        'lblrespuestamedia
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(180, 41)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(53, 13)
-        Me.Label2.TabIndex = 20
-        Me.Label2.Text = "Numero 1"
+        Me.lblrespuestamedia.AutoSize = True
+        Me.lblrespuestamedia.Location = New System.Drawing.Point(85, 55)
+        Me.lblrespuestamedia.Name = "lblrespuestamedia"
+        Me.lblrespuestamedia.Size = New System.Drawing.Size(13, 13)
+        Me.lblrespuestamedia.TabIndex = 7
+        Me.lblrespuestamedia.Text = "?"
         '
-        'txtnum2
+        'btncalcular
         '
-        Me.txtnum2.Location = New System.Drawing.Point(239, 38)
-        Me.txtnum2.Name = "txtnum2"
-        Me.txtnum2.Size = New System.Drawing.Size(53, 20)
-        Me.txtnum2.TabIndex = 19
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(13, 41)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(53, 13)
-        Me.Label1.TabIndex = 18
-        Me.Label1.Text = "Numero 1"
-        '
-        'optSuma
-        '
-        Me.optSuma.AutoSize = True
-        Me.optSuma.Checked = True
-        Me.optSuma.Location = New System.Drawing.Point(143, 37)
-        Me.optSuma.Name = "optSuma"
-        Me.optSuma.Size = New System.Drawing.Size(31, 17)
-        Me.optSuma.TabIndex = 17
-        Me.optSuma.TabStop = True
-        Me.optSuma.Text = "+"
-        Me.optSuma.UseVisualStyleBackColor = True
-        '
-        'txtnum1
-        '
-        Me.txtnum1.Location = New System.Drawing.Point(72, 38)
-        Me.txtnum1.Name = "txtnum1"
-        Me.txtnum1.Size = New System.Drawing.Size(53, 20)
-        Me.txtnum1.TabIndex = 16
-        '
-        'cboOperaciones
-        '
-        Me.cboOperaciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboOperaciones.FormattingEnabled = True
-        Me.cboOperaciones.Items.AddRange(New Object() {"Seleccione una opción", "Suma", "Resta", "Multiplicación", "División", "Porcentaje", "Exponenciación", "Residuo"})
-        Me.cboOperaciones.Location = New System.Drawing.Point(256, 125)
-        Me.cboOperaciones.Name = "cboOperaciones"
-        Me.cboOperaciones.Size = New System.Drawing.Size(121, 21)
-        Me.cboOperaciones.TabIndex = 15
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(183, 214)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(83, 53)
-        Me.Button1.TabIndex = 14
-        Me.Button1.Text = "Calcular"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btncalcular.Location = New System.Drawing.Point(12, 154)
+        Me.btncalcular.Name = "btncalcular"
+        Me.btncalcular.Size = New System.Drawing.Size(103, 33)
+        Me.btncalcular.TabIndex = 8
+        Me.btncalcular.Text = "Calcular"
+        Me.btncalcular.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(396, 344)
-        Me.Controls.Add(Me.lblRespuesta)
-        Me.Controls.Add(Me.optResiduo)
-        Me.Controls.Add(Me.optPorcentaje)
-        Me.Controls.Add(Me.optExponenciacion)
-        Me.Controls.Add(Me.optDivicion)
-        Me.Controls.Add(Me.optMultiplicacion)
-        Me.Controls.Add(Me.optResta)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.txtnum2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.optSuma)
-        Me.Controls.Add(Me.txtnum1)
-        Me.Controls.Add(Me.cboOperaciones)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(484, 412)
+        Me.Controls.Add(Me.btncalcular)
+        Me.Controls.Add(Me.lblrespuestamedia)
+        Me.Controls.Add(Me.lblrespuestadesv)
+        Me.Controls.Add(Me.lblrespuestavarianza)
+        Me.Controls.Add(Me.lbldesviacion)
+        Me.Controls.Add(Me.lblvarianza)
+        Me.Controls.Add(Me.lblmedia)
+        Me.Controls.Add(Me.txtserie)
+        Me.Controls.Add(Me.lblserie)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Calculadora Basica"
+        Me.Text = "Matrices y POO"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents lblRespuesta As Label
-    Friend WithEvents optResiduo As RadioButton
-    Friend WithEvents optPorcentaje As RadioButton
-    Friend WithEvents optExponenciacion As RadioButton
-    Friend WithEvents optDivicion As RadioButton
-    Friend WithEvents optMultiplicacion As RadioButton
-    Friend WithEvents optResta As RadioButton
-    Friend WithEvents Label2 As Label
-    Friend WithEvents txtnum2 As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents optSuma As RadioButton
-    Friend WithEvents txtnum1 As TextBox
-    Friend WithEvents cboOperaciones As ComboBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents lblserie As Label
+    Friend WithEvents txtserie As TextBox
+    Friend WithEvents lblmedia As Label
+    Friend WithEvents lblvarianza As Label
+    Friend WithEvents lbldesviacion As Label
+    Friend WithEvents lblrespuestavarianza As Label
+    Friend WithEvents lblrespuestadesv As Label
+    Friend WithEvents lblrespuestamedia As Label
+    Friend WithEvents btncalcular As Button
 End Class
