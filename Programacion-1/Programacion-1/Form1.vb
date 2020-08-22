@@ -193,7 +193,7 @@
 
             'si seleciona 
             If cobdato1.SelectedItem = "Colón Salvadoreño" Then
-                arraydeinformacion = {1, 68.03, 0.88, 2.82, 3.98, 0.11, 0.23, 0.11, 8.36, 0.15}
+                arraydeinformacion = {1, 68.05, 0.88, 2.82, 3.98, 0.11, 0.23, 0.11, 8.36, 0.15}
 
 
             ElseIf cobdato1.SelectedItem = "Colón Costarricense" Then
@@ -205,31 +205,33 @@
 
 
             ElseIf cobdato1.SelectedItem = "Lempira" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.36, 24.15, 0.31, 1, 1.41, 0.041, 0.082, 0.041, 2.98, 0.053}
 
 
             ElseIf cobdato1.SelectedItem = "Córdoba" Then
-                arraydeinformacion = {0, 0, 0, 0, 5, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.25, 17.09, 0.22, 0.71, 1, 0.029, 0.058, 0.029, 2.11, 0.038}
 
 
             ElseIf cobdato1.SelectedItem = "Balboa" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {8.75, 595.37, 7.7, 24.66, 34.84, 1, 2.02, 1, 73.58, 1.32}
 
 
             ElseIf cobdato1.SelectedItem = "Dólar Beliceño" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {4.34, 295.37, 3.82, 12.19, 17.24, 0.5, 1, 0.5, 36.49, 0.65}
 
 
             ElseIf cobdato1.SelectedItem = "Dólar Estadounidense" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {8.75, 595.4, 7.7, 24.66, 34.84, 1, 2.02, 1, 73.56, 1.32}
 
 
             ElseIf cobdato1.SelectedItem = "Peso Argentino" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {0.12, 8.09, 0.1, 0.34, 0.47, 0.014, 0.027, 0.014, 1, 0.018}
+
 
 
             ElseIf cobdato1.SelectedItem = "Dólar Canadiense" Then
-                arraydeinformacion = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                arraydeinformacion = {6.64, 451.88, 5.85, 18.72, 26.44, 0.76, 1.53, 0.76, 55.84, 1}
+
 
 
             ElseIf cobdato1.SelectedItem = "Tonelada" Then
