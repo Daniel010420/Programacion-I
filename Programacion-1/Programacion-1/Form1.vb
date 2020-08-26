@@ -1,73 +1,88 @@
 ﻿Public Class Form1
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-        Dim num1, num2, respuesta As Double
+    Dim objinteres As New interes()
 
+    Private Sub btncalcular_Click(sender As Object, e As EventArgs) Handles btncalcular.Click
+        'envio de datos a clase interes
+        objinteres.interesdado = txtinteres.Text
+        objinteres.tiempodado = txttiempo.Text
+        objinteres.capitaldado = txtcapital.Text
 
-        num1 = txtnum1.Text
-        num2 = txtnum2.Text
-
-
-
-        If optSuma.Checked Then
-            respuesta = num1 + num2
-            lblRespuesta.Text = respuesta
-        End If
-
-        If optResta.Checked Then
-            respuesta = num1 - num2
-            lblRespuesta.Text = respuesta
-        End If
-
-        If optMultiplicacion.Checked Then
-            respuesta = num1 * num2
-            lblRespuesta.Text = respuesta
-        End If
-
-        If optDivicion.Checked Then
-            respuesta = num1 / num2
-            lblRespuesta.Text = respuesta
-        End If
-
-        If optPorcentaje.Checked Then
-            respuesta = (num1 * num2) / 100
-            lblRespuesta.Text = respuesta
-        End If
-
-        If optExponenciacion.Checked Then
-            respuesta = num1 ^ num2
-            lblRespuesta.Text = respuesta
-        End If
-
-        If optResiduo.Checked Then
-            respuesta = num1 Mod num2
-            lblRespuesta.Text = respuesta
-        End If
-
-
-
-        Select Case cboOperaciones.SelectedIndex
-            Case 1
-                respuesta = num1 + num2
-                lblRespuesta.Text = respuesta
-            Case 2
-                respuesta = num1 - num2
-                lblRespuesta.Text = respuesta
-            Case 3
-                respuesta = num1 * num2
-                lblRespuesta.Text = respuesta
-            Case 4
-                respuesta = num1 / num2
-                lblRespuesta.Text = respuesta
-            Case 5
-                respuesta = (num1 * num2) / 100
-                lblRespuesta.Text = respuesta
-            Case 6
-                respuesta = num1 ^ num2
-                lblRespuesta.Text = respuesta
-            Case 7
-                respuesta = num1 Mod num2
-                lblRespuesta.Text = respuesta
-        End Select
+        lblsimple.Text = "Interes Simple: $" & objinteres.interesSimple()
+        lblcompuesto.Text = "Interes Compuesto: $" & objinteres.interesCompuesto()
     End Sub
+
+
+    Class interes
+
+        Dim _interesrecibido As Double
+        Dim _tiemporecibido As Int16
+        Dim _capitalrecibido As Double
+
+        'obtener valor enviado por el boton
+        Public Property interesdado
+            'tomar el valor recibido de el boton en la variable value, para comparar.
+            Set(value)
+                If value >= 0 And value <= 100 Then
+                    _interesrecibido = value
+                Else
+                    MessageBox.Show("El valor del interes no es valido", "Intereses", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            End Set
+
+            'asignar valor a _interesrecibido si es mayor o igual a 0, y igual o menor que 100
+            Get
+                Return _interesrecibido
+            End Get
+        End Property
+
+
+        Public Property tiempodado
+            'tomar el valor recibido de el boton en la variable value, para comparar.
+            Set(value)
+                If value >= 1 And value <= 120 Then
+                    _tiemporecibido = value
+                Else
+                    MessageBox.Show("Tiempo no es valido", "Intereses", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            End Set
+
+            'asignar valor a _tiemporecibido si es mayor o igual a 0, y igual o menor que 100
+            Get
+                Return _tiemporecibido
+            End Get
+        End Property
+
+
+        Public Property capitaldado
+            'tomar el valor recibido de el boton en la variable value, para comparar.
+            Set(value)
+                If value >= 1 Then
+                    _capitalrecibido = value
+                Else
+                    MessageBox.Show("El capital debe ser mayor a 0", "Intereses", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            End Set
+
+            'asignar valor a _tiemporecibido si es mayor o igual a 0, y igual o menor que 100
+            Get
+                Return _capitalrecibido
+            End Get
+        End Property
+
+
+        Public Function interesSimple()
+            Dim resultadointeressimple = _capitalrecibido * (_interesrecibido / 100) * (_tiemporecibido / 12)
+            Return Math.Round(resultadointeressimple, 2)
+        End Function
+
+
+        Public Function interesCompuesto()
+            Dim resultadointerescompuesto = _capitalrecibido * (1 + _interesrecibido / 100) ^ _tiemporecibido
+            Return Math.Round(resultadointerescompuesto, 2)
+        End Function
+    End Class
+
+
 End Class
+
