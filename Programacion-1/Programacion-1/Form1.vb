@@ -38,6 +38,14 @@
             MessageBox.Show("Por favor rellena algunos datos")
         End If
     End Sub
+
+    Private Sub btnlimpiar_Click(sender As Object, e As EventArgs) Handles btnlimpiar.Click
+        txtcantidad.Clear()
+        txtresultado.Clear()
+        txtunidad.Clear()
+
+
+    End Sub
 End Class
 
 

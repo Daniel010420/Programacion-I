@@ -32,6 +32,7 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btnlimpiar = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.SuspendLayout()
@@ -48,6 +49,7 @@ Partial Class Form1
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.btnlimpiar)
         Me.TabPage1.Controls.Add(Me.btncalcular)
         Me.TabPage1.Controls.Add(Me.txtresultado)
         Me.TabPage1.Controls.Add(Me.txtunidad)
@@ -66,7 +68,7 @@ Partial Class Form1
         'btncalcular
         '
         Me.btncalcular.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncalcular.Location = New System.Drawing.Point(90, 151)
+        Me.btncalcular.Location = New System.Drawing.Point(35, 151)
         Me.btncalcular.Name = "btncalcular"
         Me.btncalcular.Size = New System.Drawing.Size(91, 53)
         Me.btncalcular.TabIndex = 18
@@ -137,6 +139,16 @@ Partial Class Form1
         Me.TabPage2.Text = "Area (Superficie)"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'btnlimpiar
+        '
+        Me.btnlimpiar.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnlimpiar.Location = New System.Drawing.Point(148, 151)
+        Me.btnlimpiar.Name = "btnlimpiar"
+        Me.btnlimpiar.Size = New System.Drawing.Size(91, 53)
+        Me.btnlimpiar.TabIndex = 19
+        Me.btnlimpiar.Text = "Limpiar"
+        Me.btnlimpiar.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -166,4 +178,5 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents btncalcular As Button
+    Friend WithEvents btnlimpiar As Button
 End Class
