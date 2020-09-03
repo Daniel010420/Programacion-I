@@ -16,7 +16,7 @@
 
     Public Property enviocantidadacalcular
         Set(value)
-            'asignar valor a la variable _unidad
+            'asignar valor a la variable _cantidad
             _cantidad = value
         End Set
         Get
@@ -26,7 +26,7 @@
 
     Public Property envioposicioncobde
         Set(value)
-            'asignar valor a la variable _unidad
+            'asignar valor a la variable _posicionde
             _posicionde = value
         End Set
         Get
@@ -36,7 +36,7 @@
 
     Public Property envioposicioncoba
         Set(value)
-            'asignar valor a la variable _unidad
+            'asignar valor a la variable _posiciona
             _posiciona = value
         End Set
         Get
