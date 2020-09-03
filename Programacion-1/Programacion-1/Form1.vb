@@ -1,7 +1,9 @@
 ﻿Public Class Form1
 
-    'clase
+    'clases
     Dim objcalculos = New calculos
+    Dim objconvertidor = New conversor
+
 
     Private Sub btncalcular_Click(sender As Object, e As EventArgs) Handles btncalcular.Click
         Dim serie() = txtresultado.Text.Split("/")
@@ -10,9 +12,9 @@
         If txtcantidad.Text <> "" Or txtresultado.Text <> "" Or txtunidad.Text <> "" Then
             'si cantidad esta vacia, y hay unidades y grupos, calcular la cantidad
             If txtcantidad.Text = "" And txtunidad.Text <> "" And txtresultado.Text <> "" Then
-                'enviar datos a la clase con la variable enviounidad
+                'enviar datos a la clase llamada mi conversor con la variable enviounidad
                 objcalculos.enviounidad = txtunidad.Text
-                'enviar arreglo dividido con /
+                'enviar arreglo dividido con / y hacer llamado de la funcion rcantidad
                 txtcantidad.Text = objcalculos.rcantidad(serie)
 
                 'si unidades esta vacio y resultado esta vacio
@@ -39,50 +41,58 @@
         End If
     End Sub
 
+    'limpiar campos
     Private Sub btnlimpiar_Click(sender As Object, e As EventArgs) Handles btnlimpiar.Click
         txtcantidad.Clear()
         txtresultado.Clear()
         txtunidad.Clear()
+    End Sub
+
+
+
+
+    '///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+    'cargar datos a combobox de conversor de area
+    Private Sub cobde_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cobde.SelectedIndexChanged
+        coba.Items.Clear()
+        coba.Items.AddRange(objconvertidor.convertira)
+    End Sub
+
+    'cargar datos a combobox de conversor de area
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cobde.Items.Clear()
+        cobde.Items.AddRange(objconvertidor.convertirde)
+    End Sub
+
+
+    'calcular conversion de area, los datos son enviados a la clase convertidor
+    Private Sub btncalcularsuperficie_Click(sender As Object, e As EventArgs) Handles btncalcularsuperficie.Click
+
+        If txtcantidadsuperficie.Text <> "" And cobde.SelectedIndex >= 0 And coba.SelectedIndex >= 0 Then
+            Dim posicioncobde, posicioncoba As SByte
+            'toma la posicion selecionada
+            posicioncobde = cobde.SelectedIndex
+            posicioncoba = coba.SelectedIndex
+
+            'enviar datos a la clase
+            objconvertidor.enviocantidadacalcular = txtcantidadsuperficie.Text
+            objconvertidor.envioposicioncobde = posicioncobde
+            objconvertidor.envioposicioncoba = posicioncoba
+            'hace llamado a la funcion calculo area dentro de la calse convertidor
+            lblresultado.Text = objconvertidor.calculodearea
+
+        ElseIf txtcantidadsuperficie.Text = "" Or cobde.SelectedIndex < 0 Or coba.SelectedIndex < 0 Then
+            MessageBox.Show("Por favor rellena todos los datos")
+        End If
+
+
 
 
     End Sub
 End Class
 
 
-Class calculos
 
-    Dim _unidad, _resultado1, _resultado2 As Integer
-    ' atrapar el valor enviounidad 
-    Public Property enviounidad
-        Set(value)
-            'asignar valor a la variable _unidad
-            _unidad = value
-        End Set
-        Get
-            Return _unidad
-        End Get
-    End Property
-
-
-    'funcion para calcular cantidad
-    Public Function rcantidad(serie() As String)
-        'serie es el array que atrapa los datos de txt resultado
-        'i es un contadoe para asignar valores
-        Dim i As SByte
-        i = 1
-        'recorrer el array
-        For Each e In serie
-            If i = 1 Then
-                _resultado1 = e
-            End If
-            If i = 2 Then
-                _resultado2 = e
-            End If
-            i = i + 1
-        Next
-        'retornar el resultado
-        Return ((_unidad * _resultado1) + _resultado2)
-    End Function
-
-
-End Class

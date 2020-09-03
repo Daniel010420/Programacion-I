@@ -24,6 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.btnlimpiar = New System.Windows.Forms.Button()
         Me.btncalcular = New System.Windows.Forms.Button()
         Me.txtresultado = New System.Windows.Forms.TextBox()
         Me.txtunidad = New System.Windows.Forms.TextBox()
@@ -32,9 +33,18 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.btnlimpiar = New System.Windows.Forms.Button()
+        Me.lblresultado = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.coba = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.cobde = New System.Windows.Forms.ComboBox()
+        Me.txtcantidadsuperficie = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.btncalcularsuperficie = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -64,6 +74,16 @@ Partial Class Form1
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Mi conversor"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'btnlimpiar
+        '
+        Me.btnlimpiar.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnlimpiar.Location = New System.Drawing.Point(148, 151)
+        Me.btnlimpiar.Name = "btnlimpiar"
+        Me.btnlimpiar.Size = New System.Drawing.Size(91, 53)
+        Me.btnlimpiar.TabIndex = 19
+        Me.btnlimpiar.Text = "Limpiar"
+        Me.btnlimpiar.UseVisualStyleBackColor = True
         '
         'btncalcular
         '
@@ -131,6 +151,15 @@ Partial Class Form1
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.btncalcularsuperficie)
+        Me.TabPage2.Controls.Add(Me.lblresultado)
+        Me.TabPage2.Controls.Add(Me.Label7)
+        Me.TabPage2.Controls.Add(Me.Label6)
+        Me.TabPage2.Controls.Add(Me.coba)
+        Me.TabPage2.Controls.Add(Me.Label5)
+        Me.TabPage2.Controls.Add(Me.cobde)
+        Me.TabPage2.Controls.Add(Me.txtcantidadsuperficie)
+        Me.TabPage2.Controls.Add(Me.Label4)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -139,15 +168,83 @@ Partial Class Form1
         Me.TabPage2.Text = "Area (Superficie)"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'btnlimpiar
+        'lblresultado
         '
-        Me.btnlimpiar.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnlimpiar.Location = New System.Drawing.Point(148, 151)
-        Me.btnlimpiar.Name = "btnlimpiar"
-        Me.btnlimpiar.Size = New System.Drawing.Size(91, 53)
-        Me.btnlimpiar.TabIndex = 19
-        Me.btnlimpiar.Text = "Limpiar"
-        Me.btnlimpiar.UseVisualStyleBackColor = True
+        Me.lblresultado.AutoSize = True
+        Me.lblresultado.Location = New System.Drawing.Point(167, 216)
+        Me.lblresultado.Name = "lblresultado"
+        Me.lblresultado.Size = New System.Drawing.Size(0, 13)
+        Me.lblresultado.TabIndex = 7
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(103, 216)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(58, 13)
+        Me.Label7.TabIndex = 6
+        Me.Label7.Text = "Resultado:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(206, 87)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(14, 13)
+        Me.Label6.TabIndex = 5
+        Me.Label6.Text = "A"
+        '
+        'coba
+        '
+        Me.coba.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.coba.FormattingEnabled = True
+        Me.coba.Location = New System.Drawing.Point(226, 84)
+        Me.coba.Name = "coba"
+        Me.coba.Size = New System.Drawing.Size(121, 21)
+        Me.coba.TabIndex = 4
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(6, 87)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(64, 13)
+        Me.Label5.TabIndex = 3
+        Me.Label5.Text = "Convertir de"
+        '
+        'cobde
+        '
+        Me.cobde.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cobde.FormattingEnabled = True
+        Me.cobde.Location = New System.Drawing.Point(79, 84)
+        Me.cobde.Name = "cobde"
+        Me.cobde.Size = New System.Drawing.Size(121, 21)
+        Me.cobde.TabIndex = 2
+        '
+        'txtcantidadsuperficie
+        '
+        Me.txtcantidadsuperficie.Location = New System.Drawing.Point(61, 27)
+        Me.txtcantidadsuperficie.Name = "txtcantidadsuperficie"
+        Me.txtcantidadsuperficie.Size = New System.Drawing.Size(100, 20)
+        Me.txtcantidadsuperficie.TabIndex = 1
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(3, 30)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(52, 13)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "Cantidad:"
+        '
+        'btncalcularsuperficie
+        '
+        Me.btncalcularsuperficie.Location = New System.Drawing.Point(139, 133)
+        Me.btncalcularsuperficie.Name = "btncalcularsuperficie"
+        Me.btncalcularsuperficie.Size = New System.Drawing.Size(112, 56)
+        Me.btncalcularsuperficie.TabIndex = 8
+        Me.btncalcularsuperficie.Text = "Calcular"
+        Me.btncalcularsuperficie.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -164,6 +261,8 @@ Partial Class Form1
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -179,4 +278,13 @@ Partial Class Form1
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents btncalcular As Button
     Friend WithEvents btnlimpiar As Button
+    Friend WithEvents lblresultado As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents coba As ComboBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents cobde As ComboBox
+    Friend WithEvents txtcantidadsuperficie As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents btncalcularsuperficie As Button
 End Class
