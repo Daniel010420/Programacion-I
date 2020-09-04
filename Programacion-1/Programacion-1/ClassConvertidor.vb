@@ -3,8 +3,8 @@
     Public convertira() As String = {"Pie Cuadrado", "Vara Cuadrada", "Yarda Cuadrada", "Metro Cuadrado", "Tareas", "Manzana", "Hectárea"}
     Dim datos()() = {
      New String() {"1", "0.1111", "0.111111", "0.092903", "0.00014774656489", "0.000013188960818", "9.2903e-6"}, ' para pie cuadrado, orden de combobox
-     New String() {"1", "1", "1", "1", "1", "1", "1"}, ' para vara cuadrado, orden de combobox
-     New String() {"1", "1", "1", "1", "1", "1", "1"}, ' para yarda cuadrado, orden de combobox
+     New String() {"7.5625302466", "1", "0.84028113851", "0.70258205", "0.0011173378658", "0.00010052741037", "0.000070258205"}, ' para vara cuadrado, orden de combobox
+     New String() {"9", "1.1900778849", "1", "0.83612736", "0.001329719084", "0.00011963544791", "0.000083612736"}, ' para yarda cuadrado, orden de combobox
      New String() {"1", "1", "1", "1", "1", "1", "1"}, ' para metro cuadrado, orden de combobox
      New String() {"1", "1", "1", "1", "1", "1", "1"}, ' para tareas, orden de combobox
      New String() {"1", "1", "1", "1", "1", "1", "1"}, ' para manzana, orden de combobox

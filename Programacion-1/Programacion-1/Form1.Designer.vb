@@ -33,6 +33,7 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btncalcularsuperficie = New System.Windows.Forms.Button()
         Me.lblresultado = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -41,7 +42,6 @@ Partial Class Form1
         Me.cobde = New System.Windows.Forms.ComboBox()
         Me.txtcantidadsuperficie = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.btncalcularsuperficie = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -168,6 +168,15 @@ Partial Class Form1
         Me.TabPage2.Text = "Area (Superficie)"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'btncalcularsuperficie
+        '
+        Me.btncalcularsuperficie.Location = New System.Drawing.Point(139, 133)
+        Me.btncalcularsuperficie.Name = "btncalcularsuperficie"
+        Me.btncalcularsuperficie.Size = New System.Drawing.Size(112, 56)
+        Me.btncalcularsuperficie.TabIndex = 8
+        Me.btncalcularsuperficie.Text = "Calcular"
+        Me.btncalcularsuperficie.UseVisualStyleBackColor = True
+        '
         'lblresultado
         '
         Me.lblresultado.AutoSize = True
@@ -236,15 +245,6 @@ Partial Class Form1
         Me.Label4.Size = New System.Drawing.Size(52, 13)
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Cantidad:"
-        '
-        'btncalcularsuperficie
-        '
-        Me.btncalcularsuperficie.Location = New System.Drawing.Point(139, 133)
-        Me.btncalcularsuperficie.Name = "btncalcularsuperficie"
-        Me.btncalcularsuperficie.Size = New System.Drawing.Size(112, 56)
-        Me.btncalcularsuperficie.TabIndex = 8
-        Me.btncalcularsuperficie.Text = "Calcular"
-        Me.btncalcularsuperficie.UseVisualStyleBackColor = True
         '
         'Form1
         '
