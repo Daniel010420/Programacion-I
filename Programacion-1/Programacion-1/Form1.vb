@@ -20,16 +20,6 @@
                 'enviar arreglo dividido con / y hacer llamado de la funcion rcantidad
                 txtcantidad.Text = objcalculos.rcantidad(serie)
 
-                'si unidades esta vacio y resultado esta vacio
-            ElseIf txtunidad.Text = "" Then
-                'resultados tomara el valor de cantidad, y 0 unidades
-                txtresultado.Text = (txtcantidad.Text).ToString + "/" + (0).ToString
-
-                'si resultado esta vacio y cantidad y unidades tiene datos
-            ElseIf txtresultado.Text = "" Or txtresultado.Text <> "" And txtcantidad.Text <> "" And txtunidad.Text <> "" Then
-                'resultado tomara el valor correspondiente
-                txtresultado.Text = (txtcantidad.Text \ txtunidad.Text).ToString + "/" + (txtcantidad.Text Mod txtunidad.Text).ToString
-
                 'si solo tiene datos el campo de resultado
             ElseIf txtresultado.Text <> "" And txtcantidad.Text = "" And txtunidad.Text = "" Then
                 Dim j As Integer
@@ -37,6 +27,19 @@
                     j = j + ewe
                 Next
                 txtcantidad.Text = j
+                txtunidad.Text = 1
+
+                'si unidades esta vacio y resultado esta vacio
+            ElseIf txtunidad.Text = "" And txtcantidad.Text <> "" Then
+                'resultados tomara el valor de cantidad, y 0 unidades
+                txtresultado.Text = (txtcantidad.Text).ToString + "/" + (0).ToString
+
+                'si resultado esta vacio y cantidad y unidades tiene datos
+            ElseIf txtresultado.Text = "" And txtcantidad.Text <> "" And txtunidad.Text <> "" Then
+                'resultado tomara el valor correspondiente
+                txtresultado.Text = (txtcantidad.Text \ txtunidad.Text).ToString + "/" + (txtcantidad.Text Mod txtunidad.Text).ToString
+
+
             End If
             'si todos los campos estan vacios, enviar un mensaje
         ElseIf txtcantidad.Text = "" And txtresultado.Text = "" And txtunidad.Text = "" Then
