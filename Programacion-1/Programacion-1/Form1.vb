@@ -8,6 +8,9 @@
     Private Sub btncalcular_Click(sender As Object, e As EventArgs) Handles btncalcular.Click
         Dim serie() = txtresultado.Text.Split("/")
 
+
+
+
         'si al menos un campo esta con datos
         If txtcantidad.Text <> "" Or txtresultado.Text <> "" Or txtunidad.Text <> "" Then
             'si cantidad esta vacia, y hay unidades y grupos, calcular la cantidad
@@ -18,12 +21,12 @@
                 txtcantidad.Text = objcalculos.rcantidad(serie)
 
                 'si unidades esta vacio y resultado esta vacio
-            ElseIf txtunidad.Text = "" And txtresultado.Text = "" Then
+            ElseIf txtunidad.Text = "" Then
                 'resultados tomara el valor de cantidad, y 0 unidades
                 txtresultado.Text = (txtcantidad.Text).ToString + "/" + (0).ToString
 
                 'si resultado esta vacio y cantidad y unidades tiene datos
-            ElseIf txtresultado.Text = "" And txtcantidad.Text <> "" And txtunidad.Text <> "" Then
+            ElseIf txtresultado.Text = "" Or txtresultado.Text <> "" And txtcantidad.Text <> "" And txtunidad.Text <> "" Then
                 'resultado tomara el valor correspondiente
                 txtresultado.Text = (txtcantidad.Text \ txtunidad.Text).ToString + "/" + (txtcantidad.Text Mod txtunidad.Text).ToString
 
@@ -71,8 +74,8 @@
     'calcular conversion de area, los datos son enviados a la clase convertidor
     Private Sub btncalcularsuperficie_Click(sender As Object, e As EventArgs) Handles btncalcularsuperficie.Click
 
-        If txtcantidadsuperficie.Text <> "" And cobde.SelectedIndex >= 0 And coba.SelectedIndex >= 0 Then
-            Dim posicioncobde, posicioncoba As SByte
+        '  If txtcantidadsuperficie.Text <> "" And cobde.SelectedIndex >= 0 And coba.SelectedIndex >= 0 Then
+        Dim posicioncobde, posicioncoba As SByte
             'toma la posicion selecionada
             posicioncobde = cobde.SelectedIndex
             posicioncoba = coba.SelectedIndex
@@ -84,9 +87,9 @@
             'hace llamado a la funcion calculo area dentro de la calse convertidor
             lblresultado.Text = objconvertidor.calculodearea
 
-        ElseIf txtcantidadsuperficie.Text = "" Or cobde.SelectedIndex < 0 Or coba.SelectedIndex < 0 Then
-            MessageBox.Show("Por favor rellena todos los datos")
-        End If
+        'ElseIf txtcantidadsuperficie.Text = "" Or cobde.SelectedIndex < 0 Or coba.SelectedIndex < 0 Then
+        ' MessageBox.Show("Por favor rellena todos los datos")
+        '  End If
 
 
 

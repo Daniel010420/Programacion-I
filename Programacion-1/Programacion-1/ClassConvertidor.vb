@@ -48,7 +48,8 @@
 
     Public Function calculodearea()
 
-        Return ((datos(_posicionde)(_posiciona)) * _cantidad)
+        Dim s = ((datos(_posicionde)(_posiciona)) * _cantidad)
+        Return s
     End Function
 
 
