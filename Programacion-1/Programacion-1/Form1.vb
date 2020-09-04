@@ -74,8 +74,8 @@
     'calcular conversion de area, los datos son enviados a la clase convertidor
     Private Sub btncalcularsuperficie_Click(sender As Object, e As EventArgs) Handles btncalcularsuperficie.Click
 
-        '  If txtcantidadsuperficie.Text <> "" And cobde.SelectedIndex >= 0 And coba.SelectedIndex >= 0 Then
-        Dim posicioncobde, posicioncoba As SByte
+        If txtcantidadsuperficie.Text <> "" And cobde.SelectedIndex >= 0 And coba.SelectedIndex >= 0 Then
+            Dim posicioncobde, posicioncoba As SByte
             'toma la posicion selecionada
             posicioncobde = cobde.SelectedIndex
             posicioncoba = coba.SelectedIndex
@@ -87,9 +87,9 @@
             'hace llamado a la funcion calculo area dentro de la calse convertidor
             lblresultado.Text = objconvertidor.calculodearea
 
-        'ElseIf txtcantidadsuperficie.Text = "" Or cobde.SelectedIndex < 0 Or coba.SelectedIndex < 0 Then
-        ' MessageBox.Show("Por favor rellena todos los datos")
-        '  End If
+        ElseIf txtcantidadsuperficie.Text = "" Or cobde.SelectedIndex < 0 Or coba.SelectedIndex < 0 Then
+            MessageBox.Show("Por favor rellena todos los datos")
+        End If
 
 
 
