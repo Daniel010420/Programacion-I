@@ -7,8 +7,8 @@
      New String() {"9", "1.1900778849", "1", "0.83612736", "0.001329719084", "0.00011963544791", "0.000083612736"}, ' para yarda cuadrado, orden de combobox
      New String() {"1", "1", "1", "1", "1", "1", "1"}, ' para metro cuadrado, orden de combobox
      New String() {"1", "1", "1", "1", "1", "1", "1"}, ' para tareas, orden de combobox
-     New String() {"1", "1", "1", "1", "1", "1", "1"}, ' para manzana, orden de combobox
-     New String() {"1", "1", "1", "1", "1", "1", "1"} ' para hectarea, orden de combobox
+     New String() {"107639.10417", "10000", "8424.5538861", "6988.96", "11.202290076", "1", " 0.698896"}, ' para manzana, orden de combobox
+     New String() {"107639", "14312", "11959.9", "10000", "15.903307", "1.4184", "1"} ' para hectarea, orden de combobox
         }
 
     Dim _cantidad As Integer
