@@ -92,10 +92,22 @@
     <Compile Include="formBuscarEmpleado.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormCompra.Designer.vb">
+      <DependentUpon>FormCompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormCompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formLogeado.Designer.vb">
       <DependentUpon>formLogeado.vb</DependentUpon>
     </Compile>
     <Compile Include="formLogeado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProveedor.Designer.vb">
+      <DependentUpon>FormProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -125,8 +137,14 @@
     <EmbeddedResource Include="formBuscarEmpleado.resx">
       <DependentUpon>formBuscarEmpleado.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCompra.resx">
+      <DependentUpon>FormCompra.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formLogeado.resx">
       <DependentUpon>formLogeado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProveedor.resx">
+      <DependentUpon>FormProveedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
