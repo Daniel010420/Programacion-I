@@ -83,7 +83,7 @@ Partial Class formBuscarEmpleado
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label1)
         Me.Name = "formBuscarEmpleado"
-        Me.Text = "formBuscarEmpleado"
+        Me.Text = "Buscador"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

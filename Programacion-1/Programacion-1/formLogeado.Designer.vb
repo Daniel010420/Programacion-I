@@ -29,6 +29,7 @@ Partial Class formLogeado
         Me.btnproveedor = New System.Windows.Forms.Button()
         Me.btnclientes = New System.Windows.Forms.Button()
         Me.btnempleado = New System.Windows.Forms.Button()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -68,7 +69,7 @@ Partial Class formLogeado
         '
         'btninventario
         '
-        Me.btninventario.Location = New System.Drawing.Point(12, 189)
+        Me.btninventario.Location = New System.Drawing.Point(12, 187)
         Me.btninventario.Name = "btninventario"
         Me.btninventario.Size = New System.Drawing.Size(83, 36)
         Me.btninventario.TabIndex = 3
@@ -77,16 +78,16 @@ Partial Class formLogeado
         '
         'btnproveedor
         '
-        Me.btnproveedor.Location = New System.Drawing.Point(12, 147)
+        Me.btnproveedor.Location = New System.Drawing.Point(12, 137)
         Me.btnproveedor.Name = "btnproveedor"
         Me.btnproveedor.Size = New System.Drawing.Size(83, 36)
         Me.btnproveedor.TabIndex = 2
-        Me.btnproveedor.Text = "administrar proveedor"
+        Me.btnproveedor.Text = "Administrar Proveedor"
         Me.btnproveedor.UseVisualStyleBackColor = True
         '
         'btnclientes
         '
-        Me.btnclientes.Location = New System.Drawing.Point(12, 90)
+        Me.btnclientes.Location = New System.Drawing.Point(12, 87)
         Me.btnclientes.Name = "btnclientes"
         Me.btnclientes.Size = New System.Drawing.Size(83, 36)
         Me.btnclientes.TabIndex = 1
@@ -102,16 +103,25 @@ Partial Class formLogeado
         Me.btnempleado.Text = "Administrar empleados"
         Me.btnempleado.UseVisualStyleBackColor = True
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Lucida Handwriting", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(322, -3)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(277, 27)
+        Me.Label10.TabIndex = 60
+        Me.Label10.Text = "Farmancia Santa Fé"
+        '
         'formLogeado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.IsMdiContainer = True
-        Me.MaximizeBox = False
         Me.Name = "formLogeado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Bienvenido a Farmacia Santa Fe"
@@ -133,4 +143,5 @@ Partial Class formLogeado
     Friend WithEvents btnempleado As Button
     Friend WithEvents btninventario As Button
     Friend WithEvents btnproveedor As Button
+    Friend WithEvents Label10 As Label
 End Class

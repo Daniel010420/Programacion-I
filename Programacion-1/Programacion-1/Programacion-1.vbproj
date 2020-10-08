@@ -92,10 +92,10 @@
     <Compile Include="formBuscarEmpleado.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCompra.Designer.vb">
-      <DependentUpon>FormCompra.vb</DependentUpon>
+    <Compile Include="forminventario.Designer.vb">
+      <DependentUpon>forminventario.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormCompra.vb">
+    <Compile Include="forminventario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formLogeado.Designer.vb">
@@ -104,10 +104,10 @@
     <Compile Include="formLogeado.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormProveedor.Designer.vb">
-      <DependentUpon>FormProveedor.vb</DependentUpon>
+    <Compile Include="formAdministrarProveedor.Designer.vb">
+      <DependentUpon>formAdministrarProveedor.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormProveedor.vb">
+    <Compile Include="formAdministrarProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -137,14 +137,14 @@
     <EmbeddedResource Include="formBuscarEmpleado.resx">
       <DependentUpon>formBuscarEmpleado.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCompra.resx">
-      <DependentUpon>FormCompra.vb</DependentUpon>
+    <EmbeddedResource Include="forminventario.resx">
+      <DependentUpon>forminventario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formLogeado.resx">
       <DependentUpon>formLogeado.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormProveedor.resx">
-      <DependentUpon>FormProveedor.vb</DependentUpon>
+    <EmbeddedResource Include="formAdministrarProveedor.resx">
+      <DependentUpon>formAdministrarProveedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

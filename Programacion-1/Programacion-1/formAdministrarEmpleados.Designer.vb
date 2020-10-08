@@ -22,9 +22,6 @@ Partial Class formAdministrarEmpleados
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
@@ -40,38 +37,14 @@ Partial Class formAdministrarEmpleados
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(187, 29)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(84, 44)
-        Me.Button2.TabIndex = 17
-        Me.Button2.Text = "Eliminar"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(95, 28)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(87, 45)
-        Me.Button3.TabIndex = 18
-        Me.Button3.Text = "Modificar"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(6, 28)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(84, 45)
-        Me.Button4.TabIndex = 19
-        Me.Button4.Text = "Nuevo"
-        Me.Button4.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
@@ -209,6 +182,42 @@ Partial Class formAdministrarEmpleados
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "Nombre "
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(187, 29)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(84, 44)
+        Me.Button2.TabIndex = 17
+        Me.Button2.Text = "Eliminar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(95, 28)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(87, 45)
+        Me.Button3.TabIndex = 18
+        Me.Button3.Text = "Modificar"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(6, 28)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(84, 45)
+        Me.Button4.TabIndex = 19
+        Me.Button4.Text = "Nuevo"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(277, 29)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(84, 44)
+        Me.Button1.TabIndex = 20
+        Me.Button1.Text = "Buscar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.Button1)
@@ -222,15 +231,6 @@ Partial Class formAdministrarEmpleados
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Edicion"
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(277, 29)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(84, 44)
-        Me.Button1.TabIndex = 20
-        Me.Button1.Text = "Buscar"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'formAdministrarEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -242,7 +242,6 @@ Partial Class formAdministrarEmpleados
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
-        Me.MinimizeBox = False
         Me.Name = "formAdministrarEmpleados"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Empleados "
@@ -252,9 +251,6 @@ Partial Class formAdministrarEmpleados
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label7 As Label
     Friend WithEvents TextBox7 As TextBox
@@ -270,6 +266,9 @@ Partial Class formAdministrarEmpleados
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents GroupBox2 As GroupBox
 End Class

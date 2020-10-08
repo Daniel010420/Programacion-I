@@ -220,6 +220,7 @@ Partial Class formAdministrarClientesVIP
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "formAdministrarClientesVIP"
         Me.Text = "Clientes VIP"
         Me.GroupBox2.ResumeLayout(False)

@@ -15,4 +15,18 @@
         formadmiclientesvip.Show()
 
     End Sub
+
+    Private Sub btnproveedor_Click(sender As Object, e As EventArgs) Handles btnproveedor.Click
+        Dim formadmiproveedor As New formAdministrarProveedor
+        formadmiproveedor.MdiParent = Me
+        Me.SplitContainer1.Panel2.Controls.Add(formadmiproveedor)
+        formadmiproveedor.Show()
+    End Sub
+
+    Private Sub btninventario_Click(sender As Object, e As EventArgs) Handles btninventario.Click
+        Dim forminventario As New forminventario
+        forminventario.MdiParent = Me
+        Me.SplitContainer1.Panel2.Controls.Add(forminventario)
+        forminventario.Show()
+    End Sub
 End Class
