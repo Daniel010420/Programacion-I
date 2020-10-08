@@ -193,12 +193,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BDFarmaciaSantaFe.mdf">
+    <Content Include="BDFarmacia-SantaFe.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="BDFarmaciaSantaFe_log.ldf">
+    <Content Include="BDFarmacia-SantaFe_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>BDFarmaciaSantaFe.mdf</DependentUpon>
+      <DependentUpon>BDFarmacia-SantaFe.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
