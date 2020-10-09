@@ -24,18 +24,18 @@ Partial Class formAdministrarEmpleados
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.txtid = New System.Windows.Forms.TextBox()
+        Me.txtdireccion = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.txttelefono = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.txtcorreo = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.txtdui = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtapellido = New System.Windows.Forms.TextBox()
+        Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -49,18 +49,18 @@ Partial Class formAdministrarEmpleados
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.TextBox7)
-        Me.GroupBox1.Controls.Add(Me.TextBox6)
+        Me.GroupBox1.Controls.Add(Me.txtid)
+        Me.GroupBox1.Controls.Add(Me.txtdireccion)
         Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.TextBox5)
+        Me.GroupBox1.Controls.Add(Me.txttelefono)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.TextBox4)
+        Me.GroupBox1.Controls.Add(Me.txtcorreo)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.TextBox3)
+        Me.GroupBox1.Controls.Add(Me.txtdui)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txtapellido)
+        Me.GroupBox1.Controls.Add(Me.txtnombre)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(22, 12)
         Me.GroupBox1.Name = "GroupBox1"
@@ -78,20 +78,20 @@ Partial Class formAdministrarEmpleados
         Me.Label7.TabIndex = 27
         Me.Label7.Text = "ID"
         '
-        'TextBox7
+        'txtid
         '
-        Me.TextBox7.Location = New System.Drawing.Point(19, 35)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox7.TabIndex = 26
+        Me.txtid.Location = New System.Drawing.Point(19, 35)
+        Me.txtid.Name = "txtid"
+        Me.txtid.Size = New System.Drawing.Size(100, 20)
+        Me.txtid.TabIndex = 26
         '
-        'TextBox6
+        'txtdireccion
         '
-        Me.TextBox6.Location = New System.Drawing.Point(19, 281)
-        Me.TextBox6.Multiline = True
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(216, 110)
-        Me.TextBox6.TabIndex = 25
+        Me.txtdireccion.Location = New System.Drawing.Point(19, 281)
+        Me.txtdireccion.Multiline = True
+        Me.txtdireccion.Name = "txtdireccion"
+        Me.txtdireccion.Size = New System.Drawing.Size(216, 110)
+        Me.txtdireccion.TabIndex = 25
         '
         'Label6
         '
@@ -102,12 +102,12 @@ Partial Class formAdministrarEmpleados
         Me.Label6.TabIndex = 24
         Me.Label6.Text = "Direccion "
         '
-        'TextBox5
+        'txttelefono
         '
-        Me.TextBox5.Location = New System.Drawing.Point(19, 240)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox5.TabIndex = 23
+        Me.txttelefono.Location = New System.Drawing.Point(19, 240)
+        Me.txttelefono.Name = "txttelefono"
+        Me.txttelefono.Size = New System.Drawing.Size(100, 20)
+        Me.txttelefono.TabIndex = 23
         '
         'Label5
         '
@@ -118,12 +118,12 @@ Partial Class formAdministrarEmpleados
         Me.Label5.TabIndex = 22
         Me.Label5.Text = "Telefono"
         '
-        'TextBox4
+        'txtcorreo
         '
-        Me.TextBox4.Location = New System.Drawing.Point(19, 199)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(183, 20)
-        Me.TextBox4.TabIndex = 21
+        Me.txtcorreo.Location = New System.Drawing.Point(19, 199)
+        Me.txtcorreo.Name = "txtcorreo"
+        Me.txtcorreo.Size = New System.Drawing.Size(183, 20)
+        Me.txtcorreo.TabIndex = 21
         '
         'Label4
         '
@@ -134,12 +134,12 @@ Partial Class formAdministrarEmpleados
         Me.Label4.TabIndex = 20
         Me.Label4.Text = "Correo"
         '
-        'TextBox3
+        'txtdui
         '
-        Me.TextBox3.Location = New System.Drawing.Point(19, 158)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox3.TabIndex = 19
+        Me.txtdui.Location = New System.Drawing.Point(19, 158)
+        Me.txtdui.Name = "txtdui"
+        Me.txtdui.Size = New System.Drawing.Size(100, 20)
+        Me.txtdui.TabIndex = 19
         '
         'Label3
         '
@@ -159,19 +159,19 @@ Partial Class formAdministrarEmpleados
         Me.Label2.TabIndex = 17
         Me.Label2.Text = "Apellidos "
         '
-        'TextBox2
+        'txtapellido
         '
-        Me.TextBox2.Location = New System.Drawing.Point(19, 117)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(216, 20)
-        Me.TextBox2.TabIndex = 16
+        Me.txtapellido.Location = New System.Drawing.Point(19, 117)
+        Me.txtapellido.Name = "txtapellido"
+        Me.txtapellido.Size = New System.Drawing.Size(216, 20)
+        Me.txtapellido.TabIndex = 16
         '
-        'TextBox1
+        'txtnombre
         '
-        Me.TextBox1.Location = New System.Drawing.Point(19, 76)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(216, 20)
-        Me.TextBox1.TabIndex = 15
+        Me.txtnombre.Location = New System.Drawing.Point(19, 76)
+        Me.txtnombre.Name = "txtnombre"
+        Me.txtnombre.Size = New System.Drawing.Size(216, 20)
+        Me.txtnombre.TabIndex = 15
         '
         'Label1
         '
@@ -253,18 +253,18 @@ Partial Class formAdministrarEmpleados
     End Sub
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents txtid As TextBox
+    Friend WithEvents txtdireccion As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents txttelefono As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents txtcorreo As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents txtdui As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtapellido As TextBox
+    Friend WithEvents txtnombre As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button

@@ -23,80 +23,84 @@ Partial Class formAdministrarProveedor
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.txtdireccion = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txttelefono = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.txtid = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.TextBox4)
+        Me.GroupBox1.Controls.Add(Me.txtid)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.txtdireccion)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
+        Me.GroupBox1.Controls.Add(Me.txttelefono)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txtnombre)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(280, 262)
+        Me.GroupBox1.Size = New System.Drawing.Size(280, 323)
         Me.GroupBox1.TabIndex = 42
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos proveedor"
         '
-        'TextBox4
+        'txtdireccion
         '
-        Me.TextBox4.Location = New System.Drawing.Point(36, 187)
-        Me.TextBox4.Multiline = True
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(209, 47)
-        Me.TextBox4.TabIndex = 48
+        Me.txtdireccion.Location = New System.Drawing.Point(25, 242)
+        Me.txtdireccion.Multiline = True
+        Me.txtdireccion.Name = "txtdireccion"
+        Me.txtdireccion.Size = New System.Drawing.Size(209, 47)
+        Me.txtdireccion.TabIndex = 48
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(36, 158)
+        Me.Label3.Location = New System.Drawing.Point(25, 213)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(52, 13)
         Me.Label3.TabIndex = 47
         Me.Label3.Text = "Dirección"
         '
-        'TextBox2
+        'txttelefono
         '
-        Me.TextBox2.Location = New System.Drawing.Point(36, 122)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(134, 20)
-        Me.TextBox2.TabIndex = 46
+        Me.txttelefono.Location = New System.Drawing.Point(25, 177)
+        Me.txttelefono.Name = "txttelefono"
+        Me.txttelefono.Size = New System.Drawing.Size(134, 20)
+        Me.txttelefono.TabIndex = 46
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(36, 93)
+        Me.Label2.Location = New System.Drawing.Point(25, 148)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(49, 13)
         Me.Label2.TabIndex = 45
         Me.Label2.Text = "Telefono"
         '
-        'TextBox1
+        'txtnombre
         '
-        Me.TextBox1.Location = New System.Drawing.Point(36, 57)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(209, 20)
-        Me.TextBox1.TabIndex = 44
+        Me.txtnombre.Location = New System.Drawing.Point(25, 112)
+        Me.txtnombre.Name = "txtnombre"
+        Me.txtnombre.Size = New System.Drawing.Size(209, 20)
+        Me.txtnombre.TabIndex = 44
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(36, 28)
+        Me.Label1.Location = New System.Drawing.Point(25, 83)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(90, 13)
         Me.Label1.TabIndex = 43
@@ -108,7 +112,7 @@ Partial Class formAdministrarProveedor
         Me.GroupBox2.Controls.Add(Me.Button4)
         Me.GroupBox2.Controls.Add(Me.Button3)
         Me.GroupBox2.Controls.Add(Me.Button2)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 280)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 341)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(385, 84)
         Me.GroupBox2.TabIndex = 61
@@ -151,11 +155,27 @@ Partial Class formAdministrarProveedor
         Me.Button2.Text = "Eliminar"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'txtid
+        '
+        Me.txtid.Location = New System.Drawing.Point(22, 54)
+        Me.txtid.Name = "txtid"
+        Me.txtid.Size = New System.Drawing.Size(209, 20)
+        Me.txtid.TabIndex = 50
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(22, 25)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(16, 13)
+        Me.Label4.TabIndex = 49
+        Me.Label4.Text = "Id"
+        '
         'formAdministrarProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(409, 372)
+        Me.ClientSize = New System.Drawing.Size(420, 437)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.MaximizeBox = False
@@ -168,15 +188,17 @@ Partial Class formAdministrarProveedor
 
     End Sub
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents txtdireccion As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txttelefono As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtnombre As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents txtid As TextBox
+    Friend WithEvents Label4 As Label
 End Class

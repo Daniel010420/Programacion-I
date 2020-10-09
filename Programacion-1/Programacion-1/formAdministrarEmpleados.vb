@@ -1,21 +1,23 @@
 ﻿Public Class formAdministrarEmpleados
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Dim objConexion As New Conexion
+    Dim dataTable As New DataTable
+    Private Sub formAdministrarEmpleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        obtenerdatos()
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs)
-
+    Sub obtenerdatos()
+        dataTable = objConexion.obtenerDatosEmpleados().Tables("Empleados")
+        mostrardatos()
     End Sub
 
-    Private Sub TextBox5_TextChanged(sender As Object, e As EventArgs)
-
+    Sub mostrardatos()
+        txtid.Text = dataTable.Rows(0).ItemArray(0).ToString()
+        txtnombre.Text = dataTable.Rows(0).ItemArray(1).ToString()
+        txtapellido.Text = dataTable.Rows(0).ItemArray(2).ToString()
+        txtdui.Text = dataTable.Rows(0).ItemArray(3).ToString()
+        txtcorreo.Text = dataTable.Rows(0).ItemArray(4).ToString()
+        txttelefono.Text = dataTable.Rows(0).ItemArray(5).ToString()
+        txtdireccion.Text = dataTable.Rows(0).ItemArray(6).ToString()
     End Sub
 
-    Private Sub Label6_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
-
-    End Sub
 End Class
