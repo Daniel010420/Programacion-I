@@ -7,7 +7,7 @@ Public Class formAdministrarProveedor
     End Sub
 
     Sub obtenerdatos()
-        dataTable = objConexion.obtenerDatosProveedor().Tables("proveedor")
+        dataTable = objConexion.obtenerDatosProveedor().Tables("Proveedor")
         mostrardatos()
     End Sub
 

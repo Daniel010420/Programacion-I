@@ -29,4 +29,6 @@
         Me.SplitContainer1.Panel2.Controls.Add(forminventario)
         forminventario.Show()
     End Sub
+
+
 End Class
