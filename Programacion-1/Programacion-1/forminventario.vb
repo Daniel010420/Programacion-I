@@ -5,12 +5,10 @@
 
 
     Private Sub forminventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        obtenerdatos()
+
     End Sub
 
-    Sub obtenerdatos()
-        dataTable = objConexion.obtenerDatosInventario().Tables("Inventario")
-    End Sub
+
 
 
 
@@ -22,11 +20,7 @@
             btnbuscar.Visible = False
             accion = "nuevo"
         Else
-            Dim msg = objConexion.mantenimientoDatosInventario(New String() {
-              "", txtnombre.Text, txtproveedor.Text, txtlab.Text, txtpresentacion.Text, txtvencelote.Text, txtpreciopresentacion.Text, txtunidadespresentacion.Text}, accion)
-            MessageBox.Show(msg)
 
-            obtenerdatos()
 
             btnnuevoregistro.Text = "Nuevo"
             btnmodificarregistro.Text = "Modificar"

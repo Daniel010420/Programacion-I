@@ -33,17 +33,18 @@ Partial Class formAdministrarEmpleados
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtdui = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtapellido = New System.Windows.Forms.TextBox()
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btneliminar = New System.Windows.Forms.Button()
+        Me.btnmodificarycancelar = New System.Windows.Forms.Button()
+        Me.btnnuevoyaceptar = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtfiltro = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.grid = New System.Windows.Forms.DataGridView()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.grid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -58,13 +59,11 @@ Partial Class formAdministrarEmpleados
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txtdui)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.txtapellido)
         Me.GroupBox1.Controls.Add(Me.txtnombre)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(22, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(261, 401)
+        Me.GroupBox1.Size = New System.Drawing.Size(273, 401)
         Me.GroupBox1.TabIndex = 20
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos empleados"
@@ -72,22 +71,22 @@ Partial Class formAdministrarEmpleados
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(16, 16)
+        Me.Label7.Location = New System.Drawing.Point(19, 23)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(18, 13)
+        Me.Label7.Size = New System.Drawing.Size(65, 13)
         Me.Label7.TabIndex = 27
-        Me.Label7.Text = "ID"
+        Me.Label7.Text = "IDEmpleado"
         '
         'txtid
         '
-        Me.txtid.Location = New System.Drawing.Point(19, 35)
+        Me.txtid.Location = New System.Drawing.Point(19, 40)
         Me.txtid.Name = "txtid"
         Me.txtid.Size = New System.Drawing.Size(100, 20)
         Me.txtid.TabIndex = 26
         '
         'txtdireccion
         '
-        Me.txtdireccion.Location = New System.Drawing.Point(19, 281)
+        Me.txtdireccion.Location = New System.Drawing.Point(19, 245)
         Me.txtdireccion.Multiline = True
         Me.txtdireccion.Name = "txtdireccion"
         Me.txtdireccion.Size = New System.Drawing.Size(216, 110)
@@ -96,7 +95,7 @@ Partial Class formAdministrarEmpleados
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(16, 267)
+        Me.Label6.Location = New System.Drawing.Point(19, 228)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(55, 13)
         Me.Label6.TabIndex = 24
@@ -104,7 +103,7 @@ Partial Class formAdministrarEmpleados
         '
         'txttelefono
         '
-        Me.txttelefono.Location = New System.Drawing.Point(19, 240)
+        Me.txttelefono.Location = New System.Drawing.Point(19, 204)
         Me.txttelefono.Name = "txttelefono"
         Me.txttelefono.Size = New System.Drawing.Size(100, 20)
         Me.txttelefono.TabIndex = 23
@@ -112,7 +111,7 @@ Partial Class formAdministrarEmpleados
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(16, 228)
+        Me.Label5.Location = New System.Drawing.Point(19, 187)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(49, 13)
         Me.Label5.TabIndex = 22
@@ -120,7 +119,7 @@ Partial Class formAdministrarEmpleados
         '
         'txtcorreo
         '
-        Me.txtcorreo.Location = New System.Drawing.Point(19, 199)
+        Me.txtcorreo.Location = New System.Drawing.Point(19, 163)
         Me.txtcorreo.Name = "txtcorreo"
         Me.txtcorreo.Size = New System.Drawing.Size(183, 20)
         Me.txtcorreo.TabIndex = 21
@@ -128,7 +127,7 @@ Partial Class formAdministrarEmpleados
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(16, 185)
+        Me.Label4.Location = New System.Drawing.Point(19, 146)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(38, 13)
         Me.Label4.TabIndex = 20
@@ -136,7 +135,7 @@ Partial Class formAdministrarEmpleados
         '
         'txtdui
         '
-        Me.txtdui.Location = New System.Drawing.Point(19, 158)
+        Me.txtdui.Location = New System.Drawing.Point(19, 122)
         Me.txtdui.Name = "txtdui"
         Me.txtdui.Size = New System.Drawing.Size(100, 20)
         Me.txtdui.TabIndex = 19
@@ -144,31 +143,15 @@ Partial Class formAdministrarEmpleados
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(16, 146)
+        Me.Label3.Location = New System.Drawing.Point(19, 105)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(26, 13)
         Me.Label3.TabIndex = 18
         Me.Label3.Text = "DUI"
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(16, 97)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(52, 13)
-        Me.Label2.TabIndex = 17
-        Me.Label2.Text = "Apellidos "
-        '
-        'txtapellido
-        '
-        Me.txtapellido.Location = New System.Drawing.Point(19, 117)
-        Me.txtapellido.Name = "txtapellido"
-        Me.txtapellido.Size = New System.Drawing.Size(216, 20)
-        Me.txtapellido.TabIndex = 16
-        '
         'txtnombre
         '
-        Me.txtnombre.Location = New System.Drawing.Point(19, 76)
+        Me.txtnombre.Location = New System.Drawing.Point(19, 81)
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(216, 20)
         Me.txtnombre.TabIndex = 15
@@ -176,60 +159,81 @@ Partial Class formAdministrarEmpleados
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(16, 58)
+        Me.Label1.Location = New System.Drawing.Point(19, 64)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(47, 13)
+        Me.Label1.Size = New System.Drawing.Size(91, 13)
         Me.Label1.TabIndex = 14
-        Me.Label1.Text = "Nombre "
+        Me.Label1.Text = "Nombre Completo"
         '
-        'Button2
+        'btneliminar
         '
-        Me.Button2.Location = New System.Drawing.Point(187, 29)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(84, 44)
-        Me.Button2.TabIndex = 17
-        Me.Button2.Text = "Eliminar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btneliminar.Location = New System.Drawing.Point(187, 29)
+        Me.btneliminar.Name = "btneliminar"
+        Me.btneliminar.Size = New System.Drawing.Size(84, 44)
+        Me.btneliminar.TabIndex = 17
+        Me.btneliminar.Text = "Eliminar"
+        Me.btneliminar.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btnmodificarycancelar
         '
-        Me.Button3.Location = New System.Drawing.Point(95, 28)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(87, 45)
-        Me.Button3.TabIndex = 18
-        Me.Button3.Text = "Modificar"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnmodificarycancelar.Location = New System.Drawing.Point(95, 28)
+        Me.btnmodificarycancelar.Name = "btnmodificarycancelar"
+        Me.btnmodificarycancelar.Size = New System.Drawing.Size(87, 45)
+        Me.btnmodificarycancelar.TabIndex = 18
+        Me.btnmodificarycancelar.Text = "Modificar"
+        Me.btnmodificarycancelar.UseVisualStyleBackColor = True
         '
-        'Button4
+        'btnnuevoyaceptar
         '
-        Me.Button4.Location = New System.Drawing.Point(6, 28)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(84, 45)
-        Me.Button4.TabIndex = 19
-        Me.Button4.Text = "Nuevo"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(277, 29)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(84, 44)
-        Me.Button1.TabIndex = 20
-        Me.Button1.Text = "Buscar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnnuevoyaceptar.Location = New System.Drawing.Point(6, 28)
+        Me.btnnuevoyaceptar.Name = "btnnuevoyaceptar"
+        Me.btnnuevoyaceptar.Size = New System.Drawing.Size(84, 45)
+        Me.btnnuevoyaceptar.TabIndex = 19
+        Me.btnnuevoyaceptar.Text = "Nuevo"
+        Me.btnnuevoyaceptar.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.Button1)
-        Me.GroupBox2.Controls.Add(Me.Button4)
-        Me.GroupBox2.Controls.Add(Me.Button3)
-        Me.GroupBox2.Controls.Add(Me.Button2)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 409)
+        Me.GroupBox2.Controls.Add(Me.btnnuevoyaceptar)
+        Me.GroupBox2.Controls.Add(Me.btnmodificarycancelar)
+        Me.GroupBox2.Controls.Add(Me.btneliminar)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 424)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(385, 84)
+        Me.GroupBox2.Size = New System.Drawing.Size(289, 84)
         Me.GroupBox2.TabIndex = 21
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Edicion"
+        '
+        'txtfiltro
+        '
+        Me.txtfiltro.Location = New System.Drawing.Point(381, 25)
+        Me.txtfiltro.Name = "txtfiltro"
+        Me.txtfiltro.Size = New System.Drawing.Size(346, 20)
+        Me.txtfiltro.TabIndex = 28
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(343, 27)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(32, 13)
+        Me.Label8.TabIndex = 29
+        Me.Label8.Text = "Filtro:"
+        '
+        'grid
+        '
+        Me.grid.AllowUserToAddRows = False
+        Me.grid.AllowUserToDeleteRows = False
+        Me.grid.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grid.Location = New System.Drawing.Point(301, 51)
+        Me.grid.Name = "grid"
+        Me.grid.ReadOnly = True
+        Me.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.grid.Size = New System.Drawing.Size(649, 456)
+        Me.grid.TabIndex = 30
         '
         'formAdministrarEmpleados
         '
@@ -237,7 +241,10 @@ Partial Class formAdministrarEmpleados
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(421, 520)
+        Me.ClientSize = New System.Drawing.Size(962, 520)
+        Me.Controls.Add(Me.grid)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.txtfiltro)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -248,7 +255,9 @@ Partial Class formAdministrarEmpleados
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
+        CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupBox1 As GroupBox
@@ -262,13 +271,13 @@ Partial Class formAdministrarEmpleados
     Friend WithEvents Label4 As Label
     Friend WithEvents txtdui As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents txtapellido As TextBox
     Friend WithEvents txtnombre As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btneliminar As Button
+    Friend WithEvents btnmodificarycancelar As Button
+    Friend WithEvents btnnuevoyaceptar As Button
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents txtfiltro As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents grid As DataGridView
 End Class

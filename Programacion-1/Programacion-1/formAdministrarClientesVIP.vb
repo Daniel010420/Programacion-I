@@ -4,13 +4,10 @@ Public Class formAdministrarClientesVIP
     Dim objConexion As New Conexion
     Dim dataTable As New DataTable
     Private Sub formAdministrarClientesVIP_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        obtenerdatos()
+
     End Sub
 
-    Sub obtenerdatos()
-        dataTable = objConexion.obtenerDatosClientes().Tables("Clientes")
-        mostrardatos()
-    End Sub
+
 
     Sub mostrardatos()
         txtid.Text = dataTable.Rows(0).ItemArray(0).ToString()
