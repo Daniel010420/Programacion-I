@@ -59,32 +59,5 @@ Public Class Conexion
 
 
 
-    Public Function mantenimientoDatosInventario(ByVal datos As String(), ByVal accion As String)
-        Dim sql, msg As String
-        Select Case accion
-            Case "nuevo"
-                sql = "INSERT into Inventario (NombreMedicamento,Proveedor,Laboratorio,Presentacion,Vencimiento_Lote,Precio_Presentacion,Unidades_Presentacion) VALUES ('" + datos(1) + "', '" + datos(2) + "','" + datos(3) + "','" + datos(4) + "','" + datos(5) + "','" + datos(6) + "','" + datos(7) + "')"
-            Case "modificar"
-                sql = "UPDATE Inventario SET NombreMedicamento='" + datos(1) + "',Proveedor='" + datos(2) + "',Laboratorio='" + datos(3) + "',Presentacion='" + datos(4) + "',Vencimiento_Lote='" + datos(5) + "',Precio_Presentacion='" + datos(6) + "',Unidades_Presentacion='" + datos(7) + "' WHERE IdRegistro='" + datos(0) + "'"
-            Case "eliminar"
-                sql = "DELETE FROM Inventario WHERE IdRegistro='" + datos(0) + "'"
-        End Select
-
-        If (executesql(sql) > 0) Then
-            msg = "Accion realizada"
-        Else
-        msg = "error en el proceso"
-        End If
-
-        Return msg
-
-    End Function
-
-    Private Function executesql(ByVal sql As String)
-        miCommand.Connection = miConexion
-        miCommand.CommandText = sql
-        Return miCommand.ExecuteNonQuery()
-    End Function
-
 End Class
 
