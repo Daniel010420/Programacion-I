@@ -102,12 +102,6 @@
     <Compile Include="formAdministrarClientesVIP.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formBuscarEmpleado.Designer.vb">
-      <DependentUpon>formBuscarEmpleado.vb</DependentUpon>
-    </Compile>
-    <Compile Include="formBuscarEmpleado.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="forminventario.Designer.vb">
       <DependentUpon>forminventario.vb</DependentUpon>
     </Compile>
@@ -149,9 +143,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formAdministrarClientesVIP.resx">
       <DependentUpon>formAdministrarClientesVIP.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formBuscarEmpleado.resx">
-      <DependentUpon>formBuscarEmpleado.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forminventario.resx">
       <DependentUpon>forminventario.vb</DependentUpon>

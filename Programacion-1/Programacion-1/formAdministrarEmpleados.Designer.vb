@@ -232,7 +232,7 @@ Partial Class formAdministrarEmpleados
         Me.grid.Name = "grid"
         Me.grid.ReadOnly = True
         Me.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grid.Size = New System.Drawing.Size(649, 456)
+        Me.grid.Size = New System.Drawing.Size(651, 497)
         Me.grid.TabIndex = 30
         '
         'formAdministrarEmpleados
@@ -241,7 +241,7 @@ Partial Class formAdministrarEmpleados
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(962, 520)
+        Me.ClientSize = New System.Drawing.Size(964, 561)
         Me.Controls.Add(Me.grid)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtfiltro)
