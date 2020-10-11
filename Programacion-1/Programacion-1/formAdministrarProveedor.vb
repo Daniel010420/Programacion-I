@@ -37,6 +37,7 @@ Public Class formAdministrarProveedor
 
 
 
+
     'Boton primero
     Private Sub btnnuevoyaceptar_Click(sender As Object, e As EventArgs) Handles btnnuevoyaceptar.Click
         If btnnuevoyaceptar.Text = "Nuevo" Then 'Nuevo
