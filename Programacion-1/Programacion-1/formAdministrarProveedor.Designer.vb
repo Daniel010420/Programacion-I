@@ -52,7 +52,7 @@ Partial Class formAdministrarProveedor
         Me.grid.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grid.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.grid.Location = New System.Drawing.Point(301, 51)
         Me.grid.Name = "grid"
         Me.grid.ReadOnly = True
@@ -225,6 +225,7 @@ Partial Class formAdministrarProveedor
         Me.Controls.Add(Me.txtfiltro)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.Name = "formAdministrarProveedor"
         Me.Text = "Proveedores"
