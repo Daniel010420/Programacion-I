@@ -50,7 +50,7 @@
               "",                 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
             txtnombre.Text,     'dato(1)
             txttelefono.Text,   'dato(2)
-            txtdireccion.Text, 'dato(3)
+            txtubicacion.Text, 'dato(3)
             txtcorreo.Text},     'dato(4)
             accion, comandosql, idTabla) 'accion que se desea realizar en el case
             btnnuevoyaceptar.Text = "Nuevo"
@@ -67,7 +67,7 @@
               txtid.Text,      'dato(0) si se envia el id aqui porque es el que identifica el registro, update from id = x
               txtnombre.Text,  'dato(1)
               txttelefono.Text,     'dato(2)
-              txtdireccion.Text,'dato(3)
+              txtubicacion.Text,'dato(3)
               txtcorreo.Text}, 'dato(4)
               accion, comandosql, idTabla)
 
@@ -138,7 +138,7 @@
             txtid.Text = grid.Item(0, i).Value()
             txtnombre.Text = grid.Item(1, i).Value()
             txttelefono.Text = grid.Item(2, i).Value()
-            txtdireccion.Text = grid.Item(3, i).Value()
+            txtubicacion.Text = grid.Item(3, i).Value()
             txtcorreo.Text = grid.Item(4, i).Value()
         End If
     End Sub
@@ -148,9 +148,9 @@
     Private Sub limpiar()
         txtid.Text = ""
         txtnombre.Text = ""
+        txtubicacion.Text = ""
         txttelefono.Text = ""
         txtcorreo.Text = ""
-        txtdireccion.Text = ""
     End Sub
 
 

@@ -32,11 +32,11 @@ Partial Class formAdministrarLaboratorio
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtid = New System.Windows.Forms.TextBox()
-        Me.txtdireccion = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txttelefono = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.txtcorreo = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtubicacion = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txttelefono = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -119,11 +119,11 @@ Partial Class formAdministrarLaboratorio
         '
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.txtid)
-        Me.GroupBox1.Controls.Add(Me.txtdireccion)
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.txttelefono)
-        Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.txtcorreo)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.txtubicacion)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.txttelefono)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txtnombre)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -150,13 +150,13 @@ Partial Class formAdministrarLaboratorio
         Me.txtid.Size = New System.Drawing.Size(100, 20)
         Me.txtid.TabIndex = 26
         '
-        'txtdireccion
+        'txtcorreo
         '
-        Me.txtdireccion.Location = New System.Drawing.Point(6, 191)
-        Me.txtdireccion.Multiline = True
-        Me.txtdireccion.Name = "txtdireccion"
-        Me.txtdireccion.Size = New System.Drawing.Size(216, 40)
-        Me.txtdireccion.TabIndex = 25
+        Me.txtcorreo.Location = New System.Drawing.Point(6, 191)
+        Me.txtcorreo.Multiline = True
+        Me.txtcorreo.Name = "txtcorreo"
+        Me.txtcorreo.Size = New System.Drawing.Size(216, 40)
+        Me.txtcorreo.TabIndex = 25
         '
         'Label6
         '
@@ -167,12 +167,12 @@ Partial Class formAdministrarLaboratorio
         Me.Label6.TabIndex = 24
         Me.Label6.Text = "Correo"
         '
-        'txttelefono
+        'txtubicacion
         '
-        Me.txttelefono.Location = New System.Drawing.Point(6, 142)
-        Me.txttelefono.Name = "txttelefono"
-        Me.txttelefono.Size = New System.Drawing.Size(173, 20)
-        Me.txttelefono.TabIndex = 23
+        Me.txtubicacion.Location = New System.Drawing.Point(6, 142)
+        Me.txtubicacion.Name = "txtubicacion"
+        Me.txtubicacion.Size = New System.Drawing.Size(173, 20)
+        Me.txtubicacion.TabIndex = 23
         '
         'Label5
         '
@@ -183,12 +183,12 @@ Partial Class formAdministrarLaboratorio
         Me.Label5.TabIndex = 22
         Me.Label5.Text = "Ubicacion"
         '
-        'txtcorreo
+        'txttelefono
         '
-        Me.txtcorreo.Location = New System.Drawing.Point(6, 93)
-        Me.txtcorreo.Name = "txtcorreo"
-        Me.txtcorreo.Size = New System.Drawing.Size(100, 20)
-        Me.txtcorreo.TabIndex = 21
+        Me.txttelefono.Location = New System.Drawing.Point(6, 93)
+        Me.txttelefono.Name = "txttelefono"
+        Me.txttelefono.Size = New System.Drawing.Size(100, 20)
+        Me.txttelefono.TabIndex = 21
         '
         'Label4
         '
@@ -248,11 +248,11 @@ Partial Class formAdministrarLaboratorio
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label7 As Label
     Friend WithEvents txtid As TextBox
-    Friend WithEvents txtdireccion As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents txttelefono As TextBox
-    Friend WithEvents Label5 As Label
     Friend WithEvents txtcorreo As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents txtubicacion As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txttelefono As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents txtnombre As TextBox
     Friend WithEvents Label1 As Label

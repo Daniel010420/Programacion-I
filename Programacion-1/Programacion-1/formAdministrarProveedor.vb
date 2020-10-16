@@ -158,8 +158,8 @@ Public Class formAdministrarProveedor
     Private Sub limpiar()
         txtid.Text = ""
         txtnombre.Text = ""
-        txttelefono.Text = ""
         txtcorreo.Text = ""
+        txttelefono.Text = ""
         txtdireccion.Text = ""
     End Sub
 
