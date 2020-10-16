@@ -26,4 +26,18 @@
         newform.MdiParent = Me
         newform.Show()
     End Sub
+
+    Private Sub PresentacionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PresentacionesToolStripMenuItem.Click
+        Dim newform As New formPresentacion
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
+
+    Private Sub AdministarCargosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdministarCargosToolStripMenuItem.Click
+        Dim newform As New formCargo
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
+
+
 End Class

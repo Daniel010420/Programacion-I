@@ -161,13 +161,70 @@ Public Class Conexion
     End Function
 
 
+    Public Function mantenimientoPresentacion(ByVal datos As String(), ByVal accion As String, ByVal comandosql As String, ByVal id As String)
+        Dim sql, msg As String
+        'dato(0) sera el ID de cada tabla
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT into " + comandosql + " VALUES 
+                (
+                  '" + datos(1) + "'
+                 )"
+
+            Case "modificar"
+                sql = "UPDATE " + comandosql + " SET 
+                  Presentacion='" + datos(1) + "'
+            WHERE " + id + "    ='" + datos(0) + "'"
+
+            Case "eliminar"
+                sql = "DELETE FROM " + comandosql + " WHERE " + id + "='" + datos(0) + "'"
+        End Select
+        If (executesql(sql) > 0) Then
+            msg = "Accion realizada con exito"
+        Else
+            msg = "Error en el proceso"
+        End If
+        Return msg
+    End Function
+
+
+    Public Function mantenimientoCargo(ByVal datos As String(), ByVal accion As String, ByVal comandosql As String, ByVal id As String)
+        Dim sql, msg As String
+        'dato(0) sera el ID de cada tabla
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT into " + comandosql + " VALUES 
+                (
+                  '" + datos(1) + "'
+                 )"
+            Case "modificar"
+                sql = "UPDATE " + comandosql + " SET 
+                  Cargo='" + datos(1) + "'
+            WHERE " + id + "    ='" + datos(0) + "'"
+
+            Case "eliminar"
+                sql = "DELETE FROM " + comandosql + " WHERE " + id + "='" + datos(0) + "'"
+        End Select
+        If (executesql(sql) > 0) Then
+            msg = "Accion realizada con exito"
+        Else
+            msg = "Error en el proceso"
+        End If
+        Return msg
+    End Function
+
 
 
 
     'Encargado de los comandos sql, no tocar
     Private Function executesql(ByVal sql As String)
-        miCommand.Connection = miConexion
-        miCommand.CommandText = sql
+        Try
+            miCommand.Connection = miConexion
+            miCommand.CommandText = sql
+        Catch ex As Exception
+
+        End Try
+
         Return miCommand.ExecuteNonQuery()
     End Function
 End Class

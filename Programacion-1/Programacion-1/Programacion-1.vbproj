@@ -102,6 +102,12 @@
     <Compile Include="formAdministrarLaboratorio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="formCargo.Designer.vb">
+      <DependentUpon>formCargo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formCargo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formLogeado.Designer.vb">
       <DependentUpon>formLogeado.vb</DependentUpon>
     </Compile>
@@ -118,6 +124,12 @@
       <DependentUpon>formMotivosDaño.vb</DependentUpon>
     </Compile>
     <Compile Include="formMotivosDaño.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formPresentacion.Designer.vb">
+      <DependentUpon>formPresentacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formPresentacion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -144,6 +156,9 @@
     <EmbeddedResource Include="formAdministrarLaboratorio.resx">
       <DependentUpon>formAdministrarLaboratorio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formCargo.resx">
+      <DependentUpon>formCargo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formLogeado.resx">
       <DependentUpon>formLogeado.vb</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formMotivosDaño.resx">
       <DependentUpon>formMotivosDaño.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formPresentacion.resx">
+      <DependentUpon>formPresentacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

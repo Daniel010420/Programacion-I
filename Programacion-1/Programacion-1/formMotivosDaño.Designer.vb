@@ -51,7 +51,7 @@ Partial Class formMotivosDaño
         Me.grid.Name = "grid"
         Me.grid.ReadOnly = True
         Me.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grid.Size = New System.Drawing.Size(441, 133)
+        Me.grid.Size = New System.Drawing.Size(446, 138)
         Me.grid.TabIndex = 35
         '
         'Label8
@@ -158,12 +158,13 @@ Partial Class formMotivosDaño
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(749, 196)
+        Me.ClientSize = New System.Drawing.Size(754, 201)
         Me.Controls.Add(Me.grid)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtfiltro)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.MaximizeBox = False
         Me.Name = "formMotivosDaño"
         Me.Text = "Motivos de Daño"
         CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
