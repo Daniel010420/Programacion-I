@@ -63,7 +63,7 @@ Partial Class formAdministrarEmpleados
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(22, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(273, 401)
+        Me.GroupBox1.Size = New System.Drawing.Size(273, 339)
         Me.GroupBox1.TabIndex = 20
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos empleados"
@@ -86,7 +86,7 @@ Partial Class formAdministrarEmpleados
         '
         'txtdireccion
         '
-        Me.txtdireccion.Location = New System.Drawing.Point(19, 245)
+        Me.txtdireccion.Location = New System.Drawing.Point(19, 205)
         Me.txtdireccion.Multiline = True
         Me.txtdireccion.Name = "txtdireccion"
         Me.txtdireccion.Size = New System.Drawing.Size(216, 110)
@@ -95,7 +95,7 @@ Partial Class formAdministrarEmpleados
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(19, 228)
+        Me.Label6.Location = New System.Drawing.Point(19, 188)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(55, 13)
         Me.Label6.TabIndex = 24
@@ -103,7 +103,7 @@ Partial Class formAdministrarEmpleados
         '
         'txttelefono
         '
-        Me.txttelefono.Location = New System.Drawing.Point(19, 204)
+        Me.txttelefono.Location = New System.Drawing.Point(19, 164)
         Me.txttelefono.Name = "txttelefono"
         Me.txttelefono.Size = New System.Drawing.Size(100, 20)
         Me.txttelefono.TabIndex = 23
@@ -111,7 +111,7 @@ Partial Class formAdministrarEmpleados
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(19, 187)
+        Me.Label5.Location = New System.Drawing.Point(19, 147)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(49, 13)
         Me.Label5.TabIndex = 22
@@ -119,7 +119,7 @@ Partial Class formAdministrarEmpleados
         '
         'txtcorreo
         '
-        Me.txtcorreo.Location = New System.Drawing.Point(19, 163)
+        Me.txtcorreo.Location = New System.Drawing.Point(19, 123)
         Me.txtcorreo.Name = "txtcorreo"
         Me.txtcorreo.Size = New System.Drawing.Size(183, 20)
         Me.txtcorreo.TabIndex = 21
@@ -127,7 +127,7 @@ Partial Class formAdministrarEmpleados
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(19, 146)
+        Me.Label4.Location = New System.Drawing.Point(19, 106)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(38, 13)
         Me.Label4.TabIndex = 20
@@ -135,7 +135,7 @@ Partial Class formAdministrarEmpleados
         '
         'txtdui
         '
-        Me.txtdui.Location = New System.Drawing.Point(19, 122)
+        Me.txtdui.Location = New System.Drawing.Point(19, 82)
         Me.txtdui.Name = "txtdui"
         Me.txtdui.Size = New System.Drawing.Size(100, 20)
         Me.txtdui.TabIndex = 19
@@ -143,7 +143,7 @@ Partial Class formAdministrarEmpleados
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(19, 105)
+        Me.Label3.Location = New System.Drawing.Point(19, 65)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(26, 13)
         Me.Label3.TabIndex = 18
@@ -151,7 +151,7 @@ Partial Class formAdministrarEmpleados
         '
         'txtnombre
         '
-        Me.txtnombre.Location = New System.Drawing.Point(19, 81)
+        Me.txtnombre.Location = New System.Drawing.Point(19, 41)
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(216, 20)
         Me.txtnombre.TabIndex = 15
@@ -159,7 +159,7 @@ Partial Class formAdministrarEmpleados
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(19, 64)
+        Me.Label1.Location = New System.Drawing.Point(19, 24)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(91, 13)
         Me.Label1.TabIndex = 14
@@ -197,7 +197,7 @@ Partial Class formAdministrarEmpleados
         Me.GroupBox2.Controls.Add(Me.btnnuevoyaceptar)
         Me.GroupBox2.Controls.Add(Me.btnmodificarycancelar)
         Me.GroupBox2.Controls.Add(Me.btneliminar)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 424)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 357)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(289, 84)
         Me.GroupBox2.TabIndex = 21
@@ -232,7 +232,7 @@ Partial Class formAdministrarEmpleados
         Me.grid.Name = "grid"
         Me.grid.ReadOnly = True
         Me.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grid.Size = New System.Drawing.Size(651, 497)
+        Me.grid.Size = New System.Drawing.Size(651, 388)
         Me.grid.TabIndex = 30
         '
         'formAdministrarEmpleados
@@ -241,7 +241,7 @@ Partial Class formAdministrarEmpleados
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(964, 561)
+        Me.ClientSize = New System.Drawing.Size(964, 452)
         Me.Controls.Add(Me.grid)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtfiltro)
@@ -263,14 +263,6 @@ Partial Class formAdministrarEmpleados
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label7 As Label
     Friend WithEvents txtid As TextBox
-    Friend WithEvents txtdireccion As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents txttelefono As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents txtcorreo As TextBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents txtdui As TextBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents txtnombre As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btneliminar As Button
@@ -280,4 +272,12 @@ Partial Class formAdministrarEmpleados
     Friend WithEvents txtfiltro As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents grid As DataGridView
+    Friend WithEvents txtdireccion As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents txttelefono As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtcorreo As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txtdui As TextBox
+    Friend WithEvents Label3 As Label
 End Class

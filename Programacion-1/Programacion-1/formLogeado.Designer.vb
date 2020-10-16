@@ -82,7 +82,7 @@ Partial Class formLogeado
         '
         Me.PromocionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DescuentoToolStripMenuItem, Me.GananciaToolStripMenuItem})
         Me.PromocionesToolStripMenuItem.Name = "PromocionesToolStripMenuItem"
-        Me.PromocionesToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
+        Me.PromocionesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.PromocionesToolStripMenuItem.Text = "Porcentajes"
         '
         'DescuentoToolStripMenuItem
@@ -100,26 +100,26 @@ Partial Class formLogeado
         'StockToolStripMenuItem
         '
         Me.StockToolStripMenuItem.Name = "StockToolStripMenuItem"
-        Me.StockToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
+        Me.StockToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.StockToolStripMenuItem.Text = "Stock"
         '
         'ReportarDañoToolStripMenuItem
         '
         Me.ReportarDañoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MotivosDeDañoToolStripMenuItem, Me.NuevoRepoteToolStripMenuItem})
         Me.ReportarDañoToolStripMenuItem.Name = "ReportarDañoToolStripMenuItem"
-        Me.ReportarDañoToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
+        Me.ReportarDañoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ReportarDañoToolStripMenuItem.Text = "Reportar Daño"
         '
         'MotivosDeDañoToolStripMenuItem
         '
         Me.MotivosDeDañoToolStripMenuItem.Name = "MotivosDeDañoToolStripMenuItem"
-        Me.MotivosDeDañoToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.MotivosDeDañoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.MotivosDeDañoToolStripMenuItem.Text = "Motivos de Daño"
         '
         'NuevoRepoteToolStripMenuItem
         '
         Me.NuevoRepoteToolStripMenuItem.Name = "NuevoRepoteToolStripMenuItem"
-        Me.NuevoRepoteToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.NuevoRepoteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.NuevoRepoteToolStripMenuItem.Text = "Nuevo Repote"
         '
         'UsuariosToolStripMenuItem
@@ -170,19 +170,19 @@ Partial Class formLogeado
         'ProveedoresToolStripMenuItem1
         '
         Me.ProveedoresToolStripMenuItem1.Name = "ProveedoresToolStripMenuItem1"
-        Me.ProveedoresToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.ProveedoresToolStripMenuItem1.Size = New System.Drawing.Size(154, 22)
         Me.ProveedoresToolStripMenuItem1.Text = "Proveedores"
         '
         'LaboratoriosToolStripMenuItem
         '
         Me.LaboratoriosToolStripMenuItem.Name = "LaboratoriosToolStripMenuItem"
-        Me.LaboratoriosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LaboratoriosToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
         Me.LaboratoriosToolStripMenuItem.Text = "Laboratorios"
         '
         'NuevaCompraToolStripMenuItem
         '
         Me.NuevaCompraToolStripMenuItem.Name = "NuevaCompraToolStripMenuItem"
-        Me.NuevaCompraToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.NuevaCompraToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
         Me.NuevaCompraToolStripMenuItem.Text = "Nueva Compra"
         '
         'ClientesToolStripMenuItem

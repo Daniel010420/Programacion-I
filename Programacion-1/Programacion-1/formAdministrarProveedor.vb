@@ -8,6 +8,7 @@ Public Class formAdministrarProveedor
     Dim comandosql = ""
 
 
+    Dim mensajeenmentana = "Registro de Proveedores"
     Dim Nombretabladebusqueda = "Proveedores"
     Dim buscarpor1 = "Nombre"
     Dim buscarpor2 = "Nombre"
@@ -17,7 +18,9 @@ Public Class formAdministrarProveedor
 
     'accion al cargar el formulario
     Private Sub formAdministrarProveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        txtid.Enabled = False
+        txtid.Visible = False
+        Label7.Visible = False
+
         obtenerdatos()
     End Sub
 
@@ -63,7 +66,7 @@ Public Class formAdministrarProveedor
             btnmodificarycancelar.Text = "Modificar"
             obtenerdatos()
             limpiar()
-            MessageBox.Show(msg, "Registro de cliente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
             btneliminar.Enabled = True
 
 
@@ -78,7 +81,7 @@ Public Class formAdministrarProveedor
               accion, comandosql, idTabla)
 
             obtenerdatos()
-            MessageBox.Show(msg, "Registro de cliente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
             limpiar()
             btnnuevoyaceptar.Text = "Nuevo"
             btnmodificarycancelar.Text = "Modificar"
@@ -107,11 +110,19 @@ Public Class formAdministrarProveedor
 
 
     Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
-        If (MessageBox.Show("Esta seguro de borrar a " + txtnombre.Text, "Registro de cliente",
-                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
-            comandosql = Nombretabladebusqueda
-            objConexion.mantenimientoProveedores(New String() {txtid.Text}, "eliminar", comandosql, idTabla)
+
+        If txtid.Text <> "" Then
+            If (MessageBox.Show("Esta seguro de borrar a " + txtnombre.Text, mensajeenmentana,
+                         MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
+                comandosql = Nombretabladebusqueda
+                objConexion.mantenimientoProveedores(New String() {txtid.Text}, "eliminar", comandosql, idTabla)
+            End If
+        Else MessageBox.Show("Debe selecionar un registro para eliminar", mensajeenmentana)
         End If
+
+
+
+
         limpiar()
         obtenerdatos()
     End Sub

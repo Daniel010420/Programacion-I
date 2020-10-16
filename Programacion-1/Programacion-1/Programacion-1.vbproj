@@ -114,6 +114,12 @@
     <Compile Include="formAdministrarProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="formMotivosDaño.Designer.vb">
+      <DependentUpon>formMotivosDaño.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formMotivosDaño.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formAdministrarProveedor.resx">
       <DependentUpon>formAdministrarProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formMotivosDaño.resx">
+      <DependentUpon>formMotivosDaño.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

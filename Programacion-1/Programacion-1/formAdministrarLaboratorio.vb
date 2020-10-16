@@ -6,7 +6,7 @@
     Dim datostabla = "DatosTabla"
     Dim comandosql = ""
 
-
+    Dim mensajeenmentana = "Registro de Laboratorio"
     Dim Nombretabladebusqueda = "Laboratorio"
     Dim buscarpor1 = "Nombre"
     Dim buscarpor2 = "Correo"
@@ -14,7 +14,8 @@
     Dim comandoinsertar = Nombretabladebusqueda + " (Nombre,Telefono,Ubicacion,Correo)" 'campos de la tabla en orden menos id
     Dim comandoactualizar = Nombretabladebusqueda
     Private Sub formAdministrarLaboratorio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        txtid.Enabled = False
+        txtid.Visible = False
+        Label7.Visible = False
         obtenerdatos()
     End Sub
 
@@ -56,7 +57,7 @@
             btnmodificarycancelar.Text = "Modificar"
             obtenerdatos()
             limpiar()
-            MessageBox.Show(msg, "Registro de cliente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
             btneliminar.Enabled = True
 
 
@@ -71,7 +72,7 @@
               accion, comandosql, idTabla)
 
             obtenerdatos()
-            MessageBox.Show(msg, "Registro de Laboratorio", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
             limpiar()
             btnnuevoyaceptar.Text = "Nuevo"
             btnmodificarycancelar.Text = "Modificar"
@@ -100,11 +101,18 @@
 
 
     Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
-        If (MessageBox.Show("Esta seguro de borrar a " + txtnombre.Text, "Registro de cliente",
-                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
-            comandosql = Nombretabladebusqueda
-            objConexion.mantenimientoLaboratorios(New String() {txtid.Text}, "eliminar", comandosql, idTabla)
+
+        If txtid.Text <> "" Then
+
+            If (MessageBox.Show("Esta seguro de borrar a " + txtnombre.Text, mensajeenmentana,
+                         MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
+                comandosql = Nombretabladebusqueda
+                objConexion.mantenimientoLaboratorios(New String() {txtid.Text}, "eliminar", comandosql, idTabla)
+            End If
+        Else MessageBox.Show("Debe selecionar un registro para eliminar", mensajeenmentana)
         End If
+
+
         limpiar()
         obtenerdatos()
     End Sub

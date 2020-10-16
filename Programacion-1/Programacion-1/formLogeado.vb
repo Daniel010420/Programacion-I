@@ -20,4 +20,10 @@
         newform.MdiParent = Me
         newform.Show()
     End Sub
+
+    Private Sub MotivosDeDañoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MotivosDeDañoToolStripMenuItem.Click
+        Dim newform As New formMotivosDaño
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
 End Class

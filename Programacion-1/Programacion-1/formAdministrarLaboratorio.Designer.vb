@@ -57,7 +57,7 @@ Partial Class formAdministrarLaboratorio
         Me.grid.Name = "grid"
         Me.grid.ReadOnly = True
         Me.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grid.Size = New System.Drawing.Size(651, 497)
+        Me.grid.Size = New System.Drawing.Size(651, 393)
         Me.grid.TabIndex = 40
         '
         'Label8
@@ -81,7 +81,7 @@ Partial Class formAdministrarLaboratorio
         Me.GroupBox2.Controls.Add(Me.btnnuevoyaceptar)
         Me.GroupBox2.Controls.Add(Me.btnmodificarycancelar)
         Me.GroupBox2.Controls.Add(Me.btneliminar)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 357)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 274)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(289, 84)
         Me.GroupBox2.TabIndex = 37
@@ -129,7 +129,7 @@ Partial Class formAdministrarLaboratorio
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(273, 322)
+        Me.GroupBox1.Size = New System.Drawing.Size(273, 256)
         Me.GroupBox1.TabIndex = 36
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos laboratorio"
@@ -152,7 +152,7 @@ Partial Class formAdministrarLaboratorio
         '
         'txtdireccion
         '
-        Me.txtdireccion.Location = New System.Drawing.Point(6, 240)
+        Me.txtdireccion.Location = New System.Drawing.Point(6, 191)
         Me.txtdireccion.Multiline = True
         Me.txtdireccion.Name = "txtdireccion"
         Me.txtdireccion.Size = New System.Drawing.Size(216, 40)
@@ -161,7 +161,7 @@ Partial Class formAdministrarLaboratorio
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 219)
+        Me.Label6.Location = New System.Drawing.Point(6, 170)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(38, 13)
         Me.Label6.TabIndex = 24
@@ -169,7 +169,7 @@ Partial Class formAdministrarLaboratorio
         '
         'txttelefono
         '
-        Me.txttelefono.Location = New System.Drawing.Point(6, 191)
+        Me.txttelefono.Location = New System.Drawing.Point(6, 142)
         Me.txttelefono.Name = "txttelefono"
         Me.txttelefono.Size = New System.Drawing.Size(173, 20)
         Me.txttelefono.TabIndex = 23
@@ -177,7 +177,7 @@ Partial Class formAdministrarLaboratorio
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(6, 170)
+        Me.Label5.Location = New System.Drawing.Point(6, 121)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(55, 13)
         Me.Label5.TabIndex = 22
@@ -185,7 +185,7 @@ Partial Class formAdministrarLaboratorio
         '
         'txtcorreo
         '
-        Me.txtcorreo.Location = New System.Drawing.Point(6, 142)
+        Me.txtcorreo.Location = New System.Drawing.Point(6, 93)
         Me.txtcorreo.Name = "txtcorreo"
         Me.txtcorreo.Size = New System.Drawing.Size(100, 20)
         Me.txtcorreo.TabIndex = 21
@@ -193,7 +193,7 @@ Partial Class formAdministrarLaboratorio
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 121)
+        Me.Label4.Location = New System.Drawing.Point(6, 72)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 13)
         Me.Label4.TabIndex = 20
@@ -201,7 +201,7 @@ Partial Class formAdministrarLaboratorio
         '
         'txtnombre
         '
-        Me.txtnombre.Location = New System.Drawing.Point(6, 93)
+        Me.txtnombre.Location = New System.Drawing.Point(6, 44)
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(216, 20)
         Me.txtnombre.TabIndex = 15
@@ -209,7 +209,7 @@ Partial Class formAdministrarLaboratorio
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 72)
+        Me.Label1.Location = New System.Drawing.Point(6, 23)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 13)
         Me.Label1.TabIndex = 14
@@ -219,7 +219,7 @@ Partial Class formAdministrarLaboratorio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(964, 561)
+        Me.ClientSize = New System.Drawing.Size(964, 457)
         Me.Controls.Add(Me.grid)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtfiltro)
