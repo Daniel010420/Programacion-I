@@ -218,13 +218,9 @@ Public Class Conexion
 
     'Encargado de los comandos sql, no tocar
     Private Function executesql(ByVal sql As String)
-        Try
-            miCommand.Connection = miConexion
-            miCommand.CommandText = sql
-        Catch ex As Exception
 
-        End Try
-
+        miCommand.Connection = miConexion
+        miCommand.CommandText = sql
         Return miCommand.ExecuteNonQuery()
     End Function
 End Class
