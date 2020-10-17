@@ -8,8 +8,8 @@
 
     Dim mensajeenmentana = "Registro de Laboratorio"
     Dim Nombretabladebusqueda = "Laboratorio"
-    Dim buscarpor1 = "Nombre"
-    Dim buscarpor2 = "Correo"
+    Dim buscarpor1 = "Laboratorio"
+    Dim buscarpor2 = "Laboratorio"
     Dim idTabla = "IdLaboratorio"
     Dim comandoinsertar = Nombretabladebusqueda + " (Laboratorio,Telefono,Ubicacion,Correo)" 'campos de la tabla en orden menos id
     Dim comandoactualizar = Nombretabladebusqueda
@@ -50,8 +50,8 @@
               "",                 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
             txtnombre.Text,     'dato(1)
             txttelefono.Text,   'dato(2)
-            txtcorreo.Text, 'dato(3)
-            txtubicacion.Text},     'dato(4)
+            txtubicacion.Text, 'dato(3)
+            txtcorreo.Text},     'dato(4)
             accion, comandosql, idTabla) 'accion que se desea realizar en el case
             btnnuevoyaceptar.Text = "Nuevo"
             btnmodificarycancelar.Text = "Modificar"
@@ -67,8 +67,8 @@
               txtid.Text,      'dato(0) si se envia el id aqui porque es el que identifica el registro, update from id = x
               txtnombre.Text,  'dato(1)
               txttelefono.Text,     'dato(2)
-              txtcorreo.Text,'dato(3)
-              txtubicacion.Text}, 'dato(4)
+              txtubicacion.Text,'dato(3)
+              txtcorreo.Text}, 'dato(4)
               accion, comandosql, idTabla)
 
             obtenerdatos()
@@ -101,18 +101,17 @@
 
 
     Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
-
         If txtid.Text <> "" Then
-
             If (MessageBox.Show("Esta seguro de borrar a " + txtnombre.Text, mensajeenmentana,
-                         MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
+                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
                 comandosql = Nombretabladebusqueda
-                objConexion.mantenimientoLaboratorios(New String() {txtid.Text}, "eliminar", comandosql, idTabla)
+                Dim msg = objConexion.mantenimientoLaboratorios(New String() {txtid.Text}, "eliminar", comandosql, idTabla)
+                If msg = "Error en el proceso" Then
+                    MessageBox.Show("No se pudo eliminar este registro, porque hay registros que dependen de el", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
             End If
         Else MessageBox.Show("Debe selecionar un registro para eliminar", mensajeenmentana)
         End If
-
-
         limpiar()
         obtenerdatos()
     End Sub
@@ -138,8 +137,8 @@
             txtid.Text = grid.Item(0, i).Value()
             txtnombre.Text = grid.Item(1, i).Value()
             txttelefono.Text = grid.Item(2, i).Value()
-            txtcorreo.Text = grid.Item(3, i).Value()
-            txtubicacion.Text = grid.Item(4, i).Value()
+            txtcorreo.Text = grid.Item(4, i).Value()
+            txtubicacion.Text = grid.Item(3, i).Value()
         End If
     End Sub
 

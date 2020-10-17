@@ -106,17 +106,17 @@
 
 
     Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
-
         If txtid.Text <> "" Then
             If (MessageBox.Show("Esta seguro de borrar a " + txtnombre.Text, mensajeenmentana,
-                          MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
+                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
                 comandosql = Nombretabladebusqueda
-                objConexion.mantenimientoEmpleados(New String() {txtid.Text}, "eliminar", comandosql, idTabla)
+                Dim msg = objConexion.mantenimientoEmpleados(New String() {txtid.Text}, "eliminar", comandosql, idTabla)
+                If msg = "Error en el proceso" Then
+                    MessageBox.Show("No se pudo eliminar este registro, porque hay registros que dependen de el", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
             End If
         Else MessageBox.Show("Debe selecionar un registro para eliminar", mensajeenmentana)
         End If
-
-
         limpiar()
         obtenerdatos()
     End Sub

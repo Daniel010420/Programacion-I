@@ -65,18 +65,22 @@
         ElseIf btnnuevoyaceptar.Text = "Aceptar" Then
             comandosql = comandoinsertar
 
+
             Dim msg = objConexion.mantenimientoMedicamentoGeneral(New String() {
-              "",                 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
-              txtnombre.Text,     'dato(1)
-              cobpresentacion.SelectedValue,        'dato(2)
-              coblaboratorio.SelectedValue}, 'dato(2)
-            accion, comandosql, idTabla) 'accion que se desea realizar en el case
-            btnnuevoyaceptar.Text = "Nuevo"
-            btnmodificarycancelar.Text = "Modificar"
-            obtenerdatos()
-            limpiar()
-            MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-            btneliminar.Enabled = True
+            "",                 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
+            txtnombre.Text,     'dato(1)
+            cobpresentacion.SelectedValue,        'dato(2)
+            coblaboratorio.SelectedValue}, 'dato(2)
+          accion, comandosql, idTabla) 'accion que se desea realizar en el case
+                btnnuevoyaceptar.Text = "Nuevo"
+                btnmodificarycancelar.Text = "Modificar"
+                obtenerdatos()
+                limpiar()
+                MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                btneliminar.Enabled = True
+
+
+
 
 
         Else 'si el boton dice Guardar, significa que esta haciendo un cambio de un dato
@@ -118,17 +122,17 @@
 
 
     Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
-
         If txtid.Text <> "" Then
             If (MessageBox.Show("Esta seguro de borrar a " + txtnombre.Text, mensajeenmentana,
-                          MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
+                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
                 comandosql = Nombretabladebusqueda
-                objConexion.mantenimientoMedicamentoGeneral(New String() {txtid.Text}, "eliminar", comandosql, idTabla)
+                Dim msg = objConexion.mantenimientoMedicamentoGeneral(New String() {txtid.Text}, "eliminar", comandosql, idTabla)
+                If msg = "Error en el proceso" Then
+                    MessageBox.Show("No se pudo eliminar este registro, porque hay registros que dependen de el", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
             End If
         Else MessageBox.Show("Debe selecionar un registro para eliminar", mensajeenmentana)
         End If
-
-
         limpiar()
         obtenerdatos()
     End Sub
