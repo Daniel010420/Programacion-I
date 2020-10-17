@@ -32,9 +32,9 @@ Partial Class formAdministrarLaboratorio
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtid = New System.Windows.Forms.TextBox()
-        Me.txtcorreo = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.txtubicacion = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtcorreo = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txttelefono = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -119,9 +119,9 @@ Partial Class formAdministrarLaboratorio
         '
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.txtid)
-        Me.GroupBox1.Controls.Add(Me.txtcorreo)
-        Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.txtubicacion)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.txtcorreo)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.txttelefono)
         Me.GroupBox1.Controls.Add(Me.Label4)
@@ -132,7 +132,7 @@ Partial Class formAdministrarLaboratorio
         Me.GroupBox1.Size = New System.Drawing.Size(273, 256)
         Me.GroupBox1.TabIndex = 36
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Datos laboratorio"
+        Me.GroupBox1.Text = "Datos De Laboratorio"
         '
         'Label7
         '
@@ -150,34 +150,34 @@ Partial Class formAdministrarLaboratorio
         Me.txtid.Size = New System.Drawing.Size(100, 20)
         Me.txtid.TabIndex = 26
         '
-        'txtcorreo
+        'txtubicacion
         '
-        Me.txtcorreo.Location = New System.Drawing.Point(6, 191)
-        Me.txtcorreo.Multiline = True
-        Me.txtcorreo.Name = "txtcorreo"
-        Me.txtcorreo.Size = New System.Drawing.Size(216, 40)
-        Me.txtcorreo.TabIndex = 25
+        Me.txtubicacion.Location = New System.Drawing.Point(6, 196)
+        Me.txtubicacion.Multiline = True
+        Me.txtubicacion.Name = "txtubicacion"
+        Me.txtubicacion.Size = New System.Drawing.Size(220, 49)
+        Me.txtubicacion.TabIndex = 25
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 170)
+        Me.Label6.Location = New System.Drawing.Point(6, 116)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(38, 13)
         Me.Label6.TabIndex = 24
         Me.Label6.Text = "Correo"
         '
-        'txtubicacion
+        'txtcorreo
         '
-        Me.txtubicacion.Location = New System.Drawing.Point(6, 142)
-        Me.txtubicacion.Name = "txtubicacion"
-        Me.txtubicacion.Size = New System.Drawing.Size(173, 20)
-        Me.txtubicacion.TabIndex = 23
+        Me.txtcorreo.Location = New System.Drawing.Point(6, 142)
+        Me.txtcorreo.Name = "txtcorreo"
+        Me.txtcorreo.Size = New System.Drawing.Size(220, 20)
+        Me.txtcorreo.TabIndex = 23
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(6, 121)
+        Me.Label5.Location = New System.Drawing.Point(6, 180)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(55, 13)
         Me.Label5.TabIndex = 22
@@ -187,7 +187,7 @@ Partial Class formAdministrarLaboratorio
         '
         Me.txttelefono.Location = New System.Drawing.Point(6, 93)
         Me.txttelefono.Name = "txttelefono"
-        Me.txttelefono.Size = New System.Drawing.Size(100, 20)
+        Me.txttelefono.Size = New System.Drawing.Size(150, 20)
         Me.txttelefono.TabIndex = 21
         '
         'Label4
@@ -203,7 +203,7 @@ Partial Class formAdministrarLaboratorio
         '
         Me.txtnombre.Location = New System.Drawing.Point(6, 44)
         Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(216, 20)
+        Me.txtnombre.Size = New System.Drawing.Size(220, 20)
         Me.txtnombre.TabIndex = 15
         '
         'Label1
@@ -248,9 +248,9 @@ Partial Class formAdministrarLaboratorio
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label7 As Label
     Friend WithEvents txtid As TextBox
-    Friend WithEvents txtcorreo As TextBox
-    Friend WithEvents Label6 As Label
     Friend WithEvents txtubicacion As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents txtcorreo As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents txttelefono As TextBox
     Friend WithEvents Label4 As Label

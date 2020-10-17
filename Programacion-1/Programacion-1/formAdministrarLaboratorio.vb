@@ -11,7 +11,7 @@
     Dim buscarpor1 = "Nombre"
     Dim buscarpor2 = "Correo"
     Dim idTabla = "IdLaboratorio"
-    Dim comandoinsertar = Nombretabladebusqueda + " (Nombre,Telefono,Ubicacion,Correo)" 'campos de la tabla en orden menos id
+    Dim comandoinsertar = Nombretabladebusqueda + " (Laboratorio,Telefono,Ubicacion,Correo)" 'campos de la tabla en orden menos id
     Dim comandoactualizar = Nombretabladebusqueda
     Private Sub formAdministrarLaboratorio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtid.Visible = False
@@ -25,7 +25,7 @@
             'la palabra Empleados es la palabra que envia la peticion de la tabla que quiere
             'la palabra datos tabla es la que recibe los resultados de la tabla
             'llenar los datos del grid
-            grid.DataSource = objConexion.obtenerDatos(Nombretabladebusqueda).Tables(datostabla).DefaultView
+            grid.DataSource = objConexion.obtenerDatos().Tables("Laboratorio").DefaultView
         Catch ex As Exception
             'Mensaje si no hay datos que mostra
             MsgBox("No hay datos en la Base de Datos " & ex.Message)
@@ -50,8 +50,8 @@
               "",                 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
             txtnombre.Text,     'dato(1)
             txttelefono.Text,   'dato(2)
-            txtubicacion.Text, 'dato(3)
-            txtcorreo.Text},     'dato(4)
+            txtcorreo.Text, 'dato(3)
+            txtubicacion.Text},     'dato(4)
             accion, comandosql, idTabla) 'accion que se desea realizar en el case
             btnnuevoyaceptar.Text = "Nuevo"
             btnmodificarycancelar.Text = "Modificar"
@@ -67,8 +67,8 @@
               txtid.Text,      'dato(0) si se envia el id aqui porque es el que identifica el registro, update from id = x
               txtnombre.Text,  'dato(1)
               txttelefono.Text,     'dato(2)
-              txtubicacion.Text,'dato(3)
-              txtcorreo.Text}, 'dato(4)
+              txtcorreo.Text,'dato(3)
+              txtubicacion.Text}, 'dato(4)
               accion, comandosql, idTabla)
 
             obtenerdatos()
@@ -138,8 +138,8 @@
             txtid.Text = grid.Item(0, i).Value()
             txtnombre.Text = grid.Item(1, i).Value()
             txttelefono.Text = grid.Item(2, i).Value()
-            txtubicacion.Text = grid.Item(3, i).Value()
-            txtcorreo.Text = grid.Item(4, i).Value()
+            txtcorreo.Text = grid.Item(3, i).Value()
+            txtubicacion.Text = grid.Item(4, i).Value()
         End If
     End Sub
 
@@ -148,9 +148,9 @@
     Private Sub limpiar()
         txtid.Text = ""
         txtnombre.Text = ""
-        txtubicacion.Text = ""
-        txttelefono.Text = ""
         txtcorreo.Text = ""
+        txttelefono.Text = ""
+        txtubicacion.Text = ""
     End Sub
 
 

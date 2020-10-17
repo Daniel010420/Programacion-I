@@ -36,6 +36,7 @@ Partial Class formLogeado
         Me.ProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProveedoresToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaboratoriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistroMedicamentoGeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -49,7 +50,7 @@ Partial Class formLogeado
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(96, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'MenuStrip1
@@ -63,7 +64,7 @@ Partial Class formLogeado
         '
         'InventarioToolStripMenuItem
         '
-        Me.InventarioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportarDañoToolStripMenuItem, Me.PresentacionesToolStripMenuItem})
+        Me.InventarioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportarDañoToolStripMenuItem, Me.PresentacionesToolStripMenuItem, Me.RegistroMedicamentoGeneralToolStripMenuItem})
         Me.InventarioToolStripMenuItem.Name = "InventarioToolStripMenuItem"
         Me.InventarioToolStripMenuItem.Size = New System.Drawing.Size(93, 20)
         Me.InventarioToolStripMenuItem.Text = "Medicamento"
@@ -72,19 +73,19 @@ Partial Class formLogeado
         '
         Me.ReportarDañoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MotivosDeDañoToolStripMenuItem})
         Me.ReportarDañoToolStripMenuItem.Name = "ReportarDañoToolStripMenuItem"
-        Me.ReportarDañoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ReportarDañoToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
         Me.ReportarDañoToolStripMenuItem.Text = "Reportar Daño"
         '
         'MotivosDeDañoToolStripMenuItem
         '
         Me.MotivosDeDañoToolStripMenuItem.Name = "MotivosDeDañoToolStripMenuItem"
-        Me.MotivosDeDañoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MotivosDeDañoToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
         Me.MotivosDeDañoToolStripMenuItem.Text = "Motivos de Daño"
         '
         'PresentacionesToolStripMenuItem
         '
         Me.PresentacionesToolStripMenuItem.Name = "PresentacionesToolStripMenuItem"
-        Me.PresentacionesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PresentacionesToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
         Me.PresentacionesToolStripMenuItem.Text = "Presentaciones"
         '
         'UsuariosToolStripMenuItem
@@ -104,7 +105,7 @@ Partial Class formLogeado
         'EmpleadosToolStripMenuItem
         '
         Me.EmpleadosToolStripMenuItem.Name = "EmpleadosToolStripMenuItem"
-        Me.EmpleadosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EmpleadosToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
         Me.EmpleadosToolStripMenuItem.Text = "Empleados"
         '
         'AdministarCargosToolStripMenuItem
@@ -123,14 +124,20 @@ Partial Class formLogeado
         'ProveedoresToolStripMenuItem1
         '
         Me.ProveedoresToolStripMenuItem1.Name = "ProveedoresToolStripMenuItem1"
-        Me.ProveedoresToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.ProveedoresToolStripMenuItem1.Size = New System.Drawing.Size(140, 22)
         Me.ProveedoresToolStripMenuItem1.Text = "Proveedores"
         '
         'LaboratoriosToolStripMenuItem
         '
         Me.LaboratoriosToolStripMenuItem.Name = "LaboratoriosToolStripMenuItem"
-        Me.LaboratoriosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LaboratoriosToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
         Me.LaboratoriosToolStripMenuItem.Text = "Laboratorios"
+        '
+        'RegistroMedicamentoGeneralToolStripMenuItem
+        '
+        Me.RegistroMedicamentoGeneralToolStripMenuItem.Name = "RegistroMedicamentoGeneralToolStripMenuItem"
+        Me.RegistroMedicamentoGeneralToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
+        Me.RegistroMedicamentoGeneralToolStripMenuItem.Text = "Registro Medicamento General"
         '
         'formLogeado
         '
@@ -163,4 +170,5 @@ Partial Class formLogeado
     Friend WithEvents ProveedoresToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents LaboratoriosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PresentacionesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RegistroMedicamentoGeneralToolStripMenuItem As ToolStripMenuItem
 End Class

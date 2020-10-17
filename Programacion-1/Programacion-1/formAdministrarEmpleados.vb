@@ -3,9 +3,7 @@
     Dim objConexion As New Conexion
     Dim dataTable As New DataTable
     Dim accion As String = "nuevo"
-    Dim datostabla = "DatosTabla"
     Dim comandosql = ""
-
 
     Dim mensajeenmentana = "Registro de Empleados"
     Dim Nombretabladebusqueda = "Empleados"
@@ -29,15 +27,12 @@
             'la palabra Empleados es la palabra que envia la peticion de la tabla que quiere
             'la palabra datos tabla es la que recibe los resultados de la tabla
             'llenar los datos del grid
-            grid.DataSource = objConexion.obtenerDatos(Nombretabladebusqueda).Tables(datostabla).DefaultView
+            grid.DataSource = objConexion.obtenerDatos().Tables("Empleados").DefaultView
         Catch ex As Exception
             'Mensaje si no hay datos que mostra
             MsgBox("No hay datos en la Base de Datos " & ex.Message)
         End Try
     End Sub
-
-
-
 
 
     'Boton primero

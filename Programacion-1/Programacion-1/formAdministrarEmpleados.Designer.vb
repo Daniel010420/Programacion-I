@@ -66,7 +66,7 @@ Partial Class formAdministrarEmpleados
         Me.GroupBox1.Size = New System.Drawing.Size(273, 339)
         Me.GroupBox1.TabIndex = 20
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Datos empleados"
+        Me.GroupBox1.Text = "Datos De Empleados"
         '
         'Label7
         '
@@ -89,7 +89,7 @@ Partial Class formAdministrarEmpleados
         Me.txtdireccion.Location = New System.Drawing.Point(19, 205)
         Me.txtdireccion.Multiline = True
         Me.txtdireccion.Name = "txtdireccion"
-        Me.txtdireccion.Size = New System.Drawing.Size(216, 110)
+        Me.txtdireccion.Size = New System.Drawing.Size(220, 96)
         Me.txtdireccion.TabIndex = 25
         '
         'Label6
@@ -105,7 +105,7 @@ Partial Class formAdministrarEmpleados
         '
         Me.txttelefono.Location = New System.Drawing.Point(19, 164)
         Me.txttelefono.Name = "txttelefono"
-        Me.txttelefono.Size = New System.Drawing.Size(100, 20)
+        Me.txttelefono.Size = New System.Drawing.Size(150, 20)
         Me.txttelefono.TabIndex = 23
         '
         'Label5
@@ -121,7 +121,7 @@ Partial Class formAdministrarEmpleados
         '
         Me.txtcorreo.Location = New System.Drawing.Point(19, 123)
         Me.txtcorreo.Name = "txtcorreo"
-        Me.txtcorreo.Size = New System.Drawing.Size(183, 20)
+        Me.txtcorreo.Size = New System.Drawing.Size(220, 20)
         Me.txtcorreo.TabIndex = 21
         '
         'Label4
@@ -137,7 +137,7 @@ Partial Class formAdministrarEmpleados
         '
         Me.txtdui.Location = New System.Drawing.Point(19, 82)
         Me.txtdui.Name = "txtdui"
-        Me.txtdui.Size = New System.Drawing.Size(100, 20)
+        Me.txtdui.Size = New System.Drawing.Size(150, 20)
         Me.txtdui.TabIndex = 19
         '
         'Label3
@@ -153,7 +153,7 @@ Partial Class formAdministrarEmpleados
         '
         Me.txtnombre.Location = New System.Drawing.Point(19, 41)
         Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(216, 20)
+        Me.txtnombre.Size = New System.Drawing.Size(220, 20)
         Me.txtnombre.TabIndex = 15
         '
         'Label1

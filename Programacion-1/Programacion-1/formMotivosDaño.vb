@@ -26,7 +26,7 @@
             'la palabra Empleados es la palabra que envia la peticion de la tabla que quiere
             'la palabra datos tabla es la que recibe los resultados de la tabla
             'llenar los datos del grid
-            grid.DataSource = objConexion.obtenerDatos(Nombretabladebusqueda).Tables(datostabla).DefaultView
+            grid.DataSource = objConexion.obtenerDatos().Tables("MotivosDaño").DefaultView
         Catch ex As Exception
             'Mensaje si no hay datos que mostra
             MsgBox("No hay datos en la Base de Datos " & ex.Message)

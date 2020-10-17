@@ -17,14 +17,46 @@ Public Class Conexion
 
 
     'Obtener datos de una tabla, en este ejemplo de la tabla empleados
-    Public Function obtenerDatos(ByVal tablaBd As String)
+    Public Function obtenerDatos()
         ds.Clear()
         miCommand.Connection = miConexion
-        'seleciona todos los datos de la tabla
-        miCommand.CommandText = "select * from " + tablaBd
+
+        miCommand.CommandText = "select * from Empleados"
         miAdapter.SelectCommand = miCommand
-        'carga los datos de esta tabla en la palabra "Empleados" para ser enviados
-        miAdapter.Fill(ds, "DatosTabla")
+        'carga los datos de esta tabla en la palabra especificada para ser enviados
+        miAdapter.Fill(ds, "Empleados")
+
+        miCommand.CommandText = "select * from Laboratorio"
+        miAdapter.SelectCommand = miCommand
+        'carga los datos de esta tabla en la palabra especificada para ser enviados
+        miAdapter.Fill(ds, "Laboratorio")
+
+        miCommand.CommandText = "select * from Proveedores"
+        miAdapter.SelectCommand = miCommand
+        'carga los datos de esta tabla en la palabra especificada para ser enviados
+        miAdapter.Fill(ds, "Proveedores")
+
+        miCommand.CommandText = "select * from Cargos"
+        miAdapter.SelectCommand = miCommand
+        'carga los datos de esta tabla en la palabra especificada para ser enviados
+        miAdapter.Fill(ds, "Cargos")
+
+        miCommand.CommandText = "select * from MotivosDaño"
+        miAdapter.SelectCommand = miCommand
+        'carga los datos de esta tabla en la palabra especificada para ser enviados
+        miAdapter.Fill(ds, "MotivosDaño")
+
+        miCommand.CommandText = "select * from Presentacion"
+        miAdapter.SelectCommand = miCommand
+        'carga los datos de esta tabla en la palabra especificada para ser enviados
+        miAdapter.Fill(ds, "Presentacion")
+
+        miCommand.CommandText = "select RegistroMedicamento.IdRegistroMedicamento, RegistroMedicamento.NombreMedicamento, Presentacion.Presentacion, Laboratorio.Laboratorio from RegistroMedicamento inner join Presentacion on Presentacion.IdPresentacion = RegistroMedicamento.IdPresentacion inner join Laboratorio on Laboratorio.IdLaboratorio=RegistroMedicamento.IdLaboratorio"
+        miAdapter.SelectCommand = miCommand
+        'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
+        miAdapter.Fill(ds, "RegistroMedicamento")
+
+
         Return ds
     End Function
 
@@ -116,7 +148,7 @@ Public Class Conexion
 
             Case "modificar"
                 sql = "UPDATE " + comandosql + " SET 
-                  Nombre='" + datos(1) + "',
+                  Laboratorio='" + datos(1) + "',
                   Telefono='" + datos(2) + "',
                   Ubicacion='" + datos(3) + "',
                   Correo='" + datos(4) + "'
@@ -212,6 +244,41 @@ Public Class Conexion
         End If
         Return msg
     End Function
+
+
+
+
+    Public Function mantenimientoMedicamentoGeneral(ByVal datos As String(), ByVal accion As String, ByVal comandosql As String, ByVal id As String)
+        Dim sql, msg As String
+        'dato(0) sera el ID de cada tabla
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT into " + comandosql + " VALUES 
+                (
+                  '" + datos(1) + "', 
+                  '" + datos(2) + "',
+                  '" + datos(3) + "'
+                 )"
+
+            Case "modificar"
+                sql = "UPDATE " + comandosql + " SET 
+                  NombreMedicamento='" + datos(1) + "',
+                  IdPresentacion='" + datos(2) + "',
+                  IdLaboratorio='" + datos(3) + "'
+            WHERE " + id + "    ='" + datos(0) + "'"
+
+            Case "eliminar"
+                sql = "DELETE FROM " + comandosql + " WHERE " + id + "='" + datos(0) + "'"
+        End Select
+
+        If (executesql(sql) > 0) Then
+            msg = "Accion realizada"
+        Else
+            msg = "Error en el proceso"
+        End If
+        Return msg
+    End Function
+
 
 
 

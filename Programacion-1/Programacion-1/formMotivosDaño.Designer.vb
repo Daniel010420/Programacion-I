@@ -122,7 +122,7 @@ Partial Class formMotivosDaño
         '
         Me.txtnombre.Location = New System.Drawing.Point(19, 40)
         Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(216, 20)
+        Me.txtnombre.Size = New System.Drawing.Size(220, 20)
         Me.txtnombre.TabIndex = 15
         '
         'txtid
@@ -152,7 +152,7 @@ Partial Class formMotivosDaño
         Me.GroupBox1.Size = New System.Drawing.Size(273, 80)
         Me.GroupBox1.TabIndex = 31
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Datos de daño"
+        Me.GroupBox1.Text = "Datos De Daño"
         '
         'formMotivosDaño
         '

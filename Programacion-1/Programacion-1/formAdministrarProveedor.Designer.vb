@@ -132,7 +132,7 @@ Partial Class formAdministrarProveedor
         Me.GroupBox1.Size = New System.Drawing.Size(273, 330)
         Me.GroupBox1.TabIndex = 31
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Datos proveedores"
+        Me.GroupBox1.Text = "Datos De Proveedores"
         '
         'Label7
         '
@@ -155,7 +155,7 @@ Partial Class formAdministrarProveedor
         Me.txtdireccion.Location = New System.Drawing.Point(6, 191)
         Me.txtdireccion.Multiline = True
         Me.txtdireccion.Name = "txtdireccion"
-        Me.txtdireccion.Size = New System.Drawing.Size(216, 110)
+        Me.txtdireccion.Size = New System.Drawing.Size(220, 110)
         Me.txtdireccion.TabIndex = 25
         '
         'Label6
@@ -171,7 +171,7 @@ Partial Class formAdministrarProveedor
         '
         Me.txtcorreo.Location = New System.Drawing.Point(6, 142)
         Me.txtcorreo.Name = "txtcorreo"
-        Me.txtcorreo.Size = New System.Drawing.Size(173, 20)
+        Me.txtcorreo.Size = New System.Drawing.Size(220, 20)
         Me.txtcorreo.TabIndex = 23
         '
         'Label5
@@ -187,7 +187,7 @@ Partial Class formAdministrarProveedor
         '
         Me.txttelefono.Location = New System.Drawing.Point(6, 93)
         Me.txttelefono.Name = "txttelefono"
-        Me.txttelefono.Size = New System.Drawing.Size(100, 20)
+        Me.txttelefono.Size = New System.Drawing.Size(150, 20)
         Me.txttelefono.TabIndex = 21
         '
         'Label4
@@ -203,7 +203,7 @@ Partial Class formAdministrarProveedor
         '
         Me.txtnombre.Location = New System.Drawing.Point(6, 44)
         Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(216, 20)
+        Me.txtnombre.Size = New System.Drawing.Size(220, 20)
         Me.txtnombre.TabIndex = 15
         '
         'Label1

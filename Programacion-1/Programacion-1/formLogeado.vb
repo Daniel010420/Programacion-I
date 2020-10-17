@@ -39,5 +39,9 @@
         newform.Show()
     End Sub
 
-
+    Private Sub RegistroMedicamentoGeneralToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistroMedicamentoGeneralToolStripMenuItem.Click
+        Dim newform As New formRegistroMedicamento
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
 End Class
