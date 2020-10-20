@@ -40,7 +40,17 @@
     End Sub
 
     Private Sub RegistroMedicamentoGeneralToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistroMedicamentoGeneralToolStripMenuItem.Click
-        Dim newform As New formRegistroMedicamento
+
+    End Sub
+
+    Private Sub TiposDeClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TiposDeClientesToolStripMenuItem.Click
+        Dim newform As New formtipocliente
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
+
+    Private Sub AdministrarClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdministrarClientesToolStripMenuItem.Click
+        Dim newform As New formClientes
         newform.MdiParent = Me
         newform.Show()
     End Sub

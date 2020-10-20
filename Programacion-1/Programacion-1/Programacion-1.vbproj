@@ -108,6 +108,12 @@
     <Compile Include="formCargo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="formClientes.Designer.vb">
+      <DependentUpon>formClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formLogeado.Designer.vb">
       <DependentUpon>formLogeado.vb</DependentUpon>
     </Compile>
@@ -138,6 +144,12 @@
     <Compile Include="formRegistroMedicamento.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="formtipocliente.Designer.vb">
+      <DependentUpon>formtipocliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formtipocliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -165,6 +177,9 @@
     <EmbeddedResource Include="formCargo.resx">
       <DependentUpon>formCargo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formClientes.resx">
+      <DependentUpon>formClientes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formLogeado.resx">
       <DependentUpon>formLogeado.vb</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formRegistroMedicamento.resx">
       <DependentUpon>formRegistroMedicamento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formtipocliente.resx">
+      <DependentUpon>formtipocliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
