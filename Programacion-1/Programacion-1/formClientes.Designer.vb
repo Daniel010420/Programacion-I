@@ -30,16 +30,16 @@ Partial Class formClientes
         Me.btnmodificarycancelar = New System.Windows.Forms.Button()
         Me.btneliminar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cobtipodecliente = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtdireccion = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txttelefono = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtid = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txttelefono = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtdireccion = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.cobtipodecliente = New System.Windows.Forms.ComboBox()
         CType(Me.grid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -57,7 +57,7 @@ Partial Class formClientes
         Me.grid.Name = "grid"
         Me.grid.ReadOnly = True
         Me.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grid.Size = New System.Drawing.Size(687, 338)
+        Me.grid.Size = New System.Drawing.Size(713, 345)
         Me.grid.TabIndex = 40
         '
         'Label8
@@ -134,6 +134,55 @@ Partial Class formClientes
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Registro de Clientes"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(6, 33)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(80, 13)
+        Me.Label3.TabIndex = 12
+        Me.Label3.Text = "Tipo De Cliente"
+        '
+        'cobtipodecliente
+        '
+        Me.cobtipodecliente.FormattingEnabled = True
+        Me.cobtipodecliente.Location = New System.Drawing.Point(6, 49)
+        Me.cobtipodecliente.Name = "cobtipodecliente"
+        Me.cobtipodecliente.Size = New System.Drawing.Size(220, 21)
+        Me.cobtipodecliente.TabIndex = 11
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(6, 193)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(52, 13)
+        Me.Label5.TabIndex = 10
+        Me.Label5.Text = "Direccion"
+        '
+        'txtdireccion
+        '
+        Me.txtdireccion.Location = New System.Drawing.Point(6, 212)
+        Me.txtdireccion.Name = "txtdireccion"
+        Me.txtdireccion.Size = New System.Drawing.Size(220, 20)
+        Me.txtdireccion.TabIndex = 9
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(6, 141)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(49, 13)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "Telefono"
+        '
+        'txttelefono
+        '
+        Me.txttelefono.Location = New System.Drawing.Point(6, 160)
+        Me.txttelefono.Name = "txttelefono"
+        Me.txttelefono.Size = New System.Drawing.Size(220, 20)
+        Me.txttelefono.TabIndex = 7
+        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -166,60 +215,11 @@ Partial Class formClientes
         Me.txtid.Size = New System.Drawing.Size(100, 20)
         Me.txtid.TabIndex = 0
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 141)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(49, 13)
-        Me.Label4.TabIndex = 8
-        Me.Label4.Text = "Telefono"
-        '
-        'txttelefono
-        '
-        Me.txttelefono.Location = New System.Drawing.Point(6, 160)
-        Me.txttelefono.Name = "txttelefono"
-        Me.txttelefono.Size = New System.Drawing.Size(220, 20)
-        Me.txttelefono.TabIndex = 7
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(6, 193)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(52, 13)
-        Me.Label5.TabIndex = 10
-        Me.Label5.Text = "Direccion"
-        '
-        'txtdireccion
-        '
-        Me.txtdireccion.Location = New System.Drawing.Point(6, 212)
-        Me.txtdireccion.Name = "txtdireccion"
-        Me.txtdireccion.Size = New System.Drawing.Size(220, 20)
-        Me.txtdireccion.TabIndex = 9
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 33)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(80, 13)
-        Me.Label3.TabIndex = 12
-        Me.Label3.Text = "Tipo De Cliente"
-        '
-        'cobtipodecliente
-        '
-        Me.cobtipodecliente.FormattingEnabled = True
-        Me.cobtipodecliente.Location = New System.Drawing.Point(6, 49)
-        Me.cobtipodecliente.Name = "cobtipodecliente"
-        Me.cobtipodecliente.Size = New System.Drawing.Size(220, 21)
-        Me.cobtipodecliente.TabIndex = 11
-        '
         'formClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1016, 565)
+        Me.ClientSize = New System.Drawing.Size(1016, 415)
         Me.Controls.Add(Me.grid)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtfiltro)

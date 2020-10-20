@@ -247,7 +247,7 @@ Partial Class formAdministrarEmpleados
         Me.Controls.Add(Me.txtfiltro)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MaximizeBox = False
         Me.Name = "formAdministrarEmpleados"
         Me.Text = "Empleados "
