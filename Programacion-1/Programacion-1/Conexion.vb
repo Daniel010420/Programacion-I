@@ -374,6 +374,7 @@ Public Class Conexion
                   '" + datos(3) + "'
                  )"
 
+
             Case "modificar"
                 sql = "UPDATE " + comandosql + " SET 
                   IdTipoCliente='" + datos(1) + "',
