@@ -73,6 +73,11 @@ Public Class Conexion
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
         miAdapter.Fill(ds, "Ganancia")
 
+        miCommand.CommandText = "Select Precios.IdPrecios, Solicitudes.IdSolicitudes, Precios.PrecioCompra from Precios inner join Solicitudes on Solicitudes.IdSolicitudes = Precios.IdPrecios"
+        miAdapter.SelectCommand = miCommand
+        'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
+        miAdapter.Fill(ds, "Precio")
+
 
 
         Return ds
@@ -369,10 +374,42 @@ Public Class Conexion
                   '" + datos(3) + "'
                  )"
 
+
             Case "modificar"
                 sql = "UPDATE " + comandosql + " SET 
                   IdTipoCliente='" + datos(1) + "',
                   MargenGanacia='" + datos(2) + "'
+            WHERE " + id + "    ='" + datos(0) + "'"
+
+            Case "eliminar"
+                sql = "DELETE FROM " + comandosql + " WHERE " + id + "='" + datos(0) + "'"
+        End Select
+
+
+        If (executesql(sql) > 0) Then
+            msg = "Accion realizada"
+        Else
+            msg = "Error en el proceso"
+        End If
+        Return msg
+    End Function
+
+    Public Function mantenimientoPrecio(ByVal datos As String(), ByVal accion As String, ByVal comandosql As String, ByVal id As String)
+        Dim sql, msg As String
+        'dato(0) sera el ID de cada tabla
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT into " + comandosql + " VALUES 
+                (
+                  '" + datos(1) + "', 
+                  '" + datos(2) + "',
+                  '" + datos(3) + "'
+                 )"
+
+            Case "modificar"
+                sql = "UPDATE " + comandosql + " SET 
+                  IdSolicitudes='" + datos(1) + "',
+                  PrecioCompra='" + datos(2) + "'
             WHERE " + id + "    ='" + datos(0) + "'"
 
             Case "eliminar"
@@ -386,7 +423,6 @@ Public Class Conexion
         End If
         Return msg
     End Function
-
 
 
 
