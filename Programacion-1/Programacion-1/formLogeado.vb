@@ -60,4 +60,10 @@
         newform.MdiParent = Me
         newform.Show()
     End Sub
+
+    Private Sub PrecioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrecioToolStripMenuItem.Click
+        Dim newform As New FormPrecio
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
 End Class

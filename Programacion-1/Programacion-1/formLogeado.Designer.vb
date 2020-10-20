@@ -41,6 +41,7 @@ Partial Class formLogeado
         Me.AdministrarClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TiposDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GananciaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PrecioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -59,7 +60,7 @@ Partial Class formLogeado
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.InventarioToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.GananciaToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.InventarioToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.GananciaToolStripMenuItem, Me.PrecioToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
@@ -168,6 +169,12 @@ Partial Class formLogeado
         Me.GananciaToolStripMenuItem.Size = New System.Drawing.Size(68, 20)
         Me.GananciaToolStripMenuItem.Text = "Ganancia"
         '
+        'PrecioToolStripMenuItem
+        '
+        Me.PrecioToolStripMenuItem.Name = "PrecioToolStripMenuItem"
+        Me.PrecioToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
+        Me.PrecioToolStripMenuItem.Text = "Precio"
+        '
         'formLogeado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -204,4 +211,5 @@ Partial Class formLogeado
     Friend WithEvents AdministrarClientesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TiposDeClientesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GananciaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PrecioToolStripMenuItem As ToolStripMenuItem
 End Class
