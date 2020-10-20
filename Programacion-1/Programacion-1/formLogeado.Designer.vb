@@ -40,6 +40,7 @@ Partial Class formLogeado
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministrarClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TiposDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GananciaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -58,7 +59,7 @@ Partial Class formLogeado
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.InventarioToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.ClientesToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.InventarioToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.GananciaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
@@ -161,6 +162,12 @@ Partial Class formLogeado
         Me.TiposDeClientesToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
         Me.TiposDeClientesToolStripMenuItem.Text = "Tipos De Clientes"
         '
+        'GananciaToolStripMenuItem
+        '
+        Me.GananciaToolStripMenuItem.Name = "GananciaToolStripMenuItem"
+        Me.GananciaToolStripMenuItem.Size = New System.Drawing.Size(68, 20)
+        Me.GananciaToolStripMenuItem.Text = "Ganancia"
+        '
         'formLogeado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -196,4 +203,5 @@ Partial Class formLogeado
     Friend WithEvents ClientesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AdministrarClientesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TiposDeClientesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GananciaToolStripMenuItem As ToolStripMenuItem
 End Class
