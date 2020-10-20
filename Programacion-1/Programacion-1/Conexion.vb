@@ -68,15 +68,22 @@ Public Class Conexion
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
         miAdapter.Fill(ds, "Clientes")
 
-        miCommand.CommandText = "select PorcientoGanancia.IdPorcientoGanancia, TipoCliente.TipoCliente, PorcientoGanancia.MargenGanancia from PorcientoGanancia inner join TipoCliente on TipoCliente.IdTipoCliente = PorcientoGanancia.IdPorcientoGanancia"
+        miCommand.CommandText = "select PorcientoGanancia.IdPorcientoGanancia, TipoCliente.TipoCliente, PorcientoGanancia.MargenGanancia from PorcientoGanancia inner join TipoCliente on TipoCliente.IdTipoCliente = PorcientoGanancia.IdTipoCliente"
         miAdapter.SelectCommand = miCommand
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
         miAdapter.Fill(ds, "Ganancia")
 
-        miCommand.CommandText = "Select Precios.IdPrecios, Solicitudes.IdSolicitudes, Precios.PrecioCompra from Precios inner join Solicitudes on Solicitudes.IdSolicitudes = Precios.IdPrecios"
+        miCommand.CommandText = "select Precios.IdPrecios, Solicitudes.IdSolicitudes, Precios.PrecioCompra from Precios inner join Solicitudes on Solicitudes.IdSolicitudes = Precios.IdPrecios"
         miAdapter.SelectCommand = miCommand
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
         miAdapter.Fill(ds, "Precio")
+
+
+        miCommand.CommandText = "select Solicitudes.IdSolicitudes, Proveedores.Proveedor, RegistroMedicamento.NombreMedicamento, Solicitudes.Cantidad from Solicitudes inner join Proveedores on Proveedores.IdProveedores = Solicitudes.IdProveedor inner join RegistroMedicamento on RegistroMedicamento.IdRegistroMedicamento = Solicitudes.IdRegistroMedicamento"
+        miAdapter.SelectCommand = miCommand
+        'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
+        miAdapter.Fill(ds, "Solicitudes")
+
 
 
 
@@ -370,15 +377,13 @@ Public Class Conexion
                 sql = "INSERT into " + comandosql + " VALUES 
                 (
                   '" + datos(1) + "', 
-                  '" + datos(2) + "',
-                  '" + datos(3) + "'
+                  '" + datos(2) + "'
                  )"
-
 
             Case "modificar"
                 sql = "UPDATE " + comandosql + " SET 
                   IdTipoCliente='" + datos(1) + "',
-                  MargenGanacia='" + datos(2) + "'
+                  MargenGanancia='" + datos(2) + "'
             WHERE " + id + "    ='" + datos(0) + "'"
 
             Case "eliminar"
@@ -402,8 +407,7 @@ Public Class Conexion
                 sql = "INSERT into " + comandosql + " VALUES 
                 (
                   '" + datos(1) + "', 
-                  '" + datos(2) + "',
-                  '" + datos(3) + "'
+                  '" + datos(2) + "'
                  )"
 
             Case "modificar"

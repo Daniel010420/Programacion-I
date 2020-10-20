@@ -7,12 +7,12 @@
     Dim comandosql = ""
 
     Dim mensajeenmentana = "Registro de ganacia"
-    Dim Nombretabladebusqueda = "PorcientoGanacia"
+    Dim Nombretabladebusqueda = "PorcientoGanancia"
     Dim buscarpor1 = "IdTipoCliente"
-    Dim buscarpor2 = "MargenGanacia"
+    Dim buscarpor2 = "MargenGanancia"
 
     Dim idTabla = "IdPorcientoGanancia"
-    Dim comandoinsertar = Nombretabladebusqueda + " (IdPorcientoGanacia,IdTipoCliente,MargenGanacia)" 'campos de la tabla en orden menos id
+    Dim comandoinsertar = Nombretabladebusqueda + " (IdTipoCliente,MargenGanancia)" 'campos de la tabla en orden menos id
     Dim comandoactualizar = Nombretabladebusqueda
 
 
@@ -58,8 +58,6 @@
             'si el boton dice aceptar, significa que esta aceptando el nuevo registro y lo envia a la base
         ElseIf btnnuevoyaceptar.Text = "Aceptar" Then
             comandosql = comandoinsertar
-
-
             Dim msg = objConexion.mantenimientoGanancia(New String() {
             "",
            cobGanancia.SelectedValue,
@@ -71,9 +69,6 @@
             limpiar()
             MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
             btneliminar.Enabled = True
-
-
-
 
 
         Else 'si el boton dice Guardar, significa que esta haciendo un cambio de un dato
@@ -148,7 +143,7 @@
             Dim i As Integer
             i = grid.CurrentRow.Index
             txtid.Text = grid.Item(0, i).Value()
-            txtGanacia.Text = grid.Item(1, i).Value()
+            txtGanacia.Text = grid.Item(2, i).Value()
         End If
     End Sub
 

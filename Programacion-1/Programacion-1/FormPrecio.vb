@@ -11,7 +11,7 @@
     Dim buscarpor2 = "PrecioCompra"
 
     Dim idTabla = "IdPrecios"
-    Dim comandoinsertar = Nombretabladebusqueda + " (IdPrecios,IdSolicitudes,PrecioCompra,)" 'campos de la tabla en orden menos id
+    Dim comandoinsertar = Nombretabladebusqueda + " (IdSolicitudes,PrecioCompra)" 'campos de la tabla en orden menos id
     Dim comandoactualizar = Nombretabladebusqueda
 
     Private Sub FormPrecio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -29,10 +29,11 @@
             grid.DataSource = objConexion.obtenerDatos().Tables("Precio").DefaultView
 
             cobSolicitudes.DataSource = objConexion.obtenerDatos().Tables("Solicitudes").DefaultView
-            cobSolicitudes.DisplayMember = "Solicitudes"
+            cobSolicitudes.DisplayMember = "IdSolicitudes"
             cobSolicitudes.ValueMember = "Solicitudes.IdSolicitudes"
             cobSolicitudes.AutoCompleteMode = AutoCompleteMode.Suggest
             cobSolicitudes.AutoCompleteSource = AutoCompleteSource.ListItems
+
 
 
         Catch ex As Exception

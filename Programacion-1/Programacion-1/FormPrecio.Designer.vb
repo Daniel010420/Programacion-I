@@ -129,16 +129,16 @@ Partial Class FormPrecio
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 55)
+        Me.Label3.Location = New System.Drawing.Point(6, 38)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(80, 13)
+        Me.Label3.Size = New System.Drawing.Size(102, 13)
         Me.Label3.TabIndex = 12
-        Me.Label3.Text = "Tipo De Cliente"
+        Me.Label3.Text = "Numero de Solicitud"
         '
         'cobSolicitudes
         '
         Me.cobSolicitudes.FormattingEnabled = True
-        Me.cobSolicitudes.Location = New System.Drawing.Point(6, 81)
+        Me.cobSolicitudes.Location = New System.Drawing.Point(6, 54)
         Me.cobSolicitudes.Name = "cobSolicitudes"
         Me.cobSolicitudes.Size = New System.Drawing.Size(220, 21)
         Me.cobSolicitudes.TabIndex = 11
