@@ -385,6 +385,7 @@ Public Class Conexion
                 sql = "DELETE FROM " + comandosql + " WHERE " + id + "='" + datos(0) + "'"
         End Select
 
+
         If (executesql(sql) > 0) Then
             msg = "Accion realizada"
         Else

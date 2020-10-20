@@ -119,9 +119,9 @@ Partial Class FormPrecio
         Me.GroupBox1.Controls.Add(Me.txtcompra)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.txtid)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 41)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 51)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(273, 209)
+        Me.GroupBox1.Size = New System.Drawing.Size(273, 199)
         Me.GroupBox1.TabIndex = 46
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Registro de Precios"
