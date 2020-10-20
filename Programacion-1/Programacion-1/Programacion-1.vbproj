@@ -132,6 +132,12 @@
     <Compile Include="formMotivosDaño.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="formPorcientoGanancia.Designer.vb">
+      <DependentUpon>formPorcientoGanancia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formPorcientoGanancia.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formPresentacion.Designer.vb">
       <DependentUpon>formPresentacion.vb</DependentUpon>
     </Compile>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formMotivosDaño.resx">
       <DependentUpon>formMotivosDaño.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formPorcientoGanancia.resx">
+      <DependentUpon>formPorcientoGanancia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formPresentacion.resx">
       <DependentUpon>formPresentacion.vb</DependentUpon>

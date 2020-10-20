@@ -54,4 +54,10 @@
         newform.MdiParent = Me
         newform.Show()
     End Sub
+
+    Private Sub GananciaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GananciaToolStripMenuItem.Click
+        Dim newform As New formPorcientoGanancia
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
 End Class
