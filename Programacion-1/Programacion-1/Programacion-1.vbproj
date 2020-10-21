@@ -168,12 +168,6 @@
     <Compile Include="formtipocliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUsuarios.Designer.vb">
-      <DependentUpon>frmUsuarios.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmUsuarios.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
