@@ -168,6 +168,12 @@
     <Compile Include="formtipocliente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="formUsuarios.Designer.vb">
+      <DependentUpon>formUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -224,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formtipocliente.resx">
       <DependentUpon>formtipocliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formUsuarios.resx">
+      <DependentUpon>formUsuarios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

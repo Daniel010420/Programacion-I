@@ -70,4 +70,10 @@
         newform.MdiParent = Me
         newform.Show()
     End Sub
+
+    Private Sub UsuariosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles UsuariosToolStripMenuItem1.Click
+        Dim newform As New formUsuarios
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
 End Class

@@ -43,6 +43,7 @@ Partial Class formLogeado
         Me.PreciosMedicamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PorcientoGananciaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PorcientoDescuentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UsuariosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -79,7 +80,7 @@ Partial Class formLogeado
         '
         Me.ReportarDañoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MotivosDeDañoToolStripMenuItem})
         Me.ReportarDañoToolStripMenuItem.Name = "ReportarDañoToolStripMenuItem"
-        Me.ReportarDañoToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
+        Me.ReportarDañoToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.ReportarDañoToolStripMenuItem.Text = "Reportar Daño"
         '
         'MotivosDeDañoToolStripMenuItem
@@ -91,7 +92,7 @@ Partial Class formLogeado
         'PresentacionesToolStripMenuItem
         '
         Me.PresentacionesToolStripMenuItem.Name = "PresentacionesToolStripMenuItem"
-        Me.PresentacionesToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
+        Me.PresentacionesToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.PresentacionesToolStripMenuItem.Text = "Presentaciones"
         '
         'UsuariosToolStripMenuItem
@@ -103,7 +104,7 @@ Partial Class formLogeado
         '
         'AdministarToolStripMenuItem
         '
-        Me.AdministarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmpleadosToolStripMenuItem})
+        Me.AdministarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmpleadosToolStripMenuItem, Me.UsuariosToolStripMenuItem1})
         Me.AdministarToolStripMenuItem.Name = "AdministarToolStripMenuItem"
         Me.AdministarToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
         Me.AdministarToolStripMenuItem.Text = "Administar Empleados"
@@ -111,7 +112,7 @@ Partial Class formLogeado
         'EmpleadosToolStripMenuItem
         '
         Me.EmpleadosToolStripMenuItem.Name = "EmpleadosToolStripMenuItem"
-        Me.EmpleadosToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
+        Me.EmpleadosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.EmpleadosToolStripMenuItem.Text = "Empleados"
         '
         'AdministarCargosToolStripMenuItem
@@ -183,6 +184,12 @@ Partial Class formLogeado
         Me.PorcientoDescuentoToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
         Me.PorcientoDescuentoToolStripMenuItem.Text = "Porciento Descuento"
         '
+        'UsuariosToolStripMenuItem1
+        '
+        Me.UsuariosToolStripMenuItem1.Name = "UsuariosToolStripMenuItem1"
+        Me.UsuariosToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.UsuariosToolStripMenuItem1.Text = "Usuarios"
+        '
         'formLogeado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -221,4 +228,5 @@ Partial Class formLogeado
     Friend WithEvents PreciosMedicamentoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PorcientoGananciaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PorcientoDescuentoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UsuariosToolStripMenuItem1 As ToolStripMenuItem
 End Class
