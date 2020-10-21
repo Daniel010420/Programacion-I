@@ -73,18 +73,21 @@ Public Class Conexion
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
         miAdapter.Fill(ds, "Ganancia")
 
-        miCommand.CommandText = "select Precios.IdPrecios, Solicitudes.IdSolicitudes, Precios.PrecioCompra from Precios inner join Solicitudes on Solicitudes.IdSolicitudes = Precios.IdPrecios"
+        miCommand.CommandText = "select Precios.IdPrecios, Solicitudes.Codigo, Precios.PrecioCompra from Precios inner join Solicitudes on Solicitudes.IdSolicitudes = Precios.IdSolicitudes"
         miAdapter.SelectCommand = miCommand
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
         miAdapter.Fill(ds, "Precio")
 
 
-        miCommand.CommandText = "select Solicitudes.IdSolicitudes, Proveedores.Proveedor, RegistroMedicamento.NombreMedicamento, Solicitudes.Cantidad from Solicitudes inner join Proveedores on Proveedores.IdProveedores = Solicitudes.IdProveedor inner join RegistroMedicamento on RegistroMedicamento.IdRegistroMedicamento = Solicitudes.IdRegistroMedicamento"
+        miCommand.CommandText = "select Solicitudes.IdSolicitudes, Solicitudes.Codigo, Proveedores.Proveedor, RegistroMedicamento.NombreMedicamento, Laboratorio.Laboratorio, Solicitudes.Cantidad from Solicitudes inner join Proveedores on Proveedores.IdProveedores = Solicitudes.IdProveedor inner join RegistroMedicamento on RegistroMedicamento.IdRegistroMedicamento = Solicitudes.IdRegistroMedicamento inner join Laboratorio on RegistroMedicamento.IdLaboratorio = Laboratorio.IdLaboratorio"
         miAdapter.SelectCommand = miCommand
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
         miAdapter.Fill(ds, "Solicitudes")
 
-
+        miCommand.CommandText = "Select Descuentos.IdDescuentos, TipoCliente.TipoCliente, Descuentos.MargenDescuento from Descuentos inner join TipoCliente on TipoCliente.IdTipoCliente = Descuentos.IdTipoClientes"
+        miAdapter.SelectCommand = miCommand
+        'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
+        miAdapter.Fill(ds, "Descuentos")
 
 
         Return ds
@@ -412,8 +415,7 @@ Public Class Conexion
 
             Case "modificar"
                 sql = "UPDATE " + comandosql + " SET 
-                  IdSolicitudes='" + datos(1) + "',
-                  PrecioCompra='" + datos(2) + "'
+                  PrecioCompra='" + datos(1) + "'
             WHERE " + id + "    ='" + datos(0) + "'"
 
             Case "eliminar"
@@ -427,6 +429,38 @@ Public Class Conexion
         End If
         Return msg
     End Function
+
+
+
+    Public Function mantenimientoDescuentos(ByVal datos As String(), ByVal accion As String, ByVal comandosql As String, ByVal id As String)
+        Dim sql, msg As String
+        'dato(0) sera el ID de cada tabla
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT into " + comandosql + " VALUES 
+                (
+                  '" + datos(1) + "', 
+                  '" + datos(2) + "'
+                 )"
+
+            Case "modificar"
+                sql = "UPDATE " + comandosql + " SET 
+                 IdTipoClientes='" + datos(1) + "',
+                  MargenDescuento='" + datos(2) + "'
+            WHERE " + id + "    ='" + datos(0) + "'"
+
+            Case "eliminar"
+                sql = "DELETE FROM " + comandosql + " WHERE " + id + "='" + datos(0) + "'"
+        End Select
+
+        If (executesql(sql) > 0) Then
+            msg = "Accion realizada"
+        Else
+            msg = "Error en el proceso"
+        End If
+        Return msg
+    End Function
+
 
 
 

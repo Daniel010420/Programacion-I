@@ -8,7 +8,7 @@
 
     Dim mensajeenmentana = "Registro de ganacia"
     Dim Nombretabladebusqueda = "PorcientoGanancia"
-    Dim buscarpor1 = "IdTipoCliente"
+    Dim buscarpor1 = "TipoCliente"
     Dim buscarpor2 = "MargenGanancia"
 
     Dim idTabla = "IdPorcientoGanancia"

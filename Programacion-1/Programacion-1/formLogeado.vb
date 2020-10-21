@@ -39,9 +39,6 @@
         newform.Show()
     End Sub
 
-    Private Sub RegistroMedicamentoGeneralToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistroMedicamentoGeneralToolStripMenuItem.Click
-
-    End Sub
 
     Private Sub TiposDeClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TiposDeClientesToolStripMenuItem.Click
         Dim newform As New formtipocliente
@@ -55,15 +52,20 @@
         newform.Show()
     End Sub
 
-    Private Sub GananciaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GananciaToolStripMenuItem.Click
+
+    Private Sub PorcientoGananciaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PorcientoGananciaToolStripMenuItem.Click
         Dim newform As New formPorcientoGanancia
         newform.MdiParent = Me
         newform.Show()
     End Sub
 
-    Private Sub PrecioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrecioToolStripMenuItem.Click
+    Private Sub PreciosMedicamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreciosMedicamentoToolStripMenuItem.Click
         Dim newform As New FormPrecio
         newform.MdiParent = Me
         newform.Show()
+    End Sub
+
+    Private Sub PorcientoDescuentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PorcientoDescuentoToolStripMenuItem.Click
+
     End Sub
 End Class

@@ -31,14 +31,19 @@ Partial Class FormPrecio
         Me.btneliminar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.cobSolicitudes = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtcompra = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtid = New System.Windows.Forms.TextBox()
+        Me.gridsolicitudes = New System.Windows.Forms.DataGridView()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtfiltrosoli = New System.Windows.Forms.TextBox()
+        Me.txtsolicitudes = New System.Windows.Forms.TextBox()
+        Me.lblmensaje = New System.Windows.Forms.Label()
         CType(Me.grid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.gridsolicitudes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'grid
@@ -49,25 +54,25 @@ Partial Class FormPrecio
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grid.Location = New System.Drawing.Point(291, 51)
+        Me.grid.Location = New System.Drawing.Point(291, 272)
         Me.grid.Name = "grid"
         Me.grid.ReadOnly = True
         Me.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grid.Size = New System.Drawing.Size(713, 345)
+        Me.grid.Size = New System.Drawing.Size(713, 188)
         Me.grid.TabIndex = 50
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(333, 21)
+        Me.Label8.Location = New System.Drawing.Point(302, 242)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(32, 13)
+        Me.Label8.Size = New System.Drawing.Size(70, 13)
         Me.Label8.TabIndex = 49
-        Me.Label8.Text = "Filtro:"
+        Me.Label8.Text = "Filtro Precios:"
         '
         'txtfiltro
         '
-        Me.txtfiltro.Location = New System.Drawing.Point(371, 18)
+        Me.txtfiltro.Location = New System.Drawing.Point(371, 239)
         Me.txtfiltro.Name = "txtfiltro"
         Me.txtfiltro.Size = New System.Drawing.Size(346, 20)
         Me.txtfiltro.TabIndex = 48
@@ -113,8 +118,9 @@ Partial Class FormPrecio
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.lblmensaje)
+        Me.GroupBox1.Controls.Add(Me.txtsolicitudes)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.cobSolicitudes)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtcompra)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -135,22 +141,14 @@ Partial Class FormPrecio
         Me.Label3.TabIndex = 12
         Me.Label3.Text = "Numero de Solicitud"
         '
-        'cobSolicitudes
-        '
-        Me.cobSolicitudes.FormattingEnabled = True
-        Me.cobSolicitudes.Location = New System.Drawing.Point(6, 54)
-        Me.cobSolicitudes.Name = "cobSolicitudes"
-        Me.cobSolicitudes.Size = New System.Drawing.Size(220, 21)
-        Me.cobSolicitudes.TabIndex = 11
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(6, 114)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(90, 13)
+        Me.Label2.Size = New System.Drawing.Size(175, 13)
         Me.Label2.TabIndex = 5
-        Me.Label2.Text = "Precio de compra"
+        Me.Label2.Text = "Precio de Compra Por Presentacion"
         '
         'txtcompra
         '
@@ -175,11 +173,60 @@ Partial Class FormPrecio
         Me.txtid.Size = New System.Drawing.Size(100, 20)
         Me.txtid.TabIndex = 0
         '
+        'gridsolicitudes
+        '
+        Me.gridsolicitudes.AllowUserToAddRows = False
+        Me.gridsolicitudes.AllowUserToDeleteRows = False
+        Me.gridsolicitudes.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gridsolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.gridsolicitudes.Location = New System.Drawing.Point(291, 41)
+        Me.gridsolicitudes.Name = "gridsolicitudes"
+        Me.gridsolicitudes.ReadOnly = True
+        Me.gridsolicitudes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.gridsolicitudes.Size = New System.Drawing.Size(713, 188)
+        Me.gridsolicitudes.TabIndex = 53
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(288, 11)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(84, 13)
+        Me.Label4.TabIndex = 52
+        Me.Label4.Text = "Filtro solicitudes:"
+        '
+        'txtfiltrosoli
+        '
+        Me.txtfiltrosoli.Location = New System.Drawing.Point(378, 8)
+        Me.txtfiltrosoli.Name = "txtfiltrosoli"
+        Me.txtfiltrosoli.Size = New System.Drawing.Size(346, 20)
+        Me.txtfiltrosoli.TabIndex = 51
+        '
+        'txtsolicitudes
+        '
+        Me.txtsolicitudes.Location = New System.Drawing.Point(6, 54)
+        Me.txtsolicitudes.Name = "txtsolicitudes"
+        Me.txtsolicitudes.Size = New System.Drawing.Size(220, 20)
+        Me.txtsolicitudes.TabIndex = 13
+        '
+        'lblmensaje
+        '
+        Me.lblmensaje.AutoSize = True
+        Me.lblmensaje.Location = New System.Drawing.Point(6, 175)
+        Me.lblmensaje.Name = "lblmensaje"
+        Me.lblmensaje.Size = New System.Drawing.Size(0, 13)
+        Me.lblmensaje.TabIndex = 14
+        '
         'FormPrecio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1016, 415)
+        Me.ClientSize = New System.Drawing.Size(1016, 536)
+        Me.Controls.Add(Me.gridsolicitudes)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.txtfiltrosoli)
         Me.Controls.Add(Me.grid)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtfiltro)
@@ -191,6 +238,7 @@ Partial Class FormPrecio
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.gridsolicitudes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -205,9 +253,13 @@ Partial Class FormPrecio
     Friend WithEvents btneliminar As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents cobSolicitudes As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents txtcompra As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txtid As TextBox
+    Friend WithEvents gridsolicitudes As DataGridView
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txtfiltrosoli As TextBox
+    Friend WithEvents txtsolicitudes As TextBox
+    Friend WithEvents lblmensaje As Label
 End Class
