@@ -66,6 +66,8 @@
     End Sub
 
     Private Sub PorcientoDescuentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PorcientoDescuentoToolStripMenuItem.Click
-
+        Dim newform As New formdescuentos
+        newform.MdiParent = Me
+        newform.Show()
     End Sub
 End Class

@@ -6,7 +6,7 @@
     Dim accion As String = "nuevo"
     Dim comandosql = ""
 
-    Dim mensajeenmentana = "Registro de ganacia"
+    Dim mensajeenmentana = "Registro de ganancia"
     Dim Nombretabladebusqueda = "PorcientoGanancia"
     Dim buscarpor1 = "TipoCliente"
     Dim buscarpor2 = "MargenGanancia"

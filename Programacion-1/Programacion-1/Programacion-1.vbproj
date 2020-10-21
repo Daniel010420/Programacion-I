@@ -114,6 +114,12 @@
     <Compile Include="formClientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="formdescuentos.Designer.vb">
+      <DependentUpon>formdescuentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formdescuentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formLogeado.Designer.vb">
       <DependentUpon>formLogeado.vb</DependentUpon>
     </Compile>
@@ -191,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formClientes.resx">
       <DependentUpon>formClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formdescuentos.resx">
+      <DependentUpon>formdescuentos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formLogeado.resx">
       <DependentUpon>formLogeado.vb</DependentUpon>
