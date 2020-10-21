@@ -10,10 +10,10 @@ Public Class formAdministrarProveedor
 
     Dim mensajeenmentana = "Registro de Proveedores"
     Dim Nombretabladebusqueda = "Proveedores"
-    Dim buscarpor1 = "Nombre"
-    Dim buscarpor2 = "Nombre"
+    Dim buscarpor1 = "Proveedor"
+    Dim buscarpor2 = "Proveedor"
     Dim idTabla = "IdProveedores"
-    Dim comandoinsertar = Nombretabladebusqueda + " (Nombre,Telefono,Direccion,Correo)" 'campos de la tabla en orden menos id
+    Dim comandoinsertar = Nombretabladebusqueda + " (Proveedor,Telefono,Direccion,Correo)" 'campos de la tabla en orden menos id
     Dim comandoactualizar = Nombretabladebusqueda
 
     'accion al cargar el formulario

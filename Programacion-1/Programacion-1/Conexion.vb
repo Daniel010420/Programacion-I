@@ -148,7 +148,7 @@ Public Class Conexion
             Case "modificar"
                 sql = "UPDATE " + comandosql + " SET 
 
-                  Nombre='" + datos(1) + "',
+                  Proveedor='" + datos(1) + "',
                   Telefono           ='" + datos(2) + "',
                   Direccion      ='" + datos(3) + "',
                   Correo        ='" + datos(4) + "'
