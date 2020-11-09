@@ -56,6 +56,7 @@ Public Class Conexion
         'carga los datos de esta tabla en la palabra especificada para ser enviados
         miAdapter.Fill(ds, "Presentacion")
 
+
         miCommand.CommandText = "select RegistroMedicamento.IdRegistroMedicamento, RegistroMedicamento.NombreMedicamento, Presentacion.Presentacion, Laboratorio.Laboratorio, Presentacion.IdPresentacion, Laboratorio.IdLaboratorio from RegistroMedicamento inner join Presentacion on Presentacion.IdPresentacion = RegistroMedicamento.IdPresentacion inner join Laboratorio on Laboratorio.IdLaboratorio=RegistroMedicamento.IdLaboratorio"
         miAdapter.SelectCommand = miCommand
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
@@ -78,10 +79,12 @@ Public Class Conexion
         miAdapter.Fill(ds, "Precio")
 
 
-        miCommand.CommandText = "select Solicitudes.IdSolicitudes, Solicitudes.Codigo, Proveedores.Proveedor, RegistroMedicamento.NombreMedicamento,Presentacion.Presentacion, Laboratorio.Laboratorio, Solicitudes.Cantidad from Solicitudes inner join Proveedores on Proveedores.IdProveedores = Solicitudes.IdProveedor inner join RegistroMedicamento on RegistroMedicamento.IdRegistroMedicamento = Solicitudes.IdRegistroMedicamento inner join Laboratorio on RegistroMedicamento.IdLaboratorio = Laboratorio.IdLaboratorio inner join Presentacion on Presentacion.IdPresentacion = RegistroMedicamento.IdPresentacion"
+        miCommand.CommandText = "select Solicitudes.IdSolicitudes, Solicitudes.Codigo, Proveedores.Proveedor, RegistroMedicamento.NombreMedicamento,Presentacion.Presentacion, Laboratorio.Laboratorio, Solicitudes.Cantidad, Proveedores.IdProveedores, RegistroMedicamento.IdRegistroMedicamento, Presentacion.IdPresentacion, Laboratorio.IdLaboratorio from Solicitudes inner join Proveedores on Proveedores.IdProveedores = Solicitudes.IdProveedor inner join RegistroMedicamento on RegistroMedicamento.IdRegistroMedicamento = Solicitudes.IdRegistroMedicamento inner join Laboratorio on RegistroMedicamento.IdLaboratorio = Laboratorio.IdLaboratorio inner join Presentacion on Presentacion.IdPresentacion = RegistroMedicamento.IdPresentacion"
         miAdapter.SelectCommand = miCommand
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
         miAdapter.Fill(ds, "Solicitudes")
+
+
 
         miCommand.CommandText = "Select Descuentos.IdDescuentos, TipoCliente.TipoCliente, Descuentos.MargenDescuento, TipoCliente.IdTipoCliente from Descuentos inner join TipoCliente on TipoCliente.IdTipoCliente = Descuentos.IdTipoClientes"
         miAdapter.SelectCommand = miCommand
@@ -496,6 +499,42 @@ Public Class Conexion
         End If
         Return msg
     End Function
+
+
+
+    Public Function mantenimientosolicitudes(ByVal datos As String(), ByVal accion As String, ByVal comandosql As String, ByVal id As String)
+        Dim sql, msg As String
+        'dato(0) sera el ID de cada tabla
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT into " + comandosql + " VALUES 
+                (
+                  '" + datos(1) + "', 
+                  '" + datos(2) + "', 
+                  '" + datos(3) + "', 
+                  '" + datos(4) + "'
+                 )"
+
+            Case "modificar"
+                sql = "UPDATE " + comandosql + " SET 
+                 Codigo='" + datos(1) + "',
+                 IdProveedor='" + datos(2) + "',
+                 IdRegistroMedicamento='" + datos(3) + "',
+                 Cantidad='" + datos(4) + "'
+            WHERE " + id + "    ='" + datos(0) + "'"
+
+            Case "eliminar"
+                sql = "DELETE FROM " + comandosql + " WHERE " + id + "='" + datos(0) + "'"
+        End Select
+
+        If (executesql(sql) > 0) Then
+            msg = "Accion realizada"
+        Else
+            msg = "Error en el proceso"
+        End If
+        Return msg
+    End Function
+
 
 
 

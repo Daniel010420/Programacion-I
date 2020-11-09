@@ -190,6 +190,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Pedidosporrecibir.Designer.vb">
+      <DependentUpon>Pedidosporrecibir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidosporrecibir.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="formAdministrarEmpleados.resx">
@@ -239,6 +245,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedidosporrecibir.resx">
+      <DependentUpon>Pedidosporrecibir.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

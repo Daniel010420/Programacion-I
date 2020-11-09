@@ -86,4 +86,10 @@
     Private Sub formLogeado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub PedidosPorRecibirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PedidosPorRecibirToolStripMenuItem.Click
+        Dim newform As New Pedidosporrecibir
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
 End Class
