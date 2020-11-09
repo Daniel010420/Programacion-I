@@ -82,4 +82,8 @@
         newform.MdiParent = Me
         newform.Show()
     End Sub
+
+    Private Sub formLogeado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

@@ -31,7 +31,8 @@
             'llenar los datos del grid
             grid.DataSource = objConexion.obtenerDatos().Tables("Precio").DefaultView
             gridsolicitudes.DataSource = objConexion.obtenerDatos().Tables("Solicitudes").DefaultView
-
+            grid.Columns(0).Visible = False
+            gridsolicitudes.Columns(0).Visible = False
 
         Catch ex As Exception
             'Mensaje si no hay datos que mostra
@@ -187,15 +188,21 @@
     'pasar datos del grid al dar click hacia los txt
     Private Sub grid_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid.CellClick
         If btnnuevoyaceptar.Text <> "Aceptar" Then
-            Dim i As Integer
-            i = grid.CurrentRow.Index
-            txtid.Text = grid.Item(0, i).Value()
-            txtcompra.Text = grid.Item(2, i).Value()
-            lblmensaje.Text = "Modificar Precio Existente"
-            btneliminar.Enabled = True
-            btnnuevoyaceptar.Enabled = False
-            btnmodificarycancelar.Enabled = True
-            btnmodificarycancelar.Text = "Modificar"
+
+
+            If grid.Rows.Count > 0 Then
+
+                Dim i As Integer
+                i = grid.CurrentRow.Index
+                txtid.Text = grid.Item(0, i).Value()
+                txtcompra.Text = grid.Item(2, i).Value()
+                lblmensaje.Text = "Modificar Precio Existente"
+                btneliminar.Enabled = True
+                btnnuevoyaceptar.Enabled = False
+                btnmodificarycancelar.Enabled = True
+                btnmodificarycancelar.Text = "Modificar"
+            End If
+
         End If
 
 
@@ -213,14 +220,19 @@
 
     Private Sub gridsolicitudes_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles gridsolicitudes.CellClick
 
-        Dim i As Integer
+        If gridsolicitudes.Rows.Count > 0 Then
+            Dim i As Integer
             i = gridsolicitudes.CurrentRow.Index
             txtid.Text = gridsolicitudes.Item(0, i).Value()
-        txtsolicitudes.Text = gridsolicitudes.Item(1, i).Value()
-        lblmensaje.Text = "Agregar Nuevo Precio"
-        btneliminar.Enabled = False
-        btnmodificarycancelar.Text = "Cancelar"
-        btnnuevoyaceptar.Enabled = True
-        txtcompra.Text = ""
+            txtsolicitudes.Text = gridsolicitudes.Item(1, i).Value()
+            lblmensaje.Text = "Agregar Nuevo Precio"
+            btneliminar.Enabled = False
+            btnmodificarycancelar.Text = "Cancelar"
+            btnnuevoyaceptar.Enabled = True
+            txtcompra.Text = ""
+
+        End If
+
+
     End Sub
 End Class

@@ -56,19 +56,18 @@ Public Class Conexion
         'carga los datos de esta tabla en la palabra especificada para ser enviados
         miAdapter.Fill(ds, "Presentacion")
 
-        miCommand.CommandText = "select RegistroMedicamento.IdRegistroMedicamento, RegistroMedicamento.NombreMedicamento, Presentacion.Presentacion, Laboratorio.Laboratorio from RegistroMedicamento inner join Presentacion on Presentacion.IdPresentacion = RegistroMedicamento.IdPresentacion inner join Laboratorio on Laboratorio.IdLaboratorio=RegistroMedicamento.IdLaboratorio"
+        miCommand.CommandText = "select RegistroMedicamento.IdRegistroMedicamento, RegistroMedicamento.NombreMedicamento, Presentacion.Presentacion, Laboratorio.Laboratorio, Presentacion.IdPresentacion, Laboratorio.IdLaboratorio from RegistroMedicamento inner join Presentacion on Presentacion.IdPresentacion = RegistroMedicamento.IdPresentacion inner join Laboratorio on Laboratorio.IdLaboratorio=RegistroMedicamento.IdLaboratorio"
         miAdapter.SelectCommand = miCommand
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
         miAdapter.Fill(ds, "RegistroMedicamento")
 
 
-
-        miCommand.CommandText = "select Clientes.IdClientes, TipoCliente.TipoCliente, Clientes.Nombre, Clientes.Telefono, Clientes.Direccion from Clientes inner join TipoCliente on TipoCliente.IdTipoCliente = Clientes.IdTipoCliente"
+        miCommand.CommandText = "select Clientes.IdClientes, TipoCliente.TipoCliente, Clientes.Nombre, Clientes.Telefono, Clientes.Direccion, TipoCliente.IdTipoCliente from Clientes inner join TipoCliente on TipoCliente.IdTipoCliente = Clientes.IdTipoCliente"
         miAdapter.SelectCommand = miCommand
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
         miAdapter.Fill(ds, "Clientes")
 
-        miCommand.CommandText = "select PorcientoGanancia.IdPorcientoGanancia, TipoCliente.TipoCliente, PorcientoGanancia.MargenGanancia from PorcientoGanancia inner join TipoCliente on TipoCliente.IdTipoCliente = PorcientoGanancia.IdTipoCliente"
+        miCommand.CommandText = "select PorcientoGanancia.IdPorcientoGanancia, TipoCliente.TipoCliente, PorcientoGanancia.MargenGanancia, TipoCliente.IdTipoCliente from PorcientoGanancia inner join TipoCliente on TipoCliente.IdTipoCliente = PorcientoGanancia.IdTipoCliente"
         miAdapter.SelectCommand = miCommand
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
         miAdapter.Fill(ds, "Ganancia")
@@ -84,13 +83,13 @@ Public Class Conexion
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
         miAdapter.Fill(ds, "Solicitudes")
 
-        miCommand.CommandText = "Select Descuentos.IdDescuentos, TipoCliente.TipoCliente, Descuentos.MargenDescuento from Descuentos inner join TipoCliente on TipoCliente.IdTipoCliente = Descuentos.IdTipoClientes"
+        miCommand.CommandText = "Select Descuentos.IdDescuentos, TipoCliente.TipoCliente, Descuentos.MargenDescuento, TipoCliente.IdTipoCliente from Descuentos inner join TipoCliente on TipoCliente.IdTipoCliente = Descuentos.IdTipoClientes"
         miAdapter.SelectCommand = miCommand
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
         miAdapter.Fill(ds, "Descuentos")
 
 
-        miCommand.CommandText = "select Usuarios.IdUsuarios,Usuarios.Usuario, Usuarios.Contrasena, Empleados.NombreCompleto from Usuarios inner join Empleados on Empleados.IdEmpleado = Usuarios.IdEmpleado"
+        miCommand.CommandText = "select Usuarios.IdUsuarios,Usuarios.Usuario, Usuarios.Contrasena, Empleados.NombreCompleto, Empleados.IdEmpleado from Usuarios inner join Empleados on Empleados.IdEmpleado = Usuarios.IdEmpleado"
         miAdapter.SelectCommand = miCommand
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
         miAdapter.Fill(ds, "Usuarios")

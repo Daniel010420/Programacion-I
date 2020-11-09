@@ -29,7 +29,9 @@
             'la palabra datos tabla es la que recibe los resultados de la tabla
             'llenar los datos del grid
             grid.DataSource = objConexion.obtenerDatos().Tables("RegistroMedicamento").DefaultView
-
+            grid.Columns(0).Visible = False
+            grid.Columns(4).Visible = False
+            grid.Columns(5).Visible = False
             coblaboratorio.DataSource = objConexion.obtenerDatos().Tables("Laboratorio").DefaultView
             coblaboratorio.DisplayMember = "Laboratorio"
             coblaboratorio.ValueMember = "Laboratorio.IdLaboratorio"
@@ -153,10 +155,18 @@
     'pasar datos del grid al dar click hacia los txt
     Private Sub grid_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid.CellClick
         If btnnuevoyaceptar.Text <> "Aceptar" Then
-            Dim i As Integer
-            i = grid.CurrentRow.Index
-            txtid.Text = grid.Item(0, i).Value()
-            txtnombre.Text = grid.Item(1, i).Value()
+
+            If grid.Rows.Count > 0 Then
+                Dim i As Integer
+                i = grid.CurrentRow.Index
+                txtid.Text = grid.Item(0, i).Value()
+                txtnombre.Text = grid.Item(1, i).Value()
+                cobpresentacion.SelectedValue = grid.Item(4, i).Value()
+                coblaboratorio.SelectedValue = grid.Item(5, i).Value()
+            End If
+
+
+
         End If
     End Sub
 

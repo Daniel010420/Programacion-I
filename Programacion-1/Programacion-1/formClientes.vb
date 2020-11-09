@@ -4,6 +4,7 @@
     Dim dataTable As New DataTable
     Dim accion As String = "nuevo"
     Dim comandosql = ""
+    Dim indice As Integer
 
     Dim mensajeenmentana = "Registro de Clientes"
     Dim Nombretabladebusqueda = "Clientes"
@@ -30,7 +31,8 @@
             'la palabra datos tabla es la que recibe los resultados de la tabla
             'llenar los datos del grid
             grid.DataSource = objConexion.obtenerDatos().Tables("Clientes").DefaultView
-
+            grid.Columns(5).Visible = False
+            grid.Columns(0).Visible = False
             cobtipodecliente.DataSource = objConexion.obtenerDatos().Tables("TipoCliente").DefaultView
             cobtipodecliente.DisplayMember = "TipoCliente"
             cobtipodecliente.ValueMember = "TipoCliente.IdTipoCliente"
@@ -149,12 +151,21 @@
     'pasar datos del grid al dar click hacia los txt
     Private Sub grid_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid.CellClick
         If btnnuevoyaceptar.Text <> "Aceptar" Then
-            Dim i As Integer
-            i = grid.CurrentRow.Index
-            txtid.Text = grid.Item(0, i).Value()
-            txtnombre.Text = grid.Item(2, i).Value()
-            txttelefono.Text = grid.Item(3, i).Value()
-            txtdireccion.Text = grid.Item(4, i).Value()
+
+
+            If grid.Rows.Count > 0 Then
+                Dim i As Integer
+                i = grid.CurrentRow.Index
+                txtid.Text = grid.Item(0, i).Value()
+                txtnombre.Text = grid.Item(2, i).Value()
+                txttelefono.Text = grid.Item(3, i).Value()
+                txtdireccion.Text = grid.Item(4, i).Value()
+
+
+                cobtipodecliente.SelectedValue = grid.Item(5, i).Value()
+            End If
+
+
         End If
     End Sub
 
@@ -165,4 +176,6 @@
         txttelefono.Text = ""
         txtdireccion.Text = ""
     End Sub
+
+
 End Class

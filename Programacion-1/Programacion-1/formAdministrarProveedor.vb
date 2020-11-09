@@ -32,6 +32,7 @@ Public Class formAdministrarProveedor
             'la palabra datos tabla es la que recibe los resultados de la tabla
             'llenar los datos del grid
             grid.DataSource = objConexion.obtenerDatos().Tables("Proveedores").DefaultView
+            grid.Columns(0).Visible = False
         Catch ex As Exception
             'Mensaje si no hay datos que mostra
             MsgBox("No hay datos en la Base de Datos " & ex.Message)
@@ -140,13 +141,19 @@ Public Class formAdministrarProveedor
     'pasar datos del grid al dar click hacia los txt
     Private Sub grid_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid.CellClick
         If btnnuevoyaceptar.Text <> "Aceptar" Then
-            Dim i As Integer
-            i = grid.CurrentRow.Index
-            txtid.Text = grid.Item(0, i).Value()
-            txtnombre.Text = grid.Item(1, i).Value()
-            txttelefono.Text = grid.Item(2, i).Value()
-            txtdireccion.Text = grid.Item(3, i).Value()
-            txtcorreo.Text = grid.Item(4, i).Value()
+
+
+            If grid.Rows.Count > 0 Then
+                Dim i As Integer
+                i = grid.CurrentRow.Index
+                txtid.Text = grid.Item(0, i).Value()
+                txtnombre.Text = grid.Item(1, i).Value()
+                txttelefono.Text = grid.Item(2, i).Value()
+                txtdireccion.Text = grid.Item(3, i).Value()
+                txtcorreo.Text = grid.Item(4, i).Value()
+
+            End If
+
         End If
     End Sub
 

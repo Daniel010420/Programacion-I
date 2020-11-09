@@ -28,7 +28,8 @@
             'la palabra datos tabla es la que recibe los resultados de la tabla
             'llenar los datos del grid
             grid.DataSource = objConexion.obtenerDatos().Tables("Descuentos").DefaultView
-
+            grid.Columns(0).Visible = False
+            grid.Columns(3).Visible = False
             cobtipocliente.DataSource = objConexion.obtenerDatos().Tables("TipoCliente").DefaultView
             cobtipocliente.DisplayMember = "TipoCliente"
             cobtipocliente.ValueMember = "TipoCliente.IdTipoCliente"
@@ -137,10 +138,17 @@ End Sub
 'pasar datos del grid al dar click hacia los txt
 Private Sub grid_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid.CellClick
     If btnnuevoyaceptar.Text <> "Aceptar" Then
-        Dim i As Integer
-        i = grid.CurrentRow.Index
-        txtid.Text = grid.Item(0, i).Value()
-            txtdescuento.Text = grid.Item(2, i).Value()
+
+
+
+            If grid.Rows.Count > 0 Then
+                Dim i As Integer
+                i = grid.CurrentRow.Index
+                txtid.Text = grid.Item(0, i).Value()
+                txtdescuento.Text = grid.Item(2, i).Value()
+                cobtipocliente.SelectedValue = grid.Item(3, i).Value()
+            End If
+
         End If
 End Sub
 

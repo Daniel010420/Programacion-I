@@ -28,6 +28,7 @@
             'la palabra datos tabla es la que recibe los resultados de la tabla
             'llenar los datos del grid
             grid.DataSource = objConexion.obtenerDatos().Tables("Cargos").DefaultView
+            grid.Columns(0).Visible = False
         Catch ex As Exception
             'Mensaje si no hay datos que mostra
             MsgBox("No hay datos en la Base de Datos " & ex.Message)
@@ -132,9 +133,15 @@
         If btnnuevoyaceptar.Text <> "Aceptar" Then
             Dim i As Integer
 
-            i = grid.CurrentRow.Index
-            txtid.Text = grid.Item(0, i).Value()
-            txtnombre.Text = grid.Item(1, i).Value()
+
+
+            If grid.Rows.Count > 0 Then
+                i = grid.CurrentRow.Index
+                txtid.Text = grid.Item(0, i).Value()
+                txtnombre.Text = grid.Item(1, i).Value()
+
+            End If
+
         End If
     End Sub
 
