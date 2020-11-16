@@ -88,7 +88,7 @@
     End Sub
 
     Private Sub PedidosPorRecibirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PedidosPorRecibirToolStripMenuItem.Click
-        Dim newform As New Pedidosporrecibir
+        Dim newform As New Nuevacompra
         newform.MdiParent = Me
         newform.Show()
     End Sub

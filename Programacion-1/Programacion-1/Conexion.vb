@@ -36,6 +36,25 @@ Public Class Conexion
         'carga los datos de esta tabla en la palabra especificada para ser enviados
         miAdapter.Fill(ds, "Proveedores")
 
+
+        miCommand.CommandText = "select * from Sucursal"
+        miAdapter.SelectCommand = miCommand
+        'carga los datos de esta tabla en la palabra especificada para ser enviados
+        miAdapter.Fill(ds, "Sucursal")
+
+
+        miCommand.CommandText = "select * from Formapago"
+        miAdapter.SelectCommand = miCommand
+        'carga los datos de esta tabla en la palabra especificada para ser enviados
+        miAdapter.Fill(ds, "formapago")
+
+
+        miCommand.CommandText = "select * from Tipofactura"
+        miAdapter.SelectCommand = miCommand
+        'carga los datos de esta tabla en la palabra especificada para ser enviados
+        miAdapter.Fill(ds, "Factura")
+
+
         miCommand.CommandText = "select * from Cargos"
         miAdapter.SelectCommand = miCommand
         'carga los datos de esta tabla en la palabra especificada para ser enviados
@@ -73,16 +92,22 @@ Public Class Conexion
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
         miAdapter.Fill(ds, "Ganancia")
 
-        miCommand.CommandText = "select Precios.IdPrecios, Solicitudes.Codigo, Precios.PrecioCompra from Precios inner join Solicitudes on Solicitudes.IdSolicitudes = Precios.IdSolicitudes"
-        miAdapter.SelectCommand = miCommand
+
+        'miCommand.CommandText = "select Precios.IdPrecios, Solicitudes.Codigo, Precios.PrecioCompra from Precios inner join Solicitudes on Solicitudes.IdSolicitudes = Precios.IdSolicitudes"
+        'miAdapter.SelectCommand = miCommand
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
-        miAdapter.Fill(ds, "Precio")
+        'miAdapter.Fill(ds, "Precio")
 
 
-        miCommand.CommandText = "select Solicitudes.IdSolicitudes, Solicitudes.Codigo, Proveedores.Proveedor, RegistroMedicamento.NombreMedicamento,Presentacion.Presentacion, Laboratorio.Laboratorio, Solicitudes.Cantidad, Proveedores.IdProveedores, RegistroMedicamento.IdRegistroMedicamento, Presentacion.IdPresentacion, Laboratorio.IdLaboratorio from Solicitudes inner join Proveedores on Proveedores.IdProveedores = Solicitudes.IdProveedor inner join RegistroMedicamento on RegistroMedicamento.IdRegistroMedicamento = Solicitudes.IdRegistroMedicamento inner join Laboratorio on RegistroMedicamento.IdLaboratorio = Laboratorio.IdLaboratorio inner join Presentacion on Presentacion.IdPresentacion = RegistroMedicamento.IdPresentacion"
+        miCommand.CommandText = "select detallecompra.Iddetallecompra,RegistroMedicamento.NombreMedicamento,Presentacion.Presentacion, Laboratorio.Laboratorio, detallecompra.Cantidad, detallecompra.PrecioCompra, detallecompra.CosteTotal, Compras.IdCompra, Compras.nunfactura, RegistroMedicamento.IdRegistroMedicamento, Presentacion.IdPresentacion, Laboratorio.IdLaboratorio from detallecompra inner join RegistroMedicamento on RegistroMedicamento.IdRegistroMedicamento = detallecompra.IdRegistroMedicamento inner join Laboratorio on RegistroMedicamento.IdLaboratorio = Laboratorio.IdLaboratorio inner join Presentacion on Presentacion.IdPresentacion = RegistroMedicamento.IdPresentacion inner join Compras on Compras.IdCompra = detallecompra.IdCompra"
         miAdapter.SelectCommand = miCommand
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
-        miAdapter.Fill(ds, "Solicitudes")
+        miAdapter.Fill(ds, "Compras")
+
+        miCommand.CommandText = "select Compras.IdCompra, Compras.nunfactura, Proveedores.IdProveedores,Proveedores.Proveedor, Tipofactura.Idtipofactura, TipoFactura.tipofactura, Compras.fecha, Formapago.Formapago,Formapago.Idformapago, Sucursal.IdSucursal,Sucursal.Ubicacion from Compras inner join Proveedores on Proveedores.IdProveedores = Compras.IdProveedor inner join Tipofactura on Tipofactura.Idtipofactura = Compras.IdTipoFactura inner join Formapago on Formapago.Idformapago = Compras.IdFormaPago inner join Sucursal on Sucursal.IdSucursal = Compras.IdSucursal"
+        miAdapter.SelectCommand = miCommand
+        'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
+        miAdapter.Fill(ds, "FacturaCompras")
 
 
 
@@ -521,6 +546,45 @@ Public Class Conexion
                  IdProveedor='" + datos(2) + "',
                  IdRegistroMedicamento='" + datos(3) + "',
                  Cantidad='" + datos(4) + "'
+            WHERE " + id + "    ='" + datos(0) + "'"
+
+            Case "eliminar"
+                sql = "DELETE FROM " + comandosql + " WHERE " + id + "='" + datos(0) + "'"
+        End Select
+
+        If (executesql(sql) > 0) Then
+            msg = "Accion realizada"
+        Else
+            msg = "Error en el proceso"
+        End If
+        Return msg
+    End Function
+
+
+
+
+    Public Function mantenimientocompra(ByVal datos As String(), ByVal accion As String, ByVal comandosql As String, ByVal id As String)
+        Dim sql, msg As String
+        'dato(0) sera el ID de cada tabla
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT into " + comandosql + " VALUES 
+                (
+                  '" + datos(1) + "', 
+                  '" + datos(2) + "', 
+                  '" + datos(3) + "', 
+                  '" + datos(4) + "', 
+                  '" + datos(5) + "', 
+                  '" + datos(6) + "'
+                 )"
+
+            Case "modificar"
+                sql = "UPDATE " + comandosql + " SET 
+                 IdProveedor='" + datos(2) + "',
+                 IdTipoFactura='" + datos(3) + "',
+                 fecha='" + datos(4) + "',
+                 IdFormaPago='" + datos(5) + "',
+                 IdSucursal='" + datos(6) + "'
             WHERE " + id + "    ='" + datos(0) + "'"
 
             Case "eliminar"

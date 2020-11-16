@@ -89,6 +89,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.vb" />
+    <Compile Include="detallecompra.Designer.vb">
+      <DependentUpon>detallecompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="detallecompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturas.Designer.vb">
+      <DependentUpon>Facturas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Facturas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formAdministrarEmpleados.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +186,7 @@
     <Compile Include="formUsuarios.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -190,14 +203,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Pedidosporrecibir.Designer.vb">
-      <DependentUpon>Pedidosporrecibir.vb</DependentUpon>
+    <Compile Include="Nuevacompra.Designer.vb">
+      <DependentUpon>Nuevacompra.vb</DependentUpon>
     </Compile>
-    <Compile Include="Pedidosporrecibir.vb">
+    <Compile Include="Nuevacompra.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_BDFarmacia_SantaFeDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_BDFarmacia_SantaFeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_BDFarmacia_SantaFeDataSet.vb">
+      <DependentUpon>_BDFarmacia_SantaFeDataSet.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="detallecompra.resx">
+      <DependentUpon>detallecompra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturas.resx">
+      <DependentUpon>Facturas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formAdministrarEmpleados.resx">
       <DependentUpon>formAdministrarEmpleados.vb</DependentUpon>
     </EmbeddedResource>
@@ -246,8 +273,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pedidosporrecibir.resx">
-      <DependentUpon>Pedidosporrecibir.vb</DependentUpon>
+    <EmbeddedResource Include="Nuevacompra.resx">
+      <DependentUpon>Nuevacompra.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -261,6 +288,17 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="_BDFarmacia_SantaFeDataSet.xsc">
+      <DependentUpon>_BDFarmacia_SantaFeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_BDFarmacia_SantaFeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_BDFarmacia_SantaFeDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_BDFarmacia_SantaFeDataSet.xss">
+      <DependentUpon>_BDFarmacia_SantaFeDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

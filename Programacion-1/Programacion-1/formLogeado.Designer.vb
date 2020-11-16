@@ -30,6 +30,7 @@ Partial Class formLogeado
         Me.MotivosDeDañoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PresentacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistroGeneralMedicamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PedidosPorRecibirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -45,7 +46,6 @@ Partial Class formLogeado
         Me.PreciosMedicamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PorcientoGananciaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PorcientoDescuentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PedidosPorRecibirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -102,6 +102,12 @@ Partial Class formLogeado
         Me.RegistroGeneralMedicamentoToolStripMenuItem.Name = "RegistroGeneralMedicamentoToolStripMenuItem"
         Me.RegistroGeneralMedicamentoToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
         Me.RegistroGeneralMedicamentoToolStripMenuItem.Text = "Registro General Medicamento"
+        '
+        'PedidosPorRecibirToolStripMenuItem
+        '
+        Me.PedidosPorRecibirToolStripMenuItem.Name = "PedidosPorRecibirToolStripMenuItem"
+        Me.PedidosPorRecibirToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
+        Me.PedidosPorRecibirToolStripMenuItem.Text = "Compra Recibida"
         '
         'UsuariosToolStripMenuItem
         '
@@ -197,12 +203,6 @@ Partial Class formLogeado
         Me.PorcientoDescuentoToolStripMenuItem.Name = "PorcientoDescuentoToolStripMenuItem"
         Me.PorcientoDescuentoToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
         Me.PorcientoDescuentoToolStripMenuItem.Text = "Porciento Descuento"
-        '
-        'PedidosPorRecibirToolStripMenuItem
-        '
-        Me.PedidosPorRecibirToolStripMenuItem.Name = "PedidosPorRecibirToolStripMenuItem"
-        Me.PedidosPorRecibirToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
-        Me.PedidosPorRecibirToolStripMenuItem.Text = "Pedidos Por Recibir"
         '
         'formLogeado
         '

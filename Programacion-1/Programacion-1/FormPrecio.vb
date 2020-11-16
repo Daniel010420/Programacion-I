@@ -22,7 +22,7 @@
         btnmodificarycancelar.Enabled = False
         btnnuevoyaceptar.Enabled = False
         btnmodificarycancelar.Text = "Cancelar"
-        obtenerdatos()
+        '  obtenerdatos()
     End Sub
     Sub obtenerdatos()
         Try

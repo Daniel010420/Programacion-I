@@ -140,7 +140,6 @@
         If btnnuevoyaceptar.Text <> "Aceptar" Then
 
 
-
             If grid.Rows.Count > 0 Then
                 Dim i As Integer
                 i = grid.CurrentRow.Index
