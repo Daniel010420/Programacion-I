@@ -46,6 +46,7 @@ Partial Class formLogeado
         Me.PreciosMedicamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PorcientoGananciaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PorcientoDescuentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RealizarSolicitudDeMedicinaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -73,7 +74,7 @@ Partial Class formLogeado
         '
         'InventarioToolStripMenuItem
         '
-        Me.InventarioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportarDañoToolStripMenuItem, Me.PresentacionesToolStripMenuItem, Me.RegistroGeneralMedicamentoToolStripMenuItem, Me.PedidosPorRecibirToolStripMenuItem})
+        Me.InventarioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportarDañoToolStripMenuItem, Me.PresentacionesToolStripMenuItem, Me.RegistroGeneralMedicamentoToolStripMenuItem, Me.PedidosPorRecibirToolStripMenuItem, Me.RealizarSolicitudDeMedicinaToolStripMenuItem})
         Me.InventarioToolStripMenuItem.Name = "InventarioToolStripMenuItem"
         Me.InventarioToolStripMenuItem.Size = New System.Drawing.Size(93, 20)
         Me.InventarioToolStripMenuItem.Text = "Medicamento"
@@ -204,6 +205,12 @@ Partial Class formLogeado
         Me.PorcientoDescuentoToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
         Me.PorcientoDescuentoToolStripMenuItem.Text = "Porciento Descuento"
         '
+        'RealizarSolicitudDeMedicinaToolStripMenuItem
+        '
+        Me.RealizarSolicitudDeMedicinaToolStripMenuItem.Name = "RealizarSolicitudDeMedicinaToolStripMenuItem"
+        Me.RealizarSolicitudDeMedicinaToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
+        Me.RealizarSolicitudDeMedicinaToolStripMenuItem.Text = "Realizar solicitud de medicina"
+        '
         'formLogeado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -245,4 +252,5 @@ Partial Class formLogeado
     Friend WithEvents UsuariosToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents RegistroGeneralMedicamentoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PedidosPorRecibirToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RealizarSolicitudDeMedicinaToolStripMenuItem As ToolStripMenuItem
 End Class

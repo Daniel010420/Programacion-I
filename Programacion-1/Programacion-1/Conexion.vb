@@ -36,7 +36,6 @@ Public Class Conexion
         'carga los datos de esta tabla en la palabra especificada para ser enviados
         miAdapter.Fill(ds, "Proveedores")
 
-
         miCommand.CommandText = "select * from Sucursal"
         miAdapter.SelectCommand = miCommand
         'carga los datos de esta tabla en la palabra especificada para ser enviados
@@ -99,7 +98,7 @@ Public Class Conexion
         'miAdapter.Fill(ds, "Precio")
 
 
-        miCommand.CommandText = "select detallecompra.Iddetallecompra,RegistroMedicamento.NombreMedicamento,Presentacion.Presentacion, Laboratorio.Laboratorio, detallecompra.Cantidad, detallecompra.PrecioCompra, detallecompra.CosteTotal, Compras.IdCompra, Compras.nunfactura, RegistroMedicamento.IdRegistroMedicamento, Presentacion.IdPresentacion, Laboratorio.IdLaboratorio from detallecompra inner join RegistroMedicamento on RegistroMedicamento.IdRegistroMedicamento = detallecompra.IdRegistroMedicamento inner join Laboratorio on RegistroMedicamento.IdLaboratorio = Laboratorio.IdLaboratorio inner join Presentacion on Presentacion.IdPresentacion = RegistroMedicamento.IdPresentacion inner join Compras on Compras.IdCompra = detallecompra.IdCompra"
+        miCommand.CommandText = "select detallecompra.Iddetallecompra,RegistroMedicamento.NombreMedicamento,Presentacion.Presentacion, Laboratorio.Laboratorio, detallecompra.Cantidad, detallecompra.PrecioCompra, detallecompra.CosteAdicional, Compras.IdCompra, Compras.nunfactura, RegistroMedicamento.IdRegistroMedicamento, Presentacion.IdPresentacion, Laboratorio.IdLaboratorio from detallecompra inner join RegistroMedicamento on RegistroMedicamento.IdRegistroMedicamento = detallecompra.IdRegistroMedicamento inner join Laboratorio on RegistroMedicamento.IdLaboratorio = Laboratorio.IdLaboratorio inner join Presentacion on Presentacion.IdPresentacion = RegistroMedicamento.IdPresentacion inner join Compras on Compras.IdCompra = detallecompra.IdCompra"
         miAdapter.SelectCommand = miCommand
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
         miAdapter.Fill(ds, "Compras")
@@ -121,6 +120,17 @@ Public Class Conexion
         miAdapter.SelectCommand = miCommand
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
         miAdapter.Fill(ds, "Usuarios")
+
+
+        miCommand.CommandText = "select Solicitudes.IdSolicitudes, Solicitudes.Codigo, Proveedores.IdProveedores,Proveedores.Proveedor, Empleados.IdEmpleado, Empleados.NombreCompleto, Solicitudes.Fecha_Registro, Sucursal.IdSucursal,Sucursal.Ubicacion from Solicitudes inner join Proveedores on Proveedores.IdProveedores = Solicitudes.IdProveedor inner join Empleados on Empleados.IdEmpleado = Solicitudes.IdEmpleado inner join Sucursal on Sucursal.IdSucursal = Solicitudes.IdSucursal"
+        miAdapter.SelectCommand = miCommand
+        'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
+        miAdapter.Fill(ds, "nuevasolicitud")
+
+        miCommand.CommandText = "select detallesolicitud.Iddsolicitud,RegistroMedicamento.NombreMedicamento,Presentacion.Presentacion, Laboratorio.Laboratorio, detallesolicitud.Cantidadsolicitada, detallesolicitud.Precio, Solicitudes.IdSolicitudes, Solicitudes.Codigo, RegistroMedicamento.IdRegistroMedicamento, Presentacion.IdPresentacion, Laboratorio.IdLaboratorio from detallesolicitud inner join RegistroMedicamento on RegistroMedicamento.IdRegistroMedicamento = detallesolicitud.IdRegistroMedicamento inner join Laboratorio on RegistroMedicamento.IdLaboratorio = Laboratorio.IdLaboratorio inner join Presentacion on Presentacion.IdPresentacion = RegistroMedicamento.IdPresentacion inner join Solicitudes on Solicitudes.IdSolicitudes = detallesolicitud.IdSolicitud"
+        miAdapter.SelectCommand = miCommand
+        'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
+        miAdapter.Fill(ds, "detallesolicitud")
 
 
         Return ds
@@ -527,7 +537,43 @@ Public Class Conexion
 
 
 
-    Public Function mantenimientosolicitudes(ByVal datos As String(), ByVal accion As String, ByVal comandosql As String, ByVal id As String)
+
+
+    Public Function mantenimientodetallecompra(ByVal datos As String(), ByVal accion As String, ByVal comandosql As String, ByVal id As String)
+        Dim sql, msg As String
+        'dato(0) sera el ID de cada tabla
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT into " + comandosql + " VALUES 
+                (
+                  '" + datos(1) + "', 
+                  '" + datos(2) + "', 
+                  '" + datos(3) + "', 
+                  '" + datos(4) + "', 
+                  '" + datos(5) + "'
+                 )"
+
+            Case "modificar"
+                sql = "UPDATE " + comandosql + " SET 
+                 IdRegistroMedicamento='" + datos(1) + "',
+                 Cantidad='" + datos(2) + "',
+                 PrecioCompra='" + datos(3) + "',
+                 CosteAdicional='" + datos(4) + "'
+            WHERE " + id + "    ='" + datos(0) + "'"
+
+            Case "eliminar"
+                sql = "DELETE FROM " + comandosql + " WHERE " + id + "='" + datos(0) + "'"
+        End Select
+
+        If (executesql(sql) > 0) Then
+            msg = "Accion realizada"
+        Else
+            msg = "Error en el proceso"
+        End If
+        Return msg
+    End Function
+
+    Public Function mantenimientodetallesolicitudes(ByVal datos As String(), ByVal accion As String, ByVal comandosql As String, ByVal id As String)
         Dim sql, msg As String
         'dato(0) sera el ID de cada tabla
         Select Case accion
@@ -542,10 +588,9 @@ Public Class Conexion
 
             Case "modificar"
                 sql = "UPDATE " + comandosql + " SET 
-                 Codigo='" + datos(1) + "',
-                 IdProveedor='" + datos(2) + "',
-                 IdRegistroMedicamento='" + datos(3) + "',
-                 Cantidad='" + datos(4) + "'
+                 IdRegistroMedicamento='" + datos(1) + "',
+                 Cantidadsolicitada='" + datos(2) + "',
+                 Precio='" + datos(3) + "'
             WHERE " + id + "    ='" + datos(0) + "'"
 
             Case "eliminar"
@@ -578,6 +623,21 @@ Public Class Conexion
                   '" + datos(6) + "'
                  )"
 
+
+                If (executesql(sql) > 0) Then
+                    msg = "Accion realizada"
+
+                    miCommand.Connection = miConexion
+                    miCommand.CommandText = "select MAX(IdCompra) AS IdCompra from Compras"
+                    datos(0) = miCommand.ExecuteScalar().ToString()
+                    Module1.idcompra = datos(0)
+                    Module1.factura = datos(1)
+                Else
+                    msg = "Error en el proceso"
+                End If
+                Return msg
+
+
             Case "modificar"
                 sql = "UPDATE " + comandosql + " SET 
                  IdProveedor='" + datos(2) + "',
@@ -587,16 +647,86 @@ Public Class Conexion
                  IdSucursal='" + datos(6) + "'
             WHERE " + id + "    ='" + datos(0) + "'"
 
+                If (executesql(sql) > 0) Then
+                    msg = "Accion realizada"
+                Else
+                    msg = "Error en el proceso"
+
+                End If
+                Return msg
             Case "eliminar"
                 sql = "DELETE FROM " + comandosql + " WHERE " + id + "='" + datos(0) + "'"
+
+                If (executesql(sql) > 0) Then
+                    msg = "Accion realizada"
+                Else
+                    msg = "Error en el proceso"
+                End If
+                Return msg
         End Select
 
-        If (executesql(sql) > 0) Then
-            msg = "Accion realizada"
-        Else
-            msg = "Error en el proceso"
-        End If
-        Return msg
+
+    End Function
+
+
+
+
+    Public Function mantenimientosolicitudes(ByVal datos As String(), ByVal accion As String, ByVal comandosql As String, ByVal id As String)
+        Dim sql, msg As String
+        'dato(0) sera el ID de cada tabla
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT into " + comandosql + " VALUES 
+                (
+                  '" + datos(1) + "', 
+                  '" + datos(2) + "', 
+                  '" + datos(3) + "', 
+                  '" + datos(4) + "',  
+                  '" + datos(5) + "'
+                 )"
+
+
+                If (executesql(sql) > 0) Then
+                    msg = "Accion realizada"
+
+                    miCommand.Connection = miConexion
+                    miCommand.CommandText = "select MAX(IdSolicitudes) AS IdSolicitudes from Solicitudes"
+                    datos(0) = miCommand.ExecuteScalar().ToString()
+                    Module1.idcompra = datos(0)
+                    Module1.factura = datos(1)
+                Else
+                    msg = "Error en el proceso"
+                End If
+                Return msg
+
+
+            Case "modificar"
+                sql = "UPDATE " + comandosql + " SET 
+                 IdProveedor='" + datos(2) + "',
+                 IdEmpleado='" + datos(3) + "',
+                 fecha_Registro='" + datos(4) + "',
+                 IdSucursal='" + datos(5) + "'
+            WHERE " + id + "    ='" + datos(0) + "'"
+
+                If (executesql(sql) > 0) Then
+                    msg = "Accion realizada"
+                Else
+                    msg = "Error en el proceso"
+
+                End If
+                Return msg
+            Case "eliminar"
+                sql = "DELETE FROM " + comandosql + " WHERE " + id + "='" + datos(0) + "'"
+
+                If (executesql(sql) > 0) Then
+                    msg = "Accion realizada"
+                Else
+                    msg = "Error en el proceso"
+                End If
+                Return msg
+        End Select
+
+
     End Function
 
 
@@ -609,7 +739,9 @@ Public Class Conexion
             miCommand.Connection = miConexion
             miCommand.CommandText = sql
             Return miCommand.ExecuteNonQuery()
+
         Catch ex As Exception
+
             Return 0
         End Try
     End Function

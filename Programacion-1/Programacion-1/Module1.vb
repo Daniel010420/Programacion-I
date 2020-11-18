@@ -1,5 +1,5 @@
 ﻿Module Module1
-    Public id
+    Public idcompra
     Public factura
 
     Public buscarfactura

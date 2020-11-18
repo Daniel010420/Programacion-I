@@ -92,4 +92,10 @@
         newform.MdiParent = Me
         newform.Show()
     End Sub
+
+    Private Sub RealizarSolicitudDeMedicinaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RealizarSolicitudDeMedicinaToolStripMenuItem.Click
+        Dim newform As New NuevaSolicitud
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
 End Class

@@ -7,7 +7,8 @@
     Dim objdetalle As New detallecompra
 
 
-    Dim mensajeenmentana = "Registro de Pedido"
+
+    Dim mensajeenmentana = "Registro de Compra"
     Dim Nombretabladebusqueda = "Compras"
     Dim buscarpor1 = "nunfactura"
     Dim buscarpor2 = "Nunfactura"
@@ -39,7 +40,7 @@
             grid.Columns(10).Visible = False
             grid.Columns(11).Visible = False
             grid.Columns(12).Visible = False
-            grid.Columns(0).Visible = False
+            '   grid.Columns(0).Visible = False
             grid.Columns(0).DisplayIndex = 12
 
 
@@ -64,6 +65,7 @@
             cobid.DataSource = objConexion.obtenerDatos().Tables("FacturaCompras").DefaultView
             cobid.DisplayMember = "IdCompra"
             cobid.ValueMember = "Compras.IdCompra"
+
 
 
 
@@ -110,36 +112,36 @@
         cobproveedor.DataSource = objConexion.obtenerDatos().Tables("Proveedores").DefaultView
         cobproveedor.DisplayMember = "Proveedor"
         cobproveedor.ValueMember = " Proveedores.IdProveedores"
-        cobfacturas.AutoCompleteMode = AutoCompleteMode.Suggest
-        cobfacturas.AutoCompleteSource = AutoCompleteSource.ListItems
+        cobproveedor.AutoCompleteMode = AutoCompleteMode.Suggest
+        cobproveedor.AutoCompleteSource = AutoCompleteSource.ListItems
 
 
         cobsucursal.DataSource = objConexion.obtenerDatos().Tables("Sucursal").DefaultView
         cobsucursal.DisplayMember = "Ubicacion"
         cobsucursal.ValueMember = "Sucursal.IdSucursal"
-        cobfacturas.AutoCompleteMode = AutoCompleteMode.Suggest
-        cobfacturas.AutoCompleteSource = AutoCompleteSource.ListItems
+        cobsucursal.AutoCompleteMode = AutoCompleteMode.Suggest
+        cobsucursal.AutoCompleteSource = AutoCompleteSource.ListItems
 
 
         cobfactura.DataSource = objConexion.obtenerDatos().Tables("Factura").DefaultView
         cobfactura.DisplayMember = "tipofactura"
         cobfactura.ValueMember = "Tipofactura.Idtipofactura"
-        cobfacturas.AutoCompleteMode = AutoCompleteMode.Suggest
-        cobfacturas.AutoCompleteSource = AutoCompleteSource.ListItems
+        cobfactura.AutoCompleteMode = AutoCompleteMode.Suggest
+        cobfactura.AutoCompleteSource = AutoCompleteSource.ListItems
 
 
         cobpago.DataSource = objConexion.obtenerDatos().Tables("formapago").DefaultView
         cobpago.DisplayMember = "Formapago"
         cobpago.ValueMember = "Formapago.Idformapago"
-        cobfacturas.AutoCompleteMode = AutoCompleteMode.Suggest
-        cobfacturas.AutoCompleteSource = AutoCompleteSource.ListItems
+        cobpago.AutoCompleteMode = AutoCompleteMode.Suggest
+        cobpago.AutoCompleteSource = AutoCompleteSource.ListItems
 
 
         cobid.DataSource = objConexion.obtenerDatos().Tables("FacturaCompras").DefaultView
         cobid.DisplayMember = "IdCompra"
         cobid.ValueMember = "Compras.IdCompra"
-        cobfacturas.AutoCompleteMode = AutoCompleteMode.Suggest
-        cobfacturas.AutoCompleteSource = AutoCompleteSource.ListItems
+        cobid.AutoCompleteMode = AutoCompleteMode.Suggest
+        cobid.AutoCompleteSource = AutoCompleteSource.ListItems
 
 
         cobfacturas.DataSource = objConexion.obtenerDatos().Tables("FacturaCompras").DefaultView
@@ -171,36 +173,36 @@
         cobproveedor.DataSource = objConexion.obtenerDatos().Tables("Proveedores").DefaultView
         cobproveedor.DisplayMember = "Proveedor"
         cobproveedor.ValueMember = " Proveedores.IdProveedores"
-        cobfacturas.AutoCompleteMode = AutoCompleteMode.Suggest
-        cobfacturas.AutoCompleteSource = AutoCompleteSource.ListItems
+        cobproveedor.AutoCompleteMode = AutoCompleteMode.Suggest
+        cobproveedor.AutoCompleteSource = AutoCompleteSource.ListItems
 
 
         cobsucursal.DataSource = objConexion.obtenerDatos().Tables("Sucursal").DefaultView
         cobsucursal.DisplayMember = "Ubicacion"
         cobsucursal.ValueMember = "Sucursal.IdSucursal"
-        cobfacturas.AutoCompleteMode = AutoCompleteMode.Suggest
-        cobfacturas.AutoCompleteSource = AutoCompleteSource.ListItems
+        cobsucursal.AutoCompleteMode = AutoCompleteMode.Suggest
+        cobsucursal.AutoCompleteSource = AutoCompleteSource.ListItems
 
 
         cobfactura.DataSource = objConexion.obtenerDatos().Tables("Factura").DefaultView
         cobfactura.DisplayMember = "tipofactura"
         cobfactura.ValueMember = "Tipofactura.Idtipofactura"
-        cobfacturas.AutoCompleteMode = AutoCompleteMode.Suggest
-        cobfacturas.AutoCompleteSource = AutoCompleteSource.ListItems
+        cobfactura.AutoCompleteMode = AutoCompleteMode.Suggest
+        cobfactura.AutoCompleteSource = AutoCompleteSource.ListItems
 
 
         cobpago.DataSource = objConexion.obtenerDatos().Tables("formapago").DefaultView
         cobpago.DisplayMember = "Formapago"
         cobpago.ValueMember = "Formapago.Idformapago"
-        cobfacturas.AutoCompleteMode = AutoCompleteMode.Suggest
-        cobfacturas.AutoCompleteSource = AutoCompleteSource.ListItems
+        cobpago.AutoCompleteMode = AutoCompleteMode.Suggest
+        cobpago.AutoCompleteSource = AutoCompleteSource.ListItems
 
 
         cobid.DataSource = objConexion.obtenerDatos().Tables("FacturaCompras").DefaultView
         cobid.DisplayMember = "IdCompra"
         cobid.ValueMember = "Compras.IdCompra"
-        cobfacturas.AutoCompleteMode = AutoCompleteMode.Suggest
-        cobfacturas.AutoCompleteSource = AutoCompleteSource.ListItems
+        cobid.AutoCompleteMode = AutoCompleteMode.Suggest
+        cobid.AutoCompleteSource = AutoCompleteSource.ListItems
 
 
         cobfacturas.DataSource = objConexion.obtenerDatos().Tables("FacturaCompras").DefaultView
@@ -226,6 +228,7 @@
 
 
         totalizar()
+
 
     End Sub
 
@@ -260,20 +263,24 @@
 
             obtenerdatosfacturashechas()
 
-            MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-            btneliminar.Enabled = True
+
 
             If msg = "Accion realizada" Then
+                MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                btneliminar.Enabled = True
 
-                Module1.id = cobid.Text
 
                 Dim newventada As New detallecompra
                 newventada.ShowDialog()
-
+                Close()
                 '  If objBuscarCategoriaProducto._idC > 0 Then
                 '    cboCategoriaProductos.SelectedValue = objBuscarCategoriaProducto._idC
                 'End If
+            ElseIf msg = "Error en el proceso" Then
+                MessageBox.Show("Error en el proceso, probablemente el numero de factura ya existe", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                btneliminar.Enabled = True
             End If
+
 
 
 
@@ -339,29 +346,37 @@
 
 
     Private Sub totalizar()
-        Try
 
+        cobfactura.ValueMember = "Tipofactura.Idtipofactura"
+        'lblRespuestaIva.Text = cobfactura.Text
+        Try
 
             If grid.Rows.Count > 0 And grid.Columns.Count > 3 Then
                 Dim fila As DataGridViewRow
-                Dim nfilas As Integer = grid.Rows.Count - 1
-                Dim subtotal, sumas, iva, total As Double
 
+                Dim nfilas As Integer = grid.Rows.Count - 1
+                Dim subtotal, sumas, total As Double
+                Dim iva As Double
                 For i As Integer = 0 To nfilas
                     fila = grid.Rows(i)
-                    subtotal = Double.Parse(fila.Cells(7).Value.ToString()) '* Double.Parse(fila.Cells("precio").Value.ToString())
 
-                    'fila.Cells("subtotal").Value = subtotal.ToString()
+
+                    subtotal = Double.Parse(fila.Cells(6).Value.ToString()) + Double.Parse(fila.Cells(7).Value.ToString()) '* Double.Parse(fila.Cells("precio").Value.ToString())
+
+
+                    fila.Cells("subtotal").Value = subtotal.ToString()
                     sumas += subtotal
+
                 Next
-                'iva = If(IdTipofacturaComboBox.SelectedValue = 4, sumas * 0.13, 0)
-                total = sumas ' + iva
+                iva = If(cobfactura.SelectedValue = 2, sumas * 0.13, 0)
+                total = sumas + iva
+
 
                 lblRespuestaSuma.Text = "$ " + Math.Round(sumas, 2).ToString()
                 lblRespuestaIva.Text = "$ " + Math.Round(iva, 2).ToString()
                 lblRespuestaTotal.Text = "$ " + Math.Round(total, 2).ToString()
 
-                'lblnregistros.Text = (VentasBindingSource.Position + 1) & " de " & VentasBindingSource.Count
+                '   lblnregistros.Text = (VentasBindingSource.Position + 1) & " de " & VentasBindingSource.Count
 
             Else lblRespuestaSuma.Text = "$ 0"
                 lblRespuestaIva.Text = "$ 0"
@@ -371,14 +386,20 @@
         Catch ex As Exception
             MessageBox.Show("Error " + ex.Message)
         End Try
+
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Module1.id = cobid.Text
+        Module1.idcompra = cobid.Text
         Module1.factura = cobfacturas.Text
 
         Dim newventada As New detallecompra
         newventada.ShowDialog()
+        Close()
+
+
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -390,6 +411,14 @@
             cobfacturas.SelectedValue = newventada.idddd
         End If
 
+
+
+    End Sub
+
+    Private Sub cobfactura_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cobfactura.SelectedIndexChanged
+        cobfactura.ValueMember = "Tipofactura.Idtipofactura"
+        'lblRespuestaIva.Text = cobfactura.Text
+        totalizar()
 
 
     End Sub

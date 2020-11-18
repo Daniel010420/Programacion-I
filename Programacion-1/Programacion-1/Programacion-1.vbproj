@@ -95,6 +95,12 @@
     <Compile Include="detallecompra.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="detallesolicitud.Designer.vb">
+      <DependentUpon>detallesolicitud.vb</DependentUpon>
+    </Compile>
+    <Compile Include="detallesolicitud.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Facturas.Designer.vb">
       <DependentUpon>Facturas.vb</DependentUpon>
     </Compile>
@@ -209,6 +215,18 @@
     <Compile Include="Nuevacompra.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="NuevaSolicitud.Designer.vb">
+      <DependentUpon>NuevaSolicitud.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NuevaSolicitud.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="solicitudes.Designer.vb">
+      <DependentUpon>solicitudes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="solicitudes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="_BDFarmacia_SantaFeDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -221,6 +239,9 @@
   <ItemGroup>
     <EmbeddedResource Include="detallecompra.resx">
       <DependentUpon>detallecompra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="detallesolicitud.resx">
+      <DependentUpon>detallesolicitud.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturas.resx">
       <DependentUpon>Facturas.vb</DependentUpon>
@@ -275,6 +296,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nuevacompra.resx">
       <DependentUpon>Nuevacompra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevaSolicitud.resx">
+      <DependentUpon>NuevaSolicitud.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="solicitudes.resx">
+      <DependentUpon>solicitudes.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -30,10 +30,26 @@ Partial Class detallecompra
         Me.btnmodificarycancelar = New System.Windows.Forms.Button()
         Me.btneliminar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cobpre = New System.Windows.Forms.ComboBox()
+        Me.coblab = New System.Windows.Forms.ComboBox()
+        Me.cobmedicamento = New System.Windows.Forms.ComboBox()
+        Me.lblcoste = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtotrosvalores = New System.Windows.Forms.TextBox()
+        Me.txtprecio = New System.Windows.Forms.TextBox()
+        Me.txtcantidad = New System.Windows.Forms.TextBox()
         Me.txtfactura = New System.Windows.Forms.TextBox()
         Me.txtid = New System.Windows.Forms.TextBox()
+        Me.txtiddetalle = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.grid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -47,11 +63,11 @@ Partial Class detallecompra
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grid.Location = New System.Drawing.Point(291, 58)
+        Me.grid.Location = New System.Drawing.Point(305, 58)
         Me.grid.Name = "grid"
         Me.grid.ReadOnly = True
         Me.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grid.Size = New System.Drawing.Size(687, 338)
+        Me.grid.Size = New System.Drawing.Size(673, 364)
         Me.grid.TabIndex = 40
         '
         'Label8
@@ -75,7 +91,7 @@ Partial Class detallecompra
         Me.GroupBox2.Controls.Add(Me.btnnuevoyaceptar)
         Me.GroupBox2.Controls.Add(Me.btnmodificarycancelar)
         Me.GroupBox2.Controls.Add(Me.btneliminar)
-        Me.GroupBox2.Location = New System.Drawing.Point(-4, 312)
+        Me.GroupBox2.Location = New System.Drawing.Point(10, 359)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(289, 84)
         Me.GroupBox2.TabIndex = 37
@@ -111,21 +127,130 @@ Partial Class detallecompra
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.cobpre)
+        Me.GroupBox1.Controls.Add(Me.coblab)
+        Me.GroupBox1.Controls.Add(Me.cobmedicamento)
+        Me.GroupBox1.Controls.Add(Me.lblcoste)
+        Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.Controls.Add(Me.Label9)
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.txtotrosvalores)
+        Me.GroupBox1.Controls.Add(Me.txtprecio)
+        Me.GroupBox1.Controls.Add(Me.txtcantidad)
         Me.GroupBox1.Controls.Add(Me.txtfactura)
-        Me.GroupBox1.Controls.Add(Me.txtid)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(10, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(273, 186)
+        Me.GroupBox1.Size = New System.Drawing.Size(273, 341)
         Me.GroupBox1.TabIndex = 36
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos de compra"
         '
+        'cobpre
+        '
+        Me.cobpre.FormattingEnabled = True
+        Me.cobpre.Location = New System.Drawing.Point(4, 155)
+        Me.cobpre.Name = "cobpre"
+        Me.cobpre.Size = New System.Drawing.Size(149, 21)
+        Me.cobpre.TabIndex = 41
+        '
+        'coblab
+        '
+        Me.coblab.FormattingEnabled = True
+        Me.coblab.Location = New System.Drawing.Point(4, 115)
+        Me.coblab.Name = "coblab"
+        Me.coblab.Size = New System.Drawing.Size(149, 21)
+        Me.coblab.TabIndex = 41
+        '
+        'cobmedicamento
+        '
+        Me.cobmedicamento.FormattingEnabled = True
+        Me.cobmedicamento.Location = New System.Drawing.Point(4, 75)
+        Me.cobmedicamento.Name = "cobmedicamento"
+        Me.cobmedicamento.Size = New System.Drawing.Size(149, 21)
+        Me.cobmedicamento.TabIndex = 41
+        '
+        'lblcoste
+        '
+        Me.lblcoste.AutoSize = True
+        Me.lblcoste.Location = New System.Drawing.Point(70, 314)
+        Me.lblcoste.Name = "lblcoste"
+        Me.lblcoste.Size = New System.Drawing.Size(33, 13)
+        Me.lblcoste.TabIndex = 5
+        Me.lblcoste.Text = "coste"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(3, 314)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(64, 13)
+        Me.Label10.TabIndex = 5
+        Me.Label10.Text = "Costo Total:"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(4, 257)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(164, 13)
+        Me.Label9.TabIndex = 5
+        Me.Label9.Text = "Agregar otros gastos (Transporte)"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(4, 218)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(118, 13)
+        Me.Label7.TabIndex = 5
+        Me.Label7.Text = "Precio Total de Compra"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(4, 179)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(99, 13)
+        Me.Label6.TabIndex = 5
+        Me.Label6.Text = "Cantidad comprada"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(4, 139)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(69, 13)
+        Me.Label5.TabIndex = 5
+        Me.Label5.Text = "Presentacion"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(4, 99)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(60, 13)
+        Me.Label4.TabIndex = 5
+        Me.Label4.Text = "Laboratorio"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(4, 59)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(130, 13)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "Descripcion Medicamento"
+        '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(24, 20)
+        Me.Label2.Location = New System.Drawing.Point(4, 20)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(95, 13)
         Me.Label2.TabIndex = 5
@@ -134,37 +259,77 @@ Partial Class detallecompra
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(31, 20)
+        Me.Label1.Location = New System.Drawing.Point(19, 20)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(80, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "IdMedicamento"
         '
+        'txtotrosvalores
+        '
+        Me.txtotrosvalores.Location = New System.Drawing.Point(4, 273)
+        Me.txtotrosvalores.Name = "txtotrosvalores"
+        Me.txtotrosvalores.Size = New System.Drawing.Size(149, 20)
+        Me.txtotrosvalores.TabIndex = 0
+        '
+        'txtprecio
+        '
+        Me.txtprecio.Location = New System.Drawing.Point(4, 234)
+        Me.txtprecio.Name = "txtprecio"
+        Me.txtprecio.Size = New System.Drawing.Size(149, 20)
+        Me.txtprecio.TabIndex = 0
+        '
+        'txtcantidad
+        '
+        Me.txtcantidad.Location = New System.Drawing.Point(4, 195)
+        Me.txtcantidad.Name = "txtcantidad"
+        Me.txtcantidad.Size = New System.Drawing.Size(149, 20)
+        Me.txtcantidad.TabIndex = 0
+        '
         'txtfactura
         '
-        Me.txtfactura.Location = New System.Drawing.Point(19, 39)
+        Me.txtfactura.Location = New System.Drawing.Point(4, 36)
         Me.txtfactura.Name = "txtfactura"
-        Me.txtfactura.Size = New System.Drawing.Size(100, 20)
+        Me.txtfactura.Size = New System.Drawing.Size(149, 20)
         Me.txtfactura.TabIndex = 0
         '
         'txtid
         '
-        Me.txtid.Location = New System.Drawing.Point(31, 39)
+        Me.txtid.Location = New System.Drawing.Point(772, 12)
         Me.txtid.Name = "txtid"
-        Me.txtid.Size = New System.Drawing.Size(80, 20)
+        Me.txtid.Size = New System.Drawing.Size(149, 20)
         Me.txtid.TabIndex = 0
+        '
+        'txtiddetalle
+        '
+        Me.txtiddetalle.Location = New System.Drawing.Point(772, 32)
+        Me.txtiddetalle.Name = "txtiddetalle"
+        Me.txtiddetalle.Size = New System.Drawing.Size(149, 20)
+        Me.txtiddetalle.TabIndex = 0
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(837, 428)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(102, 28)
+        Me.Button1.TabIndex = 20
+        Me.Button1.Text = "Terminar detalle"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'detallecompra
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(990, 438)
+        Me.ClientSize = New System.Drawing.Size(990, 464)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.grid)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtfiltro)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.txtid)
+        Me.Controls.Add(Me.txtiddetalle)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "detallecompra"
@@ -188,6 +353,22 @@ Partial Class detallecompra
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtid As TextBox
     Friend WithEvents txtfactura As TextBox
+    Friend WithEvents cobpre As ComboBox
+    Friend WithEvents coblab As ComboBox
+    Friend WithEvents cobmedicamento As ComboBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents txtotrosvalores As TextBox
+    Friend WithEvents txtprecio As TextBox
+    Friend WithEvents txtcantidad As TextBox
+    Friend WithEvents lblcoste As Label
+    Friend WithEvents txtid As TextBox
+    Friend WithEvents txtiddetalle As TextBox
+    Friend WithEvents Button1 As Button
 End Class

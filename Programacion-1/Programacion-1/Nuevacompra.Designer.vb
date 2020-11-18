@@ -28,7 +28,7 @@ Partial Class Nuevacompra
         Dim IdPagoLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblRespuestaTotal = New System.Windows.Forms.Label()
         Me.lbltotal = New System.Windows.Forms.Label()
@@ -77,9 +77,9 @@ Partial Class Nuevacompra
         Fecha_vtaLabel.AutoSize = True
         Fecha_vtaLabel.Location = New System.Drawing.Point(1, 49)
         Fecha_vtaLabel.Name = "Fecha_vtaLabel"
-        Fecha_vtaLabel.Size = New System.Drawing.Size(59, 13)
+        Fecha_vtaLabel.Size = New System.Drawing.Size(40, 13)
         Fecha_vtaLabel.TabIndex = 18
-        Fecha_vtaLabel.Text = "Fecha Vta:"
+        Fecha_vtaLabel.Text = "Fecha:"
         '
         'IdTipofacturaLabel
         '
@@ -202,8 +202,8 @@ Partial Class Nuevacompra
         '
         'subtotal
         '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle1
         Me.subtotal.HeaderText = "SUBTOTAL"
         Me.subtotal.Name = "subtotal"
         Me.subtotal.ReadOnly = True

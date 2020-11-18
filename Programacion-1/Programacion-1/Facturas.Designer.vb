@@ -42,7 +42,7 @@ Partial Class Facturas
         Me.grid.Name = "grid"
         Me.grid.ReadOnly = True
         Me.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grid.Size = New System.Drawing.Size(651, 381)
+        Me.grid.Size = New System.Drawing.Size(764, 381)
         Me.grid.TabIndex = 38
         '
         'Label8
