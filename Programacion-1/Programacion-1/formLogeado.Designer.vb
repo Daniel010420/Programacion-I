@@ -31,6 +31,8 @@ Partial Class formLogeado
         Me.PresentacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistroGeneralMedicamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PedidosPorRecibirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RealizarSolicitudDeMedicinaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NuevaVentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -43,10 +45,8 @@ Partial Class formLogeado
         Me.AdministrarClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TiposDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PreciosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PreciosMedicamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PorcientoGananciaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PorcientoDescuentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RealizarSolicitudDeMedicinaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -74,7 +74,7 @@ Partial Class formLogeado
         '
         'InventarioToolStripMenuItem
         '
-        Me.InventarioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportarDañoToolStripMenuItem, Me.PresentacionesToolStripMenuItem, Me.RegistroGeneralMedicamentoToolStripMenuItem, Me.PedidosPorRecibirToolStripMenuItem, Me.RealizarSolicitudDeMedicinaToolStripMenuItem})
+        Me.InventarioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportarDañoToolStripMenuItem, Me.PresentacionesToolStripMenuItem, Me.RegistroGeneralMedicamentoToolStripMenuItem, Me.PedidosPorRecibirToolStripMenuItem, Me.RealizarSolicitudDeMedicinaToolStripMenuItem, Me.NuevaVentaToolStripMenuItem})
         Me.InventarioToolStripMenuItem.Name = "InventarioToolStripMenuItem"
         Me.InventarioToolStripMenuItem.Size = New System.Drawing.Size(93, 20)
         Me.InventarioToolStripMenuItem.Text = "Medicamento"
@@ -109,6 +109,18 @@ Partial Class formLogeado
         Me.PedidosPorRecibirToolStripMenuItem.Name = "PedidosPorRecibirToolStripMenuItem"
         Me.PedidosPorRecibirToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
         Me.PedidosPorRecibirToolStripMenuItem.Text = "Compra Recibida"
+        '
+        'RealizarSolicitudDeMedicinaToolStripMenuItem
+        '
+        Me.RealizarSolicitudDeMedicinaToolStripMenuItem.Name = "RealizarSolicitudDeMedicinaToolStripMenuItem"
+        Me.RealizarSolicitudDeMedicinaToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
+        Me.RealizarSolicitudDeMedicinaToolStripMenuItem.Text = "Realizar solicitud de medicina"
+        '
+        'NuevaVentaToolStripMenuItem
+        '
+        Me.NuevaVentaToolStripMenuItem.Name = "NuevaVentaToolStripMenuItem"
+        Me.NuevaVentaToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
+        Me.NuevaVentaToolStripMenuItem.Text = "Nueva Venta"
         '
         'UsuariosToolStripMenuItem
         '
@@ -182,34 +194,22 @@ Partial Class formLogeado
         '
         'PreciosToolStripMenuItem
         '
-        Me.PreciosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PreciosMedicamentoToolStripMenuItem, Me.PorcientoGananciaToolStripMenuItem, Me.PorcientoDescuentoToolStripMenuItem})
+        Me.PreciosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PorcientoGananciaToolStripMenuItem, Me.PorcientoDescuentoToolStripMenuItem})
         Me.PreciosToolStripMenuItem.Name = "PreciosToolStripMenuItem"
         Me.PreciosToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
         Me.PreciosToolStripMenuItem.Text = "Precios"
         '
-        'PreciosMedicamentoToolStripMenuItem
-        '
-        Me.PreciosMedicamentoToolStripMenuItem.Name = "PreciosMedicamentoToolStripMenuItem"
-        Me.PreciosMedicamentoToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
-        Me.PreciosMedicamentoToolStripMenuItem.Text = "Precios Medicamento"
-        '
         'PorcientoGananciaToolStripMenuItem
         '
         Me.PorcientoGananciaToolStripMenuItem.Name = "PorcientoGananciaToolStripMenuItem"
-        Me.PorcientoGananciaToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
+        Me.PorcientoGananciaToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
         Me.PorcientoGananciaToolStripMenuItem.Text = "Porciento Ganancia"
         '
         'PorcientoDescuentoToolStripMenuItem
         '
         Me.PorcientoDescuentoToolStripMenuItem.Name = "PorcientoDescuentoToolStripMenuItem"
-        Me.PorcientoDescuentoToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
+        Me.PorcientoDescuentoToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
         Me.PorcientoDescuentoToolStripMenuItem.Text = "Porciento Descuento"
-        '
-        'RealizarSolicitudDeMedicinaToolStripMenuItem
-        '
-        Me.RealizarSolicitudDeMedicinaToolStripMenuItem.Name = "RealizarSolicitudDeMedicinaToolStripMenuItem"
-        Me.RealizarSolicitudDeMedicinaToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
-        Me.RealizarSolicitudDeMedicinaToolStripMenuItem.Text = "Realizar solicitud de medicina"
         '
         'formLogeado
         '
@@ -246,11 +246,11 @@ Partial Class formLogeado
     Friend WithEvents AdministrarClientesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TiposDeClientesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PreciosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PreciosMedicamentoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PorcientoGananciaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PorcientoDescuentoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UsuariosToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents RegistroGeneralMedicamentoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PedidosPorRecibirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RealizarSolicitudDeMedicinaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents NuevaVentaToolStripMenuItem As ToolStripMenuItem
 End Class

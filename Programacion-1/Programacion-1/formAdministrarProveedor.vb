@@ -56,37 +56,42 @@ Public Class formAdministrarProveedor
         ElseIf btnnuevoyaceptar.Text = "Aceptar" Then
             comandosql = comandoinsertar
 
-            Dim msg = objConexion.mantenimientoProveedores(New String() {
-              "",                 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
-            txtnombre.Text,     'dato(1)
-            txttelefono.Text,   'dato(2)
-            txtdireccion.Text, 'dato(3)
-            txtcorreo.Text},     'dato(4)
-            accion, comandosql, idTabla) 'accion que se desea realizar en el case
-            btnnuevoyaceptar.Text = "Nuevo"
-            btnmodificarycancelar.Text = "Modificar"
-            obtenerdatos()
-            limpiar()
-            MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-            btneliminar.Enabled = True
+            If txtnombre.Text <> "" Then
+                Dim msg = objConexion.mantenimientoProveedores(New String() {
+          "",                 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
+        txtnombre.Text,     'dato(1)
+        txttelefono.Text,   'dato(2)
+        txtdireccion.Text, 'dato(3)
+        txtcorreo.Text},     'dato(4)
+        accion, comandosql, idTabla) 'accion que se desea realizar en el case
+                btnnuevoyaceptar.Text = "Nuevo"
+                btnmodificarycancelar.Text = "Modificar"
+                obtenerdatos()
+                limpiar()
+                MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                btneliminar.Enabled = True
 
+
+            End If
 
         Else 'si el boton dice Guardar, significa que esta haciendo un cambio de un dato
             comandosql = comandoactualizar
-            Dim msg = objConexion.mantenimientoProveedores(New String() {
-              txtid.Text,      'dato(0) si se envia el id aqui porque es el que identifica el registro, update from id = x
-              txtnombre.Text,  'dato(1)
-              txttelefono.Text,     'dato(2)
-              txtdireccion.Text,'dato(3)
-              txtcorreo.Text}, 'dato(4)
-              accion, comandosql, idTabla)
+            If txtnombre.Text <> "" Then
+                Dim msg = objConexion.mantenimientoProveedores(New String() {
+             txtid.Text,      'dato(0) si se envia el id aqui porque es el que identifica el registro, update from id = x
+             txtnombre.Text,  'dato(1)
+             txttelefono.Text,     'dato(2)
+             txtdireccion.Text,'dato(3)
+             txtcorreo.Text}, 'dato(4)
+             accion, comandosql, idTabla)
 
-            obtenerdatos()
-            MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-            limpiar()
-            btnnuevoyaceptar.Text = "Nuevo"
-            btnmodificarycancelar.Text = "Modificar"
-            btneliminar.Enabled = True
+                obtenerdatos()
+                MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                limpiar()
+                btnnuevoyaceptar.Text = "Nuevo"
+                btnmodificarycancelar.Text = "Modificar"
+                btneliminar.Enabled = True
+            End If
         End If
     End Sub
 
@@ -167,5 +172,24 @@ Public Class formAdministrarProveedor
         txtdireccion.Text = ""
     End Sub
 
+    Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtnombre.TextChanged
+        txtnombre.Text = txtnombre.Text.Trim
 
+    End Sub
+
+    Private Sub txttelefono_TextChanged(sender As Object, e As EventArgs) Handles txttelefono.TextChanged
+        txttelefono.Text = txttelefono.Text.Trim
+    End Sub
+
+    Private Sub txtcorreo_TextChanged(sender As Object, e As EventArgs) Handles txtcorreo.TextChanged
+        txtcorreo.Text = txtcorreo.Text.Trim
+    End Sub
+
+    Private Sub txtdireccion_TextChanged(sender As Object, e As EventArgs) Handles txtdireccion.TextChanged
+        txtdireccion.Text = txtdireccion.Text.Trim
+    End Sub
+
+    Private Sub txttelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txttelefono.KeyPress
+        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+    End Sub
 End Class

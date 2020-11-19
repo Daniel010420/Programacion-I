@@ -55,35 +55,39 @@
             'si el boton dice aceptar, significa que esta aceptando el nuevo registro y lo envia a la base
         ElseIf btnnuevoyaceptar.Text = "Aceptar" Then
             comandosql = comandoinsertar
-            Dim msg = objConexion.mantenimientoUsuarios(New String() {
-            "",
-           txtnombre.Text,
-           txtcontraseña.Text,
-          cobempleado.SelectedValue},
-          accion, comandosql, idTabla) 'accion que se desea realizar en el case
-            btnnuevoyaceptar.Text = "Nuevo"
-            btnmodificarycancelar.Text = "Modificar"
-            obtenerdatos()
-            limpiar()
-            MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-            btneliminar.Enabled = True
+            If txtcontraseña.Text <> "" And txtnombre.Text <> "" Then
+                Dim msg = objConexion.mantenimientoUsuarios(New String() {
+           "",
+          txtnombre.Text,
+          txtcontraseña.Text,
+         cobempleado.SelectedValue},
+         accion, comandosql, idTabla) 'accion que se desea realizar en el case
+                btnnuevoyaceptar.Text = "Nuevo"
+                btnmodificarycancelar.Text = "Modificar"
+                obtenerdatos()
+                limpiar()
+                MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                btneliminar.Enabled = True
+            End If
 
 
         Else 'si el boton dice Guardar, significa que esta haciendo un cambio de un dato
             comandosql = comandoactualizar
-            Dim msg = objConexion.mantenimientoUsuarios(New String() {
+            If txtnombre.Text <> "" And txtcontraseña.Text <> "" Then
+                Dim msg = objConexion.mantenimientoUsuarios(New String() {
              txtid.Text,
              txtnombre.Text,
            txtcontraseña.Text,
           cobempleado.SelectedValue},
             accion, comandosql, idTabla)
 
-            obtenerdatos()
-            MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-            limpiar()
-            btnnuevoyaceptar.Text = "Nuevo"
-            btnmodificarycancelar.Text = "Modificar"
-            btneliminar.Enabled = True
+                obtenerdatos()
+                MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                limpiar()
+                btnnuevoyaceptar.Text = "Nuevo"
+                btnmodificarycancelar.Text = "Modificar"
+                btneliminar.Enabled = True
+            End If
         End If
     End Sub
 
@@ -160,5 +164,16 @@
         txtnombre.Text = ""
     End Sub
 
+    Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtnombre.TextChanged
+        txtnombre.Text = txtnombre.Text.Trim
+    End Sub
+
+    Private Sub txtcontraseña_TextChanged(sender As Object, e As EventArgs) Handles txtcontraseña.TextChanged
+        txtcontraseña.Text = txtcontraseña.Text.Trim
+    End Sub
+
+    Private Sub cobempleado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cobempleado.SelectedIndexChanged
+
+    End Sub
 End Class
 

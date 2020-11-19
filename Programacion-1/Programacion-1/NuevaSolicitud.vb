@@ -4,7 +4,7 @@
     Dim dataTable As New DataTable
     Dim accion As String = "nuevo"
     Dim comandosql = ""
-    Dim objdetalle As New detallecompra
+    ' Dim objdetalle As New detallecompra
 
 
 
@@ -19,6 +19,9 @@
     Private Sub NuevaSolicitud_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         obtenerdatossolicitudhecha()
+        cobfecha.Enabled = False
+        ' obtenerdatos()
+        calendario.Visible = False
     End Sub
 
     Sub obtenerdatossolicitudhecha()
@@ -58,6 +61,8 @@
             cobid.DisplayMember = "IdSolicitudes"
             cobid.ValueMember = "Solcitudes.IdSolicitudes"
 
+            cobfecha.DataSource = objConexion.obtenerDatos().Tables("nuevasolicitud").DefaultView
+            cobfecha.DisplayMember = "Fecha_Registro"
 
 
             cargar()
@@ -210,6 +215,8 @@
             btnnuevoyaceptar.Text = "Aceptar"
             btnmodificarycancelar.Text = "Cancelar"
             accion = "nuevo"
+            calendario.Visible = True
+
             btneliminar.Enabled = False
             cargar2()
 
@@ -229,6 +236,8 @@
             btnnuevoyaceptar.Text = "Nuevo"
             btnmodificarycancelar.Text = "Modificar"
             cargar()
+
+            calendario.Visible = False
 
             obtenerdatossolicitudhecha()
 
@@ -252,6 +261,8 @@
 
 
         Else 'si el boton dice Guardar, significa que esta haciendo un cambio de un dato
+            calendario.Visible = False
+
             comandosql = comandoactualizar
             Dim msg = objConexion.mantenimientosolicitudes(New String() {
               cobid.SelectedValue,      'dato(0) si se envia el id aqui porque es el que identifica el registro, update from id = x
@@ -276,6 +287,8 @@
     Private Sub btnmodificarycancelar_Click(sender As Object, e As EventArgs) Handles btnmodificarycancelar.Click
         If btnmodificarycancelar.Text = "Modificar" Then 'Nuevo
             cargar3()
+            calendario.Visible = True
+
             btnnuevoyaceptar.Text = "Guardar"
             btnmodificarycancelar.Text = "Cancelar"
             btneliminar.Enabled = False
@@ -373,6 +386,7 @@
         Dim j = newventada.idddd
         If j > 0 Then
             cobcodigo.SelectedValue = newventada.idddd
+
         End If
 
 

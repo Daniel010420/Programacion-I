@@ -27,7 +27,7 @@ Partial Class NuevaSolicitud
         Dim Fecha_vtaLabel As System.Windows.Forms.Label
         Dim IdTipofacturaLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -50,6 +50,7 @@ Partial Class NuevaSolicitud
         Me.calendario = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cobid = New System.Windows.Forms.ComboBox()
+        Me.cobfecha = New System.Windows.Forms.ComboBox()
         Label2 = New System.Windows.Forms.Label()
         NfacturaLabel = New System.Windows.Forms.Label()
         Fecha_vtaLabel = New System.Windows.Forms.Label()
@@ -287,8 +288,8 @@ Partial Class NuevaSolicitud
         '
         'subtotal
         '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle2
         Me.subtotal.HeaderText = "SUBTOTAL"
         Me.subtotal.Name = "subtotal"
         Me.subtotal.ReadOnly = True
@@ -318,6 +319,14 @@ Partial Class NuevaSolicitud
         Me.cobid.Size = New System.Drawing.Size(147, 21)
         Me.cobid.TabIndex = 53
         '
+        'cobfecha
+        '
+        Me.cobfecha.FormattingEnabled = True
+        Me.cobfecha.Location = New System.Drawing.Point(71, 41)
+        Me.cobfecha.Name = "cobfecha"
+        Me.cobfecha.Size = New System.Drawing.Size(217, 21)
+        Me.cobfecha.TabIndex = 59
+        '
         'NuevaSolicitud
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -340,6 +349,7 @@ Partial Class NuevaSolicitud
         Me.Controls.Add(Label1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.cobid)
+        Me.Controls.Add(Me.cobfecha)
         Me.Name = "NuevaSolicitud"
         Me.Text = "Nueva Solicitud"
         Me.GroupBox2.ResumeLayout(False)
@@ -373,4 +383,5 @@ Partial Class NuevaSolicitud
     Friend WithEvents calendario As DateTimePicker
     Friend WithEvents Label3 As Label
     Friend WithEvents cobid As ComboBox
+    Friend WithEvents cobfecha As ComboBox
 End Class

@@ -84,6 +84,8 @@
         ElseIf btnnuevoyaceptar.Text = "Aceptar" Then
             comandosql = comandoinsertar
 
+
+
             If lblcoste.Text = "" Then
                 lblcoste.Text = 0
             End If
@@ -93,6 +95,7 @@
             If txtprecio.Text = "" Then
                 txtprecio.Text = 0
             End If
+
 
             Dim msg = objConexion.mantenimientodetallesolicitudes(New String() {
             "",                 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
@@ -113,7 +116,20 @@
 
 
         Else 'si el boton dice Guardar, significa que esta haciendo un cambio de un dato
+
             comandosql = comandoactualizar
+
+
+            If lblcoste.Text = "" Then
+                lblcoste.Text = 0
+            End If
+            If txtcantidad.Text = "" Then
+                txtcantidad.Text = 0
+            End If
+            If txtprecio.Text = "" Then
+                txtprecio.Text = 0
+            End If
+
             Dim msg = objConexion.mantenimientodetallesolicitudes(New String() {
               txtiddetalle.Text,      'dato(0) si se envia el id aqui porque es el que identifica el registro, update from id = x
               cobmedicamento.SelectedValue,     'dato(1)
@@ -215,7 +231,7 @@
         'txtotrosvalores.Text = txtotrosvalores.Text.Trim
 
         If txtcantidad.Text <> "" And txtprecio.Text <> "" Then
-            If txtcantidad.Text > 0 And txtprecio.Text > 0 Then
+            If txtcantidad.Text > 0 And txtprecio.Text >= 0 Then
                 Dim cantidad = txtcantidad.Text
                 Dim precio = txtprecio.Text
                 lblcoste.Text = precio
@@ -262,6 +278,28 @@
         newform.Show()
         Close()
 
+
+    End Sub
+
+    Private Sub txtcantidad_TextChanged(sender As Object, e As EventArgs) Handles txtcantidad.TextChanged
+        txtcantidad.Text = txtcantidad.Text.Trim
+    End Sub
+
+    Private Sub txtprecio_TextChanged(sender As Object, e As EventArgs) Handles txtprecio.TextChanged
+        txtprecio.Text = txtprecio.Text.Trim
+
+        txtcantidad.Text = txtcantidad.Text.Trim
+        txtprecio.Text = txtprecio.Text.Trim
+        '       txtotrosvalores.Text = txtotrosvalores.Text.Trim
+
+        If txtcantidad.Text <> "" And txtprecio.Text <> "" Then
+            If txtcantidad.Text > 0 And txtprecio.Text > 0 Then
+                Dim cantidad = txtcantidad.Text
+                Dim precio = txtprecio.Text
+                lblcoste.Text = precio
+
+            End If
+        End If
 
     End Sub
 End Class

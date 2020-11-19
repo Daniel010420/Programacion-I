@@ -32,12 +32,12 @@ Partial Class formUsuarios
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cobempleado = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtcontraseña = New System.Windows.Forms.TextBox()
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtid = New System.Windows.Forms.TextBox()
-        Me.txtcontraseña = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.grid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -147,6 +147,15 @@ Partial Class formUsuarios
         Me.cobempleado.Size = New System.Drawing.Size(220, 21)
         Me.cobempleado.TabIndex = 11
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(6, 69)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(61, 13)
+        Me.Label4.TabIndex = 5
+        Me.Label4.Text = "Contraseña"
+        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -155,6 +164,13 @@ Partial Class formUsuarios
         Me.Label2.Size = New System.Drawing.Size(43, 13)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Usuario"
+        '
+        'txtcontraseña
+        '
+        Me.txtcontraseña.Location = New System.Drawing.Point(6, 92)
+        Me.txtcontraseña.Name = "txtcontraseña"
+        Me.txtcontraseña.Size = New System.Drawing.Size(220, 20)
+        Me.txtcontraseña.TabIndex = 4
         '
         'txtnombre
         '
@@ -178,22 +194,6 @@ Partial Class formUsuarios
         Me.txtid.Name = "txtid"
         Me.txtid.Size = New System.Drawing.Size(100, 20)
         Me.txtid.TabIndex = 0
-        '
-        'txtcontraseña
-        '
-        Me.txtcontraseña.Location = New System.Drawing.Point(6, 92)
-        Me.txtcontraseña.Name = "txtcontraseña"
-        Me.txtcontraseña.Size = New System.Drawing.Size(220, 20)
-        Me.txtcontraseña.TabIndex = 4
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 69)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(61, 13)
-        Me.Label4.TabIndex = 5
-        Me.Label4.Text = "Contraseña"
         '
         'formUsuarios
         '

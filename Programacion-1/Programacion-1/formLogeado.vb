@@ -59,7 +59,7 @@
         newform.Show()
     End Sub
 
-    Private Sub PreciosMedicamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreciosMedicamentoToolStripMenuItem.Click
+    Private Sub PreciosMedicamentoToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim newform As New FormPrecio
         newform.MdiParent = Me
         newform.Show()
@@ -95,6 +95,12 @@
 
     Private Sub RealizarSolicitudDeMedicinaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RealizarSolicitudDeMedicinaToolStripMenuItem.Click
         Dim newform As New NuevaSolicitud
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
+
+    Private Sub NuevaVentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevaVentaToolStripMenuItem.Click
+        Dim newform As New NuevaVenta
         newform.MdiParent = Me
         newform.Show()
     End Sub

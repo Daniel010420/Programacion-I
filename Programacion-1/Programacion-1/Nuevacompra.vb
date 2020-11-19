@@ -4,7 +4,7 @@
     Dim dataTable As New DataTable
     Dim accion As String = "nuevo"
     Dim comandosql = ""
-    Dim objdetalle As New detallecompra
+    ' Dim objdetalle As New detallecompra
 
 
 
@@ -20,9 +20,9 @@
     Private Sub pedidossolicitados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Label3.Visible = False
-
+        cobfecha.Enabled = False
         ' obtenerdatos()
-
+        calendario.Visible = False
 
         obtenerdatosfacturashechas()
     End Sub
@@ -75,7 +75,8 @@
             cobfacturas.AutoCompleteMode = AutoCompleteMode.Suggest
             cobfacturas.AutoCompleteSource = AutoCompleteSource.ListItems
 
-
+            cobfecha.DataSource = objConexion.obtenerDatos().Tables("FacturaCompras").DefaultView
+            cobfecha.DisplayMember = "fecha"
 
 
             cargar()
@@ -242,13 +243,14 @@
             accion = "nuevo"
             btneliminar.Enabled = False
             cargar2()
-
+            calendario.Visible = True
 
             'si el boton dice aceptar, significa que esta aceptando el nuevo registro y lo envia a la base
         ElseIf btnnuevoyaceptar.Text = "Aceptar" Then
             comandosql = comandoinsertar
 
-            Dim msg = objConexion.mantenimientocompra(New String() {
+            If cobfactura.Text <> "" Then
+                Dim msg = objConexion.mantenimientocompra(New String() {
             "",                 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
             cobfacturas.Text,        'dato(2)
             cobproveedor.SelectedValue,        'dato(2)
@@ -257,34 +259,38 @@
             cobpago.SelectedValue, 'dato(2)
             cobsucursal.SelectedValue}, 'dato(2)
           accion, comandosql, idTabla) 'accion que se desea realizar en el case
-            btnnuevoyaceptar.Text = "Nuevo"
-            btnmodificarycancelar.Text = "Modificar"
-            cargar()
+                btnnuevoyaceptar.Text = "Nuevo"
+                btnmodificarycancelar.Text = "Modificar"
+                cargar()
 
-            obtenerdatosfacturashechas()
-
-
-
-            If msg = "Accion realizada" Then
-                MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-                btneliminar.Enabled = True
+                obtenerdatosfacturashechas()
+                calendario.Visible = False
+                If msg = "Accion realizada" Then
+                    MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    btneliminar.Enabled = True
 
 
-                Dim newventada As New detallecompra
-                newventada.ShowDialog()
-                Close()
-                '  If objBuscarCategoriaProducto._idC > 0 Then
-                '    cboCategoriaProductos.SelectedValue = objBuscarCategoriaProducto._idC
-                'End If
-            ElseIf msg = "Error en el proceso" Then
-                MessageBox.Show("Error en el proceso, probablemente el numero de factura ya existe", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-                btneliminar.Enabled = True
+                    Dim newventada As New detallecompra
+                    newventada.ShowDialog()
+                    Close()
+                    '  If objBuscarCategoriaProducto._idC > 0 Then
+                    '    cboCategoriaProductos.SelectedValue = objBuscarCategoriaProducto._idC
+                    'End If
+
+                ElseIf msg = "Error en el proceso" Then
+                    MessageBox.Show("Error en el proceso, probablemente el numero de factura ya existe", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    btneliminar.Enabled = True
+                End If
             End If
 
 
 
 
-        Else 'si el boton dice Guardar, significa que esta haciendo un cambio de un dato
+
+
+            Else 'si el boton dice Guardar, significa que esta haciendo un cambio de un dato
+            calendario.Visible = False
+
             comandosql = comandoactualizar
             Dim msg = objConexion.mantenimientocompra(New String() {
               cobid.SelectedValue,      'dato(0) si se envia el id aqui porque es el que identifica el registro, update from id = x
@@ -314,7 +320,10 @@
             btnmodificarycancelar.Text = "Cancelar"
             btneliminar.Enabled = False
             accion = "modificar"
+            calendario.Visible = True
         Else 'Guardar
+            calendario.Visible = False
+
             btnnuevoyaceptar.Text = "Nuevo"
             btnmodificarycancelar.Text = "Modificar"
             obtenerdatosfacturashechas()
@@ -422,4 +431,6 @@
 
 
     End Sub
+
+
 End Class

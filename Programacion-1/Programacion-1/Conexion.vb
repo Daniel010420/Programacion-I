@@ -92,6 +92,14 @@ Public Class Conexion
         miAdapter.Fill(ds, "Ganancia")
 
 
+        miCommand.CommandText = "select Clientes.IdClientes, Clientes.Nombre, Descuentos.IdDescuentos, Descuentos.MargenDescuento, PorcientoGanancia.IdPorcientoGanancia, PorcientoGanancia.MargenGanancia from Clientes inner join Descuentos on Descuentos.IdTipoClientes = Clientes.IdTipoCliente inner join PorcientoGanancia on PorcientoGanancia.IdTipoCliente = Clientes.IdTipoCliente"
+        '                               Descuentos.IdDescuentos, TipoCliente.TipoCliente, Descuentos.MargenDescuento, TipoCliente.IdTipoCliente from Descuentos inner join TipoCliente on TipoCliente.IdTipoCliente = Descuentos.IdTipoClientes"
+        miAdapter.SelectCommand = miCommand
+        'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
+        miAdapter.Fill(ds, "Gananciadescuentocliente")
+
+
+
         'miCommand.CommandText = "select Precios.IdPrecios, Solicitudes.Codigo, Precios.PrecioCompra from Precios inner join Solicitudes on Solicitudes.IdSolicitudes = Precios.IdSolicitudes"
         'miAdapter.SelectCommand = miCommand
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
@@ -131,6 +139,17 @@ Public Class Conexion
         miAdapter.SelectCommand = miCommand
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
         miAdapter.Fill(ds, "detallesolicitud")
+
+
+        miCommand.CommandText = "select detallecompra.Iddetallecompra,RegistroMedicamento.NombreMedicamento,Presentacion.Presentacion, Laboratorio.Laboratorio, detallecompra.Cantidad, detallecompra.PrecioCompra, detallecompra.CosteAdicional, Compras.IdCompra, Compras.nunfactura, RegistroMedicamento.IdRegistroMedicamento, Presentacion.IdPresentacion, Laboratorio.IdLaboratorio from detallecompra inner join RegistroMedicamento on RegistroMedicamento.IdRegistroMedicamento = detallecompra.IdRegistroMedicamento inner join Laboratorio on RegistroMedicamento.IdLaboratorio = Laboratorio.IdLaboratorio inner join Presentacion on Presentacion.IdPresentacion = RegistroMedicamento.IdPresentacion inner join Compras on Compras.IdCompra = detallecompra.IdCompra"
+        miAdapter.SelectCommand = miCommand
+        'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
+        miAdapter.Fill(ds, "detalleventa")
+
+        miCommand.CommandText = "select Ventas.IdVentas, Ventas.numfactura, Ventas.fechaventa, Formapago.Formapago,Formapago.Idformapago, Clientes.Nombre,Clientes.IdClientes, Tipofactura.Idtipofactura, TipoFactura.tipofactura,Empleados.NombreCompleto, Empleados.IdEmpleado, Sucursal.IdSucursal,Sucursal.Ubicacion from Ventas inner join Formapago on Formapago.Idformapago = Ventas.IdFormapago inner join Clientes on Clientes.IdClientes = Ventas.IdCliente inner join Tipofactura on Tipofactura.Idtipofactura = Ventas.Idtipofactura inner join Empleados on Empleados.IdEmpleado = Ventas.IdEmpleado inner join Sucursal on Sucursal.IdSucursal = Ventas.Idsucursal"
+        miAdapter.SelectCommand = miCommand
+        'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
+        miAdapter.Fill(ds, "nuevaventa")
 
 
         Return ds
@@ -729,6 +748,68 @@ Public Class Conexion
 
     End Function
 
+    Public Function mantenimientoventas(ByVal datos As String(), ByVal accion As String, ByVal comandosql As String, ByVal id As String)
+        Dim sql, msg As String
+        'dato(0) sera el ID de cada tabla
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT into " + comandosql + " VALUES 
+                (
+                  '" + datos(1) + "', 
+                  '" + datos(2) + "', 
+                  '" + datos(3) + "', 
+                  '" + datos(4) + "',  
+                  '" + datos(5) + "',  
+                  '" + datos(6) + "',  
+                  '" + datos(7) + "'
+                 )"
+
+
+                If (executesql(sql) > 0) Then
+                    msg = "Accion realizada"
+
+                    miCommand.Connection = miConexion
+                    miCommand.CommandText = "select MAX(IdVentas) AS IdVentas from Ventas"
+                    datos(0) = miCommand.ExecuteScalar().ToString()
+                    Module1.idcompra = datos(0)
+                    Module1.factura = datos(1)
+                Else
+                    msg = "Error en el proceso"
+                End If
+
+                Return msg
+
+
+            Case "modificar"
+                sql = "UPDATE " + comandosql + " SET 
+                 fechaventa='" + datos(2) + "',
+                 IdFormapago='" + datos(3) + "',
+                 IdCliente='" + datos(4) + "',
+                 Idtipofactura='" + datos(5) + "',
+                 IdEmpleado='" + datos(6) + "',
+                 IdSucursal='" + datos(7) + "'
+            WHERE " + id + "    ='" + datos(0) + "'"
+
+                If (executesql(sql) > 0) Then
+                    msg = "Accion realizada"
+                Else
+                    msg = "Error en el proceso"
+
+                End If
+                Return msg
+            Case "eliminar"
+                sql = "DELETE FROM " + comandosql + " WHERE " + id + "='" + datos(0) + "'"
+
+                If (executesql(sql) > 0) Then
+                    msg = "Accion realizada"
+                Else
+                    msg = "Error en el proceso"
+                End If
+                Return msg
+        End Select
+
+
+    End Function
 
 
 

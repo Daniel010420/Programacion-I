@@ -68,7 +68,8 @@
             comandosql = comandoinsertar
 
 
-            Dim msg = objConexion.mantenimientoMedicamentoGeneral(New String() {
+            If txtnombre.Text <> "" Then
+                Dim msg = objConexion.mantenimientoMedicamentoGeneral(New String() {
             "",                 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
             txtnombre.Text,     'dato(1)
             cobpresentacion.SelectedValue,        'dato(2)
@@ -81,25 +82,28 @@
                 MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
                 btneliminar.Enabled = True
 
+            End If
 
 
 
 
         Else 'si el boton dice Guardar, significa que esta haciendo un cambio de un dato
             comandosql = comandoactualizar
-            Dim msg = objConexion.mantenimientoMedicamentoGeneral(New String() {
-              txtid.Text,      'dato(0) si se envia el id aqui porque es el que identifica el registro, update from id = x
-              txtnombre.Text,  'dato(1)
-             cobpresentacion.SelectedValue,        'dato(2)
-              coblaboratorio.SelectedValue}, 'dato(3)
-              accion, comandosql, idTabla)
+            If txtnombre.Text <> "" Then
+                Dim msg = objConexion.mantenimientoMedicamentoGeneral(New String() {
+             txtid.Text,      'dato(0) si se envia el id aqui porque es el que identifica el registro, update from id = x
+             txtnombre.Text,  'dato(1)
+            cobpresentacion.SelectedValue,        'dato(2)
+             coblaboratorio.SelectedValue}, 'dato(3)
+             accion, comandosql, idTabla)
 
-            obtenerdatos()
-            MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-            limpiar()
-            btnnuevoyaceptar.Text = "Nuevo"
-            btnmodificarycancelar.Text = "Modificar"
-            btneliminar.Enabled = True
+                obtenerdatos()
+                MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                limpiar()
+                btnnuevoyaceptar.Text = "Nuevo"
+                btnmodificarycancelar.Text = "Modificar"
+                btneliminar.Enabled = True
+            End If
         End If
     End Sub
 
@@ -175,4 +179,21 @@
         txtid.Text = ""
         txtnombre.Text = ""
     End Sub
+
+    Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtnombre.TextChanged
+        txtnombre.Text = txtnombre.Text.Trim
+    End Sub
+
+    Private Sub txtnombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtnombre.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+            MsgBox("Solo se puede ingresar valores de tipo texto", MsgBoxStyle.Exclamation, "Ingreso de Texto")
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = False
+        End If
+    End Sub
+
+
 End Class

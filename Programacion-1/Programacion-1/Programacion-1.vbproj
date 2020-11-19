@@ -101,6 +101,12 @@
     <Compile Include="detallesolicitud.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="detalleventa.Designer.vb">
+      <DependentUpon>detalleventa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="detalleventa.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Facturas.Designer.vb">
       <DependentUpon>Facturas.vb</DependentUpon>
     </Compile>
@@ -221,10 +227,22 @@
     <Compile Include="NuevaSolicitud.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="NuevaVenta.Designer.vb">
+      <DependentUpon>NuevaVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NuevaVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="solicitudes.Designer.vb">
       <DependentUpon>solicitudes.vb</DependentUpon>
     </Compile>
     <Compile Include="solicitudes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ventas.Designer.vb">
+      <DependentUpon>ventas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ventas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="_BDFarmacia_SantaFeDataSet.Designer.vb">
@@ -242,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="detallesolicitud.resx">
       <DependentUpon>detallesolicitud.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="detalleventa.resx">
+      <DependentUpon>detalleventa.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturas.resx">
       <DependentUpon>Facturas.vb</DependentUpon>
@@ -300,8 +321,14 @@
     <EmbeddedResource Include="NuevaSolicitud.resx">
       <DependentUpon>NuevaSolicitud.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NuevaVenta.resx">
+      <DependentUpon>NuevaVenta.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="solicitudes.resx">
       <DependentUpon>solicitudes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ventas.resx">
+      <DependentUpon>ventas.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

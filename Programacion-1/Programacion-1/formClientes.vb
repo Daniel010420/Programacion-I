@@ -62,40 +62,43 @@
             comandosql = comandoinsertar
 
 
-            Dim msg = objConexion.mantenimientoClientes(New String() {
+            If txtnombre.Text <> "" Then
+                Dim msg = objConexion.mantenimientoClientes(New String() {
             "",
             cobtipodecliente.SelectedValue, 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
             txtnombre.Text,     'dato(1)
             txttelefono.Text,
             txtdireccion.Text}, 'dato(2)
           accion, comandosql, idTabla) 'accion que se desea realizar en el case
-            btnnuevoyaceptar.Text = "Nuevo"
-            btnmodificarycancelar.Text = "Modificar"
-            obtenerdatos()
-            limpiar()
-            MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-            btneliminar.Enabled = True
+                btnnuevoyaceptar.Text = "Nuevo"
+                btnmodificarycancelar.Text = "Modificar"
+                obtenerdatos()
+                limpiar()
+                MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                btneliminar.Enabled = True
 
-
+            End If
 
 
 
         Else 'si el boton dice Guardar, significa que esta haciendo un cambio de un dato
-            comandosql = comandoactualizar
-            Dim msg = objConexion.mantenimientoClientes(New String() {
-             txtid.Text,
-            cobtipodecliente.SelectedValue, 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
-            txtnombre.Text,     'dato(1)
-            txttelefono.Text,
-            txtdireccion.Text}, 'dato(3)
-            accion, comandosql, idTabla)
+                comandosql = comandoactualizar
+            If txtnombre.Text <> "" Then
+                Dim msg = objConexion.mantenimientoClientes(New String() {
+            txtid.Text,
+           cobtipodecliente.SelectedValue, 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
+           txtnombre.Text,     'dato(1)
+           txttelefono.Text,
+           txtdireccion.Text}, 'dato(3)
+           accion, comandosql, idTabla)
 
-            obtenerdatos()
-            MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-            limpiar()
-            btnnuevoyaceptar.Text = "Nuevo"
-            btnmodificarycancelar.Text = "Modificar"
-            btneliminar.Enabled = True
+                obtenerdatos()
+                MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                limpiar()
+                btnnuevoyaceptar.Text = "Nuevo"
+                btnmodificarycancelar.Text = "Modificar"
+                btneliminar.Enabled = True
+            End If
         End If
     End Sub
 
@@ -177,5 +180,15 @@
         txtdireccion.Text = ""
     End Sub
 
+    Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtnombre.TextChanged
+        txtnombre.Text = txtnombre.Text.Trim
+    End Sub
 
+    Private Sub txttelefono_TextChanged(sender As Object, e As EventArgs) Handles txttelefono.TextChanged
+        txttelefono.Text = txttelefono.Text.Trim
+    End Sub
+
+    Private Sub txtdireccion_TextChanged(sender As Object, e As EventArgs) Handles txtdireccion.TextChanged
+        txtdireccion.Text = txtdireccion.Text.Trim
+    End Sub
 End Class

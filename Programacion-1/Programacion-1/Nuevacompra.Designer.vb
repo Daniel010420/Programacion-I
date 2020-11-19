@@ -28,7 +28,7 @@ Partial Class Nuevacompra
         Dim IdPagoLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblRespuestaTotal = New System.Windows.Forms.Label()
         Me.lbltotal = New System.Windows.Forms.Label()
@@ -52,6 +52,7 @@ Partial Class Nuevacompra
         Me.cobid = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.cobfecha = New System.Windows.Forms.ComboBox()
         NfacturaLabel = New System.Windows.Forms.Label()
         Fecha_vtaLabel = New System.Windows.Forms.Label()
         IdTipofacturaLabel = New System.Windows.Forms.Label()
@@ -195,15 +196,15 @@ Partial Class Nuevacompra
         '
         'calendario
         '
-        Me.calendario.Location = New System.Drawing.Point(66, 46)
+        Me.calendario.Location = New System.Drawing.Point(74, 47)
         Me.calendario.Name = "calendario"
-        Me.calendario.Size = New System.Drawing.Size(217, 20)
+        Me.calendario.Size = New System.Drawing.Size(222, 20)
         Me.calendario.TabIndex = 19
         '
         'subtotal
         '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle2
         Me.subtotal.HeaderText = "SUBTOTAL"
         Me.subtotal.Name = "subtotal"
         Me.subtotal.ReadOnly = True
@@ -338,11 +339,20 @@ Partial Class Nuevacompra
         Me.Button2.Text = "Buscar"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'cobfecha
+        '
+        Me.cobfecha.FormattingEnabled = True
+        Me.cobfecha.Location = New System.Drawing.Point(74, 46)
+        Me.cobfecha.Name = "cobfecha"
+        Me.cobfecha.Size = New System.Drawing.Size(222, 21)
+        Me.cobfecha.TabIndex = 40
+        '
         'Nuevacompra
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(949, 582)
+        Me.Controls.Add(Me.calendario)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox2)
@@ -356,12 +366,12 @@ Partial Class Nuevacompra
         Me.Controls.Add(Me.grid)
         Me.Controls.Add(NfacturaLabel)
         Me.Controls.Add(Fecha_vtaLabel)
-        Me.Controls.Add(Me.calendario)
         Me.Controls.Add(IdTipofacturaLabel)
         Me.Controls.Add(IdPagoLabel)
         Me.Controls.Add(Label1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.cobid)
+        Me.Controls.Add(Me.cobfecha)
         Me.Name = "Nuevacompra"
         Me.Text = "Nueva Compra"
         Me.Panel1.ResumeLayout(False)
@@ -396,4 +406,5 @@ Partial Class Nuevacompra
     Friend WithEvents cobid As ComboBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents cobfecha As ComboBox
 End Class

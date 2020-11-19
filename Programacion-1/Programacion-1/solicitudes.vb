@@ -46,9 +46,10 @@
     Private Sub grid_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid.CellClick
 
         If grid.Rows.Count > 0 Then
-            Dim i As Integer
+            Dim i, pro, su, em As Integer
             i = grid.CurrentRow.Index
             Label1.Text = grid.Item(0, i).Value()
+
         End If
 
     End Sub
@@ -56,6 +57,7 @@
 
     Public Function label()
         idddd = Label1.Text
+
     End Function
 
     Private Sub btnnuevoyaceptar_Click(sender As Object, e As EventArgs) Handles btnnuevoyaceptar.Click

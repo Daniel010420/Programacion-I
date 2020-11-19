@@ -56,34 +56,39 @@
         'si el boton dice aceptar, significa que esta aceptando el nuevo registro y lo envia a la base
     ElseIf btnnuevoyaceptar.Text = "Aceptar" Then
         comandosql = comandoinsertar
-            Dim msg = objConexion.mantenimientoDescuentos(New String() {
-            "",
-           cobtipocliente.SelectedValue,
-           txtdescuento.Text},
-          accion, comandosql, idTabla) 'accion que se desea realizar en el case
-            btnnuevoyaceptar.Text = "Nuevo"
-        btnmodificarycancelar.Text = "Modificar"
-        obtenerdatos()
-        limpiar()
-        MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-        btneliminar.Enabled = True
+            If txtdescuento.Text <> "" Then
+                Dim msg = objConexion.mantenimientoDescuentos(New String() {
+         "",
+        cobtipocliente.SelectedValue,
+        txtdescuento.Text},
+       accion, comandosql, idTabla) 'accion que se desea realizar en el case
+                btnnuevoyaceptar.Text = "Nuevo"
+                btnmodificarycancelar.Text = "Modificar"
+                obtenerdatos()
+                limpiar()
+                MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                btneliminar.Enabled = True
+            End If
 
 
-    Else 'si el boton dice Guardar, significa que esta haciendo un cambio de un dato
+        Else 'si el boton dice Guardar, significa que esta haciendo un cambio de un dato
         comandosql = comandoactualizar
-            Dim msg = objConexion.mantenimientoDescuentos(New String() {
-             txtid.Text,
-            cobtipocliente.SelectedValue, 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
-            txtdescuento.Text},
-            accion, comandosql, idTabla)
+            If txtdescuento.Text <> "" Then
+                Dim msg = objConexion.mantenimientoDescuentos(New String() {
+           txtid.Text,
+          cobtipocliente.SelectedValue, 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
+          txtdescuento.Text},
+          accion, comandosql, idTabla)
+                obtenerdatos()
+                MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                limpiar()
+                btnnuevoyaceptar.Text = "Nuevo"
+                btnmodificarycancelar.Text = "Modificar"
+                btneliminar.Enabled = True
+            End If
 
-            obtenerdatos()
-        MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-        limpiar()
-        btnnuevoyaceptar.Text = "Nuevo"
-        btnmodificarycancelar.Text = "Modificar"
-        btneliminar.Enabled = True
-    End If
+
+        End If
 End Sub
 
 
@@ -158,4 +163,11 @@ Private Sub limpiar()
         txtdescuento.Text = ""
     End Sub
 
+    Private Sub txtdescuento_TextChanged(sender As Object, e As EventArgs) Handles txtdescuento.TextChanged
+        txtdescuento.Text = txtdescuento.Text.Trim
+    End Sub
+
+    Private Sub txtdescuento_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtdescuento.KeyPress
+        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+    End Sub
 End Class

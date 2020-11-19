@@ -59,33 +59,38 @@
             'si el boton dice aceptar, significa que esta aceptando el nuevo registro y lo envia a la base
         ElseIf btnnuevoyaceptar.Text = "Aceptar" Then
             comandosql = comandoinsertar
-            Dim msg = objConexion.mantenimientoGanancia(New String() {
-            "",
-           cobGanancia.SelectedValue,
-           txtGanacia.Text},
-          accion, comandosql, idTabla) 'accion que se desea realizar en el case
-            btnnuevoyaceptar.Text = "Nuevo"
-            btnmodificarycancelar.Text = "Modificar"
-            obtenerdatos()
-            limpiar()
-            MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-            btneliminar.Enabled = True
+            If txtGanacia.Text <> "" Then
+                Dim msg = objConexion.mantenimientoGanancia(New String() {
+           "",
+          cobGanancia.SelectedValue,
+          txtGanacia.Text},
+         accion, comandosql, idTabla) 'accion que se desea realizar en el case
+                btnnuevoyaceptar.Text = "Nuevo"
+                btnmodificarycancelar.Text = "Modificar"
+                obtenerdatos()
+                limpiar()
+                MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                btneliminar.Enabled = True
+            End If
 
 
         Else 'si el boton dice Guardar, significa que esta haciendo un cambio de un dato
             comandosql = comandoactualizar
-            Dim msg = objConexion.mantenimientoGanancia(New String() {
-             txtid.Text,
-            cobGanancia.SelectedValue, 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
-            txtGanacia.Text},
-            accion, comandosql, idTabla)
 
-            obtenerdatos()
-            MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-            limpiar()
-            btnnuevoyaceptar.Text = "Nuevo"
-            btnmodificarycancelar.Text = "Modificar"
-            btneliminar.Enabled = True
+            If txtGanacia.Text <> "" Then
+                Dim msg = objConexion.mantenimientoGanancia(New String() {
+ txtid.Text,
+cobGanancia.SelectedValue, 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
+txtGanacia.Text},
+accion, comandosql, idTabla)
+
+                obtenerdatos()
+                MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                limpiar()
+                btnnuevoyaceptar.Text = "Nuevo"
+                btnmodificarycancelar.Text = "Modificar"
+                btneliminar.Enabled = True
+            End If
         End If
     End Sub
 
@@ -159,4 +164,11 @@
         txtGanacia.Text = ""
     End Sub
 
+    Private Sub txtGanacia_TextChanged(sender As Object, e As EventArgs) Handles txtGanacia.TextChanged
+        txtGanacia.Text = txtGanacia.Text.Trim
+    End Sub
+
+    Private Sub txtGanacia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtGanacia.KeyPress
+        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+    End Sub
 End Class
