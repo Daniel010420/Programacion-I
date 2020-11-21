@@ -27,7 +27,7 @@ Partial Class NuevaSolicitud
         Dim Fecha_vtaLabel As System.Windows.Forms.Label
         Dim IdTipofacturaLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -51,6 +51,7 @@ Partial Class NuevaSolicitud
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cobid = New System.Windows.Forms.ComboBox()
         Me.cobfecha = New System.Windows.Forms.ComboBox()
+        Me.txtfactura = New System.Windows.Forms.TextBox()
         Label2 = New System.Windows.Forms.Label()
         NfacturaLabel = New System.Windows.Forms.Label()
         Fecha_vtaLabel = New System.Windows.Forms.Label()
@@ -288,8 +289,8 @@ Partial Class NuevaSolicitud
         '
         'subtotal
         '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle5
         Me.subtotal.HeaderText = "SUBTOTAL"
         Me.subtotal.Name = "subtotal"
         Me.subtotal.ReadOnly = True
@@ -327,11 +328,19 @@ Partial Class NuevaSolicitud
         Me.cobfecha.Size = New System.Drawing.Size(217, 21)
         Me.cobfecha.TabIndex = 59
         '
+        'txtfactura
+        '
+        Me.txtfactura.Location = New System.Drawing.Point(632, 8)
+        Me.txtfactura.Name = "txtfactura"
+        Me.txtfactura.Size = New System.Drawing.Size(147, 20)
+        Me.txtfactura.TabIndex = 60
+        '
         'NuevaSolicitud
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(949, 582)
+        Me.Controls.Add(Me.txtfactura)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox2)
@@ -384,4 +393,5 @@ Partial Class NuevaSolicitud
     Friend WithEvents Label3 As Label
     Friend WithEvents cobid As ComboBox
     Friend WithEvents cobfecha As ComboBox
+    Friend WithEvents txtfactura As TextBox
 End Class

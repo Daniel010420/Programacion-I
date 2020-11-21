@@ -17,7 +17,7 @@
     Dim comandoinsertar = Nombretabladebusqueda + " (Codigo,IdProveedor,IdEmpleado,fecha_Registro,IdSucursal)" 'campos de la tabla en orden menos id
     Dim comandoactualizar = Nombretabladebusqueda
     Private Sub NuevaSolicitud_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        txtfactura.Visible = False
         obtenerdatossolicitudhecha()
         cobfecha.Enabled = False
         ' obtenerdatos()
@@ -211,12 +211,14 @@
 
     'Boton primero
     Private Sub btnnuevoyaceptar_Click(sender As Object, e As EventArgs) Handles btnnuevoyaceptar.Click
+
         If btnnuevoyaceptar.Text = "Nuevo" Then 'Nuevo
             btnnuevoyaceptar.Text = "Aceptar"
             btnmodificarycancelar.Text = "Cancelar"
             accion = "nuevo"
             calendario.Visible = True
-
+            txtfactura.Visible = True
+            cobcodigo.Visible = False
             btneliminar.Enabled = False
             cargar2()
 
@@ -225,38 +227,48 @@
         ElseIf btnnuevoyaceptar.Text = "Aceptar" Then
             comandosql = comandoinsertar
 
-            Dim msg = objConexion.mantenimientosolicitudes(New String() {
+
+            If txtfactura.Text <> "" Then
+                Dim msg = objConexion.mantenimientosolicitudes(New String() {
             "",                 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
-            cobcodigo.Text,        'dato(2)
+            txtfactura.Text,        'dato(2)
             cobproveedor.SelectedValue,        'dato(2)
             cobempleado.SelectedValue,
             calendario.Text,'dato(2)
             cobsucursal.SelectedValue}, 'dato(2)
           accion, comandosql, idTabla) 'accion que se desea realizar en el case
-            btnnuevoyaceptar.Text = "Nuevo"
-            btnmodificarycancelar.Text = "Modificar"
-            cargar()
+                btnnuevoyaceptar.Text = "Nuevo"
+                btnmodificarycancelar.Text = "Modificar"
+                cargar()
 
-            calendario.Visible = False
+                calendario.Visible = False
 
-            obtenerdatossolicitudhecha()
+                obtenerdatossolicitudhecha()
 
-            If msg = "Accion realizada" Then
-                MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-                btneliminar.Enabled = True
+                If msg = "Accion realizada" Then
+                    MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    btneliminar.Enabled = True
 
 
-                Dim newventada As New detallesolicitud
-                newventada.ShowDialog()
-                Close()
-                'If objBuscarCategoriaProducto._idC > 0 Then
-                'cboCategoriaProductos.SelectedValue = objBuscarCategoriaProducto._idC
-                'End If
-            ElseIf msg = "Error en el proceso" Then
+                    cobcodigo.Visible = True
+                    txtfactura.Visible = False
+
+                    Dim newventada As New detallesolicitud
+                    newventada.ShowDialog()
+
+                    Dim j = newventada.b
+                    If j > 0 Then
+                        cobcodigo.SelectedValue = newventada.b
+                    End If
+                    'If objBuscarCategoriaProducto._idC > 0 Then
+                    'cboCategoriaProductos.SelectedValue = objBuscarCategoriaProducto._idC
+                    'End If
+                ElseIf msg = "Error en el proceso" Then
                     MessageBox.Show("Error en el proceso, probablemente el numero de solicitud ya existe", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-                btneliminar.Enabled = True
-            End If
+                    btneliminar.Enabled = True
+                End If
 
+            End If
 
 
 
@@ -294,6 +306,8 @@
             btneliminar.Enabled = False
             accion = "modificar"
         Else 'Guardar
+            cobcodigo.Visible = True
+            txtfactura.Visible = False
             btnnuevoyaceptar.Text = "Nuevo"
             btnmodificarycancelar.Text = "Modificar"
             obtenerdatossolicitudhecha()
@@ -373,7 +387,15 @@
 
         Dim newventada As New detallesolicitud
         newventada.ShowDialog()
-        Close()
+        '   Close()
+
+
+        obtenerdatossolicitudhecha()
+        '   Close()
+        Dim j = newventada.b
+        If j > 0 Then
+            cobcodigo.SelectedValue = newventada.b
+        End If
 
 
 

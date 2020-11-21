@@ -8,7 +8,7 @@
     Public idddd
 
     Dim buscarpor1 = "numfactura"
-    Dim buscarpor2 = "numfactura"
+    Dim buscarpor2 = "fechaventa"
     Private Sub ventas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         obtenerdatos()
     End Sub
@@ -68,5 +68,9 @@
             label()
             Close()
         End If
+    End Sub
+
+    Private Sub txtfiltro_TextChanged(sender As Object, e As EventArgs) Handles txtfiltro.TextChanged
+
     End Sub
 End Class

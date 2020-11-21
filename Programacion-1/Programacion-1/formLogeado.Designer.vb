@@ -26,8 +26,12 @@ Partial Class formLogeado
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.InventarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PreciosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PreciosDeGananciaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PreciosDeDescuentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportarDañoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MotivosDeDañoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PresentacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistroGeneralMedicamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PedidosPorRecibirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -37,16 +41,17 @@ Partial Class formLogeado
         Me.AdministarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuariosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AdministarCargosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CargosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SucursalesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FormasDePagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TipoFacturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProveedoresToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaboratoriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministrarClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TiposDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PreciosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PorcientoGananciaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PorcientoDescuentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -65,7 +70,7 @@ Partial Class formLogeado
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.InventarioToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.PreciosToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.InventarioToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.ClientesToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
@@ -74,14 +79,33 @@ Partial Class formLogeado
         '
         'InventarioToolStripMenuItem
         '
-        Me.InventarioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportarDañoToolStripMenuItem, Me.PresentacionesToolStripMenuItem, Me.RegistroGeneralMedicamentoToolStripMenuItem, Me.PedidosPorRecibirToolStripMenuItem, Me.RealizarSolicitudDeMedicinaToolStripMenuItem, Me.NuevaVentaToolStripMenuItem})
+        Me.InventarioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PreciosToolStripMenuItem1, Me.ReportarDañoToolStripMenuItem, Me.PresentacionesToolStripMenuItem, Me.RegistroGeneralMedicamentoToolStripMenuItem, Me.PedidosPorRecibirToolStripMenuItem, Me.RealizarSolicitudDeMedicinaToolStripMenuItem, Me.NuevaVentaToolStripMenuItem})
         Me.InventarioToolStripMenuItem.Name = "InventarioToolStripMenuItem"
         Me.InventarioToolStripMenuItem.Size = New System.Drawing.Size(93, 20)
         Me.InventarioToolStripMenuItem.Text = "Medicamento"
         '
+        'PreciosToolStripMenuItem1
+        '
+        Me.PreciosToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PreciosDeGananciaToolStripMenuItem, Me.PreciosDeDescuentoToolStripMenuItem})
+        Me.PreciosToolStripMenuItem1.Name = "PreciosToolStripMenuItem1"
+        Me.PreciosToolStripMenuItem1.Size = New System.Drawing.Size(237, 22)
+        Me.PreciosToolStripMenuItem1.Text = "Precios"
+        '
+        'PreciosDeGananciaToolStripMenuItem
+        '
+        Me.PreciosDeGananciaToolStripMenuItem.Name = "PreciosDeGananciaToolStripMenuItem"
+        Me.PreciosDeGananciaToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.PreciosDeGananciaToolStripMenuItem.Text = "Precios de ganancia"
+        '
+        'PreciosDeDescuentoToolStripMenuItem
+        '
+        Me.PreciosDeDescuentoToolStripMenuItem.Name = "PreciosDeDescuentoToolStripMenuItem"
+        Me.PreciosDeDescuentoToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.PreciosDeDescuentoToolStripMenuItem.Text = "Precios de descuento"
+        '
         'ReportarDañoToolStripMenuItem
         '
-        Me.ReportarDañoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MotivosDeDañoToolStripMenuItem})
+        Me.ReportarDañoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MotivosDeDañoToolStripMenuItem, Me.ReportarToolStripMenuItem})
         Me.ReportarDañoToolStripMenuItem.Name = "ReportarDañoToolStripMenuItem"
         Me.ReportarDañoToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
         Me.ReportarDañoToolStripMenuItem.Text = "Reportar Daño"
@@ -91,6 +115,12 @@ Partial Class formLogeado
         Me.MotivosDeDañoToolStripMenuItem.Name = "MotivosDeDañoToolStripMenuItem"
         Me.MotivosDeDañoToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
         Me.MotivosDeDañoToolStripMenuItem.Text = "Motivos de Daño"
+        '
+        'ReportarToolStripMenuItem
+        '
+        Me.ReportarToolStripMenuItem.Name = "ReportarToolStripMenuItem"
+        Me.ReportarToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.ReportarToolStripMenuItem.Text = "Reportar"
         '
         'PresentacionesToolStripMenuItem
         '
@@ -124,14 +154,14 @@ Partial Class formLogeado
         '
         'UsuariosToolStripMenuItem
         '
-        Me.UsuariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdministarToolStripMenuItem, Me.AdministarCargosToolStripMenuItem})
+        Me.UsuariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdministarToolStripMenuItem, Me.SucursalesToolStripMenuItem, Me.FormasDePagoToolStripMenuItem, Me.TipoFacturaToolStripMenuItem})
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(77, 20)
-        Me.UsuariosToolStripMenuItem.Text = "Empleados"
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
+        Me.UsuariosToolStripMenuItem.Text = "Empresa"
         '
         'AdministarToolStripMenuItem
         '
-        Me.AdministarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmpleadosToolStripMenuItem, Me.UsuariosToolStripMenuItem1})
+        Me.AdministarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmpleadosToolStripMenuItem, Me.UsuariosToolStripMenuItem1, Me.CargosToolStripMenuItem})
         Me.AdministarToolStripMenuItem.Name = "AdministarToolStripMenuItem"
         Me.AdministarToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
         Me.AdministarToolStripMenuItem.Text = "Administar Empleados"
@@ -148,11 +178,29 @@ Partial Class formLogeado
         Me.UsuariosToolStripMenuItem1.Size = New System.Drawing.Size(132, 22)
         Me.UsuariosToolStripMenuItem1.Text = "Usuarios"
         '
-        'AdministarCargosToolStripMenuItem
+        'CargosToolStripMenuItem
         '
-        Me.AdministarCargosToolStripMenuItem.Name = "AdministarCargosToolStripMenuItem"
-        Me.AdministarCargosToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.AdministarCargosToolStripMenuItem.Text = "Administar Cargos"
+        Me.CargosToolStripMenuItem.Name = "CargosToolStripMenuItem"
+        Me.CargosToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
+        Me.CargosToolStripMenuItem.Text = "Cargos"
+        '
+        'SucursalesToolStripMenuItem
+        '
+        Me.SucursalesToolStripMenuItem.Name = "SucursalesToolStripMenuItem"
+        Me.SucursalesToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
+        Me.SucursalesToolStripMenuItem.Text = "Sucursales"
+        '
+        'FormasDePagoToolStripMenuItem
+        '
+        Me.FormasDePagoToolStripMenuItem.Name = "FormasDePagoToolStripMenuItem"
+        Me.FormasDePagoToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
+        Me.FormasDePagoToolStripMenuItem.Text = "Formas de pago"
+        '
+        'TipoFacturaToolStripMenuItem
+        '
+        Me.TipoFacturaToolStripMenuItem.Name = "TipoFacturaToolStripMenuItem"
+        Me.TipoFacturaToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
+        Me.TipoFacturaToolStripMenuItem.Text = "Tipo de Facturas"
         '
         'ProveedoresToolStripMenuItem
         '
@@ -175,7 +223,7 @@ Partial Class formLogeado
         '
         'ClientesToolStripMenuItem
         '
-        Me.ClientesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdministrarClientesToolStripMenuItem, Me.TiposDeClientesToolStripMenuItem})
+        Me.ClientesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdministrarClientesToolStripMenuItem, Me.TiposDeClientesToolStripMenuItem, Me.UToolStripMenuItem})
         Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
         Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.ClientesToolStripMenuItem.Text = "Clientes"
@@ -192,24 +240,11 @@ Partial Class formLogeado
         Me.TiposDeClientesToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
         Me.TiposDeClientesToolStripMenuItem.Text = "Tipos De Clientes"
         '
-        'PreciosToolStripMenuItem
+        'UToolStripMenuItem
         '
-        Me.PreciosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PorcientoGananciaToolStripMenuItem, Me.PorcientoDescuentoToolStripMenuItem})
-        Me.PreciosToolStripMenuItem.Name = "PreciosToolStripMenuItem"
-        Me.PreciosToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
-        Me.PreciosToolStripMenuItem.Text = "Precios"
-        '
-        'PorcientoGananciaToolStripMenuItem
-        '
-        Me.PorcientoGananciaToolStripMenuItem.Name = "PorcientoGananciaToolStripMenuItem"
-        Me.PorcientoGananciaToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
-        Me.PorcientoGananciaToolStripMenuItem.Text = "Porciento Ganancia"
-        '
-        'PorcientoDescuentoToolStripMenuItem
-        '
-        Me.PorcientoDescuentoToolStripMenuItem.Name = "PorcientoDescuentoToolStripMenuItem"
-        Me.PorcientoDescuentoToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
-        Me.PorcientoDescuentoToolStripMenuItem.Text = "Porciento Descuento"
+        Me.UToolStripMenuItem.Name = "UToolStripMenuItem"
+        Me.UToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.UToolStripMenuItem.Text = "u"
         '
         'formLogeado
         '
@@ -237,7 +272,6 @@ Partial Class formLogeado
     Friend WithEvents UsuariosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AdministarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EmpleadosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AdministarCargosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ProveedoresToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ProveedoresToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents LaboratoriosToolStripMenuItem As ToolStripMenuItem
@@ -245,12 +279,18 @@ Partial Class formLogeado
     Friend WithEvents ClientesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AdministrarClientesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TiposDeClientesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PreciosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PorcientoGananciaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PorcientoDescuentoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UsuariosToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents RegistroGeneralMedicamentoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PedidosPorRecibirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RealizarSolicitudDeMedicinaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents NuevaVentaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReportarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CargosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SucursalesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FormasDePagoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TipoFacturaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PreciosToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents PreciosDeGananciaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PreciosDeDescuentoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UToolStripMenuItem As ToolStripMenuItem
 End Class

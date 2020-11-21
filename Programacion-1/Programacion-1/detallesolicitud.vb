@@ -3,6 +3,7 @@
     Dim dataTable As New DataTable
     Dim accion As String = "nuevo"
     Dim comandosql = ""
+    Public b
 
 
     Dim mensajeenmentana = "Registro Detalle Solicitud"
@@ -273,9 +274,7 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim newform As New NuevaSolicitud
-        newform.MdiParent = formLogeado
-        newform.Show()
+        b = txtid.Text.Trim
         Close()
 
 
@@ -300,6 +299,10 @@
 
             End If
         End If
+
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
 
     End Sub
 End Class

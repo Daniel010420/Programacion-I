@@ -28,7 +28,7 @@ Partial Class Nuevacompra
         Dim IdPagoLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblRespuestaTotal = New System.Windows.Forms.Label()
         Me.lbltotal = New System.Windows.Forms.Label()
@@ -53,6 +53,7 @@ Partial Class Nuevacompra
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.cobfecha = New System.Windows.Forms.ComboBox()
+        Me.txtfactura = New System.Windows.Forms.TextBox()
         NfacturaLabel = New System.Windows.Forms.Label()
         Fecha_vtaLabel = New System.Windows.Forms.Label()
         IdTipofacturaLabel = New System.Windows.Forms.Label()
@@ -203,8 +204,8 @@ Partial Class Nuevacompra
         '
         'subtotal
         '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle3
         Me.subtotal.HeaderText = "SUBTOTAL"
         Me.subtotal.Name = "subtotal"
         Me.subtotal.ReadOnly = True
@@ -347,11 +348,19 @@ Partial Class Nuevacompra
         Me.cobfecha.Size = New System.Drawing.Size(222, 21)
         Me.cobfecha.TabIndex = 40
         '
+        'txtfactura
+        '
+        Me.txtfactura.Location = New System.Drawing.Point(627, 12)
+        Me.txtfactura.Name = "txtfactura"
+        Me.txtfactura.Size = New System.Drawing.Size(147, 20)
+        Me.txtfactura.TabIndex = 41
+        '
         'Nuevacompra
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(949, 582)
+        Me.Controls.Add(Me.txtfactura)
         Me.Controls.Add(Me.calendario)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -407,4 +416,5 @@ Partial Class Nuevacompra
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents cobfecha As ComboBox
+    Friend WithEvents txtfactura As TextBox
 End Class

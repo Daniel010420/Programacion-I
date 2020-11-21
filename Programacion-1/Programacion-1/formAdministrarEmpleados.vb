@@ -29,6 +29,7 @@
             'llenar los datos del grid
             grid.DataSource = objConexion.obtenerDatos().Tables("Empleados").DefaultView
             grid.Columns(0).Visible = False
+
         Catch ex As Exception
             'Mensaje si no hay datos que mostra
             MsgBox("No hay datos en la Base de Datos " & ex.Message)

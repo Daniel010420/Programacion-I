@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class NuevaVenta
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,9 @@ Partial Class NuevaVenta
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim Label2 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim NfacturaLabel As System.Windows.Forms.Label
         Dim Fecha_vtaLabel As System.Windows.Forms.Label
         Dim IdTipofacturaLabel As System.Windows.Forms.Label
@@ -50,11 +49,13 @@ Partial Class NuevaVenta
         Me.lblRespuestaSuma = New System.Windows.Forms.Label()
         Me.lblsuma = New System.Windows.Forms.Label()
         Me.grid = New System.Windows.Forms.DataGridView()
-        Me.subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cobid = New System.Windows.Forms.ComboBox()
         Me.cobfecha = New System.Windows.Forms.ComboBox()
         Me.cobempleado = New System.Windows.Forms.ComboBox()
+        Me.txtfactura = New System.Windows.Forms.TextBox()
+        Me.subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.costeunidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Label2 = New System.Windows.Forms.Label()
         NfacturaLabel = New System.Windows.Forms.Label()
         Fecha_vtaLabel = New System.Windows.Forms.Label()
@@ -66,6 +67,69 @@ Partial Class NuevaVenta
         Me.Panel1.SuspendLayout()
         CType(Me.grid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'Label2
+        '
+        Label2.AutoSize = True
+        Label2.Location = New System.Drawing.Point(206, 9)
+        Label2.Name = "Label2"
+        Label2.Size = New System.Drawing.Size(48, 13)
+        Label2.TabIndex = 49
+        Label2.Text = "Sucursal"
+        '
+        'NfacturaLabel
+        '
+        NfacturaLabel.AutoSize = True
+        NfacturaLabel.Location = New System.Drawing.Point(606, 9)
+        NfacturaLabel.Name = "NfacturaLabel"
+        NfacturaLabel.Size = New System.Drawing.Size(69, 13)
+        NfacturaLabel.TabIndex = 41
+        NfacturaLabel.Text = "Factura: No.:"
+        '
+        'Fecha_vtaLabel
+        '
+        Fecha_vtaLabel.AutoSize = True
+        Fecha_vtaLabel.Location = New System.Drawing.Point(12, 42)
+        Fecha_vtaLabel.Name = "Fecha_vtaLabel"
+        Fecha_vtaLabel.Size = New System.Drawing.Size(40, 13)
+        Fecha_vtaLabel.TabIndex = 42
+        Fecha_vtaLabel.Text = "Fecha:"
+        '
+        'IdTipofacturaLabel
+        '
+        IdTipofacturaLabel.AutoSize = True
+        IdTipofacturaLabel.Location = New System.Drawing.Point(404, 11)
+        IdTipofacturaLabel.Name = "IdTipofacturaLabel"
+        IdTipofacturaLabel.Size = New System.Drawing.Size(67, 13)
+        IdTipofacturaLabel.TabIndex = 44
+        IdTipofacturaLabel.Text = "Tipo factura:"
+        '
+        'IdPagoLabel
+        '
+        IdPagoLabel.AutoSize = True
+        IdPagoLabel.Location = New System.Drawing.Point(503, 42)
+        IdPagoLabel.Name = "IdPagoLabel"
+        IdPagoLabel.Size = New System.Drawing.Size(66, 13)
+        IdPagoLabel.TabIndex = 45
+        IdPagoLabel.Text = "Forma pago:"
+        '
+        'Label1
+        '
+        Label1.AutoSize = True
+        Label1.Location = New System.Drawing.Point(12, 9)
+        Label1.Name = "Label1"
+        Label1.Size = New System.Drawing.Size(39, 13)
+        Label1.TabIndex = 46
+        Label1.Text = "Cliente"
+        '
+        'Label4
+        '
+        Label4.AutoSize = True
+        Label4.Location = New System.Drawing.Point(286, 43)
+        Label4.Name = "Label4"
+        Label4.Size = New System.Drawing.Size(54, 13)
+        Label4.TabIndex = 61
+        Label4.Text = "Empleado"
         '
         'calendario
         '
@@ -171,15 +235,6 @@ Partial Class NuevaVenta
         Me.cobfacturas.Size = New System.Drawing.Size(147, 21)
         Me.cobfacturas.TabIndex = 51
         '
-        'Label2
-        '
-        Label2.AutoSize = True
-        Label2.Location = New System.Drawing.Point(206, 9)
-        Label2.Name = "Label2"
-        Label2.Size = New System.Drawing.Size(48, 13)
-        Label2.TabIndex = 49
-        Label2.Text = "Sucursal"
-        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.lblRespuestaTotal)
@@ -264,66 +319,12 @@ Partial Class NuevaVenta
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.subtotal})
+        Me.grid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.subtotal, Me.costeunidad})
         Me.grid.Location = New System.Drawing.Point(18, 89)
         Me.grid.Name = "grid"
         Me.grid.ReadOnly = True
         Me.grid.Size = New System.Drawing.Size(912, 371)
         Me.grid.TabIndex = 47
-        '
-        'subtotal
-        '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle1
-        Me.subtotal.HeaderText = "SUBTOTAL"
-        Me.subtotal.Name = "subtotal"
-        Me.subtotal.ReadOnly = True
-        Me.subtotal.Width = 150
-        '
-        'NfacturaLabel
-        '
-        NfacturaLabel.AutoSize = True
-        NfacturaLabel.Location = New System.Drawing.Point(606, 9)
-        NfacturaLabel.Name = "NfacturaLabel"
-        NfacturaLabel.Size = New System.Drawing.Size(69, 13)
-        NfacturaLabel.TabIndex = 41
-        NfacturaLabel.Text = "Factura: No.:"
-        '
-        'Fecha_vtaLabel
-        '
-        Fecha_vtaLabel.AutoSize = True
-        Fecha_vtaLabel.Location = New System.Drawing.Point(12, 42)
-        Fecha_vtaLabel.Name = "Fecha_vtaLabel"
-        Fecha_vtaLabel.Size = New System.Drawing.Size(40, 13)
-        Fecha_vtaLabel.TabIndex = 42
-        Fecha_vtaLabel.Text = "Fecha:"
-        '
-        'IdTipofacturaLabel
-        '
-        IdTipofacturaLabel.AutoSize = True
-        IdTipofacturaLabel.Location = New System.Drawing.Point(404, 11)
-        IdTipofacturaLabel.Name = "IdTipofacturaLabel"
-        IdTipofacturaLabel.Size = New System.Drawing.Size(67, 13)
-        IdTipofacturaLabel.TabIndex = 44
-        IdTipofacturaLabel.Text = "Tipo factura:"
-        '
-        'IdPagoLabel
-        '
-        IdPagoLabel.AutoSize = True
-        IdPagoLabel.Location = New System.Drawing.Point(503, 42)
-        IdPagoLabel.Name = "IdPagoLabel"
-        IdPagoLabel.Size = New System.Drawing.Size(66, 13)
-        IdPagoLabel.TabIndex = 45
-        IdPagoLabel.Text = "Forma pago:"
-        '
-        'Label1
-        '
-        Label1.AutoSize = True
-        Label1.Location = New System.Drawing.Point(12, 9)
-        Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(39, 13)
-        Label1.TabIndex = 46
-        Label1.Text = "Cliente"
         '
         'Label3
         '
@@ -358,20 +359,31 @@ Partial Class NuevaVenta
         Me.cobempleado.Size = New System.Drawing.Size(147, 21)
         Me.cobempleado.TabIndex = 62
         '
-        'Label4
+        'txtfactura
         '
-        Label4.AutoSize = True
-        Label4.Location = New System.Drawing.Point(286, 43)
-        Label4.Name = "Label4"
-        Label4.Size = New System.Drawing.Size(54, 13)
-        Label4.TabIndex = 61
-        Label4.Text = "Empleado"
+        Me.txtfactura.Location = New System.Drawing.Point(678, 6)
+        Me.txtfactura.Name = "txtfactura"
+        Me.txtfactura.Size = New System.Drawing.Size(147, 20)
+        Me.txtfactura.TabIndex = 63
+        '
+        'subtotal
+        '
+        Me.subtotal.HeaderText = "SUBTOTAL"
+        Me.subtotal.Name = "subtotal"
+        Me.subtotal.ReadOnly = True
+        '
+        'costeunidad
+        '
+        Me.costeunidad.HeaderText = "Coste Unidad"
+        Me.costeunidad.Name = "costeunidad"
+        Me.costeunidad.ReadOnly = True
         '
         'NuevaVenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1000, 590)
+        Me.Controls.Add(Me.txtfactura)
         Me.Controls.Add(Me.cobempleado)
         Me.Controls.Add(Label4)
         Me.Controls.Add(Me.calendario)
@@ -425,9 +437,11 @@ Partial Class NuevaVenta
     Friend WithEvents lblRespuestaSuma As Label
     Friend WithEvents lblsuma As Label
     Friend WithEvents grid As DataGridView
-    Friend WithEvents subtotal As DataGridViewTextBoxColumn
     Friend WithEvents Label3 As Label
     Friend WithEvents cobid As ComboBox
     Friend WithEvents cobfecha As ComboBox
     Friend WithEvents cobempleado As ComboBox
+    Friend WithEvents txtfactura As TextBox
+    Friend WithEvents subtotal As DataGridViewTextBoxColumn
+    Friend WithEvents costeunidad As DataGridViewTextBoxColumn
 End Class

@@ -18,7 +18,7 @@
     Dim comandoactualizar = Nombretabladebusqueda
 
     Private Sub pedidossolicitados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        txtfactura.Visible = False
         Label3.Visible = False
         cobfecha.Enabled = False
         ' obtenerdatos()
@@ -55,6 +55,7 @@
             cobfactura.DataSource = objConexion.obtenerDatos().Tables("FacturaCompras").DefaultView
             cobfactura.DisplayMember = "tipofactura"
             cobfactura.ValueMember = "Tipofactura.Idtipofactura"
+
 
             cobpago.DataSource = objConexion.obtenerDatos().Tables("FacturaCompras").DefaultView
             cobpago.DisplayMember = "Formapago"
@@ -171,6 +172,7 @@
 
 
 
+
         cobproveedor.DataSource = objConexion.obtenerDatos().Tables("Proveedores").DefaultView
         cobproveedor.DisplayMember = "Proveedor"
         cobproveedor.ValueMember = " Proveedores.IdProveedores"
@@ -242,17 +244,22 @@
             btnmodificarycancelar.Text = "Cancelar"
             accion = "nuevo"
             btneliminar.Enabled = False
-            cargar2()
+            txtfactura.Visible = True
+            cobfacturas.Visible = False
             calendario.Visible = True
+            Button1.Enabled = False
+            Button2.Enabled = False
+            cargar2()
+
 
             'si el boton dice aceptar, significa que esta aceptando el nuevo registro y lo envia a la base
         ElseIf btnnuevoyaceptar.Text = "Aceptar" Then
             comandosql = comandoinsertar
 
-            If cobfactura.Text <> "" Then
+            If txtfactura.Text <> "" Then
                 Dim msg = objConexion.mantenimientocompra(New String() {
             "",                 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
-            cobfacturas.Text,        'dato(2)
+            txtfactura.Text,        'dato(2)
             cobproveedor.SelectedValue,        'dato(2)
             cobfactura.SelectedValue,
             calendario.Text,'dato(2)
@@ -262,6 +269,10 @@
                 btnnuevoyaceptar.Text = "Nuevo"
                 btnmodificarycancelar.Text = "Modificar"
                 cargar()
+                Button1.Enabled = True
+                Button2.Enabled = True
+                txtfactura.Visible = False
+                cobfacturas.Visible = True
 
                 obtenerdatosfacturashechas()
                 calendario.Visible = False
@@ -272,7 +283,12 @@
 
                     Dim newventada As New detallecompra
                     newventada.ShowDialog()
-                    Close()
+                    obtenerdatosfacturashechas()
+                    Dim j = newventada.a
+                    If j > 0 Then
+                        cobfacturas.SelectedValue = newventada.a
+                    End If
+
                     '  If objBuscarCategoriaProducto._idC > 0 Then
                     '    cboCategoriaProductos.SelectedValue = objBuscarCategoriaProducto._idC
                     'End If
@@ -288,7 +304,7 @@
 
 
 
-            Else 'si el boton dice Guardar, significa que esta haciendo un cambio de un dato
+        Else 'si el boton dice Guardar, significa que esta haciendo un cambio de un dato
             calendario.Visible = False
 
             comandosql = comandoactualizar
@@ -321,10 +337,15 @@
             btneliminar.Enabled = False
             accion = "modificar"
             calendario.Visible = True
+            Button1.Enabled = False
+            'Button2.Enabled = False
         Else 'Guardar
             calendario.Visible = False
-
+            Button1.Enabled = True
+            Button2.Enabled = True
             btnnuevoyaceptar.Text = "Nuevo"
+            txtfactura.Visible = False
+            cobfactura.Visible = True
             btnmodificarycancelar.Text = "Modificar"
             obtenerdatosfacturashechas()
 
@@ -377,7 +398,7 @@
                     sumas += subtotal
 
                 Next
-                iva = If(cobfactura.SelectedValue = 2, sumas * 0.13, 0)
+                iva = If(cobfactura.SelectedValue = 1, sumas * 0.13, 0)
                 total = sumas + iva
 
 
@@ -405,7 +426,13 @@
 
         Dim newventada As New detallecompra
         newventada.ShowDialog()
-        Close()
+        obtenerdatosfacturashechas()
+        '   Close()
+        Dim j = newventada.a
+        If j > 0 Then
+            cobfacturas.SelectedValue = newventada.a
+        End If
+
 
 
 
@@ -432,5 +459,7 @@
 
     End Sub
 
+    Private Sub txtfactura_KeyPress(sender As Object, e As KeyPressEventArgs)
 
+    End Sub
 End Class

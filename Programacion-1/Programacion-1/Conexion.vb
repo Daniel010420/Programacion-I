@@ -141,7 +141,7 @@ Public Class Conexion
         miAdapter.Fill(ds, "detallesolicitud")
 
 
-        miCommand.CommandText = "select detallecompra.Iddetallecompra,RegistroMedicamento.NombreMedicamento,Presentacion.Presentacion, Laboratorio.Laboratorio, detallecompra.Cantidad, detallecompra.PrecioCompra, detallecompra.CosteAdicional, Compras.IdCompra, Compras.nunfactura, RegistroMedicamento.IdRegistroMedicamento, Presentacion.IdPresentacion, Laboratorio.IdLaboratorio from detallecompra inner join RegistroMedicamento on RegistroMedicamento.IdRegistroMedicamento = detallecompra.IdRegistroMedicamento inner join Laboratorio on RegistroMedicamento.IdLaboratorio = Laboratorio.IdLaboratorio inner join Presentacion on Presentacion.IdPresentacion = RegistroMedicamento.IdPresentacion inner join Compras on Compras.IdCompra = detallecompra.IdCompra"
+        miCommand.CommandText = "select detallesventa.Iddventas,RegistroMedicamento.NombreMedicamento,Presentacion.Presentacion, Laboratorio.Laboratorio, detallesventa.Cantidad,detallesventa.Ingreso, Ventas.IdVentas, Ventas.numfactura, RegistroMedicamento.IdRegistroMedicamento, Presentacion.IdPresentacion, Laboratorio.IdLaboratorio from detallesventa inner join RegistroMedicamento on RegistroMedicamento.IdRegistroMedicamento = detallesventa.IdRegistroMedicamento inner join Laboratorio on RegistroMedicamento.IdLaboratorio = Laboratorio.IdLaboratorio inner join Presentacion on Presentacion.IdPresentacion = RegistroMedicamento.IdPresentacion inner join Ventas on Ventas.IdVentas = detallesventa.IdVenta"
         miAdapter.SelectCommand = miCommand
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
         miAdapter.Fill(ds, "detalleventa")
@@ -557,6 +557,35 @@ Public Class Conexion
 
 
 
+    Public Function user(ByVal datos As String(), ByVal accion As String, ByVal comandosql As String, ByVal id As String)
+        Dim sql, msg As String
+        'dato(0) sera el ID de cada tabla
+        Select Case accion
+
+
+            Case "modificar"
+                sql = "UPDATE Usuarios SET 
+                 Usuario='" + datos(0) + "',
+                 Contrasena='" + datos(1) + "'
+            WHERE   Usuario  ='" + datos(0) + "' and Contrasena  ='" + datos(1) + "'"
+
+
+        End Select
+
+        If (executesql(sql) > 0) Then
+            msg = "realizada"
+
+
+        Else
+            msg = "Error en el proceso"
+        End If
+        Return msg
+    End Function
+
+
+
+
+
 
     Public Function mantenimientodetallecompra(ByVal datos As String(), ByVal accion As String, ByVal comandosql As String, ByVal id As String)
         Dim sql, msg As String
@@ -610,6 +639,39 @@ Public Class Conexion
                  IdRegistroMedicamento='" + datos(1) + "',
                  Cantidadsolicitada='" + datos(2) + "',
                  Precio='" + datos(3) + "'
+            WHERE " + id + "    ='" + datos(0) + "'"
+
+            Case "eliminar"
+                sql = "DELETE FROM " + comandosql + " WHERE " + id + "='" + datos(0) + "'"
+        End Select
+
+        If (executesql(sql) > 0) Then
+            msg = "Accion realizada"
+        Else
+            msg = "Error en el proceso"
+        End If
+        Return msg
+    End Function
+
+
+    Public Function mantenimientodetallesventa(ByVal datos As String(), ByVal accion As String, ByVal comandosql As String, ByVal id As String)
+        Dim sql, msg As String
+        'dato(0) sera el ID de cada tabla
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT into " + comandosql + " VALUES 
+                (
+                  '" + datos(1) + "', 
+                  '" + datos(2) + "', 
+                  '" + datos(3) + "', 
+                  '" + datos(4) + "'
+                 )"
+
+            Case "modificar"
+                sql = "UPDATE " + comandosql + " SET 
+                 IdRegistroMedicamento='" + datos(1) + "',
+                 Cantidad='" + datos(2) + "',
+                 ingreso='" + datos(3) + "'
             WHERE " + id + "    ='" + datos(0) + "'"
 
             Case "eliminar"

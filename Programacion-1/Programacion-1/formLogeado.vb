@@ -33,7 +33,7 @@
         newform.Show()
     End Sub
 
-    Private Sub AdministarCargosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdministarCargosToolStripMenuItem.Click
+    Private Sub AdministarCargosToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim newform As New formCargo
         newform.MdiParent = Me
         newform.Show()
@@ -53,10 +53,8 @@
     End Sub
 
 
-    Private Sub PorcientoGananciaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PorcientoGananciaToolStripMenuItem.Click
-        Dim newform As New formPorcientoGanancia
-        newform.MdiParent = Me
-        newform.Show()
+    Private Sub PorcientoGananciaToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub PreciosMedicamentoToolStripMenuItem_Click(sender As Object, e As EventArgs)
@@ -65,10 +63,8 @@
         newform.Show()
     End Sub
 
-    Private Sub PorcientoDescuentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PorcientoDescuentoToolStripMenuItem.Click
-        Dim newform As New formdescuentos
-        newform.MdiParent = Me
-        newform.Show()
+    Private Sub PorcientoDescuentoToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub UsuariosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles UsuariosToolStripMenuItem1.Click
@@ -101,6 +97,30 @@
 
     Private Sub NuevaVentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevaVentaToolStripMenuItem.Click
         Dim newform As New NuevaVenta
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
+
+    Private Sub CargosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CargosToolStripMenuItem.Click
+        Dim newform As New formCargo
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
+
+    Private Sub PreciosDeGananciaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreciosDeGananciaToolStripMenuItem.Click
+        Dim newform As New formPorcientoGanancia
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
+
+    Private Sub PreciosDeDescuentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreciosDeDescuentoToolStripMenuItem.Click
+        Dim newform As New formdescuentos
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
+
+    Private Sub UToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UToolStripMenuItem.Click
+        Dim newform As New home
         newform.MdiParent = Me
         newform.Show()
     End Sub

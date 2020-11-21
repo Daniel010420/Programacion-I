@@ -18,7 +18,8 @@
     Dim comandoinsertar = Nombretabladebusqueda + " (numfactura, fechaventa, IdFormapago, IdCliente, Idtipofactura, IdEmpleado, Idsucursal)" 'campos de la tabla en orden menos id
     Dim comandoactualizar = Nombretabladebusqueda
     Private Sub NuevaVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        txtfactura.Visible = False
+        cobfacturas.Visible = True
         Label3.Visible = False
         cobfecha.Enabled = False
         ' obtenerdatos()
@@ -32,17 +33,20 @@
             'la palabra Empleados es la palabra que envia la peticion de la tabla que quiere
             'la palabra datos tabla es la que recibe los resultados de la tabla
             'llenar los datos del grid
-            '  grid.DataSource = objConexion.obtenerDatos().Tables("nuevaventa").DefaultView
+            grid.DataSource = objConexion.obtenerDatos().Tables("detalleventa").DefaultView
 
-            '       grid.Columns(1).Visible = False
-            '      grid.Columns(8).Visible = False
-            '     grid.Columns(9).Visible = False
-            '    grid.Columns(10).Visible = False
-            '   grid.Columns(11).Visible = False
-            '  grid.Columns(12).Visible = False
-            ' '   grid.Columns(0).Visible = False
-            'grid.Columns(0).DisplayIndex = 12
-
+            grid.Columns(2).Visible = False
+            grid.Columns(7).Visible = False
+            grid.Columns(8).Visible = False
+            grid.Columns(9).Visible = False
+            grid.Columns(10).Visible = False
+            grid.Columns(11).Visible = False
+            grid.Columns(12).Visible = False
+            grid.Columns(11).Visible = False
+            ' grid.Columns(0).Visible = False
+            grid.Columns(0).DisplayIndex = 12
+            grid.Columns(1).DisplayIndex = 11
+            'grid.Columns(6).HeaderText = "Precio Unidad"
 
             cobcliente.DataSource = objConexion.obtenerDatos().Tables("nuevaventa").DefaultView
             cobcliente.DisplayMember = "Nombre"
@@ -85,6 +89,7 @@
             cargar()
             filtro(cobfacturas.Text.Trim)
             totalizar()
+
 
 
         Catch ex As Exception
@@ -265,44 +270,61 @@
             btneliminar.Enabled = False
             cargar2()
             calendario.Visible = True
+            txtfactura.Visible = True
+            cobfacturas.Visible = False
 
+            cobfactura.SelectedValue = 2
             'si el boton dice aceptar, significa que esta aceptando el nuevo registro y lo envia a la base
         ElseIf btnnuevoyaceptar.Text = "Aceptar" Then
             comandosql = comandoinsertar
+            If txtfactura.Text <> "" Then
+                txtfactura.Visible = False
+                cobfacturas.Visible = True
+                Dim msg = objConexion.mantenimientoventas(New String() {
+                "",                 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
+                txtfactura.Text,
+                calendario.Text,'dato(2)
+                cobpago.SelectedValue, 'dato(2)
+                cobcliente.SelectedValue,        'dato(2)
+                cobfactura.SelectedValue,
+                cobempleado.SelectedValue,
+                cobsucursal.SelectedValue}, 'dato(2)
+              accion, comandosql, idTabla) 'accion que se desea realizar en el case
+                btnnuevoyaceptar.Text = "Nuevo"
+                btnmodificarycancelar.Text = "Modificar"
+                Module1.tclientes = cobcliente.SelectedValue
 
-            Dim msg = objConexion.mantenimientoventas(New String() {
-            "",                 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
-            cobfacturas.Text,
-            calendario.Text,'dato(2)
-            cobpago.SelectedValue, 'dato(2)
-            cobcliente.SelectedValue,        'dato(2)
-            cobfactura.SelectedValue,
-            cobempleado.SelectedValue,
-            cobsucursal.SelectedValue}, 'dato(2)
-          accion, comandosql, idTabla) 'accion que se desea realizar en el case
-            btnnuevoyaceptar.Text = "Nuevo"
-            btnmodificarycancelar.Text = "Modificar"
-            cargar()
+                cargar()
 
-            obtenerdatosfacturashechas()
-            calendario.Visible = False
-
-
-
-            If msg = "Accion realizada" Then
-                MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-                btneliminar.Enabled = True
+                obtenerdatosfacturashechas()
+                calendario.Visible = False
 
 
-                Dim newventada As New detalleventa
-                newventada.ShowDialog()
-                Close()
-                '  If objBuscarCategoriaProducto._idC > 0 Then
-                '    cboCategoriaProductos.SelectedValue = objBuscarCategoriaProducto._idC
-                'End If
-            ElseIf msg = "Error en el proceso" Then
-                MessageBox.Show("Error en el proceso, probablemente el numero de factura ya existe", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-                btneliminar.Enabled = True
+
+                If msg = "Accion realizada" Then
+                    MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    btneliminar.Enabled = True
+
+
+                    Dim newventada As New detalleventa
+                    newventada.ShowDialog()
+
+
+                    obtenerdatosfacturashechas()
+                    Dim j = newventada.c
+                    If j > 0 Then
+                        cobfacturas.SelectedValue = newventada.c
+                    End If
+
+
+                    '        Close()
+                    '  If objBuscarCategoriaProducto._idC > 0 Then
+                    '    cboCategoriaProductos.SelectedValue = objBuscarCategoriaProducto._idC
+                    'End If
+                ElseIf msg = "Error en el proceso" Then
+                    MessageBox.Show("Error en el proceso, probablemente el numero de factura ya existe", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    btneliminar.Enabled = True
+                End If
             End If
 
 
@@ -342,6 +364,7 @@
             btneliminar.Enabled = False
             accion = "modificar"
             calendario.Visible = True
+
         Else 'Guardar
             calendario.Visible = False
 
@@ -358,6 +381,7 @@
 
 
     Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
+
         If cobid.Text <> "" Then
             If (MessageBox.Show("Esta seguro de borrar " + cobfacturas.Text, mensajeenmentana,
                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
@@ -385,20 +409,24 @@
                 Dim fila As DataGridViewRow
 
                 Dim nfilas As Integer = grid.Rows.Count - 1
-                Dim subtotal, sumas, total As Double
+                Dim subtotal, sumas, total, cu As Double
                 Dim iva As Double
                 For i As Integer = 0 To nfilas
                     fila = grid.Rows(i)
 
 
-                    subtotal = Double.Parse(fila.Cells(6).Value.ToString()) + Double.Parse(fila.Cells(7).Value.ToString()) '* Double.Parse(fila.Cells("precio").Value.ToString())
+                    cu = Math.Round(Double.Parse(fila.Cells(7).Value.ToString()) / Double.Parse(fila.Cells(6).Value.ToString()), 2) '* Double.Parse(fila.Cells("precio").Value.ToString())
+                    fila.Cells("costeunidad").Value = cu.ToString()
 
-
+                    subtotal = Double.Parse(fila.Cells(6).Value.ToString()) * Double.Parse(fila.Cells(1).Value.ToString()) '* Double.Parse(fila.Cells("precio").Value.ToString())
                     fila.Cells("subtotal").Value = subtotal.ToString()
+
+
+
                     sumas += subtotal
 
                 Next
-                iva = If(cobfactura.SelectedValue = 2, sumas * 0.13, 0)
+                iva = If(cobfactura.SelectedValue = 1, sumas * 0.13, 0)
                 total = sumas + iva
 
 
@@ -423,10 +451,18 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Module1.idcompra = cobid.Text
         Module1.factura = cobfacturas.Text
+        Module1.tclientes = cobcliente.SelectedValue
 
         Dim newventada As New detalleventa
         newventada.ShowDialog()
-        Close()
+        ' Close()
+
+        obtenerdatosfacturashechas()
+        '   Close()
+        Dim j = newventada.c
+        If j > 0 Then
+            cobfacturas.SelectedValue = newventada.c
+        End If
 
 
 

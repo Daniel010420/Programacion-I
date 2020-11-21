@@ -156,7 +156,7 @@ Partial Class detallecompra
         Me.cobpre.FormattingEnabled = True
         Me.cobpre.Location = New System.Drawing.Point(4, 155)
         Me.cobpre.Name = "cobpre"
-        Me.cobpre.Size = New System.Drawing.Size(149, 21)
+        Me.cobpre.Size = New System.Drawing.Size(208, 21)
         Me.cobpre.TabIndex = 41
         '
         'coblab
@@ -164,7 +164,7 @@ Partial Class detallecompra
         Me.coblab.FormattingEnabled = True
         Me.coblab.Location = New System.Drawing.Point(4, 115)
         Me.coblab.Name = "coblab"
-        Me.coblab.Size = New System.Drawing.Size(149, 21)
+        Me.coblab.Size = New System.Drawing.Size(208, 21)
         Me.coblab.TabIndex = 41
         '
         'cobmedicamento
@@ -172,7 +172,7 @@ Partial Class detallecompra
         Me.cobmedicamento.FormattingEnabled = True
         Me.cobmedicamento.Location = New System.Drawing.Point(4, 75)
         Me.cobmedicamento.Name = "cobmedicamento"
-        Me.cobmedicamento.Size = New System.Drawing.Size(149, 21)
+        Me.cobmedicamento.Size = New System.Drawing.Size(248, 21)
         Me.cobmedicamento.TabIndex = 41
         '
         'lblcoste

@@ -63,7 +63,7 @@ Partial Class formAdministrarEmpleados
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(22, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(273, 339)
+        Me.GroupBox1.Size = New System.Drawing.Size(273, 333)
         Me.GroupBox1.TabIndex = 20
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos De Empleados"
@@ -197,7 +197,7 @@ Partial Class formAdministrarEmpleados
         Me.GroupBox2.Controls.Add(Me.btnnuevoyaceptar)
         Me.GroupBox2.Controls.Add(Me.btnmodificarycancelar)
         Me.GroupBox2.Controls.Add(Me.btneliminar)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 357)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 351)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(289, 84)
         Me.GroupBox2.TabIndex = 21
@@ -232,7 +232,7 @@ Partial Class formAdministrarEmpleados
         Me.grid.Name = "grid"
         Me.grid.ReadOnly = True
         Me.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grid.Size = New System.Drawing.Size(651, 388)
+        Me.grid.Size = New System.Drawing.Size(651, 442)
         Me.grid.TabIndex = 30
         '
         'formAdministrarEmpleados
@@ -241,7 +241,7 @@ Partial Class formAdministrarEmpleados
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(964, 452)
+        Me.ClientSize = New System.Drawing.Size(964, 506)
         Me.Controls.Add(Me.grid)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtfiltro)

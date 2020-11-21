@@ -3,6 +3,7 @@
     Dim dataTable As New DataTable
     Dim accion As String = "nuevo"
     Dim comandosql = ""
+    Public a
 
 
     Dim mensajeenmentana = "Registro Detalle Compra"
@@ -310,10 +311,12 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim newform As New Nuevacompra
-        newform.MdiParent = formLogeado
-        newform.Show()
+        'Dim newform As New Nuevacompra
+        '     newform.MdiParent = formLogeado
+        '   newform.Show()
+        a = txtid.Text.Trim
         Close()
+
 
 
     End Sub
