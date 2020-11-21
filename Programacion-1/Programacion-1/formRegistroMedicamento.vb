@@ -185,14 +185,7 @@
     End Sub
 
     Private Sub txtnombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtnombre.KeyPress
-        If Char.IsDigit(e.KeyChar) Then
-            e.Handled = True
-            MsgBox("Solo se puede ingresar valores de tipo texto", MsgBoxStyle.Exclamation, "Ingreso de Texto")
-        ElseIf Char.IsControl(e.KeyChar) Then
-            e.Handled = False
-        Else
-            e.Handled = False
-        End If
+
     End Sub
 
 

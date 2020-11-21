@@ -304,5 +304,6 @@
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         descuento()
+        Button2.Enabled = False
     End Sub
 End Class
