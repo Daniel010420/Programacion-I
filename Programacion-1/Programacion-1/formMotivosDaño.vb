@@ -8,11 +8,11 @@
 
 
     Dim mensajeenmentana = "Registro de Daño"
-    Dim Nombretabladebusqueda = "MotivosDaño"
-    Dim buscarpor1 = "MotivoDaño"
-    Dim buscarpor2 = "MotivoDaño"
-    Dim idTabla = "IdMotivoDaño"
-    Dim comandoinsertar = Nombretabladebusqueda + " (MotivoDaño)" 'campos de la tabla en orden menos id
+    Dim Nombretabladebusqueda = "MotivosDano"
+    Dim buscarpor1 = "MotivoDano"
+    Dim buscarpor2 = "MotivoDano"
+    Dim idTabla = "IdMotivoDano"
+    Dim comandoinsertar = Nombretabladebusqueda + " (MotivoDano)" 'campos de la tabla en orden menos id
     Dim comandoactualizar = Nombretabladebusqueda
 
     Private Sub formMotivosDaño_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -28,6 +28,7 @@
             'llenar los datos del grid
             grid.DataSource = objConexion.obtenerDatos().Tables("MotivosDaño").DefaultView
             grid.Columns(0).Visible = False
+            grid.Columns(1).HeaderText = "Motivos Daño"
         Catch ex As Exception
             'Mensaje si no hay datos que mostra
             MsgBox("No hay datos en la Base de Datos " & ex.Message)

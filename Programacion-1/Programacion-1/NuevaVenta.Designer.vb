@@ -49,13 +49,13 @@ Partial Class NuevaVenta
         Me.lblRespuestaSuma = New System.Windows.Forms.Label()
         Me.lblsuma = New System.Windows.Forms.Label()
         Me.grid = New System.Windows.Forms.DataGridView()
+        Me.subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.costeunidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cobid = New System.Windows.Forms.ComboBox()
         Me.cobfecha = New System.Windows.Forms.ComboBox()
         Me.cobempleado = New System.Windows.Forms.ComboBox()
         Me.txtfactura = New System.Windows.Forms.TextBox()
-        Me.subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.costeunidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Label2 = New System.Windows.Forms.Label()
         NfacturaLabel = New System.Windows.Forms.Label()
         Fecha_vtaLabel = New System.Windows.Forms.Label()
@@ -326,6 +326,18 @@ Partial Class NuevaVenta
         Me.grid.Size = New System.Drawing.Size(912, 371)
         Me.grid.TabIndex = 47
         '
+        'subtotal
+        '
+        Me.subtotal.HeaderText = "SUBTOTAL"
+        Me.subtotal.Name = "subtotal"
+        Me.subtotal.ReadOnly = True
+        '
+        'costeunidad
+        '
+        Me.costeunidad.HeaderText = "Coste Unidad"
+        Me.costeunidad.Name = "costeunidad"
+        Me.costeunidad.ReadOnly = True
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -365,18 +377,6 @@ Partial Class NuevaVenta
         Me.txtfactura.Name = "txtfactura"
         Me.txtfactura.Size = New System.Drawing.Size(147, 20)
         Me.txtfactura.TabIndex = 63
-        '
-        'subtotal
-        '
-        Me.subtotal.HeaderText = "SUBTOTAL"
-        Me.subtotal.Name = "subtotal"
-        Me.subtotal.ReadOnly = True
-        '
-        'costeunidad
-        '
-        Me.costeunidad.HeaderText = "Coste Unidad"
-        Me.costeunidad.Name = "costeunidad"
-        Me.costeunidad.ReadOnly = True
         '
         'NuevaVenta
         '

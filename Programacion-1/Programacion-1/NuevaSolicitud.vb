@@ -29,16 +29,7 @@
             'la palabra Empleados es la palabra que envia la peticion de la tabla que quiere
             'la palabra datos tabla es la que recibe los resultados de la tabla
             'llenar los datos del grid
-            grid.DataSource = objConexion.obtenerDatos().Tables("detallesolicitud").DefaultView
 
-            grid.Columns(1).Visible = False
-            grid.Columns(7).Visible = False
-            grid.Columns(8).Visible = False
-            grid.Columns(9).Visible = False
-            grid.Columns(10).Visible = False
-            grid.Columns(11).Visible = False
-            grid.Columns(0).Visible = False
-            grid.Columns(0).DisplayIndex = 11
 
 
             cobproveedor.DataSource = objConexion.obtenerDatos().Tables("nuevasolicitud").DefaultView
@@ -66,6 +57,16 @@
 
 
             cargar()
+            grid.DataSource = objConexion.obtenerDatos().Tables("detallesolicitud").DefaultView
+
+            grid.Columns(1).Visible = False
+            grid.Columns(7).Visible = False
+            grid.Columns(8).Visible = False
+            grid.Columns(9).Visible = False
+            grid.Columns(10).Visible = False
+            grid.Columns(11).Visible = False
+            grid.Columns(0).Visible = False
+            grid.Columns(0).DisplayIndex = 11
             filtro(cobcodigo.Text.Trim)
             totalizar()
         Catch ex As Exception
@@ -219,6 +220,8 @@
             calendario.Visible = True
             txtfactura.Visible = True
             cobcodigo.Visible = False
+            Button1.Enabled = False
+            Button2.Enabled = False
             btneliminar.Enabled = False
             cargar2()
 
@@ -240,7 +243,9 @@
                 btnnuevoyaceptar.Text = "Nuevo"
                 btnmodificarycancelar.Text = "Modificar"
                 cargar()
-
+                Button1.Enabled = True
+                Button2.Enabled = True
+                txtfactura.Text = ""
                 calendario.Visible = False
 
                 obtenerdatossolicitudhecha()
@@ -288,6 +293,10 @@
             obtenerdatossolicitudhecha()
             MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+            txtfactura.Visible = False
+            cobcodigo.Visible = True
+            Button1.Enabled = True
+
             btnnuevoyaceptar.Text = "Nuevo"
             btnmodificarycancelar.Text = "Modificar"
             btneliminar.Enabled = True
@@ -304,6 +313,9 @@
             btnnuevoyaceptar.Text = "Guardar"
             btnmodificarycancelar.Text = "Cancelar"
             btneliminar.Enabled = False
+            Button1.Enabled = False
+
+
             accion = "modificar"
         Else 'Guardar
             cobcodigo.Visible = True
@@ -311,6 +323,8 @@
             btnnuevoyaceptar.Text = "Nuevo"
             btnmodificarycancelar.Text = "Modificar"
             obtenerdatossolicitudhecha()
+            Button1.Enabled = True
+            Button2.Enabled = True
 
             btneliminar.Enabled = True
         End If
@@ -329,10 +343,13 @@
                 If msg = "Error en el proceso" Then
                     MessageBox.Show("No se pudo eliminar este registro, porque hay registros que dependen de el", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
+                If msg <> "Error en el proceso" Then
+                    obtenerdatossolicitudhecha()
+                End If
             End If
         Else MessageBox.Show("Debe selecionar un registro para eliminar", mensajeenmentana)
         End If
-        obtenerdatossolicitudhecha()
+
     End Sub
 
 

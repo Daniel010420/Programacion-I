@@ -59,10 +59,11 @@ Public Class Conexion
         'carga los datos de esta tabla en la palabra especificada para ser enviados
         miAdapter.Fill(ds, "Cargos")
 
-        miCommand.CommandText = "select * from MotivosDaño"
+        miCommand.CommandText = "select * from MotivosDano"
         miAdapter.SelectCommand = miCommand
         'carga los datos de esta tabla en la palabra especificada para ser enviados
         miAdapter.Fill(ds, "MotivosDaño")
+
 
         miCommand.CommandText = "select * from TipoCliente"
         miAdapter.SelectCommand = miCommand
@@ -79,6 +80,11 @@ Public Class Conexion
         miAdapter.SelectCommand = miCommand
         'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
         miAdapter.Fill(ds, "RegistroMedicamento")
+
+        miCommand.CommandText = "select MedicamentoDanado.IdMedicamentoDanado,RegistroMedicamento.NombreMedicamento,Presentacion.Presentacion, Laboratorio.Laboratorio, MotivosDano.MotivoDano, MotivosDano.IdMotivoDano, MedicamentoDanado.Cantidad, MedicamentoDanado.FechaDeReporte, RegistroMedicamento.IdRegistroMedicamento, Presentacion.IdPresentacion, Laboratorio.IdLaboratorio from MedicamentoDanado inner join RegistroMedicamento on RegistroMedicamento.IdRegistroMedicamento = MedicamentoDanado.IdRegistroMedicamento inner join Laboratorio on RegistroMedicamento.IdLaboratorio = Laboratorio.IdLaboratorio inner join Presentacion on Presentacion.IdPresentacion = RegistroMedicamento.IdPresentacion inner join MotivosDano on MotivosDano.IdMotivoDano = MedicamentoDanado.IdMotivoDanado"
+        miAdapter.SelectCommand = miCommand
+        'carga los datos de esta tabla en la palabra "datostabla" para ser enviados
+        miAdapter.Fill(ds, "Medicamentodanado")
 
 
         miCommand.CommandText = "select Clientes.IdClientes, TipoCliente.TipoCliente, Clientes.Nombre, Clientes.Telefono, Clientes.Direccion, TipoCliente.IdTipoCliente from Clientes inner join TipoCliente on TipoCliente.IdTipoCliente = Clientes.IdTipoCliente"
@@ -227,6 +233,38 @@ Public Class Conexion
         Return msg
     End Function
 
+    Public Function mantenimientomedicamentodanado(ByVal datos As String(), ByVal accion As String, ByVal comandosql As String, ByVal id As String)
+        Dim sql, msg As String
+        'dato(0) sera el ID de cada tabla
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT into " + comandosql + " VALUES 
+                (
+                  '" + datos(1) + "', 
+                  '" + datos(2) + "',
+                  '" + datos(3) + "',
+                  '" + datos(4) + "'
+                 )"
+
+            Case "modificar"
+                sql = "UPDATE " + comandosql + " SET 
+                  IdRegistroMedicamento='" + datos(1) + "',
+                  IdMotivoDanado     ='" + datos(2) + "',
+                  Cantidad      ='" + datos(3) + "',
+                  FechaDeReporte       ='" + datos(4) + "'
+            WHERE " + id + "    ='" + datos(0) + "'"
+
+            Case "eliminar"
+                sql = "DELETE FROM " + comandosql + " WHERE " + id + "='" + datos(0) + "'"
+        End Select
+        If (executesql(sql) > 0) Then
+            msg = "Accion realizada"
+        Else
+            msg = "Error en el proceso"
+        End If
+        Return msg
+    End Function
+
 
     Public Function mantenimientoLaboratorios(ByVal datos As String(), ByVal accion As String, ByVal comandosql As String, ByVal id As String)
         Dim sql, msg As String
@@ -273,7 +311,7 @@ Public Class Conexion
 
             Case "modificar"
                 sql = "UPDATE " + comandosql + " SET 
-                  MotivoDaño='" + datos(1) + "'
+                  MotivoDano='" + datos(1) + "'
             WHERE " + id + "    ='" + datos(0) + "'"
 
             Case "eliminar"
@@ -367,7 +405,55 @@ Public Class Conexion
     End Function
 
 
+    Public Function mantenimientoformapago(ByVal datos As String(), ByVal accion As String, ByVal comandosql As String, ByVal id As String)
+        Dim sql, msg As String
+        'dato(0) sera el ID de cada tabla
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT into " + comandosql + " VALUES 
+                (
+                  '" + datos(1) + "'
+                 )"
+            Case "modificar"
+                sql = "UPDATE " + comandosql + " SET 
+                  Formapago='" + datos(1) + "'
+            WHERE " + id + "    ='" + datos(0) + "'"
 
+            Case "eliminar"
+                sql = "DELETE FROM " + comandosql + " WHERE " + id + "='" + datos(0) + "'"
+        End Select
+        If (executesql(sql) > 0) Then
+            msg = "Accion realizada con exito"
+        Else
+            msg = "Error en el proceso"
+        End If
+        Return msg
+    End Function
+
+    Public Function mantenimientotipofactura(ByVal datos As String(), ByVal accion As String, ByVal comandosql As String, ByVal id As String)
+        Dim sql, msg As String
+        'dato(0) sera el ID de cada tabla
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT into " + comandosql + " VALUES 
+                (
+                  '" + datos(1) + "'
+                 )"
+            Case "modificar"
+                sql = "UPDATE " + comandosql + " SET 
+                  tipofactura='" + datos(1) + "'
+            WHERE " + id + "    ='" + datos(0) + "'"
+
+            Case "eliminar"
+                sql = "DELETE FROM " + comandosql + " WHERE " + id + "='" + datos(0) + "'"
+        End Select
+        If (executesql(sql) > 0) Then
+            msg = "Accion realizada con exito"
+        Else
+            msg = "Error en el proceso"
+        End If
+        Return msg
+    End Function
 
     Public Function mantenimientoMedicamentoGeneral(ByVal datos As String(), ByVal accion As String, ByVal comandosql As String, ByVal id As String)
         Dim sql, msg As String
@@ -554,6 +640,39 @@ Public Class Conexion
         Return msg
     End Function
 
+    Public Function mantenimientosucursales(ByVal datos As String(), ByVal accion As String, ByVal comandosql As String, ByVal id As String)
+        Dim sql, msg As String
+        'dato(0) sera el ID de cada tabla
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT into " + comandosql + " VALUES 
+                (
+                  '" + datos(1) + "', 
+                  '" + datos(2) + "', 
+                  '" + datos(3) + "', 
+                  '" + datos(4) + "'
+                 )"
+
+            Case "modificar"
+                sql = "UPDATE " + comandosql + " SET 
+                 CodigoSucursal='" + datos(1) + "',
+                 Ubicacion='" + datos(2) + "',
+                 Telefono='" + datos(3) + "',
+                 Fax='" + datos(4) + "'
+            WHERE " + id + "    ='" + datos(0) + "'"
+
+            Case "eliminar"
+                sql = "DELETE FROM " + comandosql + " WHERE " + id + "='" + datos(0) + "'"
+        End Select
+
+        If (executesql(sql) > 0) Then
+            msg = "Accion realizada"
+        Else
+            msg = "Error en el proceso"
+        End If
+        Return msg
+    End Function
+
 
 
 
@@ -574,6 +693,7 @@ Public Class Conexion
 
         If (executesql(sql) > 0) Then
             msg = "realizada"
+
 
 
         Else

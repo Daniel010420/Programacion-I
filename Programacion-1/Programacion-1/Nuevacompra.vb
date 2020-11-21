@@ -32,16 +32,7 @@
             'la palabra Empleados es la palabra que envia la peticion de la tabla que quiere
             'la palabra datos tabla es la que recibe los resultados de la tabla
             'llenar los datos del grid
-            grid.DataSource = objConexion.obtenerDatos().Tables("Compras").DefaultView
 
-            grid.Columns(1).Visible = False
-            grid.Columns(8).Visible = False
-            grid.Columns(9).Visible = False
-            grid.Columns(10).Visible = False
-            grid.Columns(11).Visible = False
-            grid.Columns(12).Visible = False
-            '   grid.Columns(0).Visible = False
-            grid.Columns(0).DisplayIndex = 12
 
 
             cobproveedor.DataSource = objConexion.obtenerDatos().Tables("FacturaCompras").DefaultView
@@ -81,6 +72,16 @@
 
 
             cargar()
+            grid.DataSource = objConexion.obtenerDatos().Tables("Compras").DefaultView
+
+            grid.Columns(1).Visible = False
+            grid.Columns(8).Visible = False
+            grid.Columns(9).Visible = False
+            grid.Columns(10).Visible = False
+            grid.Columns(11).Visible = False
+            grid.Columns(12).Visible = False
+            '   grid.Columns(0).Visible = False
+            grid.Columns(0).DisplayIndex = 12
             filtro(cobfacturas.Text.Trim)
             totalizar()
         Catch ex As Exception
@@ -273,7 +274,7 @@
                 Button2.Enabled = True
                 txtfactura.Visible = False
                 cobfacturas.Visible = True
-
+                txtfactura.Text = ""
                 obtenerdatosfacturashechas()
                 calendario.Visible = False
                 If msg = "Accion realizada" Then
@@ -306,7 +307,8 @@
 
         Else 'si el boton dice Guardar, significa que esta haciendo un cambio de un dato
             calendario.Visible = False
-
+            Button1.Enabled = True
+            Button2.Enabled = True
             comandosql = comandoactualizar
             Dim msg = objConexion.mantenimientocompra(New String() {
               cobid.SelectedValue,      'dato(0) si se envia el id aqui porque es el que identifica el registro, update from id = x
@@ -320,7 +322,8 @@
 
             obtenerdatosfacturashechas()
             MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-
+            txtfactura.Visible = False
+            cobfacturas.Visible = True
             btnnuevoyaceptar.Text = "Nuevo"
             btnmodificarycancelar.Text = "Modificar"
             btneliminar.Enabled = True
@@ -338,6 +341,7 @@
             accion = "modificar"
             calendario.Visible = True
             Button1.Enabled = False
+
             'Button2.Enabled = False
         Else 'Guardar
             calendario.Visible = False
@@ -346,6 +350,10 @@
             btnnuevoyaceptar.Text = "Nuevo"
             txtfactura.Visible = False
             cobfactura.Visible = True
+            txtfactura.Text = ""
+            txtfactura.Visible = False
+            cobfacturas.Visible = True
+            txtfactura.Text = ""
             btnmodificarycancelar.Text = "Modificar"
             obtenerdatosfacturashechas()
 
@@ -366,10 +374,13 @@
                 If msg = "Error en el proceso" Then
                     MessageBox.Show("No se pudo eliminar este registro, porque hay registros que dependen de el", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
+                If msg <> "Error en el proceso" Then
+                    obtenerdatosfacturashechas()
+                End If
             End If
         Else MessageBox.Show("Debe selecionar un registro para eliminar", mensajeenmentana)
         End If
-        obtenerdatosfacturashechas()
+
     End Sub
 
 

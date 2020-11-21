@@ -62,6 +62,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -88,6 +91,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Conexion.vb" />
     <Compile Include="detallecompra.Designer.vb">
       <DependentUpon>detallecompra.vb</DependentUpon>
@@ -124,6 +128,12 @@
       <DependentUpon>formAdministrarLaboratorio.vb</DependentUpon>
     </Compile>
     <Compile Include="formAdministrarLaboratorio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormasPago.Designer.vb">
+      <DependentUpon>FormasPago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormasPago.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formCargo.Designer.vb">
@@ -239,10 +249,28 @@
     <Compile Include="NuevaVenta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="reportardaño.Designer.vb">
+      <DependentUpon>reportardaño.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportardaño.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="solicitudes.Designer.vb">
       <DependentUpon>solicitudes.vb</DependentUpon>
     </Compile>
     <Compile Include="solicitudes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sucursales.Designer.vb">
+      <DependentUpon>Sucursales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sucursales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TipoFactura.Designer.vb">
+      <DependentUpon>TipoFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TipoFactura.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ventas.Designer.vb">
@@ -278,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formAdministrarLaboratorio.resx">
       <DependentUpon>formAdministrarLaboratorio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormasPago.resx">
+      <DependentUpon>FormasPago.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formCargo.resx">
       <DependentUpon>formCargo.vb</DependentUpon>
@@ -333,14 +364,24 @@
     <EmbeddedResource Include="NuevaVenta.resx">
       <DependentUpon>NuevaVenta.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="reportardaño.resx">
+      <DependentUpon>reportardaño.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="solicitudes.resx">
       <DependentUpon>solicitudes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sucursales.resx">
+      <DependentUpon>Sucursales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipoFactura.resx">
+      <DependentUpon>TipoFactura.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ventas.resx">
       <DependentUpon>ventas.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

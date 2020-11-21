@@ -5,7 +5,8 @@
     Dim accion As String = "modificar"
     Dim datostabla = "DatosTabla"
     Dim comandosql = ""
-
+    Dim inicio As New formLogeado
+    Public log = 0
 
     Dim mensajeenmentana = "Registro de Cargo"
     Dim Nombretabladebusqueda = "Usuarios"
@@ -28,11 +29,14 @@ txtpass.Text}, 'dato(1)
 accion, comandosql, idTabla)
 
             If msg = "realizada" Then
+                ' formLogeado.Label1.Text = 1
+                formLogeado.btntrabajo.Visible = True
+                formLogeado.IniciarSesionToolStripMenuItem.Text = "Cerrar Sesion"
                 Close()
-                Dim newventada As New formLogeado
-                newventada.ShowDialog()
+
             Else msg = "Usuario " + txtususario.Text + " no encontrado"
                 MessageBox.Show(msg)
+                log = 0
             End If
         End If
 

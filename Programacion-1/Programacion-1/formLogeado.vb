@@ -1,4 +1,5 @@
 ﻿Public Class formLogeado
+    Public logeado
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Close()
     End Sub
@@ -77,9 +78,29 @@
         Dim newform As New formRegistroMedicamento
         newform.MdiParent = Me
         newform.Show()
+
+        'If Label1.Text = 1 Then
+        'InventarioToolStripMenuItem.Enabled = True
+        'UsuariosToolStripMenuItem.Enabled = True
+        'ProveedoresToolStripMenuItem.Enabled = True
+        'ClientesToolStripMenuItem.Enabled = True
+        'End If
     End Sub
 
     Private Sub formLogeado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        InventarioToolStripMenuItem.Enabled = False
+        UsuariosToolStripMenuItem.Enabled = False
+        ProveedoresToolStripMenuItem.Enabled = False
+        ClientesToolStripMenuItem.Enabled = False
+        btntrabajo.Visible = False
+
+
+
+        Dim newform As New home
+        newform.MdiParent = Me
+        newform.Show()
+
+
 
     End Sub
 
@@ -119,8 +140,68 @@
         newform.Show()
     End Sub
 
-    Private Sub UToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UToolStripMenuItem.Click
-        Dim newform As New home
+
+
+    Private Sub IniciarSesionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IniciarSesionToolStripMenuItem.Click
+
+
+
+
+        If IniciarSesionToolStripMenuItem.Text = "Iniciar Sesion" Then
+            Dim newform As New home
+            newform.MdiParent = Me
+            newform.Show()
+        ElseIf IniciarSesionToolStripMenuItem.Text = "Cerrar Sesion" Then
+            InventarioToolStripMenuItem.Enabled = False
+            UsuariosToolStripMenuItem.Enabled = False
+            ProveedoresToolStripMenuItem.Enabled = False
+            ClientesToolStripMenuItem.Enabled = False
+            IniciarSesionToolStripMenuItem.Text = "Iniciar Sesion"
+            btntrabajo.Visible = False
+
+        End If
+
+
+
+        '    If Label1.Text = 1 Then
+
+        'End If
+
+        ' If 1 = 1 Then
+
+
+        '        End If
+
+    End Sub
+
+    Private Sub btntrabajo_Click(sender As Object, e As EventArgs) Handles btntrabajo.Click
+        InventarioToolStripMenuItem.Enabled = True
+        UsuariosToolStripMenuItem.Enabled = True
+        ProveedoresToolStripMenuItem.Enabled = True
+        ClientesToolStripMenuItem.Enabled = True
+        btntrabajo.Visible = False
+    End Sub
+
+    Private Sub SucursalesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SucursalesToolStripMenuItem.Click
+        Dim newform As New Sucursales
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
+
+    Private Sub FormasDePagoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FormasDePagoToolStripMenuItem.Click
+        Dim newform As New FormasPago
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
+
+    Private Sub TipoFacturaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TipoFacturaToolStripMenuItem.Click
+        Dim newform As New TipoFactura
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
+
+    Private Sub ReportarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportarToolStripMenuItem.Click
+        Dim newform As New reportardaño
         newform.MdiParent = Me
         newform.Show()
     End Sub

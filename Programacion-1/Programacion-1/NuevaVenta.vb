@@ -33,20 +33,6 @@
             'la palabra Empleados es la palabra que envia la peticion de la tabla que quiere
             'la palabra datos tabla es la que recibe los resultados de la tabla
             'llenar los datos del grid
-            grid.DataSource = objConexion.obtenerDatos().Tables("detalleventa").DefaultView
-
-            grid.Columns(2).Visible = False
-            grid.Columns(7).Visible = False
-            grid.Columns(8).Visible = False
-            grid.Columns(9).Visible = False
-            grid.Columns(10).Visible = False
-            grid.Columns(11).Visible = False
-            grid.Columns(12).Visible = False
-            grid.Columns(11).Visible = False
-            ' grid.Columns(0).Visible = False
-            grid.Columns(0).DisplayIndex = 12
-            grid.Columns(1).DisplayIndex = 11
-            'grid.Columns(6).HeaderText = "Precio Unidad"
 
             cobcliente.DataSource = objConexion.obtenerDatos().Tables("nuevaventa").DefaultView
             cobcliente.DisplayMember = "Nombre"
@@ -86,7 +72,24 @@
             cobfecha.DisplayMember = "fechaventa"
 
 
+
+
             cargar()
+            grid.DataSource = objConexion.obtenerDatos().Tables("detalleventa").DefaultView
+
+            grid.Columns(2).Visible = False
+            grid.Columns(7).Visible = False
+            grid.Columns(8).Visible = False
+            grid.Columns(9).Visible = False
+            grid.Columns(10).Visible = False
+            grid.Columns(11).Visible = False
+            grid.Columns(12).Visible = False
+            grid.Columns(11).Visible = False
+            ' grid.Columns(0).Visible = False
+            grid.Columns(0).DisplayIndex = 12
+            grid.Columns(1).DisplayIndex = 11
+            'grid.Columns(6).HeaderText = "Precio Unidad"
+
             filtro(cobfacturas.Text.Trim)
             totalizar()
 
@@ -272,7 +275,8 @@
             calendario.Visible = True
             txtfactura.Visible = True
             cobfacturas.Visible = False
-
+            Button1.Enabled = False
+            Button2.Enabled = False
             cobfactura.SelectedValue = 2
             'si el boton dice aceptar, significa que esta aceptando el nuevo registro y lo envia a la base
         ElseIf btnnuevoyaceptar.Text = "Aceptar" Then
@@ -293,9 +297,10 @@
                 btnnuevoyaceptar.Text = "Nuevo"
                 btnmodificarycancelar.Text = "Modificar"
                 Module1.tclientes = cobcliente.SelectedValue
-
+                Button1.Enabled = True
+                Button2.Enabled = True
                 cargar()
-
+                txtfactura.Text = ""
                 obtenerdatosfacturashechas()
                 calendario.Visible = False
 
@@ -348,6 +353,7 @@
             obtenerdatosfacturashechas()
             MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+            Button1.Enabled = True
             btnnuevoyaceptar.Text = "Nuevo"
             btnmodificarycancelar.Text = "Modificar"
             btneliminar.Enabled = True
@@ -364,14 +370,20 @@
             btneliminar.Enabled = False
             accion = "modificar"
             calendario.Visible = True
+            Button1.Enabled = False
+
 
         Else 'Guardar
             calendario.Visible = False
-
+            Button1.Enabled = True
+            Button2.Enabled = True
             btnnuevoyaceptar.Text = "Nuevo"
             btnmodificarycancelar.Text = "Modificar"
             obtenerdatosfacturashechas()
 
+            txtfactura.Visible = False
+            cobfacturas.Visible = True
+            txtfactura.Text = ""
             btneliminar.Enabled = True
         End If
     End Sub
@@ -389,6 +401,9 @@
                 Dim msg = objConexion.mantenimientoventas(New String() {cobid.Text}, "eliminar", comandosql, idTabla)
                 If msg = "Error en el proceso" Then
                     MessageBox.Show("No se pudo eliminar este registro, porque hay registros que dependen de el", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+                If msg <> "Error en el proceso" Then
+                    obtenerdatosfacturashechas()
                 End If
             End If
         Else MessageBox.Show("Debe selecionar un registro para eliminar", mensajeenmentana)
