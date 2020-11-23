@@ -23,6 +23,25 @@
         cobpre.Enabled = False
         txtid.Visible = False
 
+        cobmedicamento.DataSource = objConexion.obtenerDatos().Tables("RegistroMedicamento").DefaultView
+        cobmedicamento.DisplayMember = "NombreMedicamento"
+        cobmedicamento.ValueMember = "RegistroMedicamento.IdRegistroMedicamento"
+        cobmedicamento.AutoCompleteMode = AutoCompleteMode.Suggest
+        cobmedicamento.AutoCompleteSource = AutoCompleteSource.ListItems
+
+        coblab.DataSource = objConexion.obtenerDatos().Tables("RegistroMedicamento").DefaultView
+        coblab.DisplayMember = "Laboratorio"
+
+
+        cobpre.DataSource = objConexion.obtenerDatos().Tables("RegistroMedicamento").DefaultView
+        cobpre.DisplayMember = "Presentacion"
+
+
+        cobmotivos.DataSource = objConexion.obtenerDatos().Tables("MotivosDaño").DefaultView
+        cobmotivos.DisplayMember = "MotivoDano"
+        cobmotivos.ValueMember = "MotivosDano.IdmotivoDano"
+        cobmotivos.AutoCompleteMode = AutoCompleteMode.Suggest
+        cobmotivos.AutoCompleteSource = AutoCompleteSource.ListItems
         obtenerdatos()
     End Sub
     Sub obtenerdatos()
@@ -48,25 +67,7 @@
             '            filtro(txtfiltro.Text)
 
 
-            cobmedicamento.DataSource = objConexion.obtenerDatos().Tables("RegistroMedicamento").DefaultView
-            cobmedicamento.DisplayMember = "NombreMedicamento"
-            cobmedicamento.ValueMember = "RegistroMedicamento.IdRegistroMedicamento"
-            cobmedicamento.AutoCompleteMode = AutoCompleteMode.Suggest
-            cobmedicamento.AutoCompleteSource = AutoCompleteSource.ListItems
 
-            coblab.DataSource = objConexion.obtenerDatos().Tables("RegistroMedicamento").DefaultView
-            coblab.DisplayMember = "Laboratorio"
-
-
-            cobpre.DataSource = objConexion.obtenerDatos().Tables("RegistroMedicamento").DefaultView
-            cobpre.DisplayMember = "Presentacion"
-
-
-            cobmotivos.DataSource = objConexion.obtenerDatos().Tables("MotivosDaño").DefaultView
-            cobmotivos.DisplayMember = "MotivoDano"
-            cobmotivos.ValueMember = "MotivosDano.IdmotivoDano"
-            cobmotivos.AutoCompleteMode = AutoCompleteMode.Suggest
-            cobmotivos.AutoCompleteSource = AutoCompleteSource.ListItems
 
         Catch ex As Exception
             'Mensaje si no hay datos que mostra

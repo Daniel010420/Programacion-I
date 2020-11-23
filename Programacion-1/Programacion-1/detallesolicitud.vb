@@ -21,32 +21,13 @@
         txtid.Visible = False
         txtiddetalle.Visible = False
         lblcoste.Text = ""
-        obtenerdatos()
-    End Sub
+        txtid.Text = Module1.idcompra
+        txtfactura.Text = Module1.factura
+        txtfactura.Text = txtfactura.Text.Trim
+        txtfactura.Enabled = False
 
-    Sub obtenerdatos()
+
         Try
-            'la palabra Empleados es la palabra que envia la peticion de la tabla que quiere
-            'la palabra datos tabla es la que recibe los resultados de la tabla
-            'llenar los datos del grid
-            grid.DataSource = objConexion.obtenerDatos().Tables("detallesolicitud").DefaultView
-            grid.Columns(0).Visible = False
-            grid.Columns(6).Visible = False
-            grid.Columns(7).Visible = False
-            grid.Columns(8).Visible = False
-            grid.Columns(9).Visible = False
-            grid.Columns(10).Visible = False
-            '  grid.Columns(11).Visible = False
-
-
-            txtid.Text = Module1.idcompra
-            txtfactura.Text = Module1.factura
-            txtfactura.Text = txtfactura.Text.Trim
-            txtfactura.Enabled = False
-
-            filtro(txtfiltro.Text)
-
-
             cobmedicamento.DataSource = objConexion.obtenerDatos().Tables("RegistroMedicamento").DefaultView
             cobmedicamento.DisplayMember = "NombreMedicamento"
             cobmedicamento.ValueMember = "RegistroMedicamento.IdRegistroMedicamento"
@@ -59,7 +40,29 @@
 
             cobpre.DataSource = objConexion.obtenerDatos().Tables("RegistroMedicamento").DefaultView
             cobpre.DisplayMember = "Presentacion"
+        Catch ex As Exception
+            MsgBox("No hay datos en la Base de Datos " & ex.Message)
+        End Try
 
+        obtenerdatos()
+    End Sub
+
+    Sub obtenerdatos()
+        Try
+            'la palabra Empleados es la palabra que envia la peticion de la tabla que quiere
+            'la palabra datos tabla es la que recibe los resultados de la tabla
+            'llenar los datos del grid
+
+
+            grid.DataSource = objConexion.obtenerDatos().Tables("detallesolicitud").DefaultView
+            grid.Columns(0).Visible = False
+            grid.Columns(6).Visible = False
+            grid.Columns(7).Visible = False
+            grid.Columns(8).Visible = False
+            grid.Columns(9).Visible = False
+            grid.Columns(10).Visible = False
+            '  grid.Columns(11).Visible = False
+            filtro(txtfiltro.Text)
 
         Catch ex As Exception
             'Mensaje si no hay datos que mostra
@@ -98,19 +101,24 @@
             End If
 
 
-            Dim msg = objConexion.mantenimientodetallesolicitudes(New String() {
+            If txtcantidad.Text <> "" And txtprecio.Text <> "" Then
+
+
+                Dim msg = objConexion.mantenimientodetallesolicitudes(New String() {
             "",                 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
             cobmedicamento.SelectedValue,     'dato(1)
             txtcantidad.Text,     'dato(1)
-            txtprecio.Text,        'dato(2)
+            lblcoste.Text,        'dato(2)
            txtid.Text}, 'dato(2)
           accion, comandosql, idTabla) 'accion que se desea realizar en el case
-            btnnuevoyaceptar.Text = "Nuevo"
-            btnmodificarycancelar.Text = "Modificar"
-            obtenerdatos()
-            limpiar()
-            MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-            btneliminar.Enabled = True
+                    btnnuevoyaceptar.Text = "Nuevo"
+                    btnmodificarycancelar.Text = "Modificar"
+
+                    MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    btneliminar.Enabled = True
+                    limpiar()
+                    obtenerdatos()
+                End If
 
 
 
@@ -131,19 +139,29 @@
                 txtprecio.Text = 0
             End If
 
-            Dim msg = objConexion.mantenimientodetallesolicitudes(New String() {
-              txtiddetalle.Text,      'dato(0) si se envia el id aqui porque es el que identifica el registro, update from id = x
-              cobmedicamento.SelectedValue,     'dato(1)
-            txtcantidad.Text,     'dato(1)
-            txtprecio.Text}, 'dato(2)}, 'dato(3)
-              accion, comandosql, idTabla)
 
-            obtenerdatos()
-            MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-            limpiar()
-            btnnuevoyaceptar.Text = "Nuevo"
-            btnmodificarycancelar.Text = "Modificar"
-            btneliminar.Enabled = True
+            If txtcantidad.Text <> "" And txtprecio.Text <> "" Then
+
+
+                Dim msg = objConexion.mantenimientodetallesolicitudes(New String() {
+           txtiddetalle.Text,      'dato(0) si se envia el id aqui porque es el que identifica el registro, update from id = x
+           cobmedicamento.SelectedValue,     'dato(1)
+         txtcantidad.Text,     'dato(1)
+         lblcoste.Text}, 'dato(2)}, 'dato(3)
+           accion, comandosql, idTabla)
+
+
+                    MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    limpiar()
+                    btnnuevoyaceptar.Text = "Nuevo"
+                    btnmodificarycancelar.Text = "Modificar"
+                    btneliminar.Enabled = True
+                    obtenerdatos()
+
+            End If
+
+
+
         End If
     End Sub
 
@@ -158,8 +176,9 @@
         Else 'Guardar
             btnnuevoyaceptar.Text = "Nuevo"
             btnmodificarycancelar.Text = "Modificar"
-            obtenerdatos()
+
             btneliminar.Enabled = True
+            obtenerdatos()
         End If
     End Sub
 
@@ -176,11 +195,14 @@
                 If msg = "Error en el proceso" Then
                     MessageBox.Show("No se pudo eliminar este registro, porque hay registros que dependen de el", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
+                If msg <> "Error en el proceso" Then
+                    limpiar()
+                    obtenerdatos()
+                End If
             End If
         Else MessageBox.Show("Debe selecionar un registro para eliminar", mensajeenmentana)
         End If
-        limpiar()
-        obtenerdatos()
+
     End Sub
 
 
@@ -205,7 +227,7 @@
                 i = grid.CurrentRow.Index
                 txtiddetalle.Text = grid.Item(0, i).Value()
                 txtcantidad.Text = grid.Item(4, i).Value()
-                txtprecio.Text = grid.Item(5, i).Value()
+                lblcoste.Text = grid.Item(5, i).Value()
                 'txtotrosvalores.Text = grid.Item(6, i).Value()
                 cobmedicamento.SelectedValue = grid.Item(8, i).Value()
                 '   coblab.SelectedValue = grid.Item(10, i).Value()
@@ -229,13 +251,12 @@
     Private Sub txtprecio_KeyUp(sender As Object, e As KeyEventArgs) Handles txtprecio.KeyUp
         txtcantidad.Text = txtcantidad.Text.Trim
         txtprecio.Text = txtprecio.Text.Trim
-        'txtotrosvalores.Text = txtotrosvalores.Text.Trim
 
         If txtcantidad.Text <> "" And txtprecio.Text <> "" Then
             If txtcantidad.Text > 0 And txtprecio.Text >= 0 Then
-                Dim cantidad = txtcantidad.Text
-                Dim precio = txtprecio.Text
-                lblcoste.Text = precio
+                Dim cantidad As Double = txtcantidad.Text
+                Dim precio As Double = txtprecio.Text
+                lblcoste.Text = precio * cantidad
 
 
             End If
@@ -261,13 +282,13 @@
     Private Sub txtcantidad_KeyUp(sender As Object, e As KeyEventArgs) Handles txtcantidad.KeyUp
         txtcantidad.Text = txtcantidad.Text.Trim
         txtprecio.Text = txtprecio.Text.Trim
-        '       txtotrosvalores.Text = txtotrosvalores.Text.Trim
 
         If txtcantidad.Text <> "" And txtprecio.Text <> "" Then
-            If txtcantidad.Text > 0 And txtprecio.Text > 0 Then
-                Dim cantidad = txtcantidad.Text
-                Dim precio = txtprecio.Text
-                lblcoste.Text = precio
+            If txtcantidad.Text > 0 And txtprecio.Text >= 0 Then
+                Dim cantidad As Double = txtcantidad.Text
+                Dim precio As Double = txtprecio.Text
+                lblcoste.Text = precio * cantidad
+
 
             End If
         End If
@@ -284,23 +305,9 @@
         txtcantidad.Text = txtcantidad.Text.Trim
     End Sub
 
-    Private Sub txtprecio_TextChanged(sender As Object, e As EventArgs) Handles txtprecio.TextChanged
-        txtprecio.Text = txtprecio.Text.Trim
 
-        txtcantidad.Text = txtcantidad.Text.Trim
-        txtprecio.Text = txtprecio.Text.Trim
-        '       txtotrosvalores.Text = txtotrosvalores.Text.Trim
 
-        If txtcantidad.Text <> "" And txtprecio.Text <> "" Then
-            If txtcantidad.Text > 0 And txtprecio.Text > 0 Then
-                Dim cantidad = txtcantidad.Text
-                Dim precio = txtprecio.Text
-                lblcoste.Text = precio
 
-            End If
-        End If
-
-    End Sub
 
     Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
 

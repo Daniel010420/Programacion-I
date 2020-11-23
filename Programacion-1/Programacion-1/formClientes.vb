@@ -21,6 +21,15 @@
         Label1.Visible = False
         ' obtenerdatos()
 
+        Try
+            cobtipodecliente.DataSource = objConexion.obtenerDatos().Tables("TipoCliente").DefaultView
+            cobtipodecliente.DisplayMember = "TipoCliente"
+            cobtipodecliente.ValueMember = "TipoCliente.IdTipoCliente"
+            cobtipodecliente.AutoCompleteMode = AutoCompleteMode.Suggest
+            cobtipodecliente.AutoCompleteSource = AutoCompleteSource.ListItems
+        Catch ex As Exception
+            MsgBox("No hay datos en la Base de Datos " & ex.Message)
+        End Try
         obtenerdatos()
     End Sub
 
@@ -33,11 +42,7 @@
             grid.DataSource = objConexion.obtenerDatos().Tables("Clientes").DefaultView
             grid.Columns(5).Visible = False
             grid.Columns(0).Visible = False
-            cobtipodecliente.DataSource = objConexion.obtenerDatos().Tables("TipoCliente").DefaultView
-            cobtipodecliente.DisplayMember = "TipoCliente"
-            cobtipodecliente.ValueMember = "TipoCliente.IdTipoCliente"
-            cobtipodecliente.AutoCompleteMode = AutoCompleteMode.Suggest
-            cobtipodecliente.AutoCompleteSource = AutoCompleteSource.ListItems
+
 
 
         Catch ex As Exception
@@ -166,6 +171,9 @@
 
 
                 cobtipodecliente.SelectedValue = grid.Item(5, i).Value()
+                txtnombre.Text = txtnombre.Text.Trim
+                txttelefono.Text = txttelefono.Text.Trim
+                txtdireccion.Text = txtdireccion.Text.Trim
             End If
 
 
@@ -181,14 +189,21 @@
     End Sub
 
     Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtnombre.TextChanged
-        txtnombre.Text = txtnombre.Text.Trim
+
     End Sub
 
     Private Sub txttelefono_TextChanged(sender As Object, e As EventArgs) Handles txttelefono.TextChanged
-        txttelefono.Text = txttelefono.Text.Trim
+
     End Sub
 
     Private Sub txtdireccion_TextChanged(sender As Object, e As EventArgs) Handles txtdireccion.TextChanged
-        txtdireccion.Text = txtdireccion.Text.Trim
+
+    End Sub
+
+    Private Sub txttelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txttelefono.KeyPress
+        If Not (Char.IsControl(e.KeyChar) OrElse Char.IsDigit(e.KeyChar)) _
+           AndAlso (Not e.KeyChar = "-" Or txttelefono.Text.Contains("-")) Then
+            e.Handled = True
+        End If
     End Sub
 End Class

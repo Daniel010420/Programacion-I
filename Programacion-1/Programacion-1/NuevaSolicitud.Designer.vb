@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class NuevaSolicitud
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,24 +20,29 @@ Partial Class NuevaSolicitud
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim Label2 As System.Windows.Forms.Label
         Dim NfacturaLabel As System.Windows.Forms.Label
         Dim Fecha_vtaLabel As System.Windows.Forms.Label
         Dim IdTipofacturaLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.cobempleadolist = New System.Windows.Forms.ComboBox()
+        Me.cobsucursallist = New System.Windows.Forms.ComboBox()
+        Me.cobcodigolist = New System.Windows.Forms.ComboBox()
+        Me.cobproveedorlist = New System.Windows.Forms.ComboBox()
+        Me.txtfacturad = New System.Windows.Forms.TextBox()
+        Me.calendariod = New System.Windows.Forms.DateTimePicker()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnnuevoyaceptar = New System.Windows.Forms.Button()
         Me.btnmodificarycancelar = New System.Windows.Forms.Button()
         Me.btneliminar = New System.Windows.Forms.Button()
-        Me.cobempleado = New System.Windows.Forms.ComboBox()
-        Me.cobsucursal = New System.Windows.Forms.ComboBox()
-        Me.cobproveedor = New System.Windows.Forms.ComboBox()
-        Me.cobcodigo = New System.Windows.Forms.ComboBox()
+        Me.cobempleadod = New System.Windows.Forms.ComboBox()
+        Me.cobsucursald = New System.Windows.Forms.ComboBox()
+        Me.cobproveedord = New System.Windows.Forms.ComboBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblRespuestaTotal = New System.Windows.Forms.Label()
         Me.lbltotal = New System.Windows.Forms.Label()
@@ -47,11 +52,9 @@ Partial Class NuevaSolicitud
         Me.lblsuma = New System.Windows.Forms.Label()
         Me.grid = New System.Windows.Forms.DataGridView()
         Me.subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.calendario = New System.Windows.Forms.DateTimePicker()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cu = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cobid = New System.Windows.Forms.ComboBox()
         Me.cobfecha = New System.Windows.Forms.ComboBox()
-        Me.txtfactura = New System.Windows.Forms.TextBox()
         Label2 = New System.Windows.Forms.Label()
         NfacturaLabel = New System.Windows.Forms.Label()
         Fecha_vtaLabel = New System.Windows.Forms.Label()
@@ -65,75 +68,122 @@ Partial Class NuevaSolicitud
         'Label2
         '
         Label2.AutoSize = True
-        Label2.Location = New System.Drawing.Point(326, 11)
+        Label2.Location = New System.Drawing.Point(306, 10)
         Label2.Name = "Label2"
         Label2.Size = New System.Drawing.Size(48, 13)
-        Label2.TabIndex = 48
+        Label2.TabIndex = 55
         Label2.Text = "Sucursal"
         '
         'NfacturaLabel
         '
         NfacturaLabel.AutoSize = True
-        NfacturaLabel.Location = New System.Drawing.Point(560, 11)
+        NfacturaLabel.Location = New System.Drawing.Point(557, 11)
         NfacturaLabel.Name = "NfacturaLabel"
         NfacturaLabel.Size = New System.Drawing.Size(73, 13)
-        NfacturaLabel.TabIndex = 40
+        NfacturaLabel.TabIndex = 47
         NfacturaLabel.Text = "Solicitud: No.:"
         '
         'Fecha_vtaLabel
         '
         Fecha_vtaLabel.AutoSize = True
-        Fecha_vtaLabel.Location = New System.Drawing.Point(6, 44)
+        Fecha_vtaLabel.Location = New System.Drawing.Point(17, 43)
         Fecha_vtaLabel.Name = "Fecha_vtaLabel"
         Fecha_vtaLabel.Size = New System.Drawing.Size(40, 13)
-        Fecha_vtaLabel.TabIndex = 41
+        Fecha_vtaLabel.TabIndex = 48
         Fecha_vtaLabel.Text = "Fecha:"
         '
         'IdTipofacturaLabel
         '
         IdTipofacturaLabel.AutoSize = True
-        IdTipofacturaLabel.Location = New System.Drawing.Point(307, 44)
+        IdTipofacturaLabel.Location = New System.Drawing.Point(306, 43)
         IdTipofacturaLabel.Name = "IdTipofacturaLabel"
-        IdTipofacturaLabel.Size = New System.Drawing.Size(57, 13)
-        IdTipofacturaLabel.TabIndex = 43
-        IdTipofacturaLabel.Text = "Empleado:"
+        IdTipofacturaLabel.Size = New System.Drawing.Size(54, 13)
+        IdTipofacturaLabel.TabIndex = 50
+        IdTipofacturaLabel.Text = "Empleado"
         '
         'Label1
         '
         Label1.AutoSize = True
-        Label1.Location = New System.Drawing.Point(6, 11)
+        Label1.Location = New System.Drawing.Point(17, 10)
         Label1.Name = "Label1"
         Label1.Size = New System.Drawing.Size(56, 13)
-        Label1.TabIndex = 45
+        Label1.TabIndex = 52
         Label1.Text = "Proveedor"
+        '
+        'cobempleadolist
+        '
+        Me.cobempleadolist.FormattingEnabled = True
+        Me.cobempleadolist.Location = New System.Drawing.Point(374, 39)
+        Me.cobempleadolist.Name = "cobempleadolist"
+        Me.cobempleadolist.Size = New System.Drawing.Size(147, 21)
+        Me.cobempleadolist.TabIndex = 70
+        '
+        'cobsucursallist
+        '
+        Me.cobsucursallist.FormattingEnabled = True
+        Me.cobsucursallist.Location = New System.Drawing.Point(374, 7)
+        Me.cobsucursallist.Name = "cobsucursallist"
+        Me.cobsucursallist.Size = New System.Drawing.Size(147, 21)
+        Me.cobsucursallist.TabIndex = 69
+        '
+        'cobcodigolist
+        '
+        Me.cobcodigolist.FormattingEnabled = True
+        Me.cobcodigolist.Location = New System.Drawing.Point(626, 5)
+        Me.cobcodigolist.Name = "cobcodigolist"
+        Me.cobcodigolist.Size = New System.Drawing.Size(147, 21)
+        Me.cobcodigolist.TabIndex = 68
+        '
+        'cobproveedorlist
+        '
+        Me.cobproveedorlist.FormattingEnabled = True
+        Me.cobproveedorlist.Location = New System.Drawing.Point(76, 8)
+        Me.cobproveedorlist.Name = "cobproveedorlist"
+        Me.cobproveedorlist.Size = New System.Drawing.Size(147, 21)
+        Me.cobproveedorlist.TabIndex = 66
+        '
+        'txtfacturad
+        '
+        Me.txtfacturad.Location = New System.Drawing.Point(626, 6)
+        Me.txtfacturad.Name = "txtfacturad"
+        Me.txtfacturad.Size = New System.Drawing.Size(147, 20)
+        Me.txtfacturad.TabIndex = 65
+        '
+        'calendariod
+        '
+        Me.calendariod.Location = New System.Drawing.Point(76, 43)
+        Me.calendariod.Name = "calendariod"
+        Me.calendariod.Size = New System.Drawing.Size(222, 20)
+        Me.calendariod.TabIndex = 49
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(786, 6)
+        Me.Button2.Location = New System.Drawing.Point(783, 6)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 58
+        Me.Button2.TabIndex = 63
         Me.Button2.Text = "Buscar"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(867, 7)
+        Me.Button1.Location = New System.Drawing.Point(864, 7)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 50)
-        Me.Button1.TabIndex = 57
+        Me.Button1.TabIndex = 62
         Me.Button1.Text = "Editar detalle"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
+        Me.GroupBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.btnnuevoyaceptar)
         Me.GroupBox2.Controls.Add(Me.btnmodificarycancelar)
         Me.GroupBox2.Controls.Add(Me.btneliminar)
-        Me.GroupBox2.Location = New System.Drawing.Point(17, 473)
+        Me.GroupBox2.Location = New System.Drawing.Point(14, 473)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(289, 84)
-        Me.GroupBox2.TabIndex = 56
+        Me.GroupBox2.TabIndex = 61
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Registro Solicitud"
         '
@@ -164,50 +214,43 @@ Partial Class NuevaSolicitud
         Me.btneliminar.Text = "Eliminar"
         Me.btneliminar.UseVisualStyleBackColor = True
         '
-        'cobempleado
+        'cobempleadod
         '
-        Me.cobempleado.FormattingEnabled = True
-        Me.cobempleado.Location = New System.Drawing.Point(380, 44)
-        Me.cobempleado.Name = "cobempleado"
-        Me.cobempleado.Size = New System.Drawing.Size(147, 21)
-        Me.cobempleado.TabIndex = 54
+        Me.cobempleadod.FormattingEnabled = True
+        Me.cobempleadod.Location = New System.Drawing.Point(374, 39)
+        Me.cobempleadod.Name = "cobempleadod"
+        Me.cobempleadod.Size = New System.Drawing.Size(147, 21)
+        Me.cobempleadod.TabIndex = 58
         '
-        'cobsucursal
+        'cobsucursald
         '
-        Me.cobsucursal.FormattingEnabled = True
-        Me.cobsucursal.Location = New System.Drawing.Point(380, 9)
-        Me.cobsucursal.Name = "cobsucursal"
-        Me.cobsucursal.Size = New System.Drawing.Size(147, 21)
-        Me.cobsucursal.TabIndex = 52
+        Me.cobsucursald.FormattingEnabled = True
+        Me.cobsucursald.Location = New System.Drawing.Point(374, 6)
+        Me.cobsucursald.Name = "cobsucursald"
+        Me.cobsucursald.Size = New System.Drawing.Size(147, 21)
+        Me.cobsucursald.TabIndex = 57
         '
-        'cobproveedor
+        'cobproveedord
         '
-        Me.cobproveedor.FormattingEnabled = True
-        Me.cobproveedor.Location = New System.Drawing.Point(79, 7)
-        Me.cobproveedor.Name = "cobproveedor"
-        Me.cobproveedor.Size = New System.Drawing.Size(147, 21)
-        Me.cobproveedor.TabIndex = 51
-        '
-        'cobcodigo
-        '
-        Me.cobcodigo.FormattingEnabled = True
-        Me.cobcodigo.Location = New System.Drawing.Point(632, 7)
-        Me.cobcodigo.Name = "cobcodigo"
-        Me.cobcodigo.Size = New System.Drawing.Size(147, 21)
-        Me.cobcodigo.TabIndex = 50
+        Me.cobproveedord.FormattingEnabled = True
+        Me.cobproveedord.Location = New System.Drawing.Point(76, 8)
+        Me.cobproveedord.Name = "cobproveedord"
+        Me.cobproveedord.Size = New System.Drawing.Size(147, 21)
+        Me.cobproveedord.TabIndex = 56
         '
         'Panel1
         '
+        Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.lblRespuestaTotal)
         Me.Panel1.Controls.Add(Me.lbltotal)
         Me.Panel1.Controls.Add(Me.lblRespuestaIva)
         Me.Panel1.Controls.Add(Me.lbliva)
         Me.Panel1.Controls.Add(Me.lblRespuestaSuma)
         Me.Panel1.Controls.Add(Me.lblsuma)
-        Me.Panel1.Location = New System.Drawing.Point(724, 473)
+        Me.Panel1.Location = New System.Drawing.Point(721, 473)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(200, 104)
-        Me.Panel1.TabIndex = 47
+        Me.Panel1.TabIndex = 54
         '
         'lblRespuestaTotal
         '
@@ -280,83 +323,68 @@ Partial Class NuevaSolicitud
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.subtotal})
-        Me.grid.Location = New System.Drawing.Point(12, 91)
+        Me.grid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.subtotal, Me.cu})
+        Me.grid.Location = New System.Drawing.Point(9, 91)
         Me.grid.Name = "grid"
         Me.grid.ReadOnly = True
         Me.grid.Size = New System.Drawing.Size(912, 371)
-        Me.grid.TabIndex = 46
+        Me.grid.TabIndex = 53
         '
         'subtotal
         '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle1
         Me.subtotal.HeaderText = "SUBTOTAL"
         Me.subtotal.Name = "subtotal"
         Me.subtotal.ReadOnly = True
         Me.subtotal.Width = 150
         '
-        'calendario
+        'cu
         '
-        Me.calendario.Location = New System.Drawing.Point(71, 41)
-        Me.calendario.Name = "calendario"
-        Me.calendario.Size = New System.Drawing.Size(217, 20)
-        Me.calendario.TabIndex = 42
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(76, 12)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(80, 13)
-        Me.Label3.TabIndex = 49
-        Me.Label3.Text = "IdMedicamento"
+        Me.cu.HeaderText = "Coste/Unidad"
+        Me.cu.Name = "cu"
+        Me.cu.ReadOnly = True
         '
         'cobid
         '
         Me.cobid.FormattingEnabled = True
-        Me.cobid.Location = New System.Drawing.Point(632, 8)
+        Me.cobid.Location = New System.Drawing.Point(534, 549)
         Me.cobid.Name = "cobid"
         Me.cobid.Size = New System.Drawing.Size(147, 21)
-        Me.cobid.TabIndex = 53
+        Me.cobid.TabIndex = 59
         '
         'cobfecha
         '
         Me.cobfecha.FormattingEnabled = True
-        Me.cobfecha.Location = New System.Drawing.Point(71, 41)
+        Me.cobfecha.Location = New System.Drawing.Point(76, 43)
         Me.cobfecha.Name = "cobfecha"
-        Me.cobfecha.Size = New System.Drawing.Size(217, 21)
-        Me.cobfecha.TabIndex = 59
-        '
-        'txtfactura
-        '
-        Me.txtfactura.Location = New System.Drawing.Point(632, 8)
-        Me.txtfactura.Name = "txtfactura"
-        Me.txtfactura.Size = New System.Drawing.Size(147, 20)
-        Me.txtfactura.TabIndex = 60
+        Me.cobfecha.Size = New System.Drawing.Size(222, 21)
+        Me.cobfecha.TabIndex = 64
         '
         'NuevaSolicitud
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(949, 582)
-        Me.Controls.Add(Me.txtfactura)
+        Me.Controls.Add(Me.cobempleadolist)
+        Me.Controls.Add(Me.cobsucursallist)
+        Me.Controls.Add(Me.cobcodigolist)
+        Me.Controls.Add(Me.cobproveedorlist)
+        Me.Controls.Add(Me.txtfacturad)
+        Me.Controls.Add(Me.calendariod)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.cobempleado)
-        Me.Controls.Add(Me.cobsucursal)
-        Me.Controls.Add(Me.cobproveedor)
-        Me.Controls.Add(Me.cobcodigo)
+        Me.Controls.Add(Me.cobempleadod)
+        Me.Controls.Add(Me.cobsucursald)
+        Me.Controls.Add(Me.cobproveedord)
         Me.Controls.Add(Label2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.grid)
         Me.Controls.Add(NfacturaLabel)
         Me.Controls.Add(Fecha_vtaLabel)
-        Me.Controls.Add(Me.calendario)
         Me.Controls.Add(IdTipofacturaLabel)
         Me.Controls.Add(Label1)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.cobid)
         Me.Controls.Add(Me.cobfecha)
         Me.Name = "NuevaSolicitud"
@@ -370,16 +398,21 @@ Partial Class NuevaSolicitud
 
     End Sub
 
+    Friend WithEvents cobempleadolist As ComboBox
+    Friend WithEvents cobsucursallist As ComboBox
+    Friend WithEvents cobcodigolist As ComboBox
+    Friend WithEvents cobproveedorlist As ComboBox
+    Friend WithEvents txtfacturad As TextBox
+    Friend WithEvents calendariod As DateTimePicker
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents btnnuevoyaceptar As Button
     Friend WithEvents btnmodificarycancelar As Button
     Friend WithEvents btneliminar As Button
-    Friend WithEvents cobempleado As ComboBox
-    Friend WithEvents cobsucursal As ComboBox
-    Friend WithEvents cobproveedor As ComboBox
-    Friend WithEvents cobcodigo As ComboBox
+    Friend WithEvents cobempleadod As ComboBox
+    Friend WithEvents cobsucursald As ComboBox
+    Friend WithEvents cobproveedord As ComboBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents lblRespuestaTotal As Label
     Friend WithEvents lbltotal As Label
@@ -388,10 +421,8 @@ Partial Class NuevaSolicitud
     Friend WithEvents lblRespuestaSuma As Label
     Friend WithEvents lblsuma As Label
     Friend WithEvents grid As DataGridView
-    Friend WithEvents subtotal As DataGridViewTextBoxColumn
-    Friend WithEvents calendario As DateTimePicker
-    Friend WithEvents Label3 As Label
     Friend WithEvents cobid As ComboBox
     Friend WithEvents cobfecha As ComboBox
-    Friend WithEvents txtfactura As TextBox
+    Friend WithEvents subtotal As DataGridViewTextBoxColumn
+    Friend WithEvents cu As DataGridViewTextBoxColumn
 End Class

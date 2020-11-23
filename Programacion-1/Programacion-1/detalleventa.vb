@@ -14,38 +14,19 @@
     Dim comandoinsertar = Nombretabladebusqueda + " (IdRegistroMedicamento,Cantidad,ingreso,IdVenta)" 'campos de la tabla en orden menos id
     Dim comandoactualizar = Nombretabladebusqueda
     Private Sub detalleventa_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cobganancia.Visible = False
-        cobdescuento.Visible = False
+        ' cobganancia.Visible = False
+        '  cobdescuento.Visible = False
         coblab.Enabled = False
         cobpre.Enabled = False
         txtid.Visible = False
         txtiddetalle.Visible = False
-
+        txtid.Text = Module1.idcompra
+        txtfactura.Text = Module1.factura
+        txtfactura.Text = txtfactura.Text.Trim
+        txtfactura.Enabled = False
         cobcliente.Enabled = False
-        obtenerdatos()
-    End Sub
-    Sub obtenerdatos()
+
         Try
-            'la palabra Empleados es la palabra que envia la peticion de la tabla que quiere
-            'la palabra datos tabla es la que recibe los resultados de la tabla
-            'llenar los datos del grid
-            grid.DataSource = objConexion.obtenerDatos().Tables("detalleventa").DefaultView
-            grid.Columns(0).Visible = False
-            grid.Columns(6).Visible = False
-            grid.Columns(7).Visible = False
-            grid.Columns(8).Visible = False
-            grid.Columns(9).Visible = False
-            grid.Columns(10).Visible = False
-
-
-            txtid.Text = Module1.idcompra
-            txtfactura.Text = Module1.factura
-            txtfactura.Text = txtfactura.Text.Trim
-            txtfactura.Enabled = False
-
-
-            filtro(txtfiltro.Text)
-
 
             cobcliente.DataSource = objConexion.obtenerDatos().Tables("Gananciadescuentocliente").DefaultView
             cobcliente.DisplayMember = "Nombre"
@@ -73,9 +54,35 @@
             cobpre.DataSource = objConexion.obtenerDatos().Tables("RegistroMedicamento").DefaultView
             cobpre.DisplayMember = "Presentacion"
 
+        Catch ex As Exception
+            'Mensaje si no hay datos que mostra
+            MsgBox("No hay datos en la Base de Datos " & ex.Message)
+        End Try
 
+
+
+
+
+
+        obtenerdatos()
+    End Sub
+    Sub obtenerdatos()
+        Try
+            'la palabra Empleados es la palabra que envia la peticion de la tabla que quiere
+            'la palabra datos tabla es la que recibe los resultados de la tabla
+            'llenar los datos del grid
+
+            grid.DataSource = objConexion.obtenerDatos().Tables("detalleventa").DefaultView
+            grid.Columns(0).Visible = False
+            grid.Columns(6).Visible = False
+            grid.Columns(7).Visible = False
+            grid.Columns(8).Visible = False
+            grid.Columns(9).Visible = False
+            grid.Columns(10).Visible = False
+            filtro(txtfiltro.Text)
 
             cobcliente.SelectedValue = Module1.tclientes
+
         Catch ex As Exception
             'Mensaje si no hay datos que mostra
             MsgBox("No hay datos en la Base de Datos " & ex.Message)
@@ -106,27 +113,30 @@
                 txtprecio.Text = 0
             End If
 
+            If txtcantidad.Text <> "" And txtprecio.Text <> "" Then
 
-            Dim msg = objConexion.mantenimientodetallesventa(New String() {
+
+                Dim msg = objConexion.mantenimientodetallesventa(New String() {
             "",                 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
             cobmedicamento.SelectedValue,     'dato(1)
             txtcantidad.Text,     'dato(1)
             lblcoste.Text, 'dato(2)
            txtid.Text}, 'dato(2)
           accion, comandosql, idTabla) 'accion que se desea realizar en el case
-            btnnuevoyaceptar.Text = "Nuevo"
-            btnmodificarycancelar.Text = "Modificar"
-            obtenerdatos()
-            limpiar()
-            MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-            btneliminar.Enabled = True
+                    btnnuevoyaceptar.Text = "Nuevo"
+                    btnmodificarycancelar.Text = "Modificar"
 
+                    MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    btneliminar.Enabled = True
+                    limpiar()
+                    obtenerdatos()
 
+                End If
 
 
 
         Else 'si el boton dice Guardar, significa que esta haciendo un cambio de un dato
-            comandosql = comandoactualizar
+                comandosql = comandoactualizar
 
             If lblcoste.Text = "" Then
                 lblcoste.Text = 0
@@ -139,19 +149,33 @@
             End If
 
 
-            Dim msg = objConexion.mantenimientodetallesventa(New String() {
+
+            If txtcantidad.Text <> "" And txtprecio.Text <> "" Then
+
+
+
+                Dim msg = objConexion.mantenimientodetallesventa(New String() {
               txtiddetalle.Text,      'dato(0) si se envia el id aqui porque es el que identifica el registro, update from id = x
               cobmedicamento.SelectedValue,     'dato(1)
             txtcantidad.Text,     'dato(1)
             lblcoste.Text}, 'dato(2)}, 'dato(3)
               accion, comandosql, idTabla)
 
-            obtenerdatos()
-            MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-            limpiar()
-            btnnuevoyaceptar.Text = "Nuevo"
-            btnmodificarycancelar.Text = "Modificar"
-            btneliminar.Enabled = True
+
+                    MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                    btnnuevoyaceptar.Text = "Nuevo"
+                    btnmodificarycancelar.Text = "Modificar"
+                    btneliminar.Enabled = True
+                    limpiar()
+                    obtenerdatos()
+
+                End If
+
+
+
+
+
         End If
     End Sub
 
@@ -164,8 +188,9 @@
         Else 'Guardar
             btnnuevoyaceptar.Text = "Nuevo"
             btnmodificarycancelar.Text = "Modificar"
-            obtenerdatos()
+
             btneliminar.Enabled = True
+            obtenerdatos()
         End If
     End Sub
 
@@ -178,11 +203,14 @@
                 If msg = "Error en el proceso" Then
                     MessageBox.Show("No se pudo eliminar este registro, porque hay registros que dependen de el", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
+                If msg <> "Error en el proceso" Then
+                    limpiar()
+                    obtenerdatos()
+                End If
             End If
         Else MessageBox.Show("Debe selecionar un registro para eliminar", mensajeenmentana)
         End If
-        limpiar()
-        obtenerdatos()
+
     End Sub
 
 

@@ -18,7 +18,21 @@
         txtid.Visible = False
         Label1.Visible = False
         ' obtenerdatos()
+        Try
+            coblaboratorio.DataSource = objConexion.obtenerDatos().Tables("Laboratorio").DefaultView
+            coblaboratorio.DisplayMember = "Laboratorio"
+            coblaboratorio.ValueMember = "Laboratorio.IdLaboratorio"
+            coblaboratorio.AutoCompleteMode = AutoCompleteMode.Suggest
+            coblaboratorio.AutoCompleteSource = AutoCompleteSource.ListItems
 
+            cobpresentacion.DataSource = objConexion.obtenerDatos().Tables("Presentacion").DefaultView
+            cobpresentacion.DisplayMember = "Presentacion"
+            cobpresentacion.ValueMember = "Presentacion.IdPresentacion"
+            cobpresentacion.AutoCompleteMode = AutoCompleteMode.Suggest
+            cobpresentacion.AutoCompleteSource = AutoCompleteSource.ListItems
+        Catch ex As Exception
+            MsgBox("No hay datos en la Base de Datos " & ex.Message)
+        End Try
         obtenerdatos()
     End Sub
 
@@ -32,17 +46,7 @@
             grid.Columns(0).Visible = False
             grid.Columns(4).Visible = False
             grid.Columns(5).Visible = False
-            coblaboratorio.DataSource = objConexion.obtenerDatos().Tables("Laboratorio").DefaultView
-            coblaboratorio.DisplayMember = "Laboratorio"
-            coblaboratorio.ValueMember = "Laboratorio.IdLaboratorio"
-            coblaboratorio.AutoCompleteMode = AutoCompleteMode.Suggest
-            coblaboratorio.AutoCompleteSource = AutoCompleteSource.ListItems
 
-            cobpresentacion.DataSource = objConexion.obtenerDatos().Tables("Presentacion").DefaultView
-            cobpresentacion.DisplayMember = "Presentacion"
-            cobpresentacion.ValueMember = "Presentacion.IdPresentacion"
-            cobpresentacion.AutoCompleteMode = AutoCompleteMode.Suggest
-            cobpresentacion.AutoCompleteSource = AutoCompleteSource.ListItems
         Catch ex As Exception
             'Mensaje si no hay datos que mostra
             MsgBox("No hay datos en la Base de Datos " & ex.Message)
@@ -167,6 +171,7 @@
                 txtnombre.Text = grid.Item(1, i).Value()
                 cobpresentacion.SelectedValue = grid.Item(4, i).Value()
                 coblaboratorio.SelectedValue = grid.Item(5, i).Value()
+                txtnombre.Text = txtnombre.Text.Trim
             End If
 
 
@@ -181,7 +186,7 @@
     End Sub
 
     Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtnombre.TextChanged
-        txtnombre.Text = txtnombre.Text.Trim
+
     End Sub
 
     Private Sub txtnombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtnombre.KeyPress

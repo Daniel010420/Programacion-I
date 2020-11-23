@@ -140,7 +140,7 @@
                 i = grid.CurrentRow.Index
                 txtid.Text = grid.Item(0, i).Value()
                 txtnombre.Text = grid.Item(1, i).Value()
-
+                txtnombre.Text = txtnombre.Text.Trim
             End If
 
 
@@ -154,9 +154,7 @@
         txtnombre.Text = ""
     End Sub
 
-    Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtnombre.TextChanged
-        txtnombre.Text = txtnombre.Text.Trim
-    End Sub
+
 
     Private Sub txtnombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtnombre.KeyPress
         If Char.IsDigit(e.KeyChar) Then

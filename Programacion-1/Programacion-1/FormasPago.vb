@@ -140,7 +140,7 @@
                 i = grid.CurrentRow.Index
                 txtid.Text = grid.Item(0, i).Value()
                 txtnombre.Text = grid.Item(1, i).Value()
-
+                txtnombre.Text = txtnombre.Text.Trim
             End If
 
         End If
@@ -154,7 +154,7 @@
     End Sub
 
     Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtnombre.TextChanged
-        txtnombre.Text = txtnombre.Text.Trim
+
     End Sub
 
 

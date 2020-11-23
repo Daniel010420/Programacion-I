@@ -20,7 +20,15 @@
         txtid.Visible = False
         Label1.Visible = False
         ' obtenerdatos()
-
+        Try
+            cobGanancia.DataSource = objConexion.obtenerDatos().Tables("TipoCliente").DefaultView
+            cobGanancia.DisplayMember = "TipoCliente"
+            cobGanancia.ValueMember = "TipoCliente.IdTipoCliente"
+            cobGanancia.AutoCompleteMode = AutoCompleteMode.Suggest
+            cobGanancia.AutoCompleteSource = AutoCompleteSource.ListItems
+        Catch ex As Exception
+            MsgBox("No hay datos en la Base de Datos " & ex.Message)
+        End Try
         obtenerdatos()
 
     End Sub
@@ -33,11 +41,7 @@
             grid.DataSource = objConexion.obtenerDatos().Tables("Ganancia").DefaultView
             grid.Columns(0).Visible = False
             grid.Columns(3).Visible = False
-            cobGanancia.DataSource = objConexion.obtenerDatos().Tables("TipoCliente").DefaultView
-            cobGanancia.DisplayMember = "TipoCliente"
-            cobGanancia.ValueMember = "TipoCliente.IdTipoCliente"
-            cobGanancia.AutoCompleteMode = AutoCompleteMode.Suggest
-            cobGanancia.AutoCompleteSource = AutoCompleteSource.ListItems
+
 
 
         Catch ex As Exception

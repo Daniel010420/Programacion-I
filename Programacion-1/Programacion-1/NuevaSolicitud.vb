@@ -7,7 +7,6 @@
     ' Dim objdetalle As New detallecompra
 
 
-
     Dim mensajeenmentana = "Registro de Solicitud"
     Dim Nombretabladebusqueda = "Solicitudes"
     Dim buscarpor1 = "Codigo"
@@ -17,286 +16,206 @@
     Dim comandoinsertar = Nombretabladebusqueda + " (Codigo,IdProveedor,IdEmpleado,fecha_Registro,IdSucursal)" 'campos de la tabla en orden menos id
     Dim comandoactualizar = Nombretabladebusqueda
     Private Sub NuevaSolicitud_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        txtfactura.Visible = False
-        obtenerdatossolicitudhecha()
-        cobfecha.Enabled = False
-        ' obtenerdatos()
-        calendario.Visible = False
-    End Sub
-
-    Sub obtenerdatossolicitudhecha()
         Try
-            'la palabra Empleados es la palabra que envia la peticion de la tabla que quiere
-            'la palabra datos tabla es la que recibe los resultados de la tabla
-            'llenar los datos del grid
+            cobproveedord.DataSource = objConexion.obtenerDatos().Tables("Proveedores").DefaultView
+            cobproveedord.DisplayMember = "Proveedor"
+            cobproveedord.ValueMember = " Proveedores.IdProveedores"
+            cobproveedord.AutoCompleteMode = AutoCompleteMode.Suggest
+            cobproveedord.AutoCompleteSource = AutoCompleteSource.ListItems
 
+            cobsucursald.DataSource = objConexion.obtenerDatos().Tables("Sucursal").DefaultView
+            cobsucursald.DisplayMember = "Ubicacion"
+            cobsucursald.ValueMember = "Sucursal.IdSucursal"
+            cobsucursald.AutoCompleteMode = AutoCompleteMode.Suggest
+            cobsucursald.AutoCompleteSource = AutoCompleteSource.ListItems
 
+            cobempleadod.DataSource = objConexion.obtenerDatos().Tables("Empleados").DefaultView
+            cobempleadod.DisplayMember = "NombreCompleto"
+            cobempleadod.ValueMember = "Empleados.IdEmpleado"
+            cobempleadod.AutoCompleteMode = AutoCompleteMode.Suggest
+            cobempleadod.AutoCompleteSource = AutoCompleteSource.ListItems
 
-            cobproveedor.DataSource = objConexion.obtenerDatos().Tables("nuevasolicitud").DefaultView
-            cobproveedor.DisplayMember = "Proveedor"
-            cobproveedor.ValueMember = " Proveedores.IdProveedores"
-
-            cobsucursal.DataSource = objConexion.obtenerDatos().Tables("nuevasolicitud").DefaultView
-            cobsucursal.DisplayMember = "Ubicacion"
-            cobsucursal.ValueMember = "Sucursal.IdSucursal"
-
-            cobcodigo.DataSource = objConexion.obtenerDatos().Tables("nuevasolicitud").DefaultView
-            cobcodigo.DisplayMember = "Codigo"
-            cobcodigo.ValueMember = "Solicitudess.IdSolicitudes"
-
-            cobempleado.DataSource = objConexion.obtenerDatos().Tables("nuevasolicitud").DefaultView
-            cobempleado.DisplayMember = "NombreCompleto"
-            cobempleado.ValueMember = "Empleados.IdEmpleado"
 
             cobid.DataSource = objConexion.obtenerDatos().Tables("nuevasolicitud").DefaultView
             cobid.DisplayMember = "IdSolicitudes"
-            cobid.ValueMember = "Solcitudes.IdSolicitudes"
+            cobid.ValueMember = "Solicitudes.IdSolicitudes"
+
+            ' //////////////////////////////////////////////////////////////////////////////////////////////
+
+            cobproveedorlist.DataSource = objConexion.obtenerDatos().Tables("nuevasolicitud").DefaultView
+            cobproveedorlist.DisplayMember = "Proveedor"
+            cobproveedorlist.ValueMember = " Proveedores.IdProveedores"
+
+            cobsucursallist.DataSource = objConexion.obtenerDatos().Tables("nuevasolicitud").DefaultView
+            cobsucursallist.DisplayMember = "Ubicacion"
+            cobsucursallist.ValueMember = "Sucursal.IdSucursal"
+
+            cobempleadolist.DataSource = objConexion.obtenerDatos().Tables("nuevasolicitud").DefaultView
+            cobempleadolist.DisplayMember = "NombreCompleto"
+            cobempleadolist.ValueMember = "Empleados.IdEmpleado"
+
+
+
+            cobcodigolist.DataSource = objConexion.obtenerDatos().Tables("nuevasolicitud").DefaultView
+            cobcodigolist.DisplayMember = "Codigo"
+            cobcodigolist.ValueMember = "Solicitudes.IdSolicitudes"
+            cobcodigolist.AutoCompleteMode = AutoCompleteMode.Suggest
+            cobcodigolist.AutoCompleteSource = AutoCompleteSource.ListItems
 
             cobfecha.DataSource = objConexion.obtenerDatos().Tables("nuevasolicitud").DefaultView
             cobfecha.DisplayMember = "Fecha_Registro"
+            cobid.DataSource = objConexion.obtenerDatos().Tables("nuevasolicitud").DefaultView
+            cobid.DisplayMember = "IdSolicitudes"
+            cobid.ValueMember = "Solicitudes.IdSolicitudes"
 
 
-            cargar()
-            grid.DataSource = objConexion.obtenerDatos().Tables("detallesolicitud").DefaultView
+        Catch ex As Exception
+            MsgBox("No hay datos en la Base de Datos " & ex.Message)
+        End Try
+        obtenerdatosfacturashechas()
+        cargargrid()
 
-            grid.Columns(1).Visible = False
-            grid.Columns(7).Visible = False
-            grid.Columns(8).Visible = False
-            grid.Columns(9).Visible = False
-            grid.Columns(10).Visible = False
-            grid.Columns(11).Visible = False
-            grid.Columns(0).Visible = False
-            grid.Columns(0).DisplayIndex = 11
-            filtro(cobcodigo.Text.Trim)
-            totalizar()
+        mostrardatos()
+
+    End Sub
+
+    Sub obtenerdatosfacturashechas()
+        Try
+            cobcodigolist.DataSource = objConexion.obtenerDatos().Tables("nuevasolicitud").DefaultView
+            cobcodigolist.DisplayMember = "Codigo"
+            cobcodigolist.ValueMember = "Solicitudes.IdSolicitudes"
+            cobcodigolist.AutoCompleteMode = AutoCompleteMode.Suggest
+            cobcodigolist.AutoCompleteSource = AutoCompleteSource.ListItems
+
+
+
         Catch ex As Exception
             'Mensaje si no hay datos que mostra
             MsgBox("No hay datos en la Base de Datos " & ex.Message)
         End Try
     End Sub
 
+    Sub cargargrid()
+        Try
+            grid.DataSource = objConexion.obtenerDatos().Tables("detallesolicitud").DefaultView
 
-    Private Sub cargar()
-        cobproveedor.Enabled = False
-        cobsucursal.Enabled = False
-        cobempleado.Enabled = False
-        cobid.Visible = False
+
+            grid.DataSource = objConexion.obtenerDatos().Tables("detallesolicitud").DefaultView
+
+
+            grid.Columns(2).Visible = False
+            grid.Columns(8).Visible = False
+            grid.Columns(9).Visible = False
+            grid.Columns(10).Visible = False
+            grid.Columns(11).Visible = False
+            grid.Columns(12).Visible = False
+
+            grid.Columns(0).DisplayIndex = 10
+            grid.Columns(1).DisplayIndex = 9
+
+            filtro(cobcodigolist.Text.Trim)
+            totalizar()
+
+        Catch ex As Exception
+            'Mensaje si no hay datos que mostra
+            MsgBox("No hay datos en la Base de Datos " & ex.Message)
+        End Try
     End Sub
 
-    Private Sub cargar2()
-        cobproveedor.Enabled = True
-        cobsucursal.Enabled = True
-        cobempleado.Enabled = True
-        cobid.Visible = True
-        grid.DataSource = ""
-
-
-
-        cobproveedor.DataSource = objConexion.obtenerDatos().Tables("Proveedores").DefaultView
-        cobproveedor.DisplayMember = "Proveedor"
-        cobproveedor.ValueMember = " Proveedores.IdProveedores"
-        cobproveedor.AutoCompleteMode = AutoCompleteMode.Suggest
-        cobproveedor.AutoCompleteSource = AutoCompleteSource.ListItems
-
-
-        cobsucursal.DataSource = objConexion.obtenerDatos().Tables("Sucursal").DefaultView
-        cobsucursal.DisplayMember = "Ubicacion"
-        cobsucursal.ValueMember = "Sucursal.IdSucursal"
-        cobsucursal.AutoCompleteMode = AutoCompleteMode.Suggest
-        cobsucursal.AutoCompleteSource = AutoCompleteSource.ListItems
-
-
-        cobempleado.DataSource = objConexion.obtenerDatos().Tables("Empleados").DefaultView
-        cobempleado.DisplayMember = "NombreCompleto"
-        cobempleado.ValueMember = "Empleados.IdEmpleado"
-        cobempleado.AutoCompleteMode = AutoCompleteMode.Suggest
-        cobempleado.AutoCompleteSource = AutoCompleteSource.ListItems
-
-
-
-
-
-        cobid.DataSource = objConexion.obtenerDatos().Tables("nuevasolicitud").DefaultView
-        cobid.DisplayMember = "IdSolicitudes"
-        cobid.ValueMember = "Solicitudes.IdSolicitudes"
-        cobid.AutoCompleteMode = AutoCompleteMode.Suggest
-        cobid.AutoCompleteSource = AutoCompleteSource.ListItems
-
-
-        cobcodigo.DataSource = objConexion.obtenerDatos().Tables("nuevasolicitud").DefaultView
-        cobcodigo.DisplayMember = "Codigo"
-        cobcodigo.ValueMember = "Solicitudes.IdSolicitudes"
-        cobcodigo.AutoCompleteMode = AutoCompleteMode.Suggest
-        cobcodigo.AutoCompleteSource = AutoCompleteSource.ListItems
-
-    End Sub
-
-    Private Sub txtfiltro_KeyUp(sender As Object, e As KeyEventArgs) Handles cobcodigo.KeyUp
-        filtro(cobcodigo.Text.Trim)
-
-    End Sub
-
-
-
-    Private Sub cargar3()
-        cobproveedor.Enabled = True
-        cobsucursal.Enabled = True
-        cobempleado.Enabled = True
-        'cobpago.Enabled = True
-        cobid.Visible = True
-        cobcodigo.Enabled = True
-        grid.DataSource = ""
-
-
-
-
-        cobproveedor.DataSource = objConexion.obtenerDatos().Tables("Proveedores").DefaultView
-        cobproveedor.DisplayMember = "Proveedor"
-        cobproveedor.ValueMember = " Proveedores.IdProveedores"
-        cobproveedor.AutoCompleteMode = AutoCompleteMode.Suggest
-        cobproveedor.AutoCompleteSource = AutoCompleteSource.ListItems
-
-
-        cobsucursal.DataSource = objConexion.obtenerDatos().Tables("Sucursal").DefaultView
-        cobsucursal.DisplayMember = "Ubicacion"
-        cobsucursal.ValueMember = "Sucursal.IdSucursal"
-        cobsucursal.AutoCompleteMode = AutoCompleteMode.Suggest
-        cobsucursal.AutoCompleteSource = AutoCompleteSource.ListItems
-
-
-        cobempleado.DataSource = objConexion.obtenerDatos().Tables("Empleados").DefaultView
-        cobempleado.DisplayMember = "NombreCompleto"
-        cobempleado.ValueMember = "Empleados.IdEmpleado"
-        cobempleado.AutoCompleteMode = AutoCompleteMode.Suggest
-        cobempleado.AutoCompleteSource = AutoCompleteSource.ListItems
-
-
-
-
-
-        cobid.DataSource = objConexion.obtenerDatos().Tables("nuevasolicitud").DefaultView
-        cobid.DisplayMember = "IdSolicitudes"
-        cobid.ValueMember = "Solicitudes.IdSolicitudes"
-        cobid.AutoCompleteMode = AutoCompleteMode.Suggest
-        cobid.AutoCompleteSource = AutoCompleteSource.ListItems
-
-
-        cobcodigo.DataSource = objConexion.obtenerDatos().Tables("nuevasolicitud").DefaultView
-        cobcodigo.DisplayMember = "Codigo"
-        cobcodigo.ValueMember = "Solicitudes.IdSolicitudes"
-        cobcodigo.AutoCompleteMode = AutoCompleteMode.Suggest
-        cobcodigo.AutoCompleteSource = AutoCompleteSource.ListItems
-
+    Private Sub txtfiltro_KeyUp(sender As Object, e As KeyEventArgs)
+        filtro(cobcodigolist.Text.Trim)
 
     End Sub
 
     Private Sub filtro(ByVal valor As String)
-
         Dim bs As New BindingSource()
         bs.DataSource = grid.DataSource
         bs.Filter = buscarpor1 + " like '%" & valor & "%' or " + buscarpor2 + " like '%" & valor & "%'"
         grid.DataSource = bs
-
-    End Sub
-
-    Private Sub cobcodigo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cobcodigo.SelectedIndexChanged
-        filtro(cobcodigo.Text.Trim)
-
-
-        totalizar()
-
-
     End Sub
 
     '//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     'Boton primero
     Private Sub btnnuevoyaceptar_Click(sender As Object, e As EventArgs) Handles btnnuevoyaceptar.Click
-
         If btnnuevoyaceptar.Text = "Nuevo" Then 'Nuevo
             btnnuevoyaceptar.Text = "Aceptar"
             btnmodificarycancelar.Text = "Cancelar"
             accion = "nuevo"
-            calendario.Visible = True
-            txtfactura.Visible = True
-            cobcodigo.Visible = False
+            btneliminar.Enabled = False
             Button1.Enabled = False
             Button2.Enabled = False
-            btneliminar.Enabled = False
-            cargar2()
 
+            agregaryactualizardatos()
+            ' cobfacturad.SelectedValue = 2
 
             'si el boton dice aceptar, significa que esta aceptando el nuevo registro y lo envia a la base
         ElseIf btnnuevoyaceptar.Text = "Aceptar" Then
             comandosql = comandoinsertar
-
-
-            If txtfactura.Text <> "" Then
+            If txtfacturad.Text <> "" Then
                 Dim msg = objConexion.mantenimientosolicitudes(New String() {
             "",                 'dato(0) para el id, incrementa automaticamente no necesita enviar nada 
-            txtfactura.Text,        'dato(2)
-            cobproveedor.SelectedValue,        'dato(2)
-            cobempleado.SelectedValue,
-            calendario.Text,'dato(2)
-            cobsucursal.SelectedValue}, 'dato(2)
+            txtfacturad.Text,        'dato(2)
+            cobproveedord.SelectedValue,        'dato(2)
+            cobempleadod.SelectedValue,
+            calendariod.Text,'dato(2) 'dato(2)
+            cobsucursald.SelectedValue}, 'dato(2)
           accion, comandosql, idTabla) 'accion que se desea realizar en el case
+
+
                 btnnuevoyaceptar.Text = "Nuevo"
                 btnmodificarycancelar.Text = "Modificar"
-                cargar()
                 Button1.Enabled = True
                 Button2.Enabled = True
-                txtfactura.Text = ""
-                calendario.Visible = False
+                txtfacturad.Text = ""
 
-                obtenerdatossolicitudhecha()
+                mostrardatos()
+
 
                 If msg = "Accion realizada" Then
                     MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
                     btneliminar.Enabled = True
 
-
-                    cobcodigo.Visible = True
-                    txtfactura.Visible = False
+                    obtenerdatosfacturashechas()
 
                     Dim newventada As New detallesolicitud
                     newventada.ShowDialog()
 
                     Dim j = newventada.b
                     If j > 0 Then
-                        cobcodigo.SelectedValue = newventada.b
+                        cobcodigolist.SelectedValue = newventada.b
                     End If
-                    'If objBuscarCategoriaProducto._idC > 0 Then
-                    'cboCategoriaProductos.SelectedValue = objBuscarCategoriaProducto._idC
-                    'End If
                 ElseIf msg = "Error en el proceso" Then
-                    MessageBox.Show("Error en el proceso, probablemente el numero de solicitud ya existe", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show("Error en el proceso, probablemente el numero de factura ya existe", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
                     btneliminar.Enabled = True
                 End If
+            Else MessageBox.Show("Por favor escribe un nombre de solicitud", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             End If
 
 
-
         Else 'si el boton dice Guardar, significa que esta haciendo un cambio de un dato
-            calendario.Visible = False
-
+            Button1.Enabled = True
+            Button2.Enabled = True
             comandosql = comandoactualizar
             Dim msg = objConexion.mantenimientosolicitudes(New String() {
               cobid.SelectedValue,      'dato(0) si se envia el id aqui porque es el que identifica el registro, update from id = x
-               cobcodigo.Text,        'dato(2)
-            cobproveedor.SelectedValue,        'dato(2)
-            cobempleado.SelectedValue,
-            calendario.Text,'dato(2)
-            cobsucursal.SelectedValue}, 'dato(3)
+               cobcodigolist.Text,        'dato(2)
+            cobproveedord.SelectedValue,        'dato(2)
+            cobempleadod.SelectedValue,
+            calendariod.Text,'dato(2)
+            cobsucursald.SelectedValue}, 'dato(3)
               accion, comandosql, idTabla)
 
-            obtenerdatossolicitudhecha()
+            Dim s = cobcodigolist.SelectedValue
+
             MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            obtenerdatosfacturashechas()
 
-            txtfactura.Visible = False
-            cobcodigo.Visible = True
-            Button1.Enabled = True
-
+            cobcodigolist.SelectedValue = s
+            filtro(cobcodigolist.Text.Trim)
+            totalizar()
+            mostrardatos()
             btnnuevoyaceptar.Text = "Nuevo"
             btnmodificarycancelar.Text = "Modificar"
             btneliminar.Enabled = True
@@ -307,36 +226,33 @@
 
     Private Sub btnmodificarycancelar_Click(sender As Object, e As EventArgs) Handles btnmodificarycancelar.Click
         If btnmodificarycancelar.Text = "Modificar" Then 'Nuevo
-            cargar3()
-            calendario.Visible = True
-
             btnnuevoyaceptar.Text = "Guardar"
             btnmodificarycancelar.Text = "Cancelar"
             btneliminar.Enabled = False
+            accion = "modificar"
             Button1.Enabled = False
 
 
-            accion = "modificar"
+
+
+
+            agregaryactualizardatos()
+            'Button2.Enabled = False
         Else 'Guardar
-            cobcodigo.Visible = True
-            txtfactura.Visible = False
-            btnnuevoyaceptar.Text = "Nuevo"
-            btnmodificarycancelar.Text = "Modificar"
-            obtenerdatossolicitudhecha()
             Button1.Enabled = True
             Button2.Enabled = True
-
+            btnnuevoyaceptar.Text = "Nuevo"
+            txtfacturad.Text = ""
+            btnmodificarycancelar.Text = "Modificar"
             btneliminar.Enabled = True
+            mostrardatos()
+
         End If
     End Sub
 
-
-
-
-
     Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
         If cobid.Text <> "" Then
-            If (MessageBox.Show("Esta seguro de borrar " + cobcodigo.Text, mensajeenmentana,
+            If (MessageBox.Show("Esta seguro de borrar " + cobcodigolist.Text, mensajeenmentana,
                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
                 comandosql = Nombretabladebusqueda
                 Dim msg = objConexion.mantenimientosolicitudes(New String() {cobid.Text}, "eliminar", comandosql, idTabla)
@@ -344,7 +260,11 @@
                     MessageBox.Show("No se pudo eliminar este registro, porque hay registros que dependen de el", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
                 If msg <> "Error en el proceso" Then
-                    obtenerdatossolicitudhecha()
+                    obtenerdatosfacturashechas()
+
+                    filtro(cobcodigolist.Text.Trim)
+                    totalizar()
+
                 End If
             End If
         Else MessageBox.Show("Debe selecionar un registro para eliminar", mensajeenmentana)
@@ -353,9 +273,8 @@
     End Sub
 
 
-
-
     Private Sub totalizar()
+
 
         ' cobfactura.ValueMember = "Tipofactura.Idtipofactura"
         'lblRespuestaIva.Text = cobfactura.Text
@@ -364,15 +283,17 @@
             If grid.Rows.Count > 0 And grid.Columns.Count > 3 Then
                 Dim fila As DataGridViewRow
                 Dim nfilas As Integer = grid.Rows.Count - 1
-                Dim subtotal, sumas, total As Double
+                Dim subtotal, sumas, total, cu As Double
                 Dim iva As Double
                 For i As Integer = 0 To nfilas
                     fila = grid.Rows(i)
 
 
-                    subtotal = Double.Parse(fila.Cells(6).Value.ToString()) '* Double.Parse(fila.Cells("precio").Value.ToString())
+                    subtotal = Math.Round(Double.Parse(fila.Cells(7).Value.ToString()), 2) '* Double.Parse(fila.Cells("precio").Value.ToString())
+                    cu = Math.Round(Double.Parse(fila.Cells(7).Value.ToString()) / Double.Parse(fila.Cells(6).Value.ToString()), 2) '* Double.Parse(fila.Cells("precio").Value.ToString())
 
-                    'fila.Cells("subtotal").Value = subtotal.ToString()
+                    fila.Cells("subtotal").Value = subtotal.ToString()
+                    fila.Cells("cu").Value = cu.ToString()
                     sumas += subtotal
 
                 Next
@@ -395,43 +316,102 @@
             MessageBox.Show("Error " + ex.Message)
         End Try
 
-
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Module1.idcompra = cobid.Text
-        Module1.factura = cobcodigo.Text
+        Module1.factura = cobcodigolist.Text
 
         Dim newventada As New detallesolicitud
         newventada.ShowDialog()
-        '   Close()
-
-
-        obtenerdatossolicitudhecha()
-        '   Close()
+        cargargrid()
         Dim j = newventada.b
         If j > 0 Then
-            cobcodigo.SelectedValue = newventada.b
+            cobcodigolist.SelectedValue = newventada.b
         End If
-
-
-
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim newventada As New solicitudes
         newventada.ShowDialog()
-
         Dim j = newventada.idddd
         If j > 0 Then
-            cobcodigo.SelectedValue = newventada.idddd
-
+            cobcodigolist.SelectedValue = newventada.idddd
         End If
-
-
-
     End Sub
 
+
+
+    Private Sub cobfacturaslist_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cobcodigolist.SelectedIndexChanged
+        filtro(cobcodigolist.Text.Trim)
+        totalizar()
+    End Sub
+
+    Private Sub cobfacturaslist_SelectedValueChanged(sender As Object, e As EventArgs) Handles cobcodigolist.SelectedValueChanged
+        filtro(cobcodigolist.Text.Trim)
+        totalizar()
+    End Sub
+
+    Private Sub mostrardatos()
+        cobproveedord.Visible = False
+        calendariod.Visible = False
+        cobsucursald.Visible = False
+        txtfacturad.Visible = False
+        cobempleadod.Visible = False
+
+        cobproveedorlist.Visible = True
+        cobsucursallist.Visible = True
+        cobempleadolist.Visible = True
+        cobfecha.Visible = True
+        cobcodigolist.Visible = True
+        cobid.Visible = False
+
+
+        cobproveedorlist.Enabled = False
+        cobsucursallist.Enabled = False
+        cobempleadolist.Enabled = False
+        cobfecha.Enabled = False
+        cobcodigolist.Enabled = True
+        cobid.Enabled = False
+
+        grid.Visible = True
+        Panel1.Visible = True
+    End Sub
+
+
+    Private Sub agregaryactualizardatos()
+        If btnnuevoyaceptar.Text = "Aceptar" Then
+            cobproveedord.Visible = True
+            calendariod.Visible = True
+            cobsucursald.Visible = True
+            txtfacturad.Visible = True
+            cobempleadod.Visible = True
+
+            cobproveedorlist.Visible = False
+            cobsucursallist.Visible = False
+            cobempleadolist.Visible = False
+            cobfecha.Visible = False
+            cobcodigolist.Visible = False
+            cobid.Visible = False
+        End If
+
+        If btnnuevoyaceptar.Text = "Guardar" Then
+            cobproveedord.Visible = True
+            calendariod.Visible = True
+            cobsucursald.Visible = True
+            ' txtfacturad.Visible = True
+            cobempleadod.Visible = True
+
+            cobproveedorlist.Visible = False
+            cobsucursallist.Visible = False
+            cobempleadolist.Visible = False
+            cobfecha.Visible = False
+            cobcodigolist.Visible = True
+            cobid.Visible = False
+        End If
+        grid.Visible = False
+        Panel1.Visible = False
+    End Sub
 
 End Class
 

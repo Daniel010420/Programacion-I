@@ -148,6 +148,10 @@
                 txttelefono.Text = grid.Item(2, i).Value()
                 txtcorreo.Text = grid.Item(4, i).Value()
                 txtubicacion.Text = grid.Item(3, i).Value()
+                txttelefono.Text = txttelefono.Text.Trim
+                txtnombre.Text = txtnombre.Text.Trim
+                txtcorreo.Text = txtcorreo.Text.Trim
+                txtubicacion.Text = txtubicacion.Text.Trim
             End If
 
         End If
@@ -168,18 +172,17 @@
     End Sub
 
     Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtnombre.TextChanged
-        txtnombre.Text = txtnombre.Text.Trim
     End Sub
 
     Private Sub txttelefono_TextChanged(sender As Object, e As EventArgs) Handles txttelefono.TextChanged
-        txttelefono.Text = txttelefono.Text.Trim
+
     End Sub
 
     Private Sub txtcorreo_TextChanged(sender As Object, e As EventArgs) Handles txtcorreo.TextChanged
-        txtcorreo.Text = txtcorreo.Text.Trim
+
     End Sub
 
     Private Sub txtubicacion_TextChanged(sender As Object, e As EventArgs) Handles txtubicacion.TextChanged
-        txtubicacion.Text = txtubicacion.Text.Trim
+
     End Sub
 End Class

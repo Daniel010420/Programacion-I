@@ -18,7 +18,15 @@
         txtid.Visible = False
         Label1.Visible = False
         ' obtenerdatos()
-
+        Try
+            cobempleado.DataSource = objConexion.obtenerDatos().Tables("Empleados").DefaultView
+            cobempleado.DisplayMember = "NombreCompleto"
+            cobempleado.ValueMember = "Empleados.IdEmpleado"
+            cobempleado.AutoCompleteMode = AutoCompleteMode.Suggest
+            cobempleado.AutoCompleteSource = AutoCompleteSource.ListItems
+        Catch ex As Exception
+            MsgBox("No hay datos en la Base de Datos " & ex.Message)
+        End Try
         obtenerdatos()
     End Sub
 
@@ -30,11 +38,7 @@
             grid.DataSource = objConexion.obtenerDatos().Tables("Usuarios").DefaultView
             grid.Columns(0).Visible = False
             grid.Columns(4).Visible = False
-            cobempleado.DataSource = objConexion.obtenerDatos().Tables("Empleados").DefaultView
-            cobempleado.DisplayMember = "NombreCompleto"
-            cobempleado.ValueMember = "Empleados.IdEmpleado"
-            cobempleado.AutoCompleteMode = AutoCompleteMode.Suggest
-            cobempleado.AutoCompleteSource = AutoCompleteSource.ListItems
+
 
         Catch ex As Exception
             'Mensaje si no hay datos que mostra
@@ -151,6 +155,8 @@
                 txtnombre.Text = grid.Item(1, i).Value()
                 txtcontraseña.Text = grid.Item(2, i).Value()
                 cobempleado.SelectedValue = grid.Item(4, i).Value()
+                txtnombre.Text = txtnombre.Text.Trim
+                txtcontraseña.Text = txtcontraseña.Text.Trim
             End If
 
 
@@ -165,11 +171,11 @@
     End Sub
 
     Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtnombre.TextChanged
-        txtnombre.Text = txtnombre.Text.Trim
+
     End Sub
 
     Private Sub txtcontraseña_TextChanged(sender As Object, e As EventArgs) Handles txtcontraseña.TextChanged
-        txtcontraseña.Text = txtcontraseña.Text.Trim
+
     End Sub
 
     Private Sub cobempleado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cobempleado.SelectedIndexChanged

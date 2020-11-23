@@ -18,6 +18,11 @@
         txtid.Visible = False
         Label1.Visible = False
         ' obtenerdatos()
+        cobtipocliente.DataSource = objConexion.obtenerDatos().Tables("TipoCliente").DefaultView
+        cobtipocliente.DisplayMember = "TipoCliente"
+        cobtipocliente.ValueMember = "TipoCliente.IdTipoCliente"
+        cobtipocliente.AutoCompleteMode = AutoCompleteMode.Suggest
+        cobtipocliente.AutoCompleteSource = AutoCompleteSource.ListItems
 
         obtenerdatos()
     End Sub
@@ -30,11 +35,6 @@
             grid.DataSource = objConexion.obtenerDatos().Tables("Descuentos").DefaultView
             grid.Columns(0).Visible = False
             grid.Columns(3).Visible = False
-            cobtipocliente.DataSource = objConexion.obtenerDatos().Tables("TipoCliente").DefaultView
-            cobtipocliente.DisplayMember = "TipoCliente"
-            cobtipocliente.ValueMember = "TipoCliente.IdTipoCliente"
-            cobtipocliente.AutoCompleteMode = AutoCompleteMode.Suggest
-            cobtipocliente.AutoCompleteSource = AutoCompleteSource.ListItems
 
 
         Catch ex As Exception

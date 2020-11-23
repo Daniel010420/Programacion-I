@@ -144,6 +144,7 @@
                 i = grid.CurrentRow.Index
                 txtid.Text = grid.Item(0, i).Value()
                 txtnombre.Text = grid.Item(1, i).Value()
+                txtnombre.Text = txtnombre.Text.Trim
             End If
 
         End If
@@ -158,18 +159,13 @@
 
 
 
-    Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtnombre.TextChanged
-        txtnombre.Text = txtnombre.Text.Trim
-    End Sub
+
 
     Private Sub txtnombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtnombre.KeyPress
-        If Char.IsDigit(e.KeyChar) Then
+        If Not Char.IsLetter(e.KeyChar) _
+                     AndAlso Not Char.IsControl(e.KeyChar) _
+                     AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
-            MsgBox("Solo se puede ingresar valores de tipo texto", MsgBoxStyle.Exclamation, "Ingreso de Texto")
-        ElseIf Char.IsControl(e.KeyChar) Then
-            e.Handled = False
-        Else
-            e.Handled = False
         End If
     End Sub
 End Class

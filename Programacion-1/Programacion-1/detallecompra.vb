@@ -21,31 +21,13 @@
         txtid.Visible = False
         txtiddetalle.Visible = False
         lblcoste.Text = ""
-        obtenerdatos()
-    End Sub
 
-    Sub obtenerdatos()
+        txtid.Text = Module1.idcompra
+        txtfactura.Text = Module1.factura
+        txtfactura.Text = txtfactura.Text.Trim
+        txtfactura.Enabled = False
+
         Try
-            'la palabra Empleados es la palabra que envia la peticion de la tabla que quiere
-            'la palabra datos tabla es la que recibe los resultados de la tabla
-            'llenar los datos del grid
-            grid.DataSource = objConexion.obtenerDatos().Tables("Compras").DefaultView
-            grid.Columns(0).Visible = False
-            grid.Columns(7).Visible = False
-            grid.Columns(8).Visible = False
-            grid.Columns(9).Visible = False
-            grid.Columns(10).Visible = False
-            grid.Columns(11).Visible = False
-
-
-            txtid.Text = Module1.idcompra
-            txtfactura.Text = Module1.factura
-            txtfactura.Text = txtfactura.Text.Trim
-            txtfactura.Enabled = False
-
-            filtro(txtfiltro.Text)
-
-
             cobmedicamento.DataSource = objConexion.obtenerDatos().Tables("RegistroMedicamento").DefaultView
             cobmedicamento.DisplayMember = "NombreMedicamento"
             cobmedicamento.ValueMember = "RegistroMedicamento.IdRegistroMedicamento"
@@ -59,6 +41,32 @@
             cobpre.DataSource = objConexion.obtenerDatos().Tables("RegistroMedicamento").DefaultView
             cobpre.DisplayMember = "Presentacion"
 
+        Catch ex As Exception
+            MsgBox("No hay datos en la Base de Datos " & ex.Message)
+        End Try
+
+
+        obtenerdatos()
+    End Sub
+
+    Sub obtenerdatos()
+        Try
+            'la palabra Empleados es la palabra que envia la peticion de la tabla que quiere
+            'la palabra datos tabla es la que recibe los resultados de la tabla
+            'llenar los datos del grid
+
+
+
+
+            grid.DataSource = objConexion.obtenerDatos().Tables("Compras").DefaultView
+            grid.Columns(0).Visible = False
+            grid.Columns(7).Visible = False
+            grid.Columns(8).Visible = False
+            grid.Columns(9).Visible = False
+            grid.Columns(10).Visible = False
+            grid.Columns(11).Visible = False
+
+            filtro(txtfiltro.Text)
 
 
         Catch ex As Exception
@@ -109,11 +117,12 @@
           accion, comandosql, idTabla) 'accion que se desea realizar en el case
             btnnuevoyaceptar.Text = "Nuevo"
             btnmodificarycancelar.Text = "Modificar"
-            obtenerdatos()
-            limpiar()
+
             MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
             btneliminar.Enabled = True
 
+            limpiar()
+            obtenerdatos()
 
 
 
@@ -142,12 +151,14 @@
            txtotrosvalores.Text}, 'dato(2)}, 'dato(3)
               accion, comandosql, idTabla)
 
-            obtenerdatos()
+
             MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-            limpiar()
+
             btnnuevoyaceptar.Text = "Nuevo"
             btnmodificarycancelar.Text = "Modificar"
             btneliminar.Enabled = True
+            limpiar()
+            obtenerdatos()
         End If
     End Sub
 
@@ -162,8 +173,9 @@
         Else 'Guardar
             btnnuevoyaceptar.Text = "Nuevo"
             btnmodificarycancelar.Text = "Modificar"
-            obtenerdatos()
+
             btneliminar.Enabled = True
+            obtenerdatos()
         End If
     End Sub
 
@@ -180,11 +192,14 @@
                 If msg = "Error en el proceso" Then
                     MessageBox.Show("No se pudo eliminar este registro, porque hay registros que dependen de el", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
+                If msg <> "Error en el proceso" Then
+                    limpiar()
+                    obtenerdatos()
+                End If
             End If
         Else MessageBox.Show("Debe selecionar un registro para eliminar", mensajeenmentana)
         End If
-        limpiar()
-        obtenerdatos()
+
     End Sub
 
 
@@ -230,7 +245,7 @@
         lblcoste.Text = ""
     End Sub
 
-    Private Sub txtprecio_KeyUp(sender As Object, e As KeyEventArgs) Handles txtprecio.KeyUp
+    Private Sub calculo()
         txtcantidad.Text = txtcantidad.Text.Trim
         txtprecio.Text = txtprecio.Text.Trim
         txtotrosvalores.Text = txtotrosvalores.Text.Trim
@@ -239,15 +254,21 @@
             If txtcantidad.Text > 0 And txtprecio.Text >= 0 Then
                 Dim cantidad As Double = txtcantidad.Text
                 Dim precio As Double = txtprecio.Text
-                lblcoste.Text = precio
+
+                Dim res = cantidad * precio
+                lblcoste.Text = res
 
                 If txtotrosvalores.Text <> "" Then
                     If txtotrosvalores.Text >= 0 Then
-                        lblcoste.Text = precio + txtotrosvalores.Text
+                        lblcoste.Text = res + txtotrosvalores.Text
                     End If
                 End If
             End If
         End If
+    End Sub
+
+    Private Sub txtprecio_KeyUp(sender As Object, e As KeyEventArgs) Handles txtprecio.KeyUp
+        calculo()
     End Sub
 
     Private Sub txtcantidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcantidad.KeyPress
@@ -271,43 +292,11 @@
     End Sub
 
     Private Sub txtotrosvalores_KeyUp(sender As Object, e As KeyEventArgs) Handles txtotrosvalores.KeyUp
-        txtcantidad.Text = txtcantidad.Text.Trim
-        txtprecio.Text = txtprecio.Text.Trim
-        txtotrosvalores.Text = txtotrosvalores.Text.Trim
-
-        If txtcantidad.Text <> "" And txtprecio.Text <> "" Then
-            If txtcantidad.Text > 0 And txtprecio.Text > 0 Then
-                Dim cantidad As Double = txtcantidad.Text
-                Dim precio As Double = txtprecio.Text
-                lblcoste.Text = precio
-
-                If txtotrosvalores.Text <> "" Then
-                    If txtotrosvalores.Text > 0 Then
-                        lblcoste.Text = precio + txtotrosvalores.Text
-                    End If
-                End If
-            End If
-        End If
+        calculo()
     End Sub
 
     Private Sub txtcantidad_KeyUp(sender As Object, e As KeyEventArgs) Handles txtcantidad.KeyUp
-        txtcantidad.Text = txtcantidad.Text.Trim
-        txtprecio.Text = txtprecio.Text.Trim
-        txtotrosvalores.Text = txtotrosvalores.Text.Trim
-
-        If txtcantidad.Text <> "" And txtprecio.Text <> "" Then
-            If txtcantidad.Text > 0 And txtprecio.Text > 0 Then
-                Dim cantidad As Double = txtcantidad.Text
-                Dim precio As Double = txtprecio.Text
-                lblcoste.Text = precio
-
-                If txtotrosvalores.Text <> "" Then
-                    If txtotrosvalores.Text > 0 Then
-                        lblcoste.Text = precio + txtotrosvalores.Text
-                    End If
-                End If
-            End If
-        End If
+        calculo()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -326,37 +315,10 @@
     End Sub
 
     Private Sub txtprecio_TextChanged(sender As Object, e As EventArgs) Handles txtprecio.TextChanged
-        txtprecio.Text = txtprecio.Text.Trim
-
-        If txtcantidad.Text <> "" And txtprecio.Text <> "" Then
-            If txtcantidad.Text > 0 And txtprecio.Text > 0 Then
-                Dim cantidad As Double = txtcantidad.Text
-                Dim precio As Double = txtprecio.Text
-                lblcoste.Text = precio
-
-                If txtotrosvalores.Text <> "" Then
-                    If txtotrosvalores.Text > 0 Then
-                        lblcoste.Text = precio + txtotrosvalores.Text
-                    End If
-                End If
-            End If
-        End If
+        calculo()
     End Sub
 
     Private Sub txtotrosvalores_TextChanged(sender As Object, e As EventArgs) Handles txtotrosvalores.TextChanged
-        txtotrosvalores.Text = txtotrosvalores.Text.Trim
-        If txtcantidad.Text <> "" And txtprecio.Text <> "" Then
-            If txtcantidad.Text > 0 And txtprecio.Text > 0 Then
-                Dim cantidad As Double = txtcantidad.Text
-                Dim precio As Double = txtprecio.Text
-                lblcoste.Text = precio
-
-                If txtotrosvalores.Text <> "" Then
-                    If txtotrosvalores.Text > 0 Then
-                        lblcoste.Text = precio + txtotrosvalores.Text
-                    End If
-                End If
-            End If
-        End If
+        calculo()
     End Sub
 End Class

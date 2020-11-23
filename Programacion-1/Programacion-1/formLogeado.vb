@@ -1,5 +1,7 @@
 ﻿Public Class formLogeado
     Public logeado
+
+
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Close()
     End Sub
@@ -58,11 +60,7 @@
 
     End Sub
 
-    Private Sub PreciosMedicamentoToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        Dim newform As New FormPrecio
-        newform.MdiParent = Me
-        newform.Show()
-    End Sub
+
 
     Private Sub PorcientoDescuentoToolStripMenuItem_Click(sender As Object, e As EventArgs)
 

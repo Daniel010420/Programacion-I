@@ -31,9 +31,12 @@ Partial Class detallesolicitud
         Me.btnmodificarycancelar = New System.Windows.Forms.Button()
         Me.btneliminar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtprecio = New System.Windows.Forms.TextBox()
+        Me.txtcantidad = New System.Windows.Forms.TextBox()
         Me.cobpre = New System.Windows.Forms.ComboBox()
         Me.coblab = New System.Windows.Forms.ComboBox()
         Me.cobmedicamento = New System.Windows.Forms.ComboBox()
+        Me.txtfactura = New System.Windows.Forms.TextBox()
         Me.lblcoste = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -43,9 +46,6 @@ Partial Class detallesolicitud
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtprecio = New System.Windows.Forms.TextBox()
-        Me.txtcantidad = New System.Windows.Forms.TextBox()
-        Me.txtfactura = New System.Windows.Forms.TextBox()
         Me.txtid = New System.Windows.Forms.TextBox()
         Me.txtiddetalle = New System.Windows.Forms.TextBox()
         CType(Me.grid, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,6 +55,7 @@ Partial Class detallesolicitud
         '
         'Button1
         '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.Location = New System.Drawing.Point(843, 419)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(102, 28)
@@ -98,7 +99,7 @@ Partial Class detallesolicitud
         Me.GroupBox2.Controls.Add(Me.btnnuevoyaceptar)
         Me.GroupBox2.Controls.Add(Me.btnmodificarycancelar)
         Me.GroupBox2.Controls.Add(Me.btneliminar)
-        Me.GroupBox2.Location = New System.Drawing.Point(16, 350)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 341)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(289, 84)
         Me.GroupBox2.TabIndex = 45
@@ -134,9 +135,12 @@ Partial Class detallesolicitud
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txtprecio)
+        Me.GroupBox1.Controls.Add(Me.txtcantidad)
         Me.GroupBox1.Controls.Add(Me.cobpre)
         Me.GroupBox1.Controls.Add(Me.coblab)
         Me.GroupBox1.Controls.Add(Me.cobmedicamento)
+        Me.GroupBox1.Controls.Add(Me.txtfactura)
         Me.GroupBox1.Controls.Add(Me.lblcoste)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.Label7)
@@ -146,44 +150,62 @@ Partial Class detallesolicitud
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.txtprecio)
-        Me.GroupBox1.Controls.Add(Me.txtcantidad)
-        Me.GroupBox1.Controls.Add(Me.txtfactura)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 3)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(273, 312)
+        Me.GroupBox1.Size = New System.Drawing.Size(273, 332)
         Me.GroupBox1.TabIndex = 44
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos de Solicitud"
         '
+        'txtprecio
+        '
+        Me.txtprecio.Location = New System.Drawing.Point(14, 266)
+        Me.txtprecio.Name = "txtprecio"
+        Me.txtprecio.Size = New System.Drawing.Size(149, 20)
+        Me.txtprecio.TabIndex = 47
+        '
+        'txtcantidad
+        '
+        Me.txtcantidad.Location = New System.Drawing.Point(14, 221)
+        Me.txtcantidad.Name = "txtcantidad"
+        Me.txtcantidad.Size = New System.Drawing.Size(149, 20)
+        Me.txtcantidad.TabIndex = 46
+        '
         'cobpre
         '
         Me.cobpre.FormattingEnabled = True
-        Me.cobpre.Location = New System.Drawing.Point(4, 155)
+        Me.cobpre.Location = New System.Drawing.Point(14, 175)
         Me.cobpre.Name = "cobpre"
         Me.cobpre.Size = New System.Drawing.Size(149, 21)
-        Me.cobpre.TabIndex = 41
+        Me.cobpre.TabIndex = 45
         '
         'coblab
         '
         Me.coblab.FormattingEnabled = True
-        Me.coblab.Location = New System.Drawing.Point(4, 115)
+        Me.coblab.Location = New System.Drawing.Point(14, 129)
         Me.coblab.Name = "coblab"
         Me.coblab.Size = New System.Drawing.Size(149, 21)
-        Me.coblab.TabIndex = 41
+        Me.coblab.TabIndex = 44
         '
         'cobmedicamento
         '
         Me.cobmedicamento.FormattingEnabled = True
-        Me.cobmedicamento.Location = New System.Drawing.Point(4, 75)
+        Me.cobmedicamento.Location = New System.Drawing.Point(14, 83)
         Me.cobmedicamento.Name = "cobmedicamento"
         Me.cobmedicamento.Size = New System.Drawing.Size(149, 21)
-        Me.cobmedicamento.TabIndex = 41
+        Me.cobmedicamento.TabIndex = 43
+        '
+        'txtfactura
+        '
+        Me.txtfactura.Location = New System.Drawing.Point(14, 38)
+        Me.txtfactura.Name = "txtfactura"
+        Me.txtfactura.Size = New System.Drawing.Size(149, 20)
+        Me.txtfactura.TabIndex = 42
         '
         'lblcoste
         '
         Me.lblcoste.AutoSize = True
-        Me.lblcoste.Location = New System.Drawing.Point(70, 274)
+        Me.lblcoste.Location = New System.Drawing.Point(75, 296)
         Me.lblcoste.Name = "lblcoste"
         Me.lblcoste.Size = New System.Drawing.Size(33, 13)
         Me.lblcoste.TabIndex = 5
@@ -192,7 +214,7 @@ Partial Class detallesolicitud
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(3, 274)
+        Me.Label10.Location = New System.Drawing.Point(5, 296)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(64, 13)
         Me.Label10.TabIndex = 5
@@ -201,16 +223,16 @@ Partial Class detallesolicitud
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(4, 218)
+        Me.Label7.Location = New System.Drawing.Point(14, 247)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(82, 13)
+        Me.Label7.Size = New System.Drawing.Size(90, 13)
         Me.Label7.TabIndex = 5
-        Me.Label7.Text = "Precio estimado"
+        Me.Label7.Text = "Precio por unidad"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(4, 179)
+        Me.Label6.Location = New System.Drawing.Point(14, 202)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(84, 13)
         Me.Label6.TabIndex = 5
@@ -219,7 +241,7 @@ Partial Class detallesolicitud
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(4, 139)
+        Me.Label5.Location = New System.Drawing.Point(14, 156)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(69, 13)
         Me.Label5.TabIndex = 5
@@ -228,7 +250,7 @@ Partial Class detallesolicitud
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(4, 99)
+        Me.Label4.Location = New System.Drawing.Point(14, 110)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(60, 13)
         Me.Label4.TabIndex = 5
@@ -237,7 +259,7 @@ Partial Class detallesolicitud
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(4, 59)
+        Me.Label3.Location = New System.Drawing.Point(14, 64)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(130, 13)
         Me.Label3.TabIndex = 5
@@ -246,7 +268,7 @@ Partial Class detallesolicitud
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(4, 20)
+        Me.Label2.Location = New System.Drawing.Point(14, 19)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(95, 13)
         Me.Label2.TabIndex = 5
@@ -260,27 +282,6 @@ Partial Class detallesolicitud
         Me.Label1.Size = New System.Drawing.Size(80, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "IdMedicamento"
-        '
-        'txtprecio
-        '
-        Me.txtprecio.Location = New System.Drawing.Point(4, 234)
-        Me.txtprecio.Name = "txtprecio"
-        Me.txtprecio.Size = New System.Drawing.Size(149, 20)
-        Me.txtprecio.TabIndex = 0
-        '
-        'txtcantidad
-        '
-        Me.txtcantidad.Location = New System.Drawing.Point(4, 195)
-        Me.txtcantidad.Name = "txtcantidad"
-        Me.txtcantidad.Size = New System.Drawing.Size(149, 20)
-        Me.txtcantidad.TabIndex = 0
-        '
-        'txtfactura
-        '
-        Me.txtfactura.Location = New System.Drawing.Point(4, 36)
-        Me.txtfactura.Name = "txtfactura"
-        Me.txtfactura.Size = New System.Drawing.Size(149, 20)
-        Me.txtfactura.TabIndex = 0
         '
         'txtid
         '
@@ -329,9 +330,6 @@ Partial Class detallesolicitud
     Friend WithEvents btnmodificarycancelar As Button
     Friend WithEvents btneliminar As Button
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents cobpre As ComboBox
-    Friend WithEvents coblab As ComboBox
-    Friend WithEvents cobmedicamento As ComboBox
     Friend WithEvents lblcoste As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents Label7 As Label
@@ -341,9 +339,12 @@ Partial Class detallesolicitud
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtprecio As TextBox
-    Friend WithEvents txtcantidad As TextBox
-    Friend WithEvents txtfactura As TextBox
     Friend WithEvents txtid As TextBox
     Friend WithEvents txtiddetalle As TextBox
+    Friend WithEvents txtprecio As TextBox
+    Friend WithEvents txtcantidad As TextBox
+    Friend WithEvents cobpre As ComboBox
+    Friend WithEvents coblab As ComboBox
+    Friend WithEvents cobmedicamento As ComboBox
+    Friend WithEvents txtfactura As TextBox
 End Class

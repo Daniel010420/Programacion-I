@@ -154,6 +154,11 @@
                 txttelefono.Text = grid.Item(3, i).Value()
                 txtcorreo.Text = grid.Item(4, i).Value()
                 txtdireccion.Text = grid.Item(5, i).Value()
+                txtnombre.Text = txtnombre.Text.Trim
+                txtcorreo.Text = txtcorreo.Text.Trim
+                txtdui.Text = txtdui.Text.Trim
+                txttelefono.Text = txttelefono.Text.Trim
+                txtdireccion.Text = txtdireccion.Text.Trim
             End If
 
         End If
@@ -182,23 +187,23 @@
     End Sub
 
     Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtnombre.TextChanged
-        txtnombre.Text = txtnombre.Text.Trim
+
     End Sub
 
     Private Sub txtdui_TextChanged(sender As Object, e As EventArgs) Handles txtdui.TextChanged
-        txtdui.Text = txtdui.Text.Trim
+
     End Sub
 
     Private Sub txtcorreo_TextChanged(sender As Object, e As EventArgs) Handles txtcorreo.TextChanged
-        txtcorreo.Text = txtcorreo.Text.Trim
+
     End Sub
 
     Private Sub txttelefono_TextChanged(sender As Object, e As EventArgs) Handles txttelefono.TextChanged
-        txttelefono.Text = txttelefono.Text.Trim
+
     End Sub
 
     Private Sub txtdireccion_TextChanged(sender As Object, e As EventArgs) Handles txtdireccion.TextChanged
-        txtdireccion.Text = txtdireccion.Text.Trim
+
     End Sub
 
     Private Sub txtnombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtnombre.KeyPress

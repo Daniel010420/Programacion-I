@@ -156,7 +156,10 @@
                 txttelefono.Text = grid.Item(3, i).Value()
                 txtfax.Text = grid.Item(4, i).Value()
 
-
+                txtnombre.Text = txtnombre.Text.Trim
+                txttelefono.Text = txttelefono.Text.Trim
+                txtubicacion.Text = txtubicacion.Text.Trim
+                txtfax.Text = txtfax.Text.Trim
 
             End If
 
@@ -174,18 +177,25 @@
     End Sub
 
     Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtnombre.TextChanged
-        txtnombre.Text = txtnombre.Text.Trim
+
     End Sub
 
     Private Sub txttelefono_TextChanged(sender As Object, e As EventArgs) Handles txttelefono.TextChanged
-        txttelefono.Text = txttelefono.Text.Trim
+
     End Sub
 
     Private Sub txtubicacion_TextChanged(sender As Object, e As EventArgs) Handles txtubicacion.TextChanged
-        txtubicacion.Text = txtubicacion.Text.Trim
+
     End Sub
 
     Private Sub txtfax_TextChanged(sender As Object, e As EventArgs) Handles txtfax.TextChanged
-        txtfax.Text = txtfax.Text.Trim
+
+    End Sub
+
+    Private Sub txttelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txttelefono.KeyPress
+        If Not (Char.IsControl(e.KeyChar) OrElse Char.IsDigit(e.KeyChar)) _
+           AndAlso (Not e.KeyChar = "-" Or txttelefono.Text.Contains("-")) Then
+            e.Handled = True
+        End If
     End Sub
 End Class

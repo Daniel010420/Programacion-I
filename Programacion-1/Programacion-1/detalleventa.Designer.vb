@@ -31,11 +31,15 @@ Partial Class detalleventa
         Me.btnmodificarycancelar = New System.Windows.Forms.Button()
         Me.btneliminar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.cobcliente = New System.Windows.Forms.ComboBox()
-        Me.Label11 = New System.Windows.Forms.Label()
+        Me.txtprecio = New System.Windows.Forms.TextBox()
+        Me.txtcantidad = New System.Windows.Forms.TextBox()
         Me.cobpre = New System.Windows.Forms.ComboBox()
         Me.coblab = New System.Windows.Forms.ComboBox()
         Me.cobmedicamento = New System.Windows.Forms.ComboBox()
+        Me.txtfactura = New System.Windows.Forms.TextBox()
+        Me.cobcliente = New System.Windows.Forms.ComboBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.lblcoste = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -45,14 +49,10 @@ Partial Class detalleventa
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtprecio = New System.Windows.Forms.TextBox()
-        Me.txtcantidad = New System.Windows.Forms.TextBox()
-        Me.txtfactura = New System.Windows.Forms.TextBox()
         Me.txtid = New System.Windows.Forms.TextBox()
         Me.txtiddetalle = New System.Windows.Forms.TextBox()
         Me.cobdescuento = New System.Windows.Forms.ComboBox()
         Me.cobganancia = New System.Windows.Forms.ComboBox()
-        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.grid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -60,6 +60,7 @@ Partial Class detalleventa
         '
         'Button1
         '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.Location = New System.Drawing.Point(876, 533)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(102, 28)
@@ -103,7 +104,7 @@ Partial Class detalleventa
         Me.GroupBox2.Controls.Add(Me.btnnuevoyaceptar)
         Me.GroupBox2.Controls.Add(Me.btnmodificarycancelar)
         Me.GroupBox2.Controls.Add(Me.btneliminar)
-        Me.GroupBox2.Location = New System.Drawing.Point(11, 475)
+        Me.GroupBox2.Location = New System.Drawing.Point(11, 416)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(289, 84)
         Me.GroupBox2.TabIndex = 45
@@ -139,12 +140,15 @@ Partial Class detalleventa
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Button2)
-        Me.GroupBox1.Controls.Add(Me.cobcliente)
-        Me.GroupBox1.Controls.Add(Me.Label11)
+        Me.GroupBox1.Controls.Add(Me.txtprecio)
+        Me.GroupBox1.Controls.Add(Me.txtcantidad)
         Me.GroupBox1.Controls.Add(Me.cobpre)
         Me.GroupBox1.Controls.Add(Me.coblab)
         Me.GroupBox1.Controls.Add(Me.cobmedicamento)
+        Me.GroupBox1.Controls.Add(Me.txtfactura)
+        Me.GroupBox1.Controls.Add(Me.cobcliente)
+        Me.GroupBox1.Controls.Add(Me.Button2)
+        Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.lblcoste)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.Label7)
@@ -154,23 +158,74 @@ Partial Class detalleventa
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.txtprecio)
-        Me.GroupBox1.Controls.Add(Me.txtcantidad)
-        Me.GroupBox1.Controls.Add(Me.txtfactura)
         Me.GroupBox1.Location = New System.Drawing.Point(11, 10)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(273, 459)
+        Me.GroupBox1.Size = New System.Drawing.Size(273, 387)
         Me.GroupBox1.TabIndex = 44
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos de Venta"
         '
+        'txtprecio
+        '
+        Me.txtprecio.Location = New System.Drawing.Point(6, 283)
+        Me.txtprecio.Name = "txtprecio"
+        Me.txtprecio.Size = New System.Drawing.Size(149, 20)
+        Me.txtprecio.TabIndex = 50
+        '
+        'txtcantidad
+        '
+        Me.txtcantidad.Location = New System.Drawing.Point(6, 242)
+        Me.txtcantidad.Name = "txtcantidad"
+        Me.txtcantidad.Size = New System.Drawing.Size(149, 20)
+        Me.txtcantidad.TabIndex = 49
+        '
+        'cobpre
+        '
+        Me.cobpre.FormattingEnabled = True
+        Me.cobpre.Location = New System.Drawing.Point(6, 200)
+        Me.cobpre.Name = "cobpre"
+        Me.cobpre.Size = New System.Drawing.Size(149, 21)
+        Me.cobpre.TabIndex = 48
+        '
+        'coblab
+        '
+        Me.coblab.FormattingEnabled = True
+        Me.coblab.Location = New System.Drawing.Point(6, 158)
+        Me.coblab.Name = "coblab"
+        Me.coblab.Size = New System.Drawing.Size(149, 21)
+        Me.coblab.TabIndex = 47
+        '
+        'cobmedicamento
+        '
+        Me.cobmedicamento.FormattingEnabled = True
+        Me.cobmedicamento.Location = New System.Drawing.Point(6, 116)
+        Me.cobmedicamento.Name = "cobmedicamento"
+        Me.cobmedicamento.Size = New System.Drawing.Size(149, 21)
+        Me.cobmedicamento.TabIndex = 46
+        '
+        'txtfactura
+        '
+        Me.txtfactura.Location = New System.Drawing.Point(6, 75)
+        Me.txtfactura.Name = "txtfactura"
+        Me.txtfactura.Size = New System.Drawing.Size(149, 20)
+        Me.txtfactura.TabIndex = 45
+        '
         'cobcliente
         '
         Me.cobcliente.FormattingEnabled = True
-        Me.cobcliente.Location = New System.Drawing.Point(6, 32)
+        Me.cobcliente.Location = New System.Drawing.Point(6, 33)
         Me.cobcliente.Name = "cobcliente"
         Me.cobcliente.Size = New System.Drawing.Size(149, 21)
-        Me.cobcliente.TabIndex = 43
+        Me.cobcliente.TabIndex = 44
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(161, 325)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(106, 31)
+        Me.Button2.TabIndex = 20
+        Me.Button2.Text = "Aplicar Descuento"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Label11
         '
@@ -181,34 +236,10 @@ Partial Class detalleventa
         Me.Label11.TabIndex = 42
         Me.Label11.Text = "Nombre Cliente"
         '
-        'cobpre
-        '
-        Me.cobpre.FormattingEnabled = True
-        Me.cobpre.Location = New System.Drawing.Point(4, 190)
-        Me.cobpre.Name = "cobpre"
-        Me.cobpre.Size = New System.Drawing.Size(149, 21)
-        Me.cobpre.TabIndex = 41
-        '
-        'coblab
-        '
-        Me.coblab.FormattingEnabled = True
-        Me.coblab.Location = New System.Drawing.Point(4, 150)
-        Me.coblab.Name = "coblab"
-        Me.coblab.Size = New System.Drawing.Size(149, 21)
-        Me.coblab.TabIndex = 41
-        '
-        'cobmedicamento
-        '
-        Me.cobmedicamento.FormattingEnabled = True
-        Me.cobmedicamento.Location = New System.Drawing.Point(4, 110)
-        Me.cobmedicamento.Name = "cobmedicamento"
-        Me.cobmedicamento.Size = New System.Drawing.Size(149, 21)
-        Me.cobmedicamento.TabIndex = 41
-        '
         'lblcoste
         '
         Me.lblcoste.AutoSize = True
-        Me.lblcoste.Location = New System.Drawing.Point(69, 309)
+        Me.lblcoste.Location = New System.Drawing.Point(72, 334)
         Me.lblcoste.Name = "lblcoste"
         Me.lblcoste.Size = New System.Drawing.Size(34, 13)
         Me.lblcoste.TabIndex = 5
@@ -217,7 +248,7 @@ Partial Class detalleventa
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(2, 309)
+        Me.Label10.Location = New System.Drawing.Point(5, 334)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(64, 13)
         Me.Label10.TabIndex = 5
@@ -226,7 +257,7 @@ Partial Class detalleventa
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(4, 253)
+        Me.Label7.Location = New System.Drawing.Point(6, 266)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(87, 13)
         Me.Label7.TabIndex = 5
@@ -235,7 +266,7 @@ Partial Class detalleventa
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(4, 214)
+        Me.Label6.Location = New System.Drawing.Point(6, 225)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(90, 13)
         Me.Label6.TabIndex = 5
@@ -244,7 +275,7 @@ Partial Class detalleventa
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(4, 174)
+        Me.Label5.Location = New System.Drawing.Point(6, 183)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(69, 13)
         Me.Label5.TabIndex = 5
@@ -253,7 +284,7 @@ Partial Class detalleventa
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(4, 134)
+        Me.Label4.Location = New System.Drawing.Point(6, 141)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(60, 13)
         Me.Label4.TabIndex = 5
@@ -262,7 +293,7 @@ Partial Class detalleventa
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(4, 94)
+        Me.Label3.Location = New System.Drawing.Point(6, 99)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(130, 13)
         Me.Label3.TabIndex = 5
@@ -271,7 +302,7 @@ Partial Class detalleventa
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(4, 55)
+        Me.Label2.Location = New System.Drawing.Point(6, 58)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(95, 13)
         Me.Label2.TabIndex = 5
@@ -285,27 +316,6 @@ Partial Class detalleventa
         Me.Label1.Size = New System.Drawing.Size(80, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "IdMedicamento"
-        '
-        'txtprecio
-        '
-        Me.txtprecio.Location = New System.Drawing.Point(4, 269)
-        Me.txtprecio.Name = "txtprecio"
-        Me.txtprecio.Size = New System.Drawing.Size(149, 20)
-        Me.txtprecio.TabIndex = 0
-        '
-        'txtcantidad
-        '
-        Me.txtcantidad.Location = New System.Drawing.Point(4, 230)
-        Me.txtcantidad.Name = "txtcantidad"
-        Me.txtcantidad.Size = New System.Drawing.Size(149, 20)
-        Me.txtcantidad.TabIndex = 0
-        '
-        'txtfactura
-        '
-        Me.txtfactura.Location = New System.Drawing.Point(4, 71)
-        Me.txtfactura.Name = "txtfactura"
-        Me.txtfactura.Size = New System.Drawing.Size(149, 20)
-        Me.txtfactura.TabIndex = 0
         '
         'txtid
         '
@@ -336,15 +346,6 @@ Partial Class detalleventa
         Me.cobganancia.Name = "cobganancia"
         Me.cobganancia.Size = New System.Drawing.Size(149, 21)
         Me.cobganancia.TabIndex = 45
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(109, 300)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(106, 31)
-        Me.Button2.TabIndex = 20
-        Me.Button2.Text = "Aplicar Descuento"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'detalleventa
         '
@@ -381,9 +382,6 @@ Partial Class detalleventa
     Friend WithEvents btnmodificarycancelar As Button
     Friend WithEvents btneliminar As Button
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents cobpre As ComboBox
-    Friend WithEvents coblab As ComboBox
-    Friend WithEvents cobmedicamento As ComboBox
     Friend WithEvents lblcoste As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents Label7 As Label
@@ -393,14 +391,17 @@ Partial Class detalleventa
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtprecio As TextBox
-    Friend WithEvents txtcantidad As TextBox
-    Friend WithEvents txtfactura As TextBox
     Friend WithEvents txtid As TextBox
     Friend WithEvents txtiddetalle As TextBox
-    Friend WithEvents cobcliente As ComboBox
     Friend WithEvents Label11 As Label
     Friend WithEvents cobdescuento As ComboBox
     Friend WithEvents cobganancia As ComboBox
     Friend WithEvents Button2 As Button
+    Friend WithEvents txtprecio As TextBox
+    Friend WithEvents txtcantidad As TextBox
+    Friend WithEvents cobpre As ComboBox
+    Friend WithEvents coblab As ComboBox
+    Friend WithEvents cobmedicamento As ComboBox
+    Friend WithEvents txtfactura As TextBox
+    Friend WithEvents cobcliente As ComboBox
 End Class
