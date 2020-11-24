@@ -477,5 +477,9 @@
         Panel1.Visible = False
     End Sub
 
+    Private Sub cobfacturalist_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cobfacturalist.SelectedIndexChanged
+        cobfacturalist.ValueMember = "Tipofactura.Idtipofactura"
+        totalizar()
+    End Sub
 End Class
 

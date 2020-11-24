@@ -331,10 +331,7 @@
         End If
     End Sub
 
-    Private Sub cobfactura_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cobfacturad.SelectedIndexChanged
-        cobfacturalist.ValueMember = "Tipofactura.Idtipofactura"
-        totalizar()
-    End Sub
+
 
     Private Sub cobfacturaslist_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cobfacturaslist.SelectedIndexChanged
         filtro(cobfacturaslist.Text.Trim)
@@ -418,4 +415,8 @@
         Panel1.Visible = False
     End Sub
 
+    Private Sub cobfacturalist_SelectedValueChanged(sender As Object, e As EventArgs) Handles cobfacturalist.SelectedValueChanged
+        cobfacturalist.ValueMember = "Tipofactura.Idtipofactura"
+        totalizar()
+    End Sub
 End Class

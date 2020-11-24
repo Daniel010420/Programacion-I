@@ -55,12 +55,12 @@ Partial Class NuevaVenta
         Me.lblRespuestaSuma = New System.Windows.Forms.Label()
         Me.lblsuma = New System.Windows.Forms.Label()
         Me.grid = New System.Windows.Forms.DataGridView()
+        Me.subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cu = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cobid = New System.Windows.Forms.ComboBox()
         Me.cobfecha = New System.Windows.Forms.ComboBox()
         Me.cobempleadod = New System.Windows.Forms.ComboBox()
         Me.cobempleadoslist = New System.Windows.Forms.ComboBox()
-        Me.subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cu = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Label2 = New System.Windows.Forms.Label()
         NfacturaLabel = New System.Windows.Forms.Label()
         Fecha_vtaLabel = New System.Windows.Forms.Label()
@@ -139,7 +139,7 @@ Partial Class NuevaVenta
         'cobfacturalist
         '
         Me.cobfacturalist.FormattingEnabled = True
-        Me.cobfacturalist.Location = New System.Drawing.Point(499, 20)
+        Me.cobfacturalist.Location = New System.Drawing.Point(515, 47)
         Me.cobfacturalist.Name = "cobfacturalist"
         Me.cobfacturalist.Size = New System.Drawing.Size(108, 21)
         Me.cobfacturalist.TabIndex = 70
@@ -372,6 +372,21 @@ Partial Class NuevaVenta
         Me.grid.Size = New System.Drawing.Size(912, 388)
         Me.grid.TabIndex = 53
         '
+        'subtotal
+        '
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle1
+        Me.subtotal.HeaderText = "SUBTOTAL"
+        Me.subtotal.Name = "subtotal"
+        Me.subtotal.ReadOnly = True
+        Me.subtotal.Width = 150
+        '
+        'cu
+        '
+        Me.cu.HeaderText = "Coste/Unidad"
+        Me.cu.Name = "cu"
+        Me.cu.ReadOnly = True
+        '
         'cobid
         '
         Me.cobid.FormattingEnabled = True
@@ -403,21 +418,6 @@ Partial Class NuevaVenta
         Me.cobempleadoslist.Name = "cobempleadoslist"
         Me.cobempleadoslist.Size = New System.Drawing.Size(147, 21)
         Me.cobempleadoslist.TabIndex = 73
-        '
-        'subtotal
-        '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle1
-        Me.subtotal.HeaderText = "SUBTOTAL"
-        Me.subtotal.Name = "subtotal"
-        Me.subtotal.ReadOnly = True
-        Me.subtotal.Width = 150
-        '
-        'cu
-        '
-        Me.cu.HeaderText = "Coste/Unidad"
-        Me.cu.Name = "cu"
-        Me.cu.ReadOnly = True
         '
         'NuevaVenta
         '
