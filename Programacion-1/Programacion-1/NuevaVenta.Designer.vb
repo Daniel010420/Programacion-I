@@ -139,7 +139,7 @@ Partial Class NuevaVenta
         'cobfacturalist
         '
         Me.cobfacturalist.FormattingEnabled = True
-        Me.cobfacturalist.Location = New System.Drawing.Point(515, 47)
+        Me.cobfacturalist.Location = New System.Drawing.Point(499, 19)
         Me.cobfacturalist.Name = "cobfacturalist"
         Me.cobfacturalist.Size = New System.Drawing.Size(108, 21)
         Me.cobfacturalist.TabIndex = 70
