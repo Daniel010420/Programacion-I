@@ -113,6 +113,7 @@
             grid.Columns(0).DisplayIndex = 10
             grid.Columns(1).DisplayIndex = 9
 
+
             filtro(cobcodigolist.Text.Trim)
             totalizar()
 
@@ -185,6 +186,7 @@
                     If j > 0 Then
                         cobcodigolist.SelectedValue = newventada.b
                     End If
+                    totalizar()
                 ElseIf msg = "Error en el proceso" Then
                     MessageBox.Show("Error en el proceso, probablemente el numero de factura ya existe", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
                     btneliminar.Enabled = True
@@ -329,6 +331,7 @@
         If j > 0 Then
             cobcodigolist.SelectedValue = newventada.b
         End If
+        totalizar()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click

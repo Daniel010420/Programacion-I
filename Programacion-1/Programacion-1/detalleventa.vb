@@ -14,10 +14,11 @@
     Dim comandoinsertar = Nombretabladebusqueda + " (IdRegistroMedicamento,Cantidad,ingreso,IdVenta)" 'campos de la tabla en orden menos id
     Dim comandoactualizar = Nombretabladebusqueda
     Private Sub detalleventa_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' cobganancia.Visible = False
-        '  cobdescuento.Visible = False
+        cobganancia.Visible = False
+        cobdescuento.Visible = False
         coblab.Enabled = False
         cobpre.Enabled = False
+
         txtid.Visible = False
         txtiddetalle.Visible = False
         txtid.Text = Module1.idcompra
@@ -82,6 +83,13 @@
             filtro(txtfiltro.Text)
 
             cobcliente.SelectedValue = Module1.tclientes
+
+            If cobdescuento.Text = "" Then
+                cobdescuento.Text = 1
+            End If
+            If cobganancia.Text = "" Then
+                cobganancia.Text = 1
+            End If
 
         Catch ex As Exception
             'Mensaje si no hay datos que mostra
@@ -253,39 +261,27 @@
         txtcantidad.Text = ""
         txtprecio.Text = ""
         lblcoste.Text = ""
+        txtunidadespaquete.Text = ""
     End Sub
 
     Private Sub ganancia()
         Dim ganancia As Double = lblcoste.Text
         Dim gan As Double = ganancia + (ganancia * (cobganancia.Text / 100))
 
-        lblcoste.Text = gan
+        lblcoste.Text = Math.Round(gan, 2)
     End Sub
+
+
 
     Private Sub descuento()
         Dim descuento As Double = lblcoste.Text
         Dim des As Double = descuento - (descuento * (cobdescuento.Text / 100))
 
-        lblcoste.Text = des
+        lblcoste.Text = Math.Round(des, 2)
     End Sub
 
 
-    Private Sub txtprecio_KeyUp(sender As Object, e As KeyEventArgs) Handles txtprecio.KeyUp
-        txtcantidad.Text = txtcantidad.Text.Trim
-        txtprecio.Text = txtprecio.Text.Trim
 
-
-        If txtcantidad.Text <> "" And txtprecio.Text <> "" Then
-            If txtcantidad.Text > 0 And txtprecio.Text >= 0 Then
-                Dim cantidad As Double = txtcantidad.Text
-                Dim precio As Double = txtprecio.Text
-                Dim resultado As Double = (precio * cantidad)
-                lblcoste.Text = resultado
-
-                ganancia()
-            End If
-        End If
-    End Sub
 
 
 
@@ -297,16 +293,20 @@
         If Not (Char.IsControl(e.KeyChar) OrElse Char.IsDigit(e.KeyChar)) _
              AndAlso (Not e.KeyChar = "." Or txtprecio.Text.Contains(".")) Then
             e.Handled = True
+        Else
         End If
+
     End Sub
 
 
     Private Sub txtcantidad_TextChanged(sender As Object, e As EventArgs) Handles txtcantidad.TextChanged
         txtcantidad.Text = txtcantidad.Text.Trim
+        cal()
     End Sub
 
     Private Sub txtprecio_TextChanged(sender As Object, e As EventArgs) Handles txtprecio.TextChanged
         txtprecio.Text = txtprecio.Text.Trim
+        cal()
     End Sub
 
 
@@ -315,23 +315,39 @@
         Close()
     End Sub
 
-    Private Sub txtcantidad_KeyUp(sender As Object, e As KeyEventArgs) Handles txtcantidad.KeyUp
+    Private Sub cal()
         txtcantidad.Text = txtcantidad.Text.Trim
         txtprecio.Text = txtprecio.Text.Trim
+        txtunidadespaquete.Text = txtunidadespaquete.Text.Trim
 
-        If txtcantidad.Text <> "" And txtprecio.Text <> "" Then
-            If txtcantidad.Text > 0 And txtprecio.Text >= 0 Then
+        If txtcantidad.Text <> "" And txtprecio.Text <> "" And txtunidadespaquete.Text <> "" Then
+            If txtcantidad.Text > 0 And txtprecio.Text >= 0 And txtunidadespaquete.Text > 0 Then
                 Dim cantidad As Double = txtcantidad.Text
                 Dim precio As Double = txtprecio.Text
-                lblcoste.Text = precio * cantidad
+                Dim unidadespa As Double = txtunidadespaquete.Text
+                Dim res = precio / unidadespa
+                Dim d = res * cantidad
+                lblcoste.Text = d
 
                 ganancia()
             End If
         End If
     End Sub
 
+
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         descuento()
         Button2.Enabled = False
+    End Sub
+
+
+
+    Private Sub txtunidadespaquete_TextChanged(sender As Object, e As EventArgs) Handles txtunidadespaquete.TextChanged
+        txtunidadespaquete.Text = txtunidadespaquete.Text.Trim
+        cal()
+    End Sub
+
+    Private Sub txtunidadespaquete_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtunidadespaquete.KeyPress
+        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
 End Class

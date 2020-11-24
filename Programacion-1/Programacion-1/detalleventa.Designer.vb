@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class detalleventa
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class detalleventa
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.grid = New System.Windows.Forms.DataGridView()
@@ -53,6 +53,8 @@ Partial Class detalleventa
         Me.txtiddetalle = New System.Windows.Forms.TextBox()
         Me.cobdescuento = New System.Windows.Forms.ComboBox()
         Me.cobganancia = New System.Windows.Forms.ComboBox()
+        Me.txtunidadespaquete = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         CType(Me.grid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -61,7 +63,7 @@ Partial Class detalleventa
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(876, 533)
+        Me.Button1.Location = New System.Drawing.Point(876, 562)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(102, 28)
         Me.Button1.TabIndex = 43
@@ -80,7 +82,7 @@ Partial Class detalleventa
         Me.grid.Name = "grid"
         Me.grid.ReadOnly = True
         Me.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grid.Size = New System.Drawing.Size(673, 471)
+        Me.grid.Size = New System.Drawing.Size(673, 500)
         Me.grid.TabIndex = 48
         '
         'Label8
@@ -104,7 +106,7 @@ Partial Class detalleventa
         Me.GroupBox2.Controls.Add(Me.btnnuevoyaceptar)
         Me.GroupBox2.Controls.Add(Me.btnmodificarycancelar)
         Me.GroupBox2.Controls.Add(Me.btneliminar)
-        Me.GroupBox2.Location = New System.Drawing.Point(11, 416)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 506)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(289, 84)
         Me.GroupBox2.TabIndex = 45
@@ -140,6 +142,8 @@ Partial Class detalleventa
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txtunidadespaquete)
+        Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.txtprecio)
         Me.GroupBox1.Controls.Add(Me.txtcantidad)
         Me.GroupBox1.Controls.Add(Me.cobpre)
@@ -160,7 +164,7 @@ Partial Class detalleventa
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(11, 10)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(273, 387)
+        Me.GroupBox1.Size = New System.Drawing.Size(273, 490)
         Me.GroupBox1.TabIndex = 44
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos de Venta"
@@ -220,7 +224,7 @@ Partial Class detalleventa
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(161, 325)
+        Me.Button2.Location = New System.Drawing.Point(139, 453)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(106, 31)
         Me.Button2.TabIndex = 20
@@ -239,7 +243,7 @@ Partial Class detalleventa
         'lblcoste
         '
         Me.lblcoste.AutoSize = True
-        Me.lblcoste.Location = New System.Drawing.Point(72, 334)
+        Me.lblcoste.Location = New System.Drawing.Point(85, 462)
         Me.lblcoste.Name = "lblcoste"
         Me.lblcoste.Size = New System.Drawing.Size(34, 13)
         Me.lblcoste.TabIndex = 5
@@ -248,7 +252,7 @@ Partial Class detalleventa
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(5, 334)
+        Me.Label10.Location = New System.Drawing.Point(18, 462)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(64, 13)
         Me.Label10.TabIndex = 5
@@ -259,18 +263,18 @@ Partial Class detalleventa
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(6, 266)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(87, 13)
+        Me.Label7.Size = New System.Drawing.Size(100, 13)
         Me.Label7.TabIndex = 5
-        Me.Label7.Text = "Precio de unidad"
+        Me.Label7.Text = "Precio de Empaque"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(6, 225)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(90, 13)
+        Me.Label6.Size = New System.Drawing.Size(144, 13)
         Me.Label6.TabIndex = 5
-        Me.Label6.Text = "Cantidad vendida"
+        Me.Label6.Text = "Cantidad vendida (Unidades)"
         '
         'Label5
         '
@@ -334,7 +338,7 @@ Partial Class detalleventa
         'cobdescuento
         '
         Me.cobdescuento.FormattingEnabled = True
-        Me.cobdescuento.Location = New System.Drawing.Point(461, 533)
+        Me.cobdescuento.Location = New System.Drawing.Point(585, 569)
         Me.cobdescuento.Name = "cobdescuento"
         Me.cobdescuento.Size = New System.Drawing.Size(149, 21)
         Me.cobdescuento.TabIndex = 44
@@ -342,16 +346,32 @@ Partial Class detalleventa
         'cobganancia
         '
         Me.cobganancia.FormattingEnabled = True
-        Me.cobganancia.Location = New System.Drawing.Point(306, 533)
+        Me.cobganancia.Location = New System.Drawing.Point(430, 569)
         Me.cobganancia.Name = "cobganancia"
         Me.cobganancia.Size = New System.Drawing.Size(149, 21)
         Me.cobganancia.TabIndex = 45
+        '
+        'txtunidadespaquete
+        '
+        Me.txtunidadespaquete.Location = New System.Drawing.Point(7, 333)
+        Me.txtunidadespaquete.Name = "txtunidadespaquete"
+        Me.txtunidadespaquete.Size = New System.Drawing.Size(149, 20)
+        Me.txtunidadespaquete.TabIndex = 52
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(7, 316)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(112, 13)
+        Me.Label9.TabIndex = 51
+        Me.Label9.Text = "Unidades por paquete"
         '
         'detalleventa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(990, 571)
+        Me.ClientSize = New System.Drawing.Size(990, 600)
         Me.Controls.Add(Me.cobdescuento)
         Me.Controls.Add(Me.cobganancia)
         Me.Controls.Add(Me.Button1)
@@ -404,4 +424,6 @@ Partial Class detalleventa
     Friend WithEvents cobmedicamento As ComboBox
     Friend WithEvents txtfactura As TextBox
     Friend WithEvents cobcliente As ComboBox
+    Friend WithEvents txtunidadespaquete As TextBox
+    Friend WithEvents Label9 As Label
 End Class

@@ -267,9 +267,7 @@
         End If
     End Sub
 
-    Private Sub txtprecio_KeyUp(sender As Object, e As KeyEventArgs) Handles txtprecio.KeyUp
-        calculo()
-    End Sub
+
 
     Private Sub txtcantidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcantidad.KeyPress
         'solo permite enteros
@@ -291,13 +289,6 @@
         End If
     End Sub
 
-    Private Sub txtotrosvalores_KeyUp(sender As Object, e As KeyEventArgs) Handles txtotrosvalores.KeyUp
-        calculo()
-    End Sub
-
-    Private Sub txtcantidad_KeyUp(sender As Object, e As KeyEventArgs) Handles txtcantidad.KeyUp
-        calculo()
-    End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         'Dim newform As New Nuevacompra
@@ -311,10 +302,12 @@
     End Sub
 
     Private Sub txtcantidad_TextChanged(sender As Object, e As EventArgs) Handles txtcantidad.TextChanged
-        txtcantidad.Text = txtcantidad.Text.Trim
+
+        calculo()
     End Sub
 
     Private Sub txtprecio_TextChanged(sender As Object, e As EventArgs) Handles txtprecio.TextChanged
+
         calculo()
     End Sub
 

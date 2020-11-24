@@ -51,10 +51,10 @@ Partial Class NuevaSolicitud
         Me.lblRespuestaSuma = New System.Windows.Forms.Label()
         Me.lblsuma = New System.Windows.Forms.Label()
         Me.grid = New System.Windows.Forms.DataGridView()
-        Me.subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cu = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cobid = New System.Windows.Forms.ComboBox()
         Me.cobfecha = New System.Windows.Forms.ComboBox()
+        Me.subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cu = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Label2 = New System.Windows.Forms.Label()
         NfacturaLabel = New System.Windows.Forms.Label()
         Fecha_vtaLabel = New System.Windows.Forms.Label()
@@ -330,21 +330,6 @@ Partial Class NuevaSolicitud
         Me.grid.Size = New System.Drawing.Size(912, 371)
         Me.grid.TabIndex = 53
         '
-        'subtotal
-        '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle1
-        Me.subtotal.HeaderText = "SUBTOTAL"
-        Me.subtotal.Name = "subtotal"
-        Me.subtotal.ReadOnly = True
-        Me.subtotal.Width = 150
-        '
-        'cu
-        '
-        Me.cu.HeaderText = "Coste/Unidad"
-        Me.cu.Name = "cu"
-        Me.cu.ReadOnly = True
-        '
         'cobid
         '
         Me.cobid.FormattingEnabled = True
@@ -360,6 +345,21 @@ Partial Class NuevaSolicitud
         Me.cobfecha.Name = "cobfecha"
         Me.cobfecha.Size = New System.Drawing.Size(222, 21)
         Me.cobfecha.TabIndex = 64
+        '
+        'subtotal
+        '
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle1
+        Me.subtotal.HeaderText = "SUBTOTAL"
+        Me.subtotal.Name = "subtotal"
+        Me.subtotal.ReadOnly = True
+        Me.subtotal.Width = 150
+        '
+        'cu
+        '
+        Me.cu.HeaderText = "Coste/Empaque"
+        Me.cu.Name = "cu"
+        Me.cu.ReadOnly = True
         '
         'NuevaSolicitud
         '

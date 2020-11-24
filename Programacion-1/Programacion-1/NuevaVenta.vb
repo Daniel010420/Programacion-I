@@ -207,6 +207,7 @@
                     If j > 0 Then
                         cobfacturaslist.SelectedValue = newventada.c
                     End If
+                    totalizar()
                 ElseIf msg = "Error en el proceso" Then
                     MessageBox.Show("Error en el proceso, probablemente el numero de factura ya existe", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
                     btneliminar.Enabled = True
@@ -356,6 +357,7 @@
         If j > 0 Then
             cobfacturaslist.SelectedValue = newventada.c
         End If
+        totalizar()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click

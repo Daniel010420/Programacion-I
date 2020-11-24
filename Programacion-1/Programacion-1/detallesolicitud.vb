@@ -248,21 +248,6 @@
         lblcoste.Text = ""
     End Sub
 
-    Private Sub txtprecio_KeyUp(sender As Object, e As KeyEventArgs) Handles txtprecio.KeyUp
-        txtcantidad.Text = txtcantidad.Text.Trim
-        txtprecio.Text = txtprecio.Text.Trim
-
-        If txtcantidad.Text <> "" And txtprecio.Text <> "" Then
-            If txtcantidad.Text > 0 And txtprecio.Text >= 0 Then
-                Dim cantidad As Double = txtcantidad.Text
-                Dim precio As Double = txtprecio.Text
-                lblcoste.Text = precio * cantidad
-
-
-            End If
-        End If
-    End Sub
-
     Private Sub txtcantidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcantidad.KeyPress
         'solo permite enteros
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
@@ -279,7 +264,16 @@
 
 
 
-    Private Sub txtcantidad_KeyUp(sender As Object, e As KeyEventArgs) Handles txtcantidad.KeyUp
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        b = txtid.Text.Trim
+        Close()
+
+
+    End Sub
+
+    Private Sub txtcantidad_TextChanged(sender As Object, e As EventArgs) Handles txtcantidad.TextChanged
+
         txtcantidad.Text = txtcantidad.Text.Trim
         txtprecio.Text = txtprecio.Text.Trim
 
@@ -294,22 +288,23 @@
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        b = txtid.Text.Trim
-        Close()
 
 
-    End Sub
 
-    Private Sub txtcantidad_TextChanged(sender As Object, e As EventArgs) Handles txtcantidad.TextChanged
+
+
+    Private Sub txtprecio_TextChanged(sender As Object, e As EventArgs) Handles txtprecio.TextChanged
         txtcantidad.Text = txtcantidad.Text.Trim
-    End Sub
+        txtprecio.Text = txtprecio.Text.Trim
+
+        If txtcantidad.Text <> "" And txtprecio.Text <> "" Then
+            If txtcantidad.Text > 0 And txtprecio.Text >= 0 Then
+                Dim cantidad As Double = txtcantidad.Text
+                Dim precio As Double = txtprecio.Text
+                lblcoste.Text = precio * cantidad
 
 
-
-
-
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
+            End If
+        End If
     End Sub
 End Class

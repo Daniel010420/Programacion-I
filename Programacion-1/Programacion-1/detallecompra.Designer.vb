@@ -217,18 +217,18 @@ Partial Class detallecompra
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(19, 248)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(73, 13)
+        Me.Label7.Size = New System.Drawing.Size(84, 13)
         Me.Label7.TabIndex = 75
-        Me.Label7.Text = "Coste/Unidad"
+        Me.Label7.Text = "Coste/Empaque"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(19, 203)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(99, 13)
+        Me.Label6.Size = New System.Drawing.Size(153, 13)
         Me.Label6.TabIndex = 76
-        Me.Label6.Text = "Cantidad comprada"
+        Me.Label6.Text = "Cantidad comprada (Empaque)"
         '
         'Label5
         '
