@@ -414,6 +414,7 @@
         cobid.Visible = False
 
         grid.Visible = True
+        GroupBox1.Visible = True
         Panel1.Visible = True
     End Sub
 
@@ -473,6 +474,7 @@
 
         End If
 
+        GroupBox1.Visible = False
         grid.Visible = False
         Panel1.Visible = False
     End Sub
