@@ -81,6 +81,7 @@ Partial Class home
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "home"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "home"
         Me.ResumeLayout(False)
         Me.PerformLayout()

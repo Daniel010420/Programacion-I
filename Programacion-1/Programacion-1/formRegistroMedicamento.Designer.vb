@@ -207,6 +207,7 @@ Partial Class formRegistroMedicamento
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "formRegistroMedicamento"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Registro General de Medicamento"
         CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)

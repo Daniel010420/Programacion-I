@@ -258,6 +258,7 @@ Partial Class reportardaño
         Me.Controls.Add(Me.txtfiltro)
         Me.Controls.Add(Me.txtid)
         Me.Name = "reportardaño"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Reportar Daño"
         CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)

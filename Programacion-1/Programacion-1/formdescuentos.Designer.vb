@@ -186,6 +186,7 @@ Partial Class formdescuentos
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "formdescuentos"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Descuentos"
         CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)

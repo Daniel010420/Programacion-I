@@ -226,6 +226,7 @@ Partial Class formClientes
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "formClientes"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Clientes"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

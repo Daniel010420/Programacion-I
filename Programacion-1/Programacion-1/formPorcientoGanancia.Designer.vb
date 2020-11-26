@@ -186,6 +186,7 @@ Partial Class formPorcientoGanancia
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "formPorcientoGanancia"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Margen de Ganancia"
         CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)

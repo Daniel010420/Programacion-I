@@ -165,6 +165,7 @@ Partial Class TipoFactura
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "TipoFactura"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Tipos de Factura"
         CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)

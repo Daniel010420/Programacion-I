@@ -28,7 +28,7 @@ Partial Class Nuevacompra
         Dim IdPagoLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblRespuestaTotal = New System.Windows.Forms.Label()
         Me.lbltotal = New System.Windows.Forms.Label()
@@ -201,8 +201,8 @@ Partial Class Nuevacompra
         '
         'subtotal
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle1
         Me.subtotal.HeaderText = "SUBTOTAL"
         Me.subtotal.Name = "subtotal"
         Me.subtotal.ReadOnly = True
@@ -413,6 +413,7 @@ Partial Class Nuevacompra
         Me.Controls.Add(Me.cobid)
         Me.Controls.Add(Me.cobfecha)
         Me.Name = "Nuevacompra"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Nueva Compra"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

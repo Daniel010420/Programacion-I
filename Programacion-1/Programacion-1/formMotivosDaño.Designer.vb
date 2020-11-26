@@ -166,6 +166,7 @@ Partial Class formMotivosDaño
         Me.Controls.Add(Me.GroupBox1)
         Me.MaximizeBox = False
         Me.Name = "formMotivosDaño"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Motivos de Daño"
         CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)

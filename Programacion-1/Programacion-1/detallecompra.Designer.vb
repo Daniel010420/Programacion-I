@@ -334,6 +334,7 @@ Partial Class detallecompra
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "detallecompra"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Detalle de Compra"
         CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)

@@ -29,7 +29,7 @@ Partial Class NuevaVenta
         Dim IdPagoLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
         Dim Label3 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.cobfacturalist = New System.Windows.Forms.ComboBox()
         Me.cobsucursallist = New System.Windows.Forms.ComboBox()
         Me.cobfacturaslist = New System.Windows.Forms.ComboBox()
@@ -61,6 +61,10 @@ Partial Class NuevaVenta
         Me.cobfecha = New System.Windows.Forms.ComboBox()
         Me.cobempleadod = New System.Windows.Forms.ComboBox()
         Me.cobempleadoslist = New System.Windows.Forms.ComboBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lstEjercicios = New System.Windows.Forms.ListBox()
+        Me.txtrecibe = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Label2 = New System.Windows.Forms.Label()
         NfacturaLabel = New System.Windows.Forms.Label()
         Fecha_vtaLabel = New System.Windows.Forms.Label()
@@ -71,6 +75,7 @@ Partial Class NuevaVenta
         Me.GroupBox2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.grid, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label2
@@ -214,9 +219,9 @@ Partial Class NuevaVenta
         Me.GroupBox2.Controls.Add(Me.btnnuevoyaceptar)
         Me.GroupBox2.Controls.Add(Me.btnmodificarycancelar)
         Me.GroupBox2.Controls.Add(Me.btneliminar)
-        Me.GroupBox2.Location = New System.Drawing.Point(9, 502)
+        Me.GroupBox2.Location = New System.Drawing.Point(39, 435)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(289, 84)
+        Me.GroupBox2.Size = New System.Drawing.Size(288, 95)
         Me.GroupBox2.TabIndex = 61
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Registro Factura"
@@ -289,9 +294,9 @@ Partial Class NuevaVenta
         Me.Panel1.Controls.Add(Me.lbliva)
         Me.Panel1.Controls.Add(Me.lblRespuestaSuma)
         Me.Panel1.Controls.Add(Me.lblsuma)
-        Me.Panel1.Location = New System.Drawing.Point(716, 497)
+        Me.Panel1.Location = New System.Drawing.Point(713, 435)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(200, 104)
+        Me.Panel1.Size = New System.Drawing.Size(199, 115)
         Me.Panel1.TabIndex = 54
         '
         'lblRespuestaTotal
@@ -369,13 +374,13 @@ Partial Class NuevaVenta
         Me.grid.Location = New System.Drawing.Point(4, 103)
         Me.grid.Name = "grid"
         Me.grid.ReadOnly = True
-        Me.grid.Size = New System.Drawing.Size(912, 388)
+        Me.grid.Size = New System.Drawing.Size(908, 318)
         Me.grid.TabIndex = 53
         '
         'subtotal
         '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle2
         Me.subtotal.HeaderText = "SUBTOTAL"
         Me.subtotal.Name = "subtotal"
         Me.subtotal.ReadOnly = True
@@ -390,7 +395,7 @@ Partial Class NuevaVenta
         'cobid
         '
         Me.cobid.FormattingEnabled = True
-        Me.cobid.Location = New System.Drawing.Point(495, 497)
+        Me.cobid.Location = New System.Drawing.Point(396, 55)
         Me.cobid.Name = "cobid"
         Me.cobid.Size = New System.Drawing.Size(147, 21)
         Me.cobid.TabIndex = 59
@@ -419,11 +424,49 @@ Partial Class NuevaVenta
         Me.cobempleadoslist.Size = New System.Drawing.Size(147, 21)
         Me.cobempleadoslist.TabIndex = 73
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.lstEjercicios)
+        Me.GroupBox1.Controls.Add(Me.txtrecibe)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Location = New System.Drawing.Point(378, 435)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(329, 126)
+        Me.GroupBox1.TabIndex = 62
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Cajero"
+        '
+        'lstEjercicios
+        '
+        Me.lstEjercicios.FormattingEnabled = True
+        Me.lstEjercicios.Location = New System.Drawing.Point(170, 19)
+        Me.lstEjercicios.Name = "lstEjercicios"
+        Me.lstEjercicios.Size = New System.Drawing.Size(140, 95)
+        Me.lstEjercicios.TabIndex = 4
+        '
+        'txtrecibe
+        '
+        Me.txtrecibe.Location = New System.Drawing.Point(60, 19)
+        Me.txtrecibe.Name = "txtrecibe"
+        Me.txtrecibe.Size = New System.Drawing.Size(100, 20)
+        Me.txtrecibe.TabIndex = 1
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(9, 19)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(41, 13)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "Recibe"
+        '
         'NuevaVenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1000, 607)
+        Me.ClientSize = New System.Drawing.Size(933, 582)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.cobempleadoslist)
         Me.Controls.Add(Me.cobempleadod)
         Me.Controls.Add(Label3)
@@ -449,14 +492,17 @@ Partial Class NuevaVenta
         Me.Controls.Add(IdTipofacturaLabel)
         Me.Controls.Add(IdPagoLabel)
         Me.Controls.Add(Label1)
-        Me.Controls.Add(Me.cobid)
         Me.Controls.Add(Me.cobfecha)
+        Me.Controls.Add(Me.cobid)
         Me.Name = "NuevaVenta"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Nueva Venta"
         Me.GroupBox2.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -493,4 +539,8 @@ Partial Class NuevaVenta
     Friend WithEvents cobempleadoslist As ComboBox
     Friend WithEvents subtotal As DataGridViewTextBoxColumn
     Friend WithEvents cu As DataGridViewTextBoxColumn
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents txtrecibe As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents lstEjercicios As ListBox
 End Class

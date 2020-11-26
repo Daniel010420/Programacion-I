@@ -165,6 +165,7 @@ Partial Class formtipocliente
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "formtipocliente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Tipos de Cliente"
         CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)

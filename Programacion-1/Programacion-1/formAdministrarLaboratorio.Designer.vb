@@ -228,6 +228,7 @@ Partial Class formAdministrarLaboratorio
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.Name = "formAdministrarLaboratorio"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Laboratorios"
         CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)

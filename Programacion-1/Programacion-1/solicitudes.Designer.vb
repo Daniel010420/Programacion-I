@@ -89,6 +89,7 @@ Partial Class solicitudes
         Me.Controls.Add(Me.txtfiltro)
         Me.Controls.Add(Me.Label1)
         Me.Name = "solicitudes"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Solicitudes"
         CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

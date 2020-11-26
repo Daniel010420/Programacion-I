@@ -250,6 +250,7 @@ Partial Class formAdministrarEmpleados
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MaximizeBox = False
         Me.Name = "formAdministrarEmpleados"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Empleados "
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

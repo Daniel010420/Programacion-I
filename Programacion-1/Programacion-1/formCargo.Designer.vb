@@ -167,6 +167,7 @@ Partial Class formCargo
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.Name = "formCargo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Cargos"
         CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)

@@ -206,6 +206,7 @@ Partial Class formUsuarios
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "formUsuarios"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Usuarios"
         CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)

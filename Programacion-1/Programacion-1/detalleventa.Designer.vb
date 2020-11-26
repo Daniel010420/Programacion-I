@@ -31,6 +31,8 @@ Partial Class detalleventa
         Me.btnmodificarycancelar = New System.Windows.Forms.Button()
         Me.btneliminar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtunidadespaquete = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.txtprecio = New System.Windows.Forms.TextBox()
         Me.txtcantidad = New System.Windows.Forms.TextBox()
         Me.cobpre = New System.Windows.Forms.ComboBox()
@@ -53,8 +55,6 @@ Partial Class detalleventa
         Me.txtiddetalle = New System.Windows.Forms.TextBox()
         Me.cobdescuento = New System.Windows.Forms.ComboBox()
         Me.cobganancia = New System.Windows.Forms.ComboBox()
-        Me.txtunidadespaquete = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
         CType(Me.grid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -168,6 +168,22 @@ Partial Class detalleventa
         Me.GroupBox1.TabIndex = 44
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos de Venta"
+        '
+        'txtunidadespaquete
+        '
+        Me.txtunidadespaquete.Location = New System.Drawing.Point(7, 333)
+        Me.txtunidadespaquete.Name = "txtunidadespaquete"
+        Me.txtunidadespaquete.Size = New System.Drawing.Size(149, 20)
+        Me.txtunidadespaquete.TabIndex = 52
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(7, 316)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(112, 13)
+        Me.Label9.TabIndex = 51
+        Me.Label9.Text = "Unidades por paquete"
         '
         'txtprecio
         '
@@ -351,22 +367,6 @@ Partial Class detalleventa
         Me.cobganancia.Size = New System.Drawing.Size(149, 21)
         Me.cobganancia.TabIndex = 45
         '
-        'txtunidadespaquete
-        '
-        Me.txtunidadespaquete.Location = New System.Drawing.Point(7, 333)
-        Me.txtunidadespaquete.Name = "txtunidadespaquete"
-        Me.txtunidadespaquete.Size = New System.Drawing.Size(149, 20)
-        Me.txtunidadespaquete.TabIndex = 52
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(7, 316)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(112, 13)
-        Me.Label9.TabIndex = 51
-        Me.Label9.Text = "Unidades por paquete"
-        '
         'detalleventa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -383,6 +383,7 @@ Partial Class detalleventa
         Me.Controls.Add(Me.txtid)
         Me.Controls.Add(Me.txtiddetalle)
         Me.Name = "detalleventa"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Detalle de Venta"
         CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)

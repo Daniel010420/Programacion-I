@@ -481,5 +481,44 @@
         cobfacturalist.ValueMember = "Tipofactura.Idtipofactura"
         totalizar()
     End Sub
+
+    Private Sub txtrecibe_TextChanged(sender As Object, e As EventArgs) Handles txtrecibe.TextChanged
+        If txtrecibe.Text <> "" Then
+            Dim total = lblRespuestaTotal.Text
+            Dim paga = txtrecibe.Text
+            Dim diferencia = paga - total
+            Dim denominaciones() = {100, 50, 20, 10, 5, 1, 0.5, 0.25, 0.1, 0.05, 0.01}, cantidad = 0
+            Dim denomina As String
+
+            lstEjercicios.Items.Clear()
+
+            If diferencia > 0 Then
+                For Each denominacion In denominaciones
+                    While diferencia > 0 And denominacion <= diferencia
+                        diferencia = Math.Round(diferencia - denominacion, 2)
+                        cantidad += 1
+                    End While
+                    If cantidad > 0 Then
+                        If denominacion <= 1 Then
+                            denomina = " moneda de "
+                        Else
+                            denomina = " billete de "
+                        End If
+                        lstEjercicios.Items.Add(cantidad.ToString() + denomina + denominacion.ToString())
+                        cantidad = 0
+                    End If
+                Next
+
+            End If
+        End If
+
+    End Sub
+
+    Private Sub txtrecibe_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtrecibe.KeyPress
+        If Not (Char.IsControl(e.KeyChar) OrElse Char.IsDigit(e.KeyChar)) _
+           AndAlso (Not e.KeyChar = "." Or txtrecibe.Text.Contains(".")) Then
+            e.Handled = True
+        End If
+    End Sub
 End Class
 

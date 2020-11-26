@@ -225,6 +225,7 @@ Partial Class Sucursales
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "Sucursales"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Sucursales"
         CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)

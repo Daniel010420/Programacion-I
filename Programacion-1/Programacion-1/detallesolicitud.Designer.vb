@@ -311,6 +311,7 @@ Partial Class detallesolicitud
         Me.Controls.Add(Me.txtid)
         Me.Controls.Add(Me.txtiddetalle)
         Me.Name = "detallesolicitud"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Detalle Solicitud"
         CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)

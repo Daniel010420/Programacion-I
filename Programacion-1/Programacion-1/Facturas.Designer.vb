@@ -89,6 +89,7 @@ Partial Class Facturas
         Me.Controls.Add(Me.txtfiltro)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Facturas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Facturas"
         CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

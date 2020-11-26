@@ -89,6 +89,7 @@ Partial Class ventas
         Me.Controls.Add(Me.txtfiltro)
         Me.Controls.Add(Me.Label1)
         Me.Name = "ventas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Ventas"
         CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
