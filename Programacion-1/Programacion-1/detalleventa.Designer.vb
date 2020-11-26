@@ -63,7 +63,7 @@ Partial Class detalleventa
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(876, 562)
+        Me.Button1.Location = New System.Drawing.Point(895, 562)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(102, 28)
         Me.Button1.TabIndex = 43
@@ -82,7 +82,7 @@ Partial Class detalleventa
         Me.grid.Name = "grid"
         Me.grid.ReadOnly = True
         Me.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grid.Size = New System.Drawing.Size(673, 500)
+        Me.grid.Size = New System.Drawing.Size(692, 500)
         Me.grid.TabIndex = 48
         '
         'Label8
@@ -106,7 +106,7 @@ Partial Class detalleventa
         Me.GroupBox2.Controls.Add(Me.btnnuevoyaceptar)
         Me.GroupBox2.Controls.Add(Me.btnmodificarycancelar)
         Me.GroupBox2.Controls.Add(Me.btneliminar)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 506)
+        Me.GroupBox2.Location = New System.Drawing.Point(11, 434)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(289, 84)
         Me.GroupBox2.TabIndex = 45
@@ -164,7 +164,7 @@ Partial Class detalleventa
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(11, 10)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(273, 490)
+        Me.GroupBox1.Size = New System.Drawing.Size(273, 418)
         Me.GroupBox1.TabIndex = 44
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos de Venta"
@@ -240,7 +240,7 @@ Partial Class detalleventa
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(139, 453)
+        Me.Button2.Location = New System.Drawing.Point(136, 371)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(106, 31)
         Me.Button2.TabIndex = 20
@@ -259,7 +259,7 @@ Partial Class detalleventa
         'lblcoste
         '
         Me.lblcoste.AutoSize = True
-        Me.lblcoste.Location = New System.Drawing.Point(85, 462)
+        Me.lblcoste.Location = New System.Drawing.Point(82, 380)
         Me.lblcoste.Name = "lblcoste"
         Me.lblcoste.Size = New System.Drawing.Size(34, 13)
         Me.lblcoste.TabIndex = 5
@@ -268,7 +268,7 @@ Partial Class detalleventa
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(18, 462)
+        Me.Label10.Location = New System.Drawing.Point(15, 380)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(64, 13)
         Me.Label10.TabIndex = 5
@@ -353,16 +353,18 @@ Partial Class detalleventa
         '
         'cobdescuento
         '
+        Me.cobdescuento.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.cobdescuento.FormattingEnabled = True
-        Me.cobdescuento.Location = New System.Drawing.Point(585, 569)
+        Me.cobdescuento.Location = New System.Drawing.Point(594, 569)
         Me.cobdescuento.Name = "cobdescuento"
         Me.cobdescuento.Size = New System.Drawing.Size(149, 21)
         Me.cobdescuento.TabIndex = 44
         '
         'cobganancia
         '
+        Me.cobganancia.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.cobganancia.FormattingEnabled = True
-        Me.cobganancia.Location = New System.Drawing.Point(430, 569)
+        Me.cobganancia.Location = New System.Drawing.Point(439, 569)
         Me.cobganancia.Name = "cobganancia"
         Me.cobganancia.Size = New System.Drawing.Size(149, 21)
         Me.cobganancia.TabIndex = 45
@@ -371,7 +373,7 @@ Partial Class detalleventa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(990, 600)
+        Me.ClientSize = New System.Drawing.Size(1009, 600)
         Me.Controls.Add(Me.cobdescuento)
         Me.Controls.Add(Me.cobganancia)
         Me.Controls.Add(Me.Button1)

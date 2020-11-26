@@ -683,6 +683,8 @@ Public Class Conexion
 
 
             Case "modificar"
+
+
                 sql = "UPDATE Usuarios SET 
                  Usuario='" + datos(0) + "',
                  Contrasena='" + datos(1) + "'
@@ -693,8 +695,6 @@ Public Class Conexion
 
         If (executesql(sql) > 0) Then
             msg = "realizada"
-
-
 
         Else
             msg = "Error en el proceso"

@@ -56,7 +56,7 @@ Partial Class detallesolicitud
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(843, 419)
+        Me.Button1.Location = New System.Drawing.Point(852, 430)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(102, 28)
         Me.Button1.TabIndex = 43
@@ -75,7 +75,7 @@ Partial Class detallesolicitud
         Me.grid.Name = "grid"
         Me.grid.ReadOnly = True
         Me.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grid.Size = New System.Drawing.Size(673, 364)
+        Me.grid.Size = New System.Drawing.Size(682, 375)
         Me.grid.TabIndex = 48
         '
         'Label8
@@ -301,7 +301,7 @@ Partial Class detallesolicitud
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1000, 450)
+        Me.ClientSize = New System.Drawing.Size(1009, 461)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.grid)
         Me.Controls.Add(Me.Label8)
