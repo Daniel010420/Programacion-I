@@ -32,16 +32,19 @@ Partial Class home
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.SystemColors.HighlightText
+        Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(132, 105)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(43, 13)
+        Me.Label2.Size = New System.Drawing.Size(45, 15)
         Me.Label2.TabIndex = 8
         Me.Label2.Text = "Usuario"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(123, 195)
+        Me.Label1.Location = New System.Drawing.Point(129, 184)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(61, 13)
         Me.Label1.TabIndex = 6
@@ -58,6 +61,7 @@ Partial Class home
         '
         Me.txtpass.Location = New System.Drawing.Point(70, 211)
         Me.txtpass.Name = "txtpass"
+        Me.txtpass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtpass.Size = New System.Drawing.Size(166, 20)
         Me.txtpass.TabIndex = 11
         '
@@ -74,7 +78,8 @@ Partial Class home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(342, 391)
+        Me.BackgroundImage = Global.Programacion_1.My.Resources.Resources.login
+        Me.ClientSize = New System.Drawing.Size(310, 391)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.txtpass)
         Me.Controls.Add(Me.txtususario)

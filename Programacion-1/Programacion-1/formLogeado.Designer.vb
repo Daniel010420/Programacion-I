@@ -58,6 +58,7 @@ Partial Class formLogeado
         '
         'MenuToolStripMenuItem
         '
+        Me.MenuToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control
         Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalirToolStripMenuItem, Me.IniciarSesionToolStripMenuItem})
         Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
         Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
@@ -66,13 +67,13 @@ Partial Class formLogeado
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SalirToolStripMenuItem.Text = "Cerrar programa"
         '
         'IniciarSesionToolStripMenuItem
         '
         Me.IniciarSesionToolStripMenuItem.Name = "IniciarSesionToolStripMenuItem"
-        Me.IniciarSesionToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
+        Me.IniciarSesionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.IniciarSesionToolStripMenuItem.Text = "Iniciar Sesion"
         '
         'MenuStrip1
@@ -126,7 +127,7 @@ Partial Class formLogeado
         'ReportarToolStripMenuItem
         '
         Me.ReportarToolStripMenuItem.Name = "ReportarToolStripMenuItem"
-        Me.ReportarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ReportarToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
         Me.ReportarToolStripMenuItem.Text = "Reportar"
         '
         'PresentacionesToolStripMenuItem
@@ -219,13 +220,13 @@ Partial Class formLogeado
         'ProveedoresToolStripMenuItem1
         '
         Me.ProveedoresToolStripMenuItem1.Name = "ProveedoresToolStripMenuItem1"
-        Me.ProveedoresToolStripMenuItem1.Size = New System.Drawing.Size(140, 22)
+        Me.ProveedoresToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.ProveedoresToolStripMenuItem1.Text = "Proveedores"
         '
         'LaboratoriosToolStripMenuItem
         '
         Me.LaboratoriosToolStripMenuItem.Name = "LaboratoriosToolStripMenuItem"
-        Me.LaboratoriosToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
+        Me.LaboratoriosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.LaboratoriosToolStripMenuItem.Text = "Laboratorios"
         '
         'ClientesToolStripMenuItem
