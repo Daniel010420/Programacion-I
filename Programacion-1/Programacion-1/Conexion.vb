@@ -685,21 +685,31 @@ Public Class Conexion
             Case "modificar"
 
 
-                sql = "UPDATE Usuarios SET 
-                 Usuario='" + datos(0) + "',
-                 Contrasena='" + datos(1) + "'
-            WHERE   Usuario  ='" + datos(0) + "' and Contrasena  ='" + datos(1) + "'"
+
+                miCommand.Connection = miConexion
+                miCommand.CommandText = "select (IdUsuarios) from Usuarios where Usuario = '" + datos(0) + "' and Contrasena = '" + datos(1) + "'"
+
+
+
+                Dim j = miCommand.ExecuteScalar()
+                If (j > 0) Then
+                    msg = "realizada"
+                ElseIf msg = "error en el proceso" Then
+                End If
+
+
+
+                Return msg
+
+
+
+
 
 
         End Select
 
-        If (executesql(sql) > 0) Then
-            msg = "realizada"
 
-        Else
-            msg = "Error en el proceso"
-        End If
-        Return msg
+
     End Function
 
 

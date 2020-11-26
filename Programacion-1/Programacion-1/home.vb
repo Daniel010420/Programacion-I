@@ -34,7 +34,7 @@ accion, comandosql, idTabla)
                 formLogeado.IniciarSesionToolStripMenuItem.Text = "Cerrar Sesion"
                 Close()
 
-            Else msg = "Usuario " + txtususario.Text + " no encontrado"
+            Else msg = "Usuario o contraseña no encontrado"
                 MessageBox.Show(msg)
                 log = 0
             End If
