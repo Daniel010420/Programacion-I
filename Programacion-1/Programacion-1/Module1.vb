@@ -4,4 +4,5 @@
     Public tclientes
     Public buscarfactura
     Public logeado
+    Public idempleado
 End Module

@@ -29,7 +29,7 @@ Partial Class NuevaVenta
         Dim IdPagoLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
         Dim Label3 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.cobfacturalist = New System.Windows.Forms.ComboBox()
         Me.cobsucursallist = New System.Windows.Forms.ComboBox()
         Me.cobfacturaslist = New System.Windows.Forms.ComboBox()
@@ -65,6 +65,7 @@ Partial Class NuevaVenta
         Me.lstEjercicios = New System.Windows.Forms.ListBox()
         Me.txtrecibe = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Label2 = New System.Windows.Forms.Label()
         NfacturaLabel = New System.Windows.Forms.Label()
         Fecha_vtaLabel = New System.Windows.Forms.Label()
@@ -379,8 +380,8 @@ Partial Class NuevaVenta
         '
         'subtotal
         '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle3
         Me.subtotal.HeaderText = "SUBTOTAL"
         Me.subtotal.Name = "subtotal"
         Me.subtotal.ReadOnly = True
@@ -461,6 +462,15 @@ Partial Class NuevaVenta
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Recibe"
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(408, 60)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(39, 13)
+        Me.Label5.TabIndex = 74
+        Me.Label5.Text = "Label5"
+        '
         'NuevaVenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -494,6 +504,7 @@ Partial Class NuevaVenta
         Me.Controls.Add(Label1)
         Me.Controls.Add(Me.cobfecha)
         Me.Controls.Add(Me.cobid)
+        Me.Controls.Add(Me.Label5)
         Me.Name = "NuevaVenta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Nueva Venta"
@@ -543,4 +554,5 @@ Partial Class NuevaVenta
     Friend WithEvents txtrecibe As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents lstEjercicios As ListBox
+    Friend WithEvents Label5 As Label
 End Class

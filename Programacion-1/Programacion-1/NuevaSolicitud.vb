@@ -88,7 +88,7 @@
             cobcodigolist.AutoCompleteSource = AutoCompleteSource.ListItems
 
 
-
+            cobempleadod.SelectedValue = Module1.idempleado
         Catch ex As Exception
             'Mensaje si no hay datos que mostra
             MsgBox("No hay datos en la Base de Datos " & ex.Message)
@@ -116,7 +116,7 @@
 
             filtro(cobcodigolist.Text.Trim)
             totalizar()
-
+            cobempleadod.SelectedValue = Module1.idempleado
         Catch ex As Exception
             'Mensaje si no hay datos que mostra
             MsgBox("No hay datos en la Base de Datos " & ex.Message)
@@ -139,6 +139,9 @@
 
     'Boton primero
     Private Sub btnnuevoyaceptar_Click(sender As Object, e As EventArgs) Handles btnnuevoyaceptar.Click
+
+
+        cobempleadod.SelectedValue = Module1.idempleado
         If btnnuevoyaceptar.Text = "Nuevo" Then 'Nuevo
             btnnuevoyaceptar.Text = "Aceptar"
             btnmodificarycancelar.Text = "Cancelar"
@@ -195,7 +198,7 @@
 
             End If
 
-
+            cobempleadod.SelectedValue = Module1.idempleado
         Else 'si el boton dice Guardar, significa que esta haciendo un cambio de un dato
             Button1.Enabled = True
             Button2.Enabled = True
@@ -227,18 +230,27 @@
 
 
     Private Sub btnmodificarycancelar_Click(sender As Object, e As EventArgs) Handles btnmodificarycancelar.Click
+
+        cobempleadod.SelectedValue = Module1.idempleado
+
         If btnmodificarycancelar.Text = "Modificar" Then 'Nuevo
-            btnnuevoyaceptar.Text = "Guardar"
-            btnmodificarycancelar.Text = "Cancelar"
-            btneliminar.Enabled = False
-            accion = "modificar"
-            Button1.Enabled = False
+
+            If cobempleadod.Text.Trim = cobempleadolist.Text.Trim Then
+                btnnuevoyaceptar.Text = "Guardar"
+                btnmodificarycancelar.Text = "Cancelar"
+                btneliminar.Enabled = False
+                accion = "modificar"
+                Button1.Enabled = False
 
 
 
 
 
-            agregaryactualizardatos()
+                agregaryactualizardatos()
+            End If
+
+
+
             'Button2.Enabled = False
         Else 'Guardar
             Button1.Enabled = True
@@ -248,29 +260,33 @@
             btnmodificarycancelar.Text = "Modificar"
             btneliminar.Enabled = True
             mostrardatos()
-
+            cobempleadod.SelectedValue = Module1.idempleado
         End If
     End Sub
 
     Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
-        If cobid.Text <> "" Then
-            If (MessageBox.Show("Esta seguro de borrar " + cobcodigolist.Text, mensajeenmentana,
+        If cobempleadod.Text.Trim = cobempleadolist.Text.Trim Then
+            If cobid.Text <> "" Then
+                If (MessageBox.Show("Esta seguro de borrar " + cobcodigolist.Text, mensajeenmentana,
                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
-                comandosql = Nombretabladebusqueda
-                Dim msg = objConexion.mantenimientosolicitudes(New String() {cobid.Text}, "eliminar", comandosql, idTabla)
-                If msg = "Error en el proceso" Then
-                    MessageBox.Show("No se pudo eliminar este registro, porque hay registros que dependen de el", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End If
-                If msg <> "Error en el proceso" Then
-                    obtenerdatosfacturashechas()
+                    comandosql = Nombretabladebusqueda
+                    Dim msg = objConexion.mantenimientosolicitudes(New String() {cobid.Text}, "eliminar", comandosql, idTabla)
+                    If msg = "Error en el proceso" Then
+                        MessageBox.Show("No se pudo eliminar este registro, porque hay registros que dependen de el", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                    If msg <> "Error en el proceso" Then
+                        obtenerdatosfacturashechas()
 
-                    filtro(cobcodigolist.Text.Trim)
-                    totalizar()
+                        filtro(cobcodigolist.Text.Trim)
+                        totalizar()
 
+                    End If
                 End If
+            Else MessageBox.Show("Debe selecionar un registro para eliminar", mensajeenmentana)
             End If
-        Else MessageBox.Show("Debe selecionar un registro para eliminar", mensajeenmentana)
+
         End If
+
 
     End Sub
 
@@ -321,17 +337,24 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Module1.idcompra = cobid.Text
-        Module1.factura = cobcodigolist.Text
 
-        Dim newventada As New detallesolicitud
-        newventada.ShowDialog()
-        cargargrid()
-        Dim j = newventada.b
-        If j > 0 Then
-            cobcodigolist.SelectedValue = newventada.b
+        If cobempleadod.Text.Trim = cobempleadolist.Text.Trim Then
+            Module1.idcompra = cobid.Text
+            Module1.factura = cobcodigolist.Text
+
+            Dim newventada As New detallesolicitud
+            newventada.ShowDialog()
+            cargargrid()
+            Dim j = newventada.b
+            If j > 0 Then
+                cobcodigolist.SelectedValue = newventada.b
+            End If
+            totalizar()
+
         End If
-        totalizar()
+
+        cobempleadod.SelectedValue = Module1.idempleado
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click

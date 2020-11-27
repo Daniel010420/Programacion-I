@@ -687,13 +687,15 @@ Public Class Conexion
 
 
                 miCommand.Connection = miConexion
-                miCommand.CommandText = "select (IdUsuarios) from Usuarios where Usuario = '" + datos(0) + "' and Contrasena = '" + datos(1) + "'"
+                miCommand.CommandText = "select (IdEmpleado) from Usuarios where Usuario = '" + datos(0) + "' and Contrasena = '" + datos(1) + "'"
 
 
 
                 Dim j = miCommand.ExecuteScalar()
                 If (j > 0) Then
+                    Module1.idempleado = j
                     msg = "realizada"
+
                 ElseIf msg = "error en el proceso" Then
                 End If
 

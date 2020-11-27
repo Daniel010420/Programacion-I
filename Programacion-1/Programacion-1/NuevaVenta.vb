@@ -5,6 +5,7 @@
     Dim dataTable As New DataTable
     Dim accion As String = "nuevo"
     Dim comandosql = ""
+
     ' Dim objdetalle As New detallecompra
 
 
@@ -37,6 +38,7 @@
             cobempleadod.ValueMember = "Empleados.IdEmpleado"
             cobempleadod.AutoCompleteMode = AutoCompleteMode.Suggest
             cobempleadod.AutoCompleteSource = AutoCompleteSource.ListItems
+
 
             cobfacturad.DataSource = objConexion.obtenerDatos().Tables("Factura").DefaultView
             cobfacturad.DisplayMember = "tipofactura"
@@ -90,7 +92,7 @@
             cobfecha.DisplayMember = "fechaventa"
 
 
-
+            Label5.text = Module1.idempleado
 
         Catch ex As Exception
             MsgBox("No hay datos en la Base de Datos " & ex.Message)
@@ -100,6 +102,7 @@
         obtenerdatosfacturashechas()
 
         mostrardatos()
+
 
     End Sub
 
@@ -120,6 +123,8 @@
 
             grid.Columns(0).DisplayIndex = 12
             grid.Columns(1).DisplayIndex = 11
+
+            cobempleadod.SelectedValue = Module1.idempleado
 
             'grid.Columns(6).HeaderText = "Precio Unidad"
         Catch ex As Exception
@@ -164,7 +169,7 @@
             btneliminar.Enabled = False
             Button1.Enabled = False
             Button2.Enabled = False
-
+            cobempleadod.SelectedValue = Module1.idempleado
             agregaryactualizardatos()
             cobfacturad.SelectedValue = 2
 
@@ -216,7 +221,7 @@
 
             End If
 
-
+            cobempleadod.SelectedValue = Module1.idempleado
         Else 'si el boton dice Guardar, significa que esta haciendo un cambio de un dato
             Button1.Enabled = True
             Button2.Enabled = True
@@ -251,17 +256,19 @@
 
     Private Sub btnmodificarycancelar_Click(sender As Object, e As EventArgs) Handles btnmodificarycancelar.Click
         If btnmodificarycancelar.Text = "Modificar" Then 'Nuevo
-            btnnuevoyaceptar.Text = "Guardar"
-            btnmodificarycancelar.Text = "Cancelar"
-            btneliminar.Enabled = False
-            accion = "modificar"
-            Button1.Enabled = False
+            cobempleadod.SelectedValue = Module1.idempleado
+
+            If cobempleadod.Text.Trim = cobempleadoslist.Text.Trim Then
+                btnnuevoyaceptar.Text = "Guardar"
+                btnmodificarycancelar.Text = "Cancelar"
+                btneliminar.Enabled = False
+                accion = "modificar"
+                Button1.Enabled = False
 
 
 
-
-
-            agregaryactualizardatos()
+                agregaryactualizardatos()
+            End If
             'Button2.Enabled = False
         Else 'Guardar
             Button1.Enabled = True
@@ -271,29 +278,34 @@
             btnmodificarycancelar.Text = "Modificar"
             btneliminar.Enabled = True
             mostrardatos()
-
         End If
+        cobempleadod.SelectedValue = Module1.idempleado
     End Sub
 
     Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
-        If cobid.Text <> "" Then
-            If (MessageBox.Show("Esta seguro de borrar " + cobfacturaslist.Text, mensajeenmentana,
-                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
-                comandosql = Nombretabladebusqueda
-                Dim msg = objConexion.mantenimientoventas(New String() {cobid.Text}, "eliminar", comandosql, idTabla)
-                If msg = "Error en el proceso" Then
-                    MessageBox.Show("No se pudo eliminar este registro, porque hay registros que dependen de el", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End If
-                If msg <> "Error en el proceso" Then
-                    obtenerdatosfacturashechas()
+        cobempleadod.SelectedValue = Module1.idempleado
+        If cobempleadod.Text.Trim = cobempleadoslist.Text.Trim Then
+            If cobid.Text <> "" Then
+                If (MessageBox.Show("Esta seguro de borrar " + cobfacturaslist.Text, mensajeenmentana,
+                               MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
+                    comandosql = Nombretabladebusqueda
+                    Dim msg = objConexion.mantenimientoventas(New String() {cobid.Text}, "eliminar", comandosql, idTabla)
+                    If msg = "Error en el proceso" Then
+                        MessageBox.Show("No se pudo eliminar este registro, porque hay registros que dependen de el", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                    If msg <> "Error en el proceso" Then
+                        obtenerdatosfacturashechas()
 
-                    filtro(cobfacturaslist.Text.Trim)
-                    totalizar()
+                        filtro(cobfacturaslist.Text.Trim)
+                        totalizar()
 
+                    End If
                 End If
+            Else MessageBox.Show("Debe selecionar un registro para eliminar", mensajeenmentana)
             End If
-        Else MessageBox.Show("Debe selecionar un registro para eliminar", mensajeenmentana)
         End If
+
+
 
     End Sub
 
@@ -347,17 +359,23 @@
 
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Module1.idcompra = cobid.Text
-        Module1.factura = cobfacturaslist.Text
-        Module1.tclientes = cobclientelist.SelectedValue
-        Dim newventada As New detalleventa
-        newventada.ShowDialog()
-        cargargrid()
-        Dim j = newventada.c
-        If j > 0 Then
-            cobfacturaslist.SelectedValue = newventada.c
+        cobempleadod.SelectedValue = Module1.idempleado
+        If cobempleadod.Text.Trim = cobempleadoslist.Text.Trim Then
+            Module1.idcompra = cobid.Text
+            Module1.factura = cobfacturaslist.Text
+            Module1.tclientes = cobclientelist.SelectedValue
+            Dim newventada As New detalleventa
+            newventada.ShowDialog()
+            cargargrid()
+            Dim j = newventada.c
+            If j > 0 Then
+                cobfacturaslist.SelectedValue = newventada.c
+            End If
+            totalizar()
+
         End If
-        totalizar()
+
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -367,6 +385,7 @@
         If j > 0 Then
             cobfacturaslist.SelectedValue = newventada.idddd
         End If
+        cobempleadod.SelectedValue = Module1.idempleado
     End Sub
 
     Private Sub cobfactura_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cobfacturad.SelectedIndexChanged
@@ -429,6 +448,7 @@
             cobpagod.Visible = True
             cobempleadod.Visible = True
             cobid.Visible = True
+            cobempleadod.Enabled = False
 
             cobclientelist.Visible = False
             cobsucursallist.Visible = False
@@ -447,7 +467,7 @@
         End If
 
         If btnnuevoyaceptar.Text = "Guardar" Then
-
+            cobempleadod.Enabled = False
             cobcliented.Visible = True
             calendariod.Visible = True
             cobsucursald.Visible = True
