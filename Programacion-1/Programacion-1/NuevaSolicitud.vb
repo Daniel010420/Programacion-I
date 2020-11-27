@@ -419,6 +419,7 @@
             cobfecha.Visible = False
             cobcodigolist.Visible = False
             cobid.Visible = False
+            cobempleadod.Enabled = False
         End If
 
         If btnnuevoyaceptar.Text = "Guardar" Then
@@ -427,7 +428,7 @@
             cobsucursald.Visible = True
             ' txtfacturad.Visible = True
             cobempleadod.Visible = True
-
+            cobempleadod.Enabled = False
             cobproveedorlist.Visible = False
             cobsucursallist.Visible = False
             cobempleadolist.Visible = False

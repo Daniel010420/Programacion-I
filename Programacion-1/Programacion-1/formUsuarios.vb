@@ -66,11 +66,21 @@
           txtcontraseña.Text,
          cobempleado.SelectedValue},
          accion, comandosql, idTabla) 'accion que se desea realizar en el case
+
+
+                If msg = "Accion realizada" Then
+                    obtenerdatos()
+                    limpiar()
+                    MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                ElseIf msg = "Error en el proceso" Then
+                    MessageBox.Show("Error en el proceso, probablemente el nombre de usuario ya existe", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                End If
+
+
                 btnnuevoyaceptar.Text = "Nuevo"
                 btnmodificarycancelar.Text = "Modificar"
-                obtenerdatos()
-                limpiar()
-                MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+
                 btneliminar.Enabled = True
             End If
 
@@ -85,9 +95,17 @@
           cobempleado.SelectedValue},
             accion, comandosql, idTabla)
 
-                obtenerdatos()
-                MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
-                limpiar()
+
+                If msg = "Accion realizada" Then
+                    obtenerdatos()
+                    MessageBox.Show(msg, mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    limpiar()
+                ElseIf msg = "Error en el proceso" Then
+                    MessageBox.Show("Error en el proceso, probablemente el nombre de usuario ya existe", mensajeenmentana, MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                End If
+
+
                 btnnuevoyaceptar.Text = "Nuevo"
                 btnmodificarycancelar.Text = "Modificar"
                 btneliminar.Enabled = True
