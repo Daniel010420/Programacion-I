@@ -139,8 +139,9 @@
                     limpiar()
                     obtenerdatos()
 
-                End If
 
+            End If
+            Button2.Enabled = True
 
 
         Else 'si el boton dice Guardar, significa que esta haciendo un cambio de un dato

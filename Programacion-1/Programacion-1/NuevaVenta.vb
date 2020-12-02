@@ -542,5 +542,11 @@
             e.Handled = True
         End If
     End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim newventana As New imprimirventa
+        newventana.idventaaa = cobfacturaslist.SelectedValue
+        newventana.ShowDialog()
+    End Sub
 End Class
 

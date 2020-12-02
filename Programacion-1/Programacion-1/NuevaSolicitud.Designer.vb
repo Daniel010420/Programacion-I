@@ -55,6 +55,7 @@ Partial Class NuevaSolicitud
         Me.cu = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cobid = New System.Windows.Forms.ComboBox()
         Me.cobfecha = New System.Windows.Forms.ComboBox()
+        Me.Button3 = New System.Windows.Forms.Button()
         Label2 = New System.Windows.Forms.Label()
         NfacturaLabel = New System.Windows.Forms.Label()
         Fecha_vtaLabel = New System.Windows.Forms.Label()
@@ -361,11 +362,21 @@ Partial Class NuevaSolicitud
         Me.cobfecha.Size = New System.Drawing.Size(222, 21)
         Me.cobfecha.TabIndex = 64
         '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(309, 502)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(116, 44)
+        Me.Button3.TabIndex = 71
+        Me.Button3.Text = "Imprimir Solicitud"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'NuevaSolicitud
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(949, 582)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.cobempleadolist)
         Me.Controls.Add(Me.cobsucursallist)
         Me.Controls.Add(Me.cobcodigolist)
@@ -426,4 +437,5 @@ Partial Class NuevaSolicitud
     Friend WithEvents cobfecha As ComboBox
     Friend WithEvents subtotal As DataGridViewTextBoxColumn
     Friend WithEvents cu As DataGridViewTextBoxColumn
+    Friend WithEvents Button3 As Button
 End Class

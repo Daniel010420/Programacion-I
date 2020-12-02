@@ -182,9 +182,11 @@
 
                     obtenerdatosfacturashechas()
 
+
                     Dim newventada As New detallesolicitud
                     newventada.ShowDialog()
 
+                    cargargrid()
                     Dim j = newventada.b
                     If j > 0 Then
                         cobcodigolist.SelectedValue = newventada.b
@@ -440,5 +442,11 @@
         Panel1.Visible = False
     End Sub
 
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        '  Dim newventana As New imprimirsolicitudes
+        '    newventana.idsoli = cobcodigolist.SelectedValue
+        '   newventana.ShowDialog()
+
+    End Sub
 End Class
 

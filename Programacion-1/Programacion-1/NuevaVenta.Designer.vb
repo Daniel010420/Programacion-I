@@ -29,7 +29,7 @@ Partial Class NuevaVenta
         Dim IdPagoLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
         Dim Label3 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.cobfacturalist = New System.Windows.Forms.ComboBox()
         Me.cobsucursallist = New System.Windows.Forms.ComboBox()
         Me.cobfacturaslist = New System.Windows.Forms.ComboBox()
@@ -66,6 +66,7 @@ Partial Class NuevaVenta
         Me.txtrecibe = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Button3 = New System.Windows.Forms.Button()
         Label2 = New System.Windows.Forms.Label()
         NfacturaLabel = New System.Windows.Forms.Label()
         Fecha_vtaLabel = New System.Windows.Forms.Label()
@@ -380,8 +381,8 @@ Partial Class NuevaVenta
         '
         'subtotal
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle2
         Me.subtotal.HeaderText = "SUBTOTAL"
         Me.subtotal.Name = "subtotal"
         Me.subtotal.ReadOnly = True
@@ -471,11 +472,22 @@ Partial Class NuevaVenta
         Me.Label5.TabIndex = 74
         Me.Label5.Text = "Label5"
         '
+        'Button3
+        '
+        Me.Button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Button3.Location = New System.Drawing.Point(226, 536)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(101, 34)
+        Me.Button3.TabIndex = 75
+        Me.Button3.Text = "Imprimir"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'NuevaVenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(933, 582)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.cobempleadoslist)
         Me.Controls.Add(Me.cobempleadod)
@@ -555,4 +567,5 @@ Partial Class NuevaVenta
     Friend WithEvents Label4 As Label
     Friend WithEvents lstEjercicios As ListBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents Button3 As Button
 End Class
