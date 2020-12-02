@@ -1,0 +1,556 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Programacion-1
+</name>
+</assembly>
+<members>
+<member name="T:Programacion_1.My.Resources.Resources">
+<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member>
+<member name="P:Programacion_1.My.Resources.Resources.ResourceManager">
+<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member>
+<member name="P:Programacion_1.My.Resources.Resources.Culture">
+<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member>
+<member name="P:Programacion_1.My.Resources.Resources.login">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.CargosDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.ClientesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.ComprasDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.DescuentosDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.detallecompraDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.detallesolicitudDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.detallesventaDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.EmpleadosDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.FormapagoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.LaboratorioDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.MedicamentoDanadoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.MotivosDanoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.PermisosEmpleadoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.PorcientoGananciaDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.PresentacionDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.ProveedoresDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.RegistroMedicamentoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.SolicitudesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.SucursalDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.TipoClienteDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.TipofacturaDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.UsuariosDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.VentasDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.imprimirventaDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.CargosRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.ClientesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.ComprasRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.DescuentosRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.detallecompraRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.detallesolicitudRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.detallesventaRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.EmpleadosRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.FormapagoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.LaboratorioRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.MedicamentoDanadoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.MotivosDanoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.PermisosEmpleadoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.PorcientoGananciaRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.PresentacionRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.ProveedoresRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.RegistroMedicamentoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.SolicitudesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.SucursalRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.TipoClienteRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.TipofacturaRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.UsuariosRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.VentasRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.imprimirventaRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.CargosRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.ClientesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.ComprasRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.DescuentosRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.detallecompraRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.detallesolicitudRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.detallesventaRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.EmpleadosRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.FormapagoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.LaboratorioRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.MedicamentoDanadoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.MotivosDanoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.PermisosEmpleadoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.PorcientoGananciaRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.PresentacionRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.ProveedoresRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.RegistroMedicamentoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.SolicitudesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.SucursalRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.TipoClienteRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.TipofacturaRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.UsuariosRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.VentasRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.imprimirventaRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.CargosTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.ClientesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.ComprasTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.DescuentosTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.detallecompraTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.detallesolicitudTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.detallesventaTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.EmpleadosTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.FormapagoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.LaboratorioTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.MedicamentoDanadoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.MotivosDanoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.PermisosEmpleadoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.PorcientoGananciaTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.PresentacionTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.ProveedoresTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.RegistroMedicamentoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.SolicitudesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.SucursalTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.TipoClienteTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.TipofacturaTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.UsuariosTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.VentasTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.imprimirventaTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(Programacion_1._BDFarmacia_SantaFeDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(Programacion_1._BDFarmacia_SantaFeDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(Programacion_1._BDFarmacia_SantaFeDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.TableAdapterManager.UpdateAll(Programacion_1._BDFarmacia_SantaFeDataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+</members>
+</doc>
