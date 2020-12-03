@@ -226,6 +226,12 @@
     <Compile Include="home.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="imprimirsolicitud.Designer.vb">
+      <DependentUpon>imprimirsolicitud.vb</DependentUpon>
+    </Compile>
+    <Compile Include="imprimirsolicitud.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="imprimirventa.Designer.vb">
       <DependentUpon>imprimirventa.vb</DependentUpon>
     </Compile>
@@ -361,6 +367,9 @@
     <EmbeddedResource Include="home.resx">
       <DependentUpon>home.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="imprimirsolicitud.resx">
+      <DependentUpon>imprimirsolicitud.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="imprimirventa.resx">
       <DependentUpon>imprimirventa.vb</DependentUpon>
     </EmbeddedResource>
@@ -382,6 +391,7 @@
     <EmbeddedResource Include="reportardaño.resx">
       <DependentUpon>reportardaño.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportesolicitud.rdlc" />
     <EmbeddedResource Include="Reporteventa.rdlc" />
     <EmbeddedResource Include="solicitudes.resx">
       <DependentUpon>solicitudes.vb</DependentUpon>
