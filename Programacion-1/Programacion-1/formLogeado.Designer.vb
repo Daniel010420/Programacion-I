@@ -53,6 +53,7 @@ Partial Class formLogeado
         Me.AdministrarClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TiposDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btntrabajo = New System.Windows.Forms.Button()
+        Me.ListadoProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -67,13 +68,13 @@ Partial Class formLogeado
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.SalirToolStripMenuItem.Text = "Cerrar programa"
         '
         'IniciarSesionToolStripMenuItem
         '
         Me.IniciarSesionToolStripMenuItem.Name = "IniciarSesionToolStripMenuItem"
-        Me.IniciarSesionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.IniciarSesionToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.IniciarSesionToolStripMenuItem.Text = "Iniciar Sesion"
         '
         'MenuStrip1
@@ -212,7 +213,7 @@ Partial Class formLogeado
         '
         'ProveedoresToolStripMenuItem
         '
-        Me.ProveedoresToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProveedoresToolStripMenuItem1, Me.LaboratoriosToolStripMenuItem})
+        Me.ProveedoresToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProveedoresToolStripMenuItem1, Me.LaboratoriosToolStripMenuItem, Me.ListadoProveedoresToolStripMenuItem})
         Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
         Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
         Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
@@ -257,6 +258,12 @@ Partial Class formLogeado
         Me.btntrabajo.TabIndex = 3
         Me.btntrabajo.Text = "Empezar a trabajar"
         Me.btntrabajo.UseVisualStyleBackColor = True
+        '
+        'ListadoProveedoresToolStripMenuItem
+        '
+        Me.ListadoProveedoresToolStripMenuItem.Name = "ListadoProveedoresToolStripMenuItem"
+        Me.ListadoProveedoresToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ListadoProveedoresToolStripMenuItem.Text = "Listado Proveedores"
         '
         'formLogeado
         '
@@ -307,4 +314,5 @@ Partial Class formLogeado
     Friend WithEvents PreciosDeDescuentoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents IniciarSesionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents btntrabajo As Button
+    Friend WithEvents ListadoProveedoresToolStripMenuItem As ToolStripMenuItem
 End Class

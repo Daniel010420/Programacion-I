@@ -273,6 +273,12 @@
     <Compile Include="NuevaVenta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Proveedores.Designer.vb">
+      <DependentUpon>Proveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Proveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="reportardaño.Designer.vb">
       <DependentUpon>reportardaño.vb</DependentUpon>
     </Compile>
@@ -388,9 +394,13 @@
     <EmbeddedResource Include="NuevaVenta.resx">
       <DependentUpon>NuevaVenta.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Proveedores.resx">
+      <DependentUpon>Proveedores.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="reportardaño.resx">
       <DependentUpon>reportardaño.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reporteproveedores.rdlc" />
     <EmbeddedResource Include="Reportesolicitud.rdlc" />
     <EmbeddedResource Include="Reporteventa.rdlc" />
     <EmbeddedResource Include="solicitudes.resx">
