@@ -203,4 +203,10 @@
         newform.MdiParent = Me
         newform.Show()
     End Sub
+
+    Private Sub ListadoProveedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoProveedoresToolStripMenuItem.Click
+        Dim newform As New Proveedores
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
 End Class
