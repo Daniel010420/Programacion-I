@@ -270,7 +270,7 @@ Partial Class NuevaSolicitud
         Me.lbltotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbltotal.Location = New System.Drawing.Point(16, 76)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(61, 16)
+        Me.lbltotal.Size = New System.Drawing.Size(65, 16)
         Me.lbltotal.TabIndex = 4
         Me.lbltotal.Text = "TOTAL:"
         '
@@ -291,7 +291,7 @@ Partial Class NuevaSolicitud
         Me.lbliva.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbliva.Location = New System.Drawing.Point(16, 44)
         Me.lbliva.Name = "lbliva"
-        Me.lbliva.Size = New System.Drawing.Size(36, 16)
+        Me.lbliva.Size = New System.Drawing.Size(40, 16)
         Me.lbliva.TabIndex = 2
         Me.lbliva.Text = "IVA:"
         '
@@ -312,7 +312,7 @@ Partial Class NuevaSolicitud
         Me.lblsuma.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblsuma.Location = New System.Drawing.Point(16, 9)
         Me.lblsuma.Name = "lblsuma"
-        Me.lblsuma.Size = New System.Drawing.Size(55, 16)
+        Me.lblsuma.Size = New System.Drawing.Size(60, 16)
         Me.lblsuma.TabIndex = 0
         Me.lblsuma.Text = "SUMA:"
         '
@@ -368,7 +368,7 @@ Partial Class NuevaSolicitud
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(116, 44)
         Me.Button3.TabIndex = 71
-        Me.Button3.Text = "Imprimir Solicitud"
+        Me.Button3.Text = "Imprimir"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'NuevaSolicitud

@@ -419,4 +419,10 @@
         cobfacturalist.ValueMember = "Tipofactura.Idtipofactura"
         totalizar()
     End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim newventana As New Imprimircompra
+        newventana.idcompraas = cobfacturaslist.SelectedValue
+        newventana.ShowDialog()
+    End Sub
 End Class

@@ -135,6 +135,12 @@
     <Compile Include="Facturas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Imprimircompra.Designer.vb">
+      <DependentUpon>Imprimircompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Imprimircompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ImprimirDano.Designer.vb">
       <DependentUpon>ImprimirDano.vb</DependentUpon>
     </Compile>
@@ -358,6 +364,9 @@
     <EmbeddedResource Include="Facturas.resx">
       <DependentUpon>Facturas.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Imprimircompra.resx">
+      <DependentUpon>Imprimircompra.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ImprimirDano.resx">
       <DependentUpon>ImprimirDano.vb</DependentUpon>
     </EmbeddedResource>
@@ -446,6 +455,7 @@
       <DependentUpon>MedicamentoDanado.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteClientes.rdlc" />
+    <EmbeddedResource Include="Reportecompra.rdlc" />
     <EmbeddedResource Include="Reporteempleados.rdlc" />
     <EmbeddedResource Include="Reportelaboratorios.rdlc" />
     <EmbeddedResource Include="Reportemedicamentos.rdlc" />

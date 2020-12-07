@@ -57,6 +57,7 @@ Partial Class Nuevacompra
         Me.cobfacturad = New System.Windows.Forms.ComboBox()
         Me.cobfacturaslist = New System.Windows.Forms.ComboBox()
         Me.cobfacturalist = New System.Windows.Forms.ComboBox()
+        Me.Button3 = New System.Windows.Forms.Button()
         NfacturaLabel = New System.Windows.Forms.Label()
         Fecha_vtaLabel = New System.Windows.Forms.Label()
         IdTipofacturaLabel = New System.Windows.Forms.Label()
@@ -153,7 +154,7 @@ Partial Class Nuevacompra
         Me.lbltotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbltotal.Location = New System.Drawing.Point(16, 76)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(61, 16)
+        Me.lbltotal.Size = New System.Drawing.Size(65, 16)
         Me.lbltotal.TabIndex = 4
         Me.lbltotal.Text = "TOTAL:"
         '
@@ -174,7 +175,7 @@ Partial Class Nuevacompra
         Me.lbliva.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbliva.Location = New System.Drawing.Point(16, 44)
         Me.lbliva.Name = "lbliva"
-        Me.lbliva.Size = New System.Drawing.Size(36, 16)
+        Me.lbliva.Size = New System.Drawing.Size(40, 16)
         Me.lbliva.TabIndex = 2
         Me.lbliva.Text = "IVA:"
         '
@@ -195,7 +196,7 @@ Partial Class Nuevacompra
         Me.lblsuma.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblsuma.Location = New System.Drawing.Point(16, 9)
         Me.lblsuma.Name = "lblsuma"
-        Me.lblsuma.Size = New System.Drawing.Size(55, 16)
+        Me.lblsuma.Size = New System.Drawing.Size(60, 16)
         Me.lblsuma.TabIndex = 0
         Me.lblsuma.Text = "SUMA:"
         '
@@ -383,11 +384,21 @@ Partial Class Nuevacompra
         Me.cobfacturalist.Size = New System.Drawing.Size(147, 21)
         Me.cobfacturalist.TabIndex = 46
         '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(307, 506)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(105, 45)
+        Me.Button3.TabIndex = 47
+        Me.Button3.Text = "Imprimir"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'Nuevacompra
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(949, 582)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.cobfacturalist)
         Me.Controls.Add(Me.cobsucursallist)
         Me.Controls.Add(Me.cobfacturaslist)
@@ -452,4 +463,5 @@ Partial Class Nuevacompra
     Friend WithEvents cobfacturad As ComboBox
     Friend WithEvents cobfacturaslist As ComboBox
     Friend WithEvents cobfacturalist As ComboBox
+    Friend WithEvents Button3 As Button
 End Class

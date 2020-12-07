@@ -172,6 +172,11 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.imprimircomprasDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.CargosRow">
 <summary>
 Represents strongly named DataRow class.
@@ -308,6 +313,11 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.imprimirdanosRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.imprimircomprasRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -452,6 +462,11 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSet.imprimircomprasRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.CargosTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
@@ -588,6 +603,11 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.imprimirdanosTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Programacion_1._BDFarmacia_SantaFeDataSetTableAdapters.imprimircomprasTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
