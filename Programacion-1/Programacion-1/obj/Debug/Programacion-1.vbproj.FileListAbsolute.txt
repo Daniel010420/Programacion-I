@@ -212,3 +212,4 @@ C:\Users\William\Source\Repos\Programacion-I\Programacion-1\Programacion-1\obj\D
 C:\Users\William\Source\Repos\Programacion-I\Programacion-1\Programacion-1\obj\Debug\Programacion_1.ImprimirProveedores.resources
 C:\Users\William\Source\Repos\Programacion-I\Programacion-1\Programacion-1\obj\Debug\Programacion_1.MedicamentoDanado.resources
 C:\Users\William\Source\Repos\Programacion-I\Programacion-1\Programacion-1\obj\Debug\Programacion_1.Imprimircompra.resources
+C:\Users\William\Source\Repos\Programacion-I\Programacion-1\Programacion-1\obj\Debug\Programacion_1.Imprimirventasporcliente.resources

@@ -239,4 +239,10 @@
         newform.MdiParent = Me
         newform.Show()
     End Sub
+
+    Private Sub VentasPorClienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VentasPorClienteToolStripMenuItem.Click
+        Dim newform As New Imprimirventasporcliente
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
 End Class
