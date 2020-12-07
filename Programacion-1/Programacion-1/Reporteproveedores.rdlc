@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Proveedores</Value>
+                <Value>Listado de Proveedores</Value>
                 <Style>
                   <FontSize>16pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -23,9 +23,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.79057cm</Top>
-        <Left>6.21453cm</Left>
+        <Left>8.9662cm</Left>
         <Height>0.66146cm</Height>
-        <Width>3.83646cm</Width>
+        <Width>6.56167cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -40,13 +40,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.14042cm</Width>
+              <Width>7.31542cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.60583cm</Width>
+              <Width>3.82291cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.27713cm</Width>
+              <Width>7.69025cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>4.59021cm</Width>
@@ -335,7 +335,7 @@
         <Top>2.64266cm</Top>
         <Left>0.48282cm</Left>
         <Height>1.2cm</Height>
-        <Width>15.61359cm</Width>
+        <Width>23.41879cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -347,7 +347,7 @@
     <Height>1.98958in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>9.63925in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

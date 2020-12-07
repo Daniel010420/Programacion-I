@@ -135,6 +135,18 @@
     <Compile Include="Facturas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ImprimirDano.Designer.vb">
+      <DependentUpon>ImprimirDano.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimirDano.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImprimirMedicamentos.Designer.vb">
+      <DependentUpon>ImprimirMedicamentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimirMedicamentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formAdministrarEmpleados.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +182,12 @@
       <DependentUpon>formdescuentos.vb</DependentUpon>
     </Compile>
     <Compile Include="formdescuentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImprimirEmpleados.Designer.vb">
+      <DependentUpon>ImprimirEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimirEmpleados.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formLogeado.Designer.vb">
@@ -226,16 +244,28 @@
     <Compile Include="home.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="imprimirsolicitud.Designer.vb">
-      <DependentUpon>imprimirsolicitud.vb</DependentUpon>
+    <Compile Include="ImprimirLaboratorio.Designer.vb">
+      <DependentUpon>ImprimirLaboratorio.vb</DependentUpon>
     </Compile>
-    <Compile Include="imprimirsolicitud.vb">
+    <Compile Include="ImprimirLaboratorio.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="imprimirventa.Designer.vb">
-      <DependentUpon>imprimirventa.vb</DependentUpon>
+    <Compile Include="ImprimirSolicitud.Designer.vb">
+      <DependentUpon>ImprimirSolicitud.vb</DependentUpon>
     </Compile>
-    <Compile Include="imprimirventa.vb">
+    <Compile Include="ImprimirSolicitud.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImprimirVenta.Designer.vb">
+      <DependentUpon>ImprimirVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimirVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImprimirClientes.Designer.vb">
+      <DependentUpon>ImprimirClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimirClientes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module1.vb" />
@@ -273,16 +303,16 @@
     <Compile Include="NuevaVenta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Proveedores.Designer.vb">
-      <DependentUpon>Proveedores.vb</DependentUpon>
+    <Compile Include="ImprimirProveedores.Designer.vb">
+      <DependentUpon>ImprimirProveedores.vb</DependentUpon>
     </Compile>
-    <Compile Include="Proveedores.vb">
+    <Compile Include="ImprimirProveedores.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="reportardaño.Designer.vb">
-      <DependentUpon>reportardaño.vb</DependentUpon>
+    <Compile Include="MedicamentoDanado.Designer.vb">
+      <DependentUpon>MedicamentoDanado.vb</DependentUpon>
     </Compile>
-    <Compile Include="reportardaño.vb">
+    <Compile Include="MedicamentoDanado.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="solicitudes.Designer.vb">
@@ -328,6 +358,12 @@
     <EmbeddedResource Include="Facturas.resx">
       <DependentUpon>Facturas.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ImprimirDano.resx">
+      <DependentUpon>ImprimirDano.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImprimirMedicamentos.resx">
+      <DependentUpon>ImprimirMedicamentos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formAdministrarEmpleados.resx">
       <DependentUpon>formAdministrarEmpleados.vb</DependentUpon>
     </EmbeddedResource>
@@ -345,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formdescuentos.resx">
       <DependentUpon>formdescuentos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImprimirEmpleados.resx">
+      <DependentUpon>ImprimirEmpleados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formLogeado.resx">
       <DependentUpon>formLogeado.vb</DependentUpon>
@@ -373,11 +412,17 @@
     <EmbeddedResource Include="home.resx">
       <DependentUpon>home.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="imprimirsolicitud.resx">
-      <DependentUpon>imprimirsolicitud.vb</DependentUpon>
+    <EmbeddedResource Include="ImprimirLaboratorio.resx">
+      <DependentUpon>ImprimirLaboratorio.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="imprimirventa.resx">
-      <DependentUpon>imprimirventa.vb</DependentUpon>
+    <EmbeddedResource Include="ImprimirSolicitud.resx">
+      <DependentUpon>ImprimirSolicitud.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImprimirVenta.resx">
+      <DependentUpon>ImprimirVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImprimirClientes.resx">
+      <DependentUpon>ImprimirClientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -394,12 +439,17 @@
     <EmbeddedResource Include="NuevaVenta.resx">
       <DependentUpon>NuevaVenta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Proveedores.resx">
-      <DependentUpon>Proveedores.vb</DependentUpon>
+    <EmbeddedResource Include="ImprimirProveedores.resx">
+      <DependentUpon>ImprimirProveedores.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="reportardaño.resx">
-      <DependentUpon>reportardaño.vb</DependentUpon>
+    <EmbeddedResource Include="MedicamentoDanado.resx">
+      <DependentUpon>MedicamentoDanado.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReporteClientes.rdlc" />
+    <EmbeddedResource Include="Reporteempleados.rdlc" />
+    <EmbeddedResource Include="Reportelaboratorios.rdlc" />
+    <EmbeddedResource Include="Reportemedicamentos.rdlc" />
+    <EmbeddedResource Include="Reportemotivosdano.rdlc" />
     <EmbeddedResource Include="Reporteproveedores.rdlc" />
     <EmbeddedResource Include="Reportesolicitud.rdlc" />
     <EmbeddedResource Include="Reporteventa.rdlc" />

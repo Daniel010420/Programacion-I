@@ -199,13 +199,43 @@
     End Sub
 
     Private Sub ReportarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportarToolStripMenuItem.Click
-        Dim newform As New reportardaño
+        Dim newform As New MedicamentoDanado
         newform.MdiParent = Me
         newform.Show()
     End Sub
 
     Private Sub ListadoProveedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoProveedoresToolStripMenuItem.Click
-        Dim newform As New Proveedores
+        Dim newform As New ImprimirProveedores
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
+
+    Private Sub ListadoDeClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeClientesToolStripMenuItem.Click
+        Dim newform As New ImprimirClientes
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
+
+    Private Sub ListasoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListasoToolStripMenuItem.Click
+        Dim newform As New ImprimirLaboratorio
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
+
+    Private Sub ListadoEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoEmpleadosToolStripMenuItem.Click
+        Dim newform As New ImprimirEmpleados
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
+
+    Private Sub ReporteMedicamentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteMedicamentosToolStripMenuItem.Click
+        Dim newform As New imprimirmedicamentos
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
+
+    Private Sub ListaDeReportesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListaDeReportesToolStripMenuItem.Click
+        Dim newform As New ImprimirDano
         newform.MdiParent = Me
         newform.Show()
     End Sub
