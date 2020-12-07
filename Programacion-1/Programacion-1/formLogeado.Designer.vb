@@ -63,9 +63,10 @@ Partial Class formLogeado
         Me.ListadoDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.TiposDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.btntrabajo = New System.Windows.Forms.Button()
         Me.OtrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentasPorClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HistorialDeComprasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btntrabajo = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -322,6 +323,25 @@ Partial Class formLogeado
         Me.TiposDeClientesToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
         Me.TiposDeClientesToolStripMenuItem.Text = "Tipos De Clientes"
         '
+        'OtrosToolStripMenuItem
+        '
+        Me.OtrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VentasPorClienteToolStripMenuItem, Me.HistorialDeComprasToolStripMenuItem})
+        Me.OtrosToolStripMenuItem.Name = "OtrosToolStripMenuItem"
+        Me.OtrosToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
+        Me.OtrosToolStripMenuItem.Text = "Otros"
+        '
+        'VentasPorClienteToolStripMenuItem
+        '
+        Me.VentasPorClienteToolStripMenuItem.Name = "VentasPorClienteToolStripMenuItem"
+        Me.VentasPorClienteToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
+        Me.VentasPorClienteToolStripMenuItem.Text = "Historial de Ventas"
+        '
+        'HistorialDeComprasToolStripMenuItem
+        '
+        Me.HistorialDeComprasToolStripMenuItem.Name = "HistorialDeComprasToolStripMenuItem"
+        Me.HistorialDeComprasToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
+        Me.HistorialDeComprasToolStripMenuItem.Text = "Historial de Compras"
+        '
         'btntrabajo
         '
         Me.btntrabajo.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -331,19 +351,6 @@ Partial Class formLogeado
         Me.btntrabajo.TabIndex = 3
         Me.btntrabajo.Text = "Empezar a trabajar"
         Me.btntrabajo.UseVisualStyleBackColor = True
-        '
-        'OtrosToolStripMenuItem
-        '
-        Me.OtrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VentasPorClienteToolStripMenuItem})
-        Me.OtrosToolStripMenuItem.Name = "OtrosToolStripMenuItem"
-        Me.OtrosToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
-        Me.OtrosToolStripMenuItem.Text = "Otros"
-        '
-        'VentasPorClienteToolStripMenuItem
-        '
-        Me.VentasPorClienteToolStripMenuItem.Name = "VentasPorClienteToolStripMenuItem"
-        Me.VentasPorClienteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.VentasPorClienteToolStripMenuItem.Text = "Ventas por cliente"
         '
         'formLogeado
         '
@@ -407,4 +414,5 @@ Partial Class formLogeado
     Friend WithEvents ListaDeReportesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OtrosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VentasPorClienteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HistorialDeComprasToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -386,6 +386,7 @@ Partial Class Nuevacompra
         '
         'Button3
         '
+        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Button3.Location = New System.Drawing.Point(307, 506)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(105, 45)

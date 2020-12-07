@@ -1585,6 +1585,36 @@ GROUP BY Ventas.IdVentas, Ventas.numfactura, Ventas.fechaventa, Formapago.Formap
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="historialdecompraTableAdapter" GeneratorDataComponentClassName="historialdecompraTableAdapter" Name="historialdecompra" UserDataComponentName="historialdecompraTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDFarmacia_SantaFeConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fillhistorialcompra" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fillhistorialcompra" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fillhistorialcompra">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        SUM(detallecompra.Cantidad * detallecompra.PrecioCompra + detallecompra.CosteAdicional) AS subtotal, Compras.nunfactura, Compras.fecha, Proveedores.Proveedor, Formapago.Formapago, Tipofactura.tipofactura, 
+                         Sucursal.Ubicacion
+FROM            Compras INNER JOIN
+                         Proveedores ON Compras.IdProveedor = Proveedores.IdProveedores INNER JOIN
+                         Tipofactura ON Compras.IdTipoFactura = Tipofactura.Idtipofactura INNER JOIN
+                         Formapago ON Compras.IdFormaPago = Formapago.Idformapago INNER JOIN
+                         Sucursal ON Compras.IdSucursal = Sucursal.IdSucursal INNER JOIN
+                         detallecompra ON detallecompra.IdCompra = Compras.IdCompra
+GROUP BY Compras.nunfactura, Compras.fecha, Proveedores.Proveedor, Formapago.Formapago, Tipofactura.tipofactura, Sucursal.Ubicacion</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="subtotal" DataSetColumn="subtotal" />
+              <Mapping SourceColumn="nunfactura" DataSetColumn="nunfactura" />
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="Proveedor" DataSetColumn="Proveedor" />
+              <Mapping SourceColumn="Formapago" DataSetColumn="Formapago" />
+              <Mapping SourceColumn="tipofactura" DataSetColumn="tipofactura" />
+              <Mapping SourceColumn="Ubicacion" DataSetColumn="Ubicacion" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -2448,6 +2478,55 @@ GROUP BY Ventas.IdVentas, Ventas.numfactura, Ventas.fechaventa, Formapago.Formap
                 </xs:simpleType>
               </xs:element>
               <xs:element name="NombreCompleto" msprop:Generator_ColumnVarNameInTable="columnNombreCompleto" msprop:Generator_ColumnPropNameInRow="NombreCompleto" msprop:Generator_ColumnPropNameInTable="NombreCompletoColumn" msprop:Generator_UserColumnName="NombreCompleto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ubicacion" msprop:Generator_ColumnVarNameInTable="columnUbicacion" msprop:Generator_ColumnPropNameInRow="Ubicacion" msprop:Generator_ColumnPropNameInTable="UbicacionColumn" msprop:Generator_UserColumnName="Ubicacion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="historialdecompra" msprop:Generator_TableClassName="historialdecompraDataTable" msprop:Generator_TableVarName="tablehistorialdecompra" msprop:Generator_TablePropName="historialdecompra" msprop:Generator_RowDeletingName="historialdecompraRowDeleting" msprop:Generator_RowChangingName="historialdecompraRowChanging" msprop:Generator_RowEvHandlerName="historialdecompraRowChangeEventHandler" msprop:Generator_RowDeletedName="historialdecompraRowDeleted" msprop:Generator_UserTableName="historialdecompra" msprop:Generator_RowChangedName="historialdecompraRowChanged" msprop:Generator_RowEvArgName="historialdecompraRowChangeEvent" msprop:Generator_RowClassName="historialdecompraRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="subtotal" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsubtotal" msprop:Generator_ColumnPropNameInRow="subtotal" msprop:Generator_ColumnPropNameInTable="subtotalColumn" msprop:Generator_UserColumnName="subtotal" type="xs:double" minOccurs="0" />
+              <xs:element name="nunfactura" msprop:Generator_ColumnVarNameInTable="columnnunfactura" msprop:Generator_ColumnPropNameInRow="nunfactura" msprop:Generator_ColumnPropNameInTable="nunfacturaColumn" msprop:Generator_UserColumnName="nunfactura">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Proveedor" msprop:Generator_ColumnVarNameInTable="columnProveedor" msprop:Generator_ColumnPropNameInRow="Proveedor" msprop:Generator_ColumnPropNameInTable="ProveedorColumn" msprop:Generator_UserColumnName="Proveedor">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Formapago" msprop:Generator_ColumnVarNameInTable="columnFormapago" msprop:Generator_ColumnPropNameInRow="Formapago" msprop:Generator_ColumnPropNameInTable="FormapagoColumn" msprop:Generator_UserColumnName="Formapago">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tipofactura" msprop:Generator_ColumnVarNameInTable="columntipofactura" msprop:Generator_ColumnPropNameInRow="tipofactura" msprop:Generator_ColumnPropNameInTable="tipofacturaColumn" msprop:Generator_UserColumnName="tipofactura">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />

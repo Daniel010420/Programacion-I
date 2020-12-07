@@ -147,6 +147,12 @@
     <Compile Include="ImprimirDano.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="imprimirhistorialdecompra.Designer.vb">
+      <DependentUpon>imprimirhistorialdecompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="imprimirhistorialdecompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ImprimirMedicamentos.Designer.vb">
       <DependentUpon>ImprimirMedicamentos.vb</DependentUpon>
     </Compile>
@@ -274,10 +280,10 @@
     <Compile Include="ImprimirClientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Imprimirventasporcliente.Designer.vb">
-      <DependentUpon>Imprimirventasporcliente.vb</DependentUpon>
+    <Compile Include="Imprimirhistorialdevent.Designer.vb">
+      <DependentUpon>Imprimirhistorialdevent.vb</DependentUpon>
     </Compile>
-    <Compile Include="Imprimirventasporcliente.vb">
+    <Compile Include="Imprimirhistorialdevent.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module1.vb" />
@@ -376,6 +382,9 @@
     <EmbeddedResource Include="ImprimirDano.resx">
       <DependentUpon>ImprimirDano.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="imprimirhistorialdecompra.resx">
+      <DependentUpon>imprimirhistorialdecompra.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ImprimirMedicamentos.resx">
       <DependentUpon>ImprimirMedicamentos.vb</DependentUpon>
     </EmbeddedResource>
@@ -439,8 +448,8 @@
     <EmbeddedResource Include="ImprimirClientes.resx">
       <DependentUpon>ImprimirClientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Imprimirventasporcliente.resx">
-      <DependentUpon>Imprimirventasporcliente.vb</DependentUpon>
+    <EmbeddedResource Include="Imprimirhistorialdevent.resx">
+      <DependentUpon>Imprimirhistorialdevent.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -466,13 +475,14 @@
     <EmbeddedResource Include="ReporteClientes.rdlc" />
     <EmbeddedResource Include="Reportecompra.rdlc" />
     <EmbeddedResource Include="Reporteempleados.rdlc" />
+    <EmbeddedResource Include="Reportehistorialdecompra.rdlc" />
     <EmbeddedResource Include="Reportelaboratorios.rdlc" />
     <EmbeddedResource Include="Reportemedicamentos.rdlc" />
     <EmbeddedResource Include="Reportemotivosdano.rdlc" />
     <EmbeddedResource Include="Reporteproveedores.rdlc" />
     <EmbeddedResource Include="Reportesolicitud.rdlc" />
     <EmbeddedResource Include="Reporteventa.rdlc" />
-    <EmbeddedResource Include="Reporteventasporcliente.rdlc" />
+    <EmbeddedResource Include="RepoteHistorialdeventas.rdlc" />
     <EmbeddedResource Include="solicitudes.resx">
       <DependentUpon>solicitudes.vb</DependentUpon>
     </EmbeddedResource>
